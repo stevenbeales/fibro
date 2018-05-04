@@ -9,7 +9,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: fibro_health_test
+  database: fibro_test
   pool: 2
   username: mental
   password: fibro

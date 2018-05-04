@@ -16,23 +16,12 @@ spec/reports
 ## Bundler config contains local state
 .config
 
-.DS_Store
-._.DS_Store
-dump.rdb
-
 bin/*
 
 data/
 
-.sass-cache/*
-public/csv/*
-public/plugins/*
-public/tombstone/*
-
 # Ignore bundler config
 /.bundle
-/.vagrant
-/.vagrantfile
 /cache
 /coverage/*
 
@@ -43,30 +32,9 @@ public/tombstone/*
 # Ignore all logfiles and tempfiles.
 /logfile
 
-# Ignore plugins except for the bundled ones.
-/plugins/*
-!/plugins/emoji/
-!/plugins/lazyYT/
-!/plugins/poll/
-!/plugins/discourse-details/
-!/plugins/discourse-nginx-performance-report
-!/plugins/discourse-narrative-bot
-!/plugins/discourse-presence
-/plugins/*/auto_generated/
-
-/spec/fixtures/plugins/my_plugin/auto_generated
-
 # Ignore byebug history
 /.byebug_history
 
-
-# Ignore gem that is copied in
-MiniProfiler/Ruby/rack-mini-profiler-2.0.1a.gem
-
-# Vim temp files
-*~
-*.swp
-*.swo
 
 /public/uploads
 /public/backups
@@ -76,19 +44,13 @@ MiniProfiler/Ruby/rack-mini-profiler-2.0.1a.gem
 vendor/bundle/*
 *.db
 
-# ignore jetbrains ide file
-*.iml
-
-# vim swap
-*.swn
-
 # ignore nodejs files
 /node_modules
 /package-lock.json
 
 
-vim.exe.stackdump
 spec/rspec.txt
 log/bullet.log
 .vscode/launch.json
 .vscode/settings.json
+log/fibro.log
