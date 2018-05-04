@@ -18,4 +18,4 @@ use Rack::Timeout, service_timeout: 5
 use Rack::Deflater
 
 require './app'
-run App.new
+run Sinatra::Application
