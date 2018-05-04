@@ -2,11 +2,7 @@
 
 [![Build Status](https://travis-ci.org/stevenbeales/fibro.png)](https://travis-ci.org/stevenbeales/fibro)
 
-[![Coverage Status](https://coveralls.io/repos/stevenbeales/fibro/badge.svg?branch=master)](https://coveralls.io/r/stevenbeales/fibro?branch=master)
-
 [![Dependency Status](https://beta.gemnasium.com/badges/github.com/stevenbeales/fibro.svg)](https://beta.gemnasium.com/projects/github.com/stevenbeales/fibro)
-
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/stevenbeales/fibro/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/stevenbeales/fibro/?branch=master)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/6574b93819edbc0cff7d/maintainability)](https://codeclimate.com/github/stevenbeales/fibro/maintainability)
 

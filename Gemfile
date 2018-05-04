@@ -26,7 +26,6 @@ gem 'valid_email2', '>= 2.2', require: false # validates email format
 gem 'validates_timeliness', '>= 4.0', require: false # validate dates and times
 
 group :test do
-  gem 'coveralls', '~> 0.7.1', require: false # code coverage
   gem 'database_cleaner', '>=1.6', require: false # for test database cleaning
   gem 'factory_bot', '>= 4.0', require: false # for test data setup
   gem 'fuubar', '>= 2.3', require: false # rspec formatter
@@ -34,8 +33,7 @@ group :test do
   gem 'rspec', '>= 3.7', require: false # for behavioral driven testing
   gem 'rubocop', '>= 0.5', require: false # syntax checking
   gem 'ruby_audit', '>= 1.2', require: false # complements bundler-audit
-  gem 'scrutinizer-ocular', '>= 1.0', require: false # scrutinizer code coverage
-  gem 'simplecov', '~> 0.14.1', require: false # for code coverage
+  gem 'simplecov', '>= 0.14', require: false # for code coverage
   gem 'simplecov-console', '>= 0.4', require: false # code coverage to console
   gem 'travis', '>= 1.8', require: false # for continuous integrations
   gem 'warning', '>= 0.1', require: false # customize warnings

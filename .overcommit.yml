@@ -8,7 +8,7 @@
 # For a complete list of options that you can use to customize hooks, see:
 # https://github.com/brigade/overcommit#configuration
 #
-# TO avoid resigning overcommit on every configuration change  
+# TO avoid resigning overcommit on every configuration change
 verify_signatures: false
 
 PreCommit:
@@ -22,14 +22,14 @@ PreCommit:
       exclude:
         - *default_excludes
   RuboCop:
-    enabled: true
+    enabled: false
     on_warn: fail # Treat all warnings as failures
   Fasterer:
     enabled: true
   BundleAudit:
     enabled: true
   BundleCheck:
-    enabled: true
+    enabled: false
   BundleOutdated:
     enabled: true
   Reek:
@@ -46,7 +46,7 @@ PreCommit:
     enabled: true
   Fixme:
     enabled: true
-  
+
 IndexTags:
   enabled: true # Generate a tags file with `ctags` each time HEAD changes
 
