@@ -12,11 +12,13 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra-initializers'
 require_relative 'config/db'
+require './app/app_constants'
 
 configure { set :server, :puma }
 set :app_file, __FILE__
 set :root, File.dirname(__FILE__)
 set :public_folder, File.dirname(__FILE__) + '/public'
+set :log_file, File.dirname(__FILE__) + AppConstants::LOG_FILE
 enable :sessions
 
 # Register initializers a la Rails

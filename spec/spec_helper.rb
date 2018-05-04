@@ -40,9 +40,6 @@ RSpec.configure do |config|
 
   config.before(:each) do
     Bullet.start_request
-
-    # allow email validation to bypass MX lookups so email validation works offline
-    allow_any_instance_of(ValidEmail2::Address).to receive(:valid_mx?) { true }
   end
 
   config.after(:each) do
