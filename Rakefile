@@ -3,8 +3,6 @@
 require 'sinatra/activerecord'
 require 'sinatra/activerecord/rake'
 
-MIGRATIONS_PATH = 'db/data_migrate'
-
 # Heroku advises us to wrap Rspec tasks in a rescue block so rake does not throw error in production
 begin
   require 'rspec/core/rake_task'
