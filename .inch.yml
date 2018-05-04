@@ -1,0 +1,16 @@
+# Inch documentation coverage analysis
+files:
+  # define files included in the analysis (defaults to ["{app,lib}/**/*.rb"])
+  included:
+    - app/**/*.rb
+    - lib/**/*.rb
+    - intents/**/*.rb
+    - db/**/*.rb
+    - config/**/*.rb
+    - /*.rb
+    - script/**/*.rb
+    
+  # define files excluded from the analysis (defaults to [])
+  excluded:
+    - vendor/**/*.rb
+    - spec/**/*.rb

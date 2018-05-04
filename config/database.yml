@@ -1,0 +1,24 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: fibro
+  pool: 2
+  username: fibro
+  password: health
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: fibro_health_test
+  pool: 2
+  username: mental
+  password: fibro
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  connect_timeout: 1
+  checkout_timeout: 5
+  variables:
+    statement_timeout: 5000 # ms

@@ -1,0 +1,63 @@
+# Use this file to configure the Overcommit hooks you wish to use. This will
+# extend the default configuration defined in:
+# https://github.com/brigade/overcommit/blob/master/config/default.yml
+#
+# For a complete list of hooks, see:
+# https://github.com/brigade/overcommit/tree/master/lib/overcommit/hook
+#
+# For a complete list of options that you can use to customize hooks, see:
+# https://github.com/brigade/overcommit#configuration
+#
+# TO avoid resigning overcommit on every configuration change  
+verify_signatures: false
+
+PreCommit:
+  ALL:
+    problem_on_unmodified_line: warn
+    exclude: &default_excludes
+      - 'node_modules/**/*'
+      - 'vendor/**/*'
+      - 'db/migrate/*'
+    MyHook:
+      exclude:
+        - *default_excludes
+  RuboCop:
+    enabled: true
+    on_warn: fail # Treat all warnings as failures
+  Fasterer:
+    enabled: true
+  BundleAudit:
+    enabled: true
+  BundleCheck:
+    enabled: true
+  BundleOutdated:
+    enabled: true
+  Reek:
+    enabled: true
+  ImageOptim:
+    enabled: true
+  Mdl:
+    enabled: true
+  TravisLint:
+    enabled: true
+  JsonSyntax:
+    enabled: true
+  LocalPathsInGemfile:
+    enabled: true
+  Fixme:
+    enabled: true
+  
+IndexTags:
+  enabled: true # Generate a tags file with `ctags` each time HEAD changes
+
+CommitMsg:
+  RussianNovel:
+    enabled: true
+  Spellcheck:
+    enabled: true
+  BundleCheck:
+    enabled: true
+
+PrePush:
+  RSpec:
+    enabled: true
