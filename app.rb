@@ -1,5 +1,9 @@
+# frozen_string_literal: true
+
 require 'sinatra'
 
-get '/' do
-  'Fibro Friend!'
+set :public_folder, 'public'
+
+get "/" do
+  redirect '/index.html'
 end
