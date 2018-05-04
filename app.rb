@@ -39,3 +39,7 @@ post '/' do
     Bugsnag.notify(exception)
   end
 end
+
+get "/privacy" do
+  redirect '/privacy.html'
+end
