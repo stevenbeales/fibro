@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require 'rack/protection'
-use Rack::Protection
-
 require 'rubygems'
 
 require 'bundler/setup'
