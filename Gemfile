@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 ruby ENV['CUSTOM_RUBY_VERSION'] || '2.4.4'
 
 gem 'activerecord', '>= 5.2' # ORM
-gem 'alexa_verifier' # Verify Alexa responses
 gem 'audited', '>= 4.7', require: false # adds table auiting support
 gem 'bugsnag', '>= 6.6', require: false # online bug reporting
 gem 'default_value_for', '>= 3.0', require: false # set default values
@@ -18,6 +17,7 @@ gem 'puma', '>= 3.11', require: false # puma web server
 gem 'rack-heartbeat', '>= 1.1', require: false # provide heartbeat URL
 gem 'rack-timeout', '>= 0.4', require: false # configure Rack timeout
 gem 'rake', '>= 12.3', require: false # so we can run Rake tasks
+gem 'ralyxa', '>= 1.7', require: false # Ralyxa framework to handle Alexa requests
 gem 'sinatra', '>= 2.0', require: false # Web server
 gem 'sinatra-activerecord', '>= 2.0', require: false # for Active Record models
 gem 'sinatra-initializers', '>= 0.1', require: false # config initializers for sinatra

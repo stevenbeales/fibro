@@ -40,6 +40,9 @@ RSpec.configure do |config|
 
   config.before(:each) do
     Bullet.start_request
+    Ralyxa.configure do |con|
+      con.validate_requests = false
+    end
   end
 
   config.after(:each) do

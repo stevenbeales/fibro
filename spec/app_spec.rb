@@ -26,4 +26,11 @@ RSpec.describe App do
     get '/privacy'
     expect(last_response.redirect?).to be_truthy
   end
+
+  it 'should contain individuals' do
+    get '/privacy'
+    follow_redirect!
+    expect(last_response.body).to include 'individuals'
+  end
+
 end

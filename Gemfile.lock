@@ -133,6 +133,8 @@ GEM
     rack-timeout (0.4.2)
     rainbow (3.0.0)
     rake (12.3.1)
+    ralyxa (1.7.0)
+      alexa_verifier (~> 1.0)
     rdoc (6.0.4)
     reek (4.8.1)
       codeclimate-engine-rb (~> 0.4.0)
@@ -228,7 +230,6 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord (>= 5.2)
-  alexa_verifier
   audited (>= 4.7)
   better_errors (>= 2.4)
   binding_of_caller (>= 0.8)
@@ -253,6 +254,7 @@ DEPENDENCIES
   rack-test (>= 1.0)
   rack-timeout (>= 0.4)
   rake (>= 12.3)
+  ralyxa (>= 1.7)
   reek (>= 4.8)
   rspec (>= 3.7)
   rubocop (>= 0.5)

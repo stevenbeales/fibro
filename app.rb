@@ -12,6 +12,7 @@ require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/activerecord'
 require 'sinatra-initializers'
+require 'ralyxa'
 require_relative 'config/db'
 require './app/app_constants'
 require 'json'
@@ -69,7 +70,7 @@ class App < Sinatra::Base
     puts "Received request with headers:\n#{request.env}"
 
     begin
-      request
+      Ralyxa::Skill.handle(request)
     rescue StandardError => exception
       Bugsnag.notify(exception)
     end
