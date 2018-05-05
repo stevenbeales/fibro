@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
-RSpec.describe Sinatra::Application do
-  subject { Sinatra::Application }
+require './app'
+
+RSpec.describe App do
+  subject { App.new }
+
+  it { expect(subject).to be_a Sinatra::Wrapper }
 
   it 'should not throw an exception when posting a request to the home page' do
     expect { post '/' }.not_to raise_error
@@ -14,10 +18,11 @@ RSpec.describe Sinatra::Application do
 
   it 'should redirect to privacy policy' do
     get '/privacy'
-    expect(last_response.location).to eq 'https://example.org/privacy' # https://example.org/ is rack test default URL
+    # http://example.org/ is rack test default URL
+    expect(last_response.location).to eq 'http://example.org/privacy.html'
   end
 
-  it 'should contain privacy policy' do
+  it 'should redirect to privacy policy' do
     get '/privacy'
     expect(last_response.redirect?).to be_truthy
   end

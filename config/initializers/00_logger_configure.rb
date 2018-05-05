@@ -2,7 +2,7 @@
 
 require 'fileutils'
 
-set :log_file, settings.root + AppConstants::LOG_FILE
+set :log_file, AppConstants::LOG_FILE
 FileUtils.touch(settings.log_file)
 
 configure do

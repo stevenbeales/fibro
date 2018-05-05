@@ -7,7 +7,7 @@ Attribute:
   enabled: false
   exclude: []
 BooleanParameter:
-  enabled: true
+  enabled: false
   exclude: []
 ClassVariable:
   enabled: true
@@ -32,7 +32,7 @@ InstanceVariableAssumption:
   enabled: true
   exclude: []
 IrresponsibleModule:
-  enabled: true
+  enabled: false
   exclude: []
 LongParameterList:
   enabled: true
@@ -47,7 +47,7 @@ LongYieldList:
   max_params: 3
 ManualDispatch:
   enabled: true
-  exclude: [responds]
+  exclude: []
 ModuleInitialize:
   enabled: true
   exclude: []
@@ -58,8 +58,8 @@ NestedIterators:
   ignore_iterators:
   - tap
 NilCheck:
-  enabled: true
-  exclude: [unique_order_number]
+  enabled: false
+  exclude: []
 PrimaDonnaMethod:
   enabled: true
   exclude: []
@@ -89,6 +89,7 @@ TooManyStatements:
   enabled: true
   exclude:
   - initialize
+  - get_session
   max_statements: 7
 UncommunicativeMethodName:
   enabled: true
@@ -131,5 +132,5 @@ UnusedPrivateMethod:
   exclude: []
 UtilityFunction:
   enabled: true
-  exclude: [config_cookies, config_report, config_x_headers, read_entry, read_last]
+  exclude: [make_ssml_response]
   public_methods_only: true

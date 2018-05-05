@@ -46,6 +46,8 @@ PreCommit:
     enabled: true
   Fixme:
     enabled: true
+  BrokenSymlinks:
+    enabled: false
 
 IndexTags:
   enabled: true # Generate a tags file with `ctags` each time HEAD changes

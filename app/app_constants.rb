@@ -3,5 +3,5 @@
 # This module contains all application constants
 module AppConstants
   APP_NAME = 'Fibro Friend'
-  LOG_FILE = '/log/fibro.log'
+  LOG_FILE = './log/fibro.log'
 end

@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 ruby ENV['CUSTOM_RUBY_VERSION'] || '2.4.4'
 
 gem 'activerecord', '>= 5.2' # ORM
-gem 'activerecord-delay_touching', '>= 1.0' # Batch Touching Calls
+gem 'alexa_verifier' # Verify Alexa responses
 gem 'audited', '>= 4.7', require: false # adds table auiting support
 gem 'bugsnag', '>= 6.6', require: false # online bug reporting
 gem 'default_value_for', '>= 3.0', require: false # set default values
@@ -12,6 +12,7 @@ gem 'discard', '>= 1.0', require: false # soft deletes
 gem 'dotenv', '>= 2.2', require: false # adds environment variables from .env files
 gem 'goldiloader', '>= 2.1', require: false # automatic eager loading
 gem 'i18n', '>= 1.0', require: false # internationalization support
+gem 'nokogiri', require: false # HTML parsing
 gem 'pg', '>= 1.0', require: false # for Postgres
 gem 'puma', '>= 3.11', require: false # puma web server
 gem 'rack-heartbeat', '>= 1.1', require: false # provide heartbeat URL
