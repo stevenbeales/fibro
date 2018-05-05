@@ -29,8 +29,6 @@ data/
 /public/tombstone/*
 /bundle/*
 
-# Ignore all logfiles and tempfiles.
-/logfile
 
 # Ignore byebug history
 /.byebug_history
@@ -53,4 +51,5 @@ spec/rspec.txt
 log/bullet.log
 .vscode/launch.json
 .vscode/settings.json
+log/.gitignore
 log/fibro.log

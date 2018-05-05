@@ -7,30 +7,41 @@ RSpec.describe App do
 
   it { expect(subject).to be_a Sinatra::Wrapper }
 
-  it 'should not throw an exception when posting a request to the home page' do
-    expect { post '/' }.not_to raise_error
+  context 'home page' do
+    it 'should not throw an exception when posting a request' do
+      expect { post '/' }.not_to raise_error
+    end
+
+    it 'should equal index.html' do
+      get '/'
+      expect(last_response.body).to eq IO.binread(subject.settings.public_folder + '/index.html')
+    end
+
+    it 'should contain fibro friend' do
+      get '/'
+      expect(last_response.body.downcase).to include('fibro friend')
+    end
   end
 
-  it 'should not throw an exception when getting home page' do
-    get '/'
-    expect(last_request.path).to eq('/')
+  context 'privacy policy' do
+    it 'should not redirect to privacy policy' do
+      get '/privacy'
+      expect(last_response.redirect?).to be_falsey
+    end
+
+    it 'should contain individuals in privacy policy' do
+      get '/privacy'
+      expect(last_response.body).to include 'individuals'
+    end
+
+    it 'should equal privacy.html' do
+      get '/privacy'
+      expect(last_response.body).to eq IO.binread(subject.settings.public_folder + '/privacy.html')
+    end
   end
 
-  it 'should redirect to privacy policy' do
-    get '/privacy'
-    # http://example.org/ is rack test default URL
-    expect(last_response.location).to eq 'http://example.org/privacy.html'
+  it 'should return not found for non-existent route' do
+    get '/blah'
+    expect(last_response.body).to include 'Not Found'
   end
-
-  it 'should redirect to privacy policy' do
-    get '/privacy'
-    expect(last_response.redirect?).to be_truthy
-  end
-
-  it 'should contain individuals' do
-    get '/privacy'
-    follow_redirect!
-    expect(last_response.body).to include 'individuals'
-  end
-
 end

@@ -44,24 +44,8 @@ class App < Sinatra::Base
 
   helpers Sinatra::App::Helpers
 
-  configure do
-    $stdout.sync = true
-    verifier = AlexaVerifier.configure do |config|
-      config.verify_uri         = true
-      config.verify_timeliness  = true
-      config.verify_certificate = true
-      config.verify_signature   = true
-    end
-    set :cert_verifier, verifier
-  end
-
-  before do
-    # Respond with json for all responses
-    content_type :json
-  end
-
   get "/" do
-    redirect '/index.html'
+    send_file settings.public_folder + '/index.html'
   end
 
   # Entry point for requests from Amazon Alexa.
@@ -77,7 +61,7 @@ class App < Sinatra::Base
   end
 
   get "/privacy" do
-    redirect '/privacy.html'
+    send_file settings.public_folder + '/privacy.html'
   end
 
   post '/rate-pain' do
