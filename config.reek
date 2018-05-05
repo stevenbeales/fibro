@@ -47,7 +47,7 @@ LongYieldList:
   max_params: 3
 ManualDispatch:
   enabled: true
-  exclude: []
+  exclude: [responds]
 ModuleInitialize:
   enabled: true
   exclude: []
