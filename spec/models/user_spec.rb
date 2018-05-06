@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe User, type: :model do
   subject { TestFactory.test_user }
 
@@ -53,7 +55,6 @@ RSpec.describe User, type: :model do
     it 'does create a user with a +=' do
       expect { User.authenticate('Lisa+=') }.to change { User.count }.by(1)
     end
-
   end
 
   describe 'Saving to a database' do

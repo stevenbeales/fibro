@@ -11,7 +11,7 @@ class User < ApplicationRecord
   default_value_for :access_token, ''
   validates :user_id,
             presence: true,
-            format: { with: VALID_USERNAME_REGEX},
+            format: { with: VALID_USERNAME_REGEX },
             uniqueness: { case_sensitive: false }
   validates_length_of :user_id, \
                       within: 1..64, \

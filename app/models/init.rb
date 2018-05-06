@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'audited'
 require 'default_value_for'
 require 'discard'
