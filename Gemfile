@@ -32,7 +32,6 @@ group :test do
   gem 'fuubar', '>= 2.3', require: false # rspec formatter
   gem 'rack-test', '>= 1.0', require: false # for testing rake servers
   gem 'rspec', '>= 3.7', require: false # for behavioral driven testing
-  gem 'rubocop', '>= 0.5', require: false # syntax checking
   gem 'ruby_audit', '>= 1.2', require: false # complements bundler-audit
   gem 'simplecov', '>= 0.16', require: false # for code coverage
   gem 'simplecov-console', '>= 0.4', require: false # code coverage to console
@@ -49,6 +48,7 @@ group :development, :test do
   gem 'fasterer', '>= 0.4', require: false # find slow code
   gem 'overcommit', '>= 0.4', require: false # git hooks
   gem 'reek', '>= 4.8', require: false # find code smells
+  gem 'rubocop', '>= 0.5', require: false # syntax checking
   gem 'timecop', '>= 0.9', require: false # testing time dependent
 end
 
