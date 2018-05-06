@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 ruby ENV['CUSTOM_RUBY_VERSION'] || '2.4.4'
 
 gem 'activerecord', '>= 5.2' # ORM
-gem 'activerecord-delay_touching', '>= 1.0' # Batch Touching Calls
 gem 'audited', '>= 4.7', require: false # adds table auiting support
 gem 'bugsnag', '>= 6.6', require: false # online bug reporting
 gem 'bundler-audit', '>= 0.6', require: false # check gems for security issues
@@ -24,8 +23,6 @@ gem 'ruby_audit', '>= 1.2', require: false # complements bundler-audit
 gem 'sinatra', '>= 2.0', require: false # Web server
 gem 'sinatra-activerecord', '>= 2.0', require: false # for Active Record models
 gem 'sinatra-initializers', '>= 0.1', require: false # config initializers for sinatra
-gem 'strong_migrations', '>= 0.2', require: false # check migrations for unsafe production operations
-gem 'valid_email2', '>= 2.2', require: false # validates email format
 gem 'validates_timeliness', '>= 4.0', require: false # validate dates and times
 
 group :test do

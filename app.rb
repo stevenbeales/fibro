@@ -16,11 +16,7 @@ require 'ralyxa'
 require_relative 'config/db'
 require './app/app_constants'
 require 'json'
-require 'net/http'
-require 'uri'
-require 'nokogiri'
-require 'alexa_verifier'
-require_relative 'rate_pain'
+require_relative 'app/models/init'
 require_relative 'helpers'
 
 # Main App Class and Entry Point
@@ -80,15 +76,5 @@ class App < Sinatra::Base
     rate_pain_session = RatePainSession.new
     resp_text = rate_pain_session.rate_pain
     make_ssml_response resp_text, false
-  end
-
-  def self.readable_content(content)
-    # Convert html to plain text and then split by newlines so pauses can be added
-    html = Nokogiri::HTML(content)
-    # Remove code snippets
-    html.css("pre code").each { |pre| pre.swap(" Code Snippet. ") }
-    # Squish multiple new lines into one
-    text = html.text.gsub!(/[\n]+/, "\n")
-    text.split("\n")
   end
 end
