@@ -5,9 +5,10 @@ class SymptomLog < ApplicationRecord
   audited
   include Discard::Model
 
-  belongs_to :user
+  belongs_to :user, inverse_of: :symptom_log
   validates :user, presence: true
   validates_associated :user
+  validates_uniqueness_of :user
 
   def to_s
     %(#{user}'s symptom log)

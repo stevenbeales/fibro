@@ -8,3 +8,6 @@ require 'validates_timeliness'
 
 require_relative 'application_record'
 require_relative 'user'
+require_relative 'symptom'
+require_relative 'symptom_log'
+require_relative 'symptom_log_entry'

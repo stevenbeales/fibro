@@ -14,5 +14,6 @@ class CreateSymptomLogs < ActiveRecord::Migration[5.2]
 
   def add_indexes_and_keys
     add_index :symptom_logs, :discarded_at
+    add_index :symptom_logs, :user, unique: true
   end
 end

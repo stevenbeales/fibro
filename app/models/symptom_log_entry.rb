@@ -14,6 +14,7 @@ class SymptomLogEntry < ApplicationRecord
   validates :symptom_log, presence: true
   validates_associated :symptom_log
 
+  delegate :user, to: :symptom_log
   default_value_for :entry_date, Time.now
   validates :entry_date, presence: true
   validates_datetime :entry_date

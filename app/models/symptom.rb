@@ -10,6 +10,11 @@ class Symptom < ApplicationRecord
             presence: true,
             uniqueness: { case_sensitive: false }
 
+  validates_length_of :name, \
+                      within: 2..50, \
+                      too_long: 'pick a shorter name', \
+                      too_short: 'pick a longer name'
+
   def to_s
     name
   end

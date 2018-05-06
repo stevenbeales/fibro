@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 ruby ENV['CUSTOM_RUBY_VERSION'] || '2.4.4'
 
 gem 'activerecord', '>= 5.2' # ORM
+gem 'activerecord-delay_touching', '>= 1.0' # Batch Touching Calls
 gem 'audited', '>= 4.7', require: false # adds table auiting support
 gem 'bugsnag', '>= 6.6', require: false # online bug reporting
 gem 'bundler-audit', '>= 0.6', require: false # check gems for security issues

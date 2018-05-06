@@ -12,4 +12,3 @@ require 'bullet' # needs to initialize after ActiveRecord config
 require_relative 'shared_context_specs'
 require_relative 'shared_example_specs'
 require_relative 'test_constants'
-require_relative 'test_factory'
