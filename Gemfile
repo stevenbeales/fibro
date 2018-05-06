@@ -19,6 +19,7 @@ gem 'rack-heartbeat', '>= 1.1', require: false # provide heartbeat URL
 gem 'rack-timeout', '>= 0.4', require: false # configure Rack timeout
 gem 'rake', '>= 12.3', require: false # so we can run Rake tasks
 gem 'ralyxa', '>= 1.7', require: false # Ralyxa framework to handle Alexa requests
+gem 'ruby_audit', '>= 1.2', require: false # complements bundler-audit
 gem 'sinatra', '>= 2.0', require: false # Web server
 gem 'sinatra-activerecord', '>= 2.0', require: false # for Active Record models
 gem 'sinatra-initializers', '>= 0.1', require: false # config initializers for sinatra
@@ -32,11 +33,9 @@ group :test do
   gem 'fuubar', '>= 2.3', require: false # rspec formatter
   gem 'rack-test', '>= 1.0', require: false # for testing rake servers
   gem 'rspec', '>= 3.7', require: false # for behavioral driven testing
-  gem 'ruby_audit', '>= 1.2', require: false # complements bundler-audit
   gem 'simplecov', '>= 0.16', require: false # for code coverage
   gem 'simplecov-console', '>= 0.4', require: false # code coverage to console
-  gem 'travis', '>= 1.8', require: false # for continuous integrations
-  gem 'warning', '>= 0.1', require: false # customize warnings
+  gem 'timecop', '>= 0.9', require: false # testing time dependent code
 end
 
 group :development, :test do
@@ -49,7 +48,8 @@ group :development, :test do
   gem 'overcommit', '>= 0.4', require: false # git hooks
   gem 'reek', '>= 4.8', require: false # find code smells
   gem 'rubocop', '>= 0.5', require: false # syntax checking
-  gem 'timecop', '>= 0.9', require: false # testing time dependent
+  gem 'travis', '>= 1.8', require: false # for continuous integrations
+  gem 'warning', '>= 0.1', require: false # customize warnings
 end
 
 group :doc do

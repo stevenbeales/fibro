@@ -75,7 +75,7 @@ class RatePainSession
     step = current_step
     if current_step.nil?
       puts "RATING IS OVER: #{@ratings}"
-      text_to_ssml("Your ratings have been submitted. Thank you.")
+      text_to_ssml('Your ratings have been submitted. Thank you.')
     else
       text_to_ssml(step[:prompt])
     end
@@ -89,9 +89,6 @@ class RatePainSession
   end
 
   def text_to_ssml(text)
-    result = OPENING_TAG
-    result += text
-    result += CLOSING_TAG
-    result
+    %(#{OPENING_TAG}#{text}#{CLOSING_TAG})
   end
 end
