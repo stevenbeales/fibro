@@ -1,55 +1,22 @@
-## Documentation cache and generated files:
-/doc/
-## test results
-/spec/examples.txt
-spec/reports
-## code coverage
-/coverage/
-## Visual Studio code
-./.vscode
-## temp files
-/tmp/
 ## Ruby gems
-/vendor/
-*.gem
-*.rbc
-## Bundler config contains local state
-.config
+**/vendor
 
-bin/*
-
-data/
-
+## binaries
+**/bin
 # Ignore bundler config
-/.bundle
-/cache
-/coverage/*
-
-/public/assets/*
-/public/tombstone/*
-/bundle/*
-
-
+**/.bundle
 # Ignore byebug history
-/.byebug_history
+**/.byebug_history
+# logs
+**/log
 
-
-/public/uploads
-/public/backups
-/public/stylesheet-cache/*
-
-
-vendor/bundle/*
-*.db
-
-# ignore nodejs files
-/node_modules
-/package-lock.json
-
-
+## test results
 spec/rspec.txt
-log/bullet.log
-.vscode/launch.json
-.vscode/settings.json
-log/.gitignore
-log/fibro.log
+spec/examples.txt
+spec/reports
+
+## code coverage
+**/coverage
+
+## Visual Studio code
+**/.vscode
