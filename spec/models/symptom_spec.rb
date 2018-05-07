@@ -20,8 +20,8 @@ RSpec.describe Symptom, type: :model do
 
   describe 'Saving to a database' do
     it 'starts out unpersisted' do
-      symptom = described_class.new
-      expect(symptom.id).to be_nil
+      an_object = described_class.new
+      expect(an_object.id).to be_nil
     end
 
     it 'can be persisted' do

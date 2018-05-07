@@ -3,6 +3,8 @@
 RSpec.describe SymptomLog, type: :model do
   subject { FactoryBot.build(:test_symptom_log) }
 
+  include_examples 'valid object creation', described_class
+
   describe '#respond_to?' do
     include_context 'shared attributes'
     include_examples 'respond', %i[user]
@@ -12,13 +14,13 @@ RSpec.describe SymptomLog, type: :model do
 
   describe 'Saving to a database' do
     it 'starts out unpersisted' do
-      symptom_log = described_class.new
-      expect(symptom_log.id).to be_nil
+      an_object = described_class.new
+      expect(an_object.id).to be_nil
     end
 
-    it 'cannot be persisted' do
+    it 'can be persisted' do
       symptom_log = build(:timmy_log)
-      expect { symptom_log.save! }.to raise_error(ActiveRecord::RecordInvalid)
+      expect { symptom_log.save! }.not_to raise_error
     end
 
     it 'has unique user' do

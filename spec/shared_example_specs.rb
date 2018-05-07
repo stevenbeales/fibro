@@ -133,9 +133,9 @@ RSpec.shared_examples 'number specs' do |number|
     end
   end
 
-  context 'is positive' do
+  context 'is not negative' do
     it do
-      subject.send(:write_attribute, number, 0)
+      subject.send(:write_attribute, number, -1)
       subject.valid?
       expect(subject.errors[number.to_sym].size).to eq(1)
     end

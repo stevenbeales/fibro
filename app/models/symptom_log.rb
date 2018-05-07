@@ -10,6 +10,8 @@ class SymptomLog < ApplicationRecord
   validates_associated :user
   validates_uniqueness_of :user
 
+  has_many :symptom_log_entries, inverse_of: :symptom_log
+
   def to_s
     %(#{user}'s symptom log)
   end
