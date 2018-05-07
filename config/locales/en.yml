@@ -1,1 +1,6 @@
 en:
+  goodbye_response: "Goodbye."
+  help_response: "Alexa can only process a few seconds of speech at a time, so after each sentence, pause for a breath while your sentence is saved, then continue speaking when you hear the prompt."
+  launch_response: "What would you like to do? Say tests to list tests. Say start Depression to start a Depression test. Say help for more help."
+  start_over_response: "What would you like to do now?"
+  cancel_response: "OK. What would you like to do now?"

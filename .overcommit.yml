@@ -35,7 +35,7 @@ PreCommit:
   Reek:
     enabled: true
   ImageOptim:
-    enabled: true
+    enabled: false
   Mdl:
     enabled: false
   TravisLint:
@@ -50,16 +50,16 @@ PreCommit:
     enabled: false
 
 IndexTags:
-  enabled: true # Generate a tags file with `ctags` each time HEAD changes
+  enabled: false # Generate a tags file with `ctags` each time HEAD changes
 
 CommitMsg:
   RussianNovel:
     enabled: true
   Spellcheck:
-    enabled: true
+    enabled: false
   BundleCheck:
     enabled: true
 
 PrePush:
   RSpec:
-    enabled: true
+    enabled: false # enable this if you don't run rspec prior to git

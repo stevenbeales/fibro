@@ -1,0 +1,17 @@
+# frozen_string_literal: true
+
+require './intents/amazon_cancel_intent'
+require './intents/amazon_help_intent'
+require './intents/amazon_more_intent'
+require './intents/amazon_navigate_home_intent'
+require './intents/amazon_next_intent'
+require './intents/amazon_no_intent'
+require './intents/amazon_pause_intent'
+require './intents/amazon_previous_intent'
+require './intents/amazon_repeat_intent'
+require './intents/amazon_resume_intent'
+require './intents/amazon_start_over'
+require './intents/amazon_stop_intent'
+require './intents/amazon_yes_intent'
+require './intents/launch_request_intent'
+require './intents/session_ended_request'
