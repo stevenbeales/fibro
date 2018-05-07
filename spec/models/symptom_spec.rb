@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe Symptom, type: :model do
-  subject { FactoryBot.create(:test_symptom) }
+  subject { build(:test_symptom) }
 
   include_examples 'valid object creation', described_class
 
