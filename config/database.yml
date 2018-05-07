@@ -11,8 +11,8 @@ test:
   encoding: unicode
   database: fibro_test
   pool: 2
-  username: mental
-  password: fibro
+  username: fibro
+  password: health
 
 production:
   adapter: postgresql
