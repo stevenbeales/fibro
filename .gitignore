@@ -7,8 +7,6 @@
 **/.bundle
 # Ignore byebug history
 **/.byebug_history
-# logs
-**/log
 
 ## test results
 spec/rspec.txt
