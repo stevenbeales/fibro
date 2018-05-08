@@ -12,6 +12,11 @@ RSpec.describe App do
       expect { post '/' }.not_to raise_error
     end
 
+    it 'should be OK' do
+      get '/'
+      expect(last_response).to be_ok
+    end
+
     it 'should equal index.html' do
       get '/'
       expect(last_response.body).to eq IO.binread(subject.settings.public_folder + '/index.html')
@@ -24,6 +29,11 @@ RSpec.describe App do
   end
 
   context 'privacy policy' do
+    it 'should be OK' do
+      get '/'
+      expect(last_response).to be_ok
+    end
+
     it 'should not redirect to privacy policy' do
       get '/privacy'
       expect(last_response.redirect?).to be_falsey

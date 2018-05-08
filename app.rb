@@ -10,9 +10,12 @@
 
 require 'sinatra'
 require 'sinatra/base'
+require 'sinatra/contrib/all'
 require 'sinatra/activerecord'
 require 'sinatra-initializers'
 require 'ralyxa'
+require 'sinatra/custom_logger'
+require 'logger'
 require_relative 'config/db'
 require_relative 'app/app_constants'
 require_relative 'app/models/init'
@@ -31,6 +34,16 @@ class App < Sinatra::Base
   set :log_file, File.dirname(__FILE__) + LOG_FILE
   set :error_log_file, File.dirname(__FILE__) + ERROR_LOG_FILE
 
+  register Sinatra::Contrib
+
+  # Register initializers a la Rails
+  register Sinatra::Initializers
+
+  register Sinatra::ActiveRecordExtension
+
+  helpers Sinatra::App::Helpers
+  helpers Sinatra::CustomLogger
+
   # Rack request logging
   configure do
     file = File.new(settings.log_file, 'a+')
@@ -47,12 +60,11 @@ class App < Sinatra::Base
     env["rack.errors"] = error_log
   end
 
-  # Register initializers a la Rails
-  register Sinatra::Initializers
-
-  register Sinatra::ActiveRecordExtension
-
-  helpers Sinatra::App::Helpers
+  configure do
+    logger = Logger.new(File.open("#{root}/log/#{environment}.log", 'a'))
+    logger.level = Logger::DEBUG if development?
+    set :logger, logger
+  end
 
   get "/" do
     send_file settings.public_folder + '/index.html'
@@ -61,7 +73,7 @@ class App < Sinatra::Base
   # Entry point for requests from Amazon Alexa.
   # The incoming requests are dispatched to intents in the intents folder by Ralyxa.
   post '/' do
-    error_log.write("Received request with headers:\n#{request.env}")
+    logger.info("Received request with headers:\n#{request.env}")
 
     begin
       Ralyxa::Skill.handle(request)
@@ -76,7 +88,7 @@ class App < Sinatra::Base
 
   post '/rate-pain' do
     req_body = request.body.read
-    error_log.write("REQUEST BODY: #{req_body}")
+    logger.info("REQUEST BODY: #{req_body}")
     req_params = JSON.parse req_body
 
     session = RatePain.get_session req_params
@@ -86,7 +98,7 @@ class App < Sinatra::Base
 
   # For debugging
   get '/rate-pain' do
-    error_log.write("Received request with headers:\n#{request.env}")
+    logger.info("Received request with headers:\n#{request.env}")
     rate_pain_session = RatePainSession.new
     resp_text = rate_pain_session.rate_pain
     make_ssml_response resp_text, false
