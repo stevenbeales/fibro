@@ -2,8 +2,6 @@
 
 [![Build Status](https://travis-ci.org/stevenbeales/fibro.png)](https://travis-ci.org/stevenbeales/fibro)
 
-[![Dependency Status](https://beta.gemnasium.com/badges/github.com/stevenbeales/fibro.svg)](https://beta.gemnasium.com/projects/github.com/stevenbeales/fibro)
-
 [![Maintainability](https://api.codeclimate.com/v1/badges/6574b93819edbc0cff7d/maintainability)](https://codeclimate.com/github/stevenbeales/fibro/maintainability)
 
 [![Inline docs](http://inch-ci.org/github/stevenbeales/fibro.svg?branch=master)](http://inch-ci.org/github/stevenbeales/fibro)
@@ -29,10 +27,7 @@ To install dependencies -
 3) bundle exec rake db:setup - To generate test and development databases and seed the databases with test data
 4) Supports Travis online Continuous Integration if you have linked Travis CI and Github accounts. (see./travis.yml for configuration)
 5) Supports CodeClimate online Code Quality and Coverage if you have linked CodeClimate account. (see ./codeclimate.yml for configuration)
-6) Supports Coveralls online Code Coverage if you have linked Coveralls.io account. (see ./simplecov and ./coveralls.yml for configuration)
-7) Supports Gemnasium online Dependency Checker if you have linked Gemnasium account.
-8) Supports Scrutinizer online Code Quality checks if you have linked Scrutinizer account (see ./scrutinizer.yml for configuration)
-9) Supports Inch online Documentation Quality checks if you have linked Inch account (see ./inch.yml for configuration)
+6) Supports Inch online Documentation Quality checks if you have linked Inch account (see ./inch.yml for configuration)
 
 To run the test suite -
 
