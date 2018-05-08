@@ -58,7 +58,7 @@ CommitMsg:
   Spellcheck:
     enabled: false
   BundleCheck:
-    enabled: true
+    enabled: false
 
 PrePush:
   RSpec:
