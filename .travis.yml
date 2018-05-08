@@ -36,9 +36,9 @@ before_script:
 before_install:
   - gem update bundler # ensure bundler up to date
   - "echo 'gem: --no-ri --no-rdoc' > ~/.gemrc" # ensure bundle does not install docs
-  - touch ~/log/fibro.log
-  - touch ~/log/bullet.log
-  - touch ~/log/error.log
+  - touch ~/fibro/log/fibro.log
+  - touch ~/fibro/log/bullet.log
+  - touch ~/fibro/log/error.log
 
 script:
   - bundle exec rake --version
