@@ -21,3 +21,4 @@ spec/reports
 log/fibro.log
 log/error.log
 log/bullet.log
+log/test.log

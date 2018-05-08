@@ -11,10 +11,12 @@
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/contrib/all'
+require 'sinatra/cookies'
 require 'sinatra/activerecord'
 require 'sinatra-initializers'
 require 'ralyxa'
 require 'sinatra/custom_logger'
+require 'sinatra/reloader' if development?
 require 'logger'
 require_relative 'config/db'
 require_relative 'app/app_constants'
@@ -23,6 +25,10 @@ require_relative 'helpers'
 
 # Main App Class and Entry Point
 class App < Sinatra::Base
+  configure :development do
+    register Sinatra::Reloader
+  end
+
   include AppConstants
   enable :sessions
   enable :logging
@@ -43,6 +49,7 @@ class App < Sinatra::Base
 
   helpers Sinatra::App::Helpers
   helpers Sinatra::CustomLogger
+  helpers Sinatra::Cookies
 
   # Rack request logging
   configure do
