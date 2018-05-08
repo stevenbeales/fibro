@@ -36,11 +36,11 @@ before_script:
 before_install:
   - gem update bundler # ensure bundler up to date
   - "echo 'gem: --no-ri --no-rdoc' > ~/.gemrc" # ensure bundle does not install docs
+
+script:
   - touch ~/build/stevenbeales/fibro/log/fibro.log
   - touch ~/build/stevenbeales/fibro/log/bullet.log
   - touch ~/build/stevenbeales/fibro/log/error.log
-
-script:
   - bundle exec rake --version
   - RACK_ENV=test bundle exec rake db:migrate
   - RACK_ENV=test bundle exec rake spec
