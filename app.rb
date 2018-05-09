@@ -33,9 +33,6 @@ class App < Sinatra::Base
   enable :logging
 
   configure { set :server, :puma }
-  set :app_file, __FILE__
-  set :root, File.dirname(__FILE__)
-  set :public_folder, File.dirname(__FILE__) + '/public'
   set :log_file, File.dirname(__FILE__) + LOG_FILE
   set :error_log_file, File.dirname(__FILE__) + ERROR_LOG_FILE
 

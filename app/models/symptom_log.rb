@@ -10,7 +10,16 @@ class SymptomLog < ApplicationRecord
   validates_associated :user
   validates_uniqueness_of :user
 
-  has_many :symptom_log_entries, inverse_of: :symptom_log
+  has_many :symptom_log_entries, inverse_of: :symptom_log, dependent: :destroy
+  alias entries symptom_log_entries
+
+  def add(entry)
+    entries.concat(entry)
+  end
+
+  def count
+    entries.count
+  end
 
   def to_s
     %(#{user}'s symptom log)

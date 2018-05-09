@@ -6,6 +6,7 @@ require_relative 'coverage_init'
 require_relative 'init'
 require './app/models/init'
 require './app/services/init'
+require './speech_assets/init'
 
 Warning.ignore(%i[method_redefined not_reached missing_ivar unused_var])
 Warning.ignore(/mismatched indentation/)

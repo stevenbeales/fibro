@@ -93,15 +93,16 @@ Metrics/BlockLength:
     - 'Rakefile'
     - '**/*.rake'
     - 'spec/**/*.rb'
+    - 'speech_assets/*.rb'
 
 Metrics/LineLength:
   Max: 120
 
 Metrics/MethodLength:
-  Max: 20
+  Max: 50
 
 Metrics/AbcSize:
-  Max: 20
+  Max: 50
 
 # Prefer &&/|| over and/or.
 Style/AndOr:

@@ -7,7 +7,7 @@ RSpec.describe SymptomLog, type: :model do
 
   describe '#respond_to?' do
     include_context 'shared attributes'
-    include_examples 'respond', %i[user]
+    include_examples 'respond', %i[user entries symptom_log_entries count add]
     include_examples 'discard attribute'
     include_examples 'common attributes'
   end
@@ -33,6 +33,18 @@ RSpec.describe SymptomLog, type: :model do
     it "prints user's symptom log" do
       symptom_log = build(:timmy_log)
       expect(symptom_log.to_s).to eq("Timmy's symptom log")
+    end
+  end
+
+  describe '#entries' do
+    it "can contain a system log entry" do
+      subject.add(build(:test_symptom_log_entry))
+      expect(subject.count).to be > 0
+    end
+
+    it "can contain multiple system log entries" do
+      subject.add(build(:another_log_entry))
+      expect(subject.count).to be > 1
     end
   end
 

@@ -5,6 +5,7 @@ SimpleCov.profiles.define 'app' do
   add_group 'Lib', 'lib'
   add_group 'Config', 'config'
   add_group 'Db', 'db'
+  add_group 'SpeechAssets', 'speech_assets'
   add_group 'Spec', 'spec'
 
   add_filter '/.bundle/'
