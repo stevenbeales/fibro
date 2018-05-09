@@ -11,7 +11,6 @@
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/contrib/all'
-require 'sinatra/cookies'
 require 'sinatra/activerecord'
 require 'sinatra-initializers'
 require 'ralyxa'
@@ -49,7 +48,6 @@ class App < Sinatra::Base
 
   helpers Sinatra::App::Helpers
   helpers Sinatra::CustomLogger
-  helpers Sinatra::Cookies
 
   # Rack request logging
   configure do
@@ -59,7 +57,7 @@ class App < Sinatra::Base
     use Rack::CommonLogger, file
   end
 
-  # Rack and custom error logging
+  # Rack error logging
   error_log = File.new(settings.error_log_file, 'a+')
   error_log.sync = true
   # ensure file flushes to disk automatically
@@ -67,8 +65,9 @@ class App < Sinatra::Base
     env["rack.errors"] = error_log
   end
 
+  # custom logging
   configure do
-    logger = Logger.new(File.open("#{root}/log/#{environment}.log", 'a'))
+    logger = Logger.new(File.open("#{root}/log/#{environment}.log", 'a+'))
     logger.level = Logger::DEBUG if development?
     set :logger, logger
   end
@@ -91,23 +90,5 @@ class App < Sinatra::Base
 
   get "/privacy" do
     send_file settings.public_folder + '/privacy.html'
-  end
-
-  post '/rate-pain' do
-    req_body = request.body.read
-    logger.info("REQUEST BODY: #{req_body}")
-    req_params = JSON.parse req_body
-
-    session = RatePain.get_session req_params
-    resp_text = RatePainIntents.handle_intent session, req_params
-    make_ssml_response resp_text, session.is_finished?
-  end
-
-  # For debugging
-  get '/rate-pain' do
-    logger.info("Received request with headers:\n#{request.env}")
-    rate_pain_session = RatePainSession.new
-    resp_text = rate_pain_session.rate_pain
-    make_ssml_response resp_text, false
   end
 end

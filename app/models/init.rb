@@ -5,8 +5,6 @@ require 'default_value_for'
 require 'discard'
 require 'validates_timeliness'
 
-require_relative 'rate_pain'
-
 require_relative 'application_record'
 require_relative 'user'
 require_relative 'symptom'

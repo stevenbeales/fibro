@@ -13,7 +13,6 @@ gem 'discard', '>= 1.0', require: false # soft deletes
 gem 'dotenv', '>= 2.2', require: false # adds environment variables from .env files
 gem 'goldiloader', '>= 2.1', require: false # automatic eager loading
 gem 'i18n', '>= 1.0', require: false # internationalization support
-gem 'nokogiri', require: false # HTML parsing
 gem 'pg', '>= 1.0', require: false # for Postgres
 gem 'puma', '>= 3.11', require: false # puma web server
 gem 'rack-heartbeat', '>= 1.1', require: false # provide heartbeat URL
