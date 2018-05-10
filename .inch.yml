@@ -5,11 +5,12 @@ files:
     - app/**/*.rb
     - lib/**/*.rb
     - intents/**/*.rb
+    - speech_assets/**/*.rb
     - db/**/*.rb
     - config/**/*.rb
     - /*.rb
     - script/**/*.rb
-    
+
   # define files excluded from the analysis (defaults to [])
   excluded:
     - vendor/**/*.rb

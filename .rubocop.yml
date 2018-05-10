@@ -95,6 +95,10 @@ Metrics/BlockLength:
     - 'spec/**/*.rb'
     - 'speech_assets/*.rb'
 
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false
 Metrics/LineLength:
   Max: 120
 
@@ -102,7 +106,7 @@ Metrics/MethodLength:
   Max: 50
 
 Metrics/AbcSize:
-  Max: 50
+  Max: 100
 
 # Prefer &&/|| over and/or.
 Style/AndOr:

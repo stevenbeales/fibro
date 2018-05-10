@@ -2,8 +2,8 @@
 
 require './app'
 
-RSpec.describe App do
-  subject { App.new }
+RSpec.describe Sinatra::MyApp do
+  subject { Sinatra::MyApp.new }
 
   it { expect(subject).to be_a Sinatra::Wrapper }
 

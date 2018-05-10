@@ -3,6 +3,7 @@ exclude_paths:
   - script
   - public
   - db/migrate
+  - speech_assets
 Attribute:
   enabled: false
   exclude: []
@@ -22,7 +23,7 @@ DataClump:
   min_clump_size: 2
 DuplicateMethodCall:
   enabled: true
-  exclude: []
+  exclude: [self.registered]
   max_calls: 1
   allow_calls: []
 FeatureEnvy:
@@ -75,7 +76,7 @@ Syntax:
   exclude: []
 TooManyConstants:
   enabled: true
-  exclude: [AppConstants, AlexaConstants, TestConstants]
+  exclude: [AppConstants, TestConstants]
   max_constants: 5
 TooManyInstanceVariables:
   enabled: true
@@ -90,6 +91,7 @@ TooManyStatements:
   exclude:
   - initialize
   - get_session
+  - self.registered
   max_statements: 7
 UncommunicativeMethodName:
   enabled: true

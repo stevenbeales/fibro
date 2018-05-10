@@ -5,6 +5,7 @@ ruby ENV['CUSTOM_RUBY_VERSION'] || '2.4.4'
 
 gem 'activerecord', '>= 5.2', require: false # ORM
 gem 'alexa_generator', '>= 0.3.2', require: false # Alexa utterance generator
+gem 'alexa_web_service', '>= 1.0', require: false # Alexa Web Service support
 gem 'audited', '>= 4.7', require: false # adds table auiting support
 gem 'bugsnag', '>= 6.6', require: false # online bug reporting
 gem 'bundler-audit', '>= 0.6', require: false # check gems for security issues
@@ -12,13 +13,13 @@ gem 'default_value_for', '>= 3.0', require: false # set default values
 gem 'discard', '>= 1.0', require: false # soft deletes
 gem 'dotenv', '>= 2.2', require: false # adds environment variables from .env files
 gem 'goldiloader', '>= 2.1', require: false # automatic eager loading
+gem 'httparty', '>= 0.16', require: false # parse html
 gem 'i18n', '>= 1.0', require: false # internationalization support
 gem 'pg', '>= 1.0', require: false # for Postgres
 gem 'puma', '>= 3.11', require: false # puma web server
 gem 'rack-heartbeat', '>= 1.1', require: false # provide heartbeat URL
 gem 'rack-timeout', '>= 0.4', require: false # configure Rack timeout
 gem 'rake', '>= 12.3', require: false # so we can run Rake tasks
-gem 'ralyxa', '>= 1.7', require: false # Ralyxa framework to handle Alexa requests
 gem 'ruby_audit', '>= 1.2', require: false # complements bundler-audit
 gem 'sinatra', '>= 2.0', require: false # Web server
 gem 'sinatra-activerecord', '>= 2.0', require: false # for Active Record models
