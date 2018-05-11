@@ -1,38 +1,40 @@
 # frozen_string_literal: true
 
+require 'alexa_web_service'
+
 RSpec.describe AlexaService do
-  subject { described_class.new(user) }
+  subject { described_class.new(user, AlexaWebService::Response.new) }
   let!(:user) { build(:test_user) }
 
   it { expect(subject).to be_an AlexaService }
 
   describe '.help_response' do
     it do
-      expect(AlexaService.help_response).to eq(I18n.t(:help_response))
+      expect(subject.help_response.spoken_response).to eq(I18n.t(:help_response))
     end
   end
 
   describe '.launch_response' do
     it do
-      expect(AlexaService.launch_response).to eq(I18n.t(:launch_response))
+      expect(subject.launch_response.spoken_response).to eq(I18n.t(:launch_response))
     end
   end
 
   describe '.start_over_response' do
     it do
-      expect(AlexaService.start_over_response).to eq(I18n.t(:start_over_response))
+      expect(subject.start_over_response.spoken_response).to eq(I18n.t(:start_over_response))
     end
   end
 
   describe '.goodbye_response' do
     it do
-      expect(AlexaService.goodbye_response).to eq(I18n.t(:goodbye_response))
+      expect(subject.goodbye_response.spoken_response).to eq(I18n.t(:goodbye_response))
     end
   end
 
   describe '.cancel_response' do
     it do
-      expect(AlexaService.cancel_response).to eq(I18n.t(:cancel_response))
+      expect(subject.cancel_response.spoken_response).to eq(I18n.t(:cancel_response))
     end
   end
 end

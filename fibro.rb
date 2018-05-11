@@ -11,41 +11,42 @@ module Sinatra
         # Uncomment this and include your skill id before submitting application for certification:
         # halt 400, "Invalid Application ID" unless @application_id == "your-skill-id"
 
-        response = AlexaWebService::Response.new
-
-        if @echo_request.launch_request?
-          response.end_session = false
-          response.spoken_response = AlexaService.launch_response
-        elsif @echo_request.intent_name == "AMAZON.HelpIntent" || @echo_request.intent_name == "AMAZON.MoreIntent"
-          response.end_session = false
-          response.spoken_response = AlexaService.default_help_response
-        elsif @echo_request.intent_name == "ConditionIntent"
-
-        elsif @echo_request.intent_name == "SymptomIntent"
-
-        elsif @echo_request.intent_name == "EverybodyHurtsIntent"
-        elsif @echo_request.intent_name == "AMAZON.NextIntent"
-        elsif @echo_request.intent_name == "AMAZON.NoIntent"
-        elsif @echo_request.intent_name == "AMAZON.PauseIntent"
-        elsif @echo_request.intent_name == "AMAZON.PreviousIntent"
-        elsif @echo_request.intent_name == "AMAZON.RepeatIntent"
-        elsif @echo_request.intent_name == "AMAZON.ResumeIntent"
-        elsif @echo_request.intent_name == "AMAZON.YesIntent"
-
-        elsif @echo_request.session_ended_request?
-          response.end_session = true
-        elsif @echo_request.intent_name == "AMAZON.StopIntent" || @echo_request.intent_name == "AMAZON.CancelIntent"
-          response.spoken_response = AlexaService.cancel_response
-          response.end_session = true
-        elsif @echo_request.intent_name == "AMAZON.NavigateHomeIntent" ||
-              @echo_request.intent_name == 'AMAZON.StartOverIntent'
-          response.end_session = false
-          response.session_attributes = {}
-          response.spoken_response = AlexaService.start_over_response
-        end
-
+        response = build_response(@echo_request, AlexaWebService::Response.new)
         response.post
       end
+    end
+
+    def self.build_response(echo_request, response)
+      alexa_service = AlexaService.new(@user, response)
+      if echo_request.launch_request?
+        response = alexa_service.launch_response
+      elsif echo_request.session_ended_request?
+        response.end_session = true
+      elsif echo_request.intent_name == "AMAZON.HelpIntent" ||
+            echo_request.intent_name == "AMAZON.MoreIntent"
+        response = alexa_service.help_response
+      elsif echo_request.intent_name == "ConditionIntent"
+
+      elsif echo_request.intent_name == "SymptomIntent"
+
+      elsif echo_request.intent_name == "EverybodyHurtsIntent"
+      elsif echo_request.intent_name == "AMAZON.NextIntent"
+      elsif echo_request.intent_name == "AMAZON.NoIntent"
+      elsif echo_request.intent_name == "AMAZON.PauseIntent"
+      elsif echo_request.intent_name == "AMAZON.PreviousIntent"
+      elsif echo_request.intent_name == "AMAZON.RepeatIntent"
+      elsif echo_request.intent_name == "AMAZON.ResumeIntent"
+      elsif echo_request.intent_name == "AMAZON.YesIntent"
+
+      elsif echo_request.intent_name == "AMAZON.StopIntent"
+        response = alexa_service.goodbye_response
+      elsif echo_request.intent_name == "AMAZON.CancelIntent"
+        response = alexa_service.cancel_response
+      elsif echo_request.intent_name == "AMAZON.NavigateHomeIntent" ||
+            echo_request.intent_name == 'AMAZON.StartOverIntent'
+        response = alexa_service.start_over_response
+      end
+      response
     end
   end
   register Fibro

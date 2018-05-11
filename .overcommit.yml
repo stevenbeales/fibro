@@ -22,7 +22,7 @@ PreCommit:
       exclude:
         - *default_excludes
   RuboCop:
-    enabled: true
+    enabled: false
     on_warn: fail # Treat all warnings as failures
   Fasterer:
     enabled: true

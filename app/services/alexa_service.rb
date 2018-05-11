@@ -2,29 +2,42 @@
 
 # Class to define Alexa's intent behavior
 class AlexaService
-  attr_reader :user
+  attr_reader :user, :response
 
-  def self.goodbye_response
-    I18n.t :goodbye_response
-  end
-
-  def self.help_response
-    I18n.t :help_response
-  end
-
-  def self.launch_response
-    I18n.t :launch_response
-  end
-
-  def self.start_over_response
-    I18n.t :start_over_response
-  end
-
-  def self.cancel_response
-    I18n.t :cancel_response
-  end
-
-  def initialize(user)
+  def initialize(user, response)
     @user = user
+    @response = response
+  end
+
+  def goodbye_response
+    response.end_session = true
+    response.spoken_response = I18n.t :goodbye_response
+    response
+  end
+
+  def help_response
+    response.end_session = false
+    response.spoken_response = I18n.t :help_response
+    response
+  end
+
+  def launch_response
+    response.end_session = false
+    response.spoken_response = I18n.t :launch_response
+    response
+  end
+
+  def start_over_response
+    response.end_session = false
+    response.session_attributes = {}
+    response.spoken_response = I18n.t :start_over_response
+    response
+  end
+
+  def cancel_response
+    response.end_session = false
+    response.session_attributes = {}
+    response.spoken_response = I18n.t :cancel_response
+    response
   end
 end

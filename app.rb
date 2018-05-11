@@ -110,6 +110,7 @@ module Sinatra
         # This can be used in your skill as additional verification that the request is coming
         # from the right place
         @application_id = @echo_request.application_id
+        @user = User.authenticate(@echo_request.user_id)
 
         # If the request body has been read, you need to rewind it.
         request.body.rewind
