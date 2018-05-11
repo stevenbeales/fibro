@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Class to build custom intents
+# Abstract class to build custom intents
 class IntentBuilder
   attr_reader :intent
 

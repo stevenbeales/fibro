@@ -14,6 +14,9 @@ model = AlexaGenerator::InteractionModel.build do |modl|
   modl.add_intent(:SymptomIntent) do |intent|
     SymptomIntentBuilder.new(intent).add
   end
+  modl.add_intent(:SymptomInfoIntent) do |intent|
+    SymptomInfoIntentBuilder.new(intent).add
+  end
 end
 
 json_schema = JsonInteractionModel.new(model)

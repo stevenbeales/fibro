@@ -16,16 +16,13 @@ module Sinatra
       end
     end
 
-    def self.build_response(echo_request, response)
+    def build_response(echo_request, response)
       alexa_service = AlexaService.new(@user, response)
       if echo_request.launch_request?
         response = alexa_service.launch_response
-      elsif echo_request.session_ended_request?
-        response.end_session = true
-      elsif echo_request.intent_name == "AMAZON.HelpIntent" ||
-            echo_request.intent_name == "AMAZON.MoreIntent"
-        response = alexa_service.help_response
       elsif echo_request.intent_name == "ConditionIntent"
+
+      elsif echo_request.intent_name == "SymptomInfoIntent"
 
       elsif echo_request.intent_name == "SymptomIntent"
 
@@ -42,11 +39,24 @@ module Sinatra
         response = alexa_service.goodbye_response
       elsif echo_request.intent_name == "AMAZON.CancelIntent"
         response = alexa_service.cancel_response
-      elsif echo_request.intent_name == "AMAZON.NavigateHomeIntent" ||
-            echo_request.intent_name == 'AMAZON.StartOverIntent'
+      elsif echo_request.session_ended_request?
+        response.end_session = true
+      elsif help?
+        response = alexa_service.help_response
+      elsif start_over?
         response = alexa_service.start_over_response
       end
       response
+    end
+
+    def help?
+      echo_request.intent_name == "AMAZON.HelpIntent" ||
+        echo_request.intent_name == "AMAZON.MoreIntent"
+    end
+
+    def start_over?
+      echo_request.intent_name == "AMAZON.NavigateHomeIntent" ||
+        echo_request.intent_name == 'AMAZON.StartOverIntent'
     end
   end
   register Fibro

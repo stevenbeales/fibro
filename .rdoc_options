@@ -3,6 +3,8 @@ encoding: UTF-8
 static_path: []
 rdoc_include:
 - "lib/**/*.rb"
+- "app/**/*.rb"
+- "speech_assets/**/*.rb"
 - "README.md"
 - "CONTRIBUTING.md"
 - "CHANGELOG.md"
@@ -22,6 +24,6 @@ page_dir:
 show_hash: false
 tab_width: 8
 template_stylesheets: []
-title: mental-test-ruby API Documentation
+title: fibro Documentation
 visibility: :protected
 webcvs:
