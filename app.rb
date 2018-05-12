@@ -21,7 +21,6 @@ require 'logger'
 require_relative 'config/db'
 require_relative 'app/app_constants'
 require_relative 'app/models/init'
-require_relative 'helpers'
 require_relative 'fibro'
 
 # Namespace App under Sinatra
@@ -50,7 +49,6 @@ module Sinatra
     register Sinatra::Initializers
     register Sinatra::ActiveRecordExtension
 
-    helpers Sinatra::App::Helpers
     helpers Sinatra::CustomLogger
 
     # Rack request logging

@@ -9,7 +9,10 @@ module Sinatra
         content_type :json
 
         # Uncomment this and include your skill id before submitting application for certification:
-        # halt 400, "Invalid Application ID" unless @application_id == "your-skill-id"
+        if production?
+          halt 400, "Invalid Application ID" unless @application_id ==
+                                                    AppConstants::SKILL_ID
+        end
 
         response = build_response(@echo_request, AlexaWebService::Response.new)
         response.post

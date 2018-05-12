@@ -12,8 +12,6 @@ Disclaimer. These statements have not been validated by the FDA. This skill is n
 
 An Alexa skill for Fibromyalgia sufferers written in Ruby using the Sinatra framework.
 
-The application supports importing Surveys and Instruments from SurveyJS.io and REDCap.
-
 Installation instructions for developers
 
 Ruby Version

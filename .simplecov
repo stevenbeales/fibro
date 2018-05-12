@@ -19,9 +19,8 @@ SimpleCov.profiles.define 'app' do
   add_filter '/log/'
   add_filter ['_config.yml', '.codeclimate.yml', '.env', '.fasterer.yml', '.gitattributes',
               '.gitignore', '.inch.yml', '.overcommit.yml', '.rdoc_options',  '.rspec', '.rubocop.yml',
-              '.ruby-version', '.simplecov', '.test.env', '.travis.yml', 'AUTHORS', 'CODE_OF_CONDUCT.md',
-              'config.reek', 'CONTRIBUTING.md', '.development.env', 'Gemfile', 'Gemfile.lock',
-              'issue_template.md', 'LICENSE', 'Procfile', '.production.env',
-              'Rakefile', 'README.md', 'VERSION', 'config/database.yml'
+              '.ruby-version', '.simplecov', '.travis.yml', 'AUTHORS', 'CODE_OF_CONDUCT.md',
+              'config.reek', 'CONTRIBUTING.md', 'Gemfile', 'Gemfile.lock', 'issue_template.md', 'LICENSE',
+              'Procfile', 'Rakefile', 'README.md', 'VERSION', 'config/database.yml'
             ]
 end
