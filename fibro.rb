@@ -18,45 +18,42 @@ module Sinatra
 
     def build_response(echo_request, response)
       alexa_service = AlexaService.new(@user, response)
-      if echo_request.launch_request?
-        response = alexa_service.launch_response
-      elsif echo_request.intent_name == "ConditionIntent"
+      return alexa_service.launch_response if echo_request.launch_request?
+      return alexa_service.end_session_response if echo_request.session_ended_request?
 
-      elsif echo_request.intent_name == "SymptomInfoIntent"
-
-      elsif echo_request.intent_name == "SymptomIntent"
-
-      elsif echo_request.intent_name == "EverybodyHurtsIntent"
-      elsif echo_request.intent_name == "AMAZON.NextIntent"
-      elsif echo_request.intent_name == "AMAZON.NoIntent"
-      elsif echo_request.intent_name == "AMAZON.PauseIntent"
-      elsif echo_request.intent_name == "AMAZON.PreviousIntent"
-      elsif echo_request.intent_name == "AMAZON.RepeatIntent"
-      elsif echo_request.intent_name == "AMAZON.ResumeIntent"
-      elsif echo_request.intent_name == "AMAZON.YesIntent"
-
-      elsif echo_request.intent_name == "AMAZON.StopIntent"
-        response = alexa_service.goodbye_response
-      elsif echo_request.intent_name == "AMAZON.CancelIntent"
-        response = alexa_service.cancel_response
-      elsif echo_request.session_ended_request?
-        response.end_session = true
-      elsif help?
-        response = alexa_service.help_response
-      elsif start_over?
-        response = alexa_service.start_over_response
+      response = case echo_request.intent_name
+                 when "ConditionIntent"
+                   alexa_service.condition_response
+                 when "SymptomInfoIntent"
+                   alexa_service.symptom_info_response
+                 when "SymptomIntent"
+                   alexa_service.symptom_response
+                 when "EverybodyHurtsIntent"
+                   alexa_service.everybody_hurts_response
+                 when "AMAZON.NextIntent"
+                   alexa_service.next_response
+                 when "AMAZON.NoIntent"
+                   alexa_service.no_response
+                 when "AMAZON.PauseIntent"
+                   alexa_service.pause_response
+                 when "AMAZON.PreviousIntent"
+                   alexa_service.previous_response
+                 when "AMAZON.RepeatIntent"
+                   alexa_service.repeat_response
+                 when "AMAZON.ResumeIntent"
+                   alexa_service.resume_response
+                 when "AMAZON.YesIntent"
+                   alexa_service.yes_response
+                 when "AMAZON.StopIntent"
+                   alexa_service.stop_response
+                 when "AMAZON.CancelIntent"
+                   alexa_service.cancel_response
+                 when "AMAZON.HelpIntent"
+                   alexa_service.help_response
+                 when "AMAZON.StartOverIntent"
+                   alexa_service.start_over_response
       end
       response
-    end
-
-    def help?
-      echo_request.intent_name == "AMAZON.HelpIntent" ||
-        echo_request.intent_name == "AMAZON.MoreIntent"
-    end
-
-    def start_over?
-      echo_request.intent_name == "AMAZON.NavigateHomeIntent" ||
-        echo_request.intent_name == 'AMAZON.StartOverIntent'
     end
   end
   register Fibro

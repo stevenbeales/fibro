@@ -4,7 +4,6 @@ static_path: []
 rdoc_include:
 - "lib/**/*.rb"
 - "app/**/*.rb"
-- "speech_assets/**/*.rb"
 - "README.md"
 - "CONTRIBUTING.md"
 - "CHANGELOG.md"

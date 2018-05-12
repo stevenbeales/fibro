@@ -34,6 +34,7 @@ module Sinatra
 
     set :protection, except: :json_csrf
     register Sinatra::Fibro
+    register Sinatra::Contrib
 
     include AppConstants
     helpers Sinatra::Cookies
@@ -45,11 +46,8 @@ module Sinatra
     set :log_file, File.dirname(__FILE__) + LOG_FILE
     set :error_log_file, File.dirname(__FILE__) + ERROR_LOG_FILE
 
-    register Sinatra::Contrib
-
     # Register initializers a la Rails
     register Sinatra::Initializers
-
     register Sinatra::ActiveRecordExtension
 
     helpers Sinatra::App::Helpers
@@ -58,18 +56,13 @@ module Sinatra
     # Rack request logging
     configure do
       file = File.new(settings.log_file, 'a+')
-      # ensure file flushes to disk automatically
-      file.sync = true
+      file.sync = true # ensure file flushes to disk automatically
       use Rack::CommonLogger, file
     end
 
     # Rack error logging
     error_log = File.new(settings.error_log_file, 'a+')
-    error_log.sync = true
-    # ensure file flushes to disk automatically
-    before do
-      env["rack.errors"] = error_log
-    end
+    error_log.sync = true # ensure file flushes to disk automatically
 
     # custom logging
     configure do
@@ -82,8 +75,9 @@ module Sinatra
       send_file settings.public_folder + '/index.html'
     end
 
-    # Entry point for requests from Amazon Alexa.
+    # Pre process requests from Amazon Alexa.
     before do
+      env["rack.errors"] = error_log
       if request.request_method == "POST"
         content_type :json, 'charset' => 'utf-8'
         logger.info("Received request with headers:\n#{request.env}")
@@ -121,6 +115,5 @@ module Sinatra
     get "/privacy" do
       send_file settings.public_folder + '/privacy.html'
     end
-    run! unless test?
   end
 end

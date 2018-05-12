@@ -3,7 +3,7 @@ exclude_paths:
   - script
   - public
   - db/migrate
-  - speech_assets
+  - app/speech_assets
 Attribute:
   enabled: false
   exclude: []

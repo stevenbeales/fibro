@@ -26,9 +26,9 @@ RSpec.describe AlexaService do
     end
   end
 
-  describe '.goodbye_response' do
+  describe '.stop_response' do
     it do
-      expect(subject.goodbye_response.spoken_response).to eq(I18n.t(:goodbye_response))
+      expect(subject.stop_response.spoken_response).to eq(I18n.t(:stop_response))
     end
   end
 

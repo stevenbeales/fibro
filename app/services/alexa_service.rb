@@ -9,9 +9,14 @@ class AlexaService
     @response = response
   end
 
-  def goodbye_response
+  def stop_response
     response.end_session = true
-    response.spoken_response = I18n.t :goodbye_response
+    response.spoken_response = I18n.t :stop_response
+    response
+  end
+
+  def end_session_response
+    response.end_session = true
     response
   end
 
