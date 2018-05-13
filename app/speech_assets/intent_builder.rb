@@ -3,6 +3,7 @@
 # Abstract class to build custom intents
 class IntentBuilder
   attr_reader :intent
+  attr_reader :builder
 
   def initialize(intent)
     @intent = intent
@@ -10,5 +11,9 @@ class IntentBuilder
 
   def add
     raise NotImplementedError
+  end
+
+  def add_slot(name, type, &block)
+    intent.add_slot(name, type, &block)
   end
 end

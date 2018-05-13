@@ -7,7 +7,14 @@ languages:
 
 exclude_paths:
  - "lib/tasks/*"
- - "public/*"
  - "script/*"
  - "db//*/*"
- - "vendor/*"
+ - "vendor//*/*"
+ - "bin/*"
+ - "log/*"
+ - "public//*/*"
+ - "coverage//*/*"
+
+
+
+

@@ -3,7 +3,7 @@
 # Class to build Symptom Information Intent
 class SymptomInfoIntentBuilder < IntentBuilder
   def add
-    intent.add_slot(:SymptomInfo, :LIST_OF_SYMPTOMS) do |slot|
+    add_slot(:SymptomInfo, :LIST_OF_SYMPTOMS) do |slot|
       slot.add_bindings('Fatigue', 'Pain', 'Fogginess', 'Memory', 'Poor Sleep', 'Depression', 'Mood Change',
                         'Eyes', 'Light Sensitivity', 'Abdominal Pain', 'Dizzy', 'Balance Problems', 'Headache',
                         'Joint Pain', 'Lymph Node Tenderness', 'Sore Throat', 'Other')

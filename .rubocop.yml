@@ -88,7 +88,7 @@ Layout/TrailingWhitespace:
   Enabled: false
 
 Metrics/BlockLength:
-  Max: 30
+  Max: 50
   Exclude:
     - 'Rakefile'
     - '**/*.rake'

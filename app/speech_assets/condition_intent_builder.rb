@@ -3,7 +3,7 @@
 # Class to build Condition Intent
 class ConditionIntentBuilder < IntentBuilder
   def add
-    intent.add_slot(:Condition, :LIST_OF_CONDITIONS) do |slot|
+    add_slot(:Condition, :LIST_OF_CONDITIONS) do |slot|
       slot.add_bindings('Fibromyalgia', 'Fibro')
     end
     intent.add_utterance_template('{Condition}')

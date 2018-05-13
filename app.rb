@@ -15,13 +15,13 @@ require 'sinatra-initializers'
 require 'sinatra/contrib'
 require 'sinatra/cookies'
 require 'sinatra/custom_logger'
+require_relative 'lib/sinatra/fibro'
 require 'sinatra/reloader' if development?
 require 'alexa_web_service'
 require 'logger'
 require_relative 'config/db'
 require_relative 'app/app_constants'
 require_relative 'app/models/init'
-require_relative 'fibro'
 
 # Namespace App under Sinatra
 module Sinatra
@@ -69,10 +69,6 @@ module Sinatra
       set :logger, logger
     end
 
-    get "/" do
-      send_file settings.public_folder + '/index.html'
-    end
-
     # Pre process requests from Amazon Alexa.
     before do
       env["rack.errors"] = error_log
@@ -108,6 +104,24 @@ module Sinatra
         request.body.rewind
         AlexaWebService::Verify.new(request.env, request.body.read)
       end
+    end
+
+    post '/' do
+      content_type :json
+
+      # Uncomment this and include your skill id before submitting application for certification:
+      if production?
+        halt 400, "Invalid Application ID" unless @application_id ==
+                                                  AppConstants::SKILL_ID
+      end
+
+      # build_response helper method registered in fibro module
+      response = build_response(@echo_request, AlexaWebService::Response.new)
+      response.post
+    end
+
+    get "/" do
+      send_file settings.public_folder + '/index.html'
     end
 
     get "/privacy" do
