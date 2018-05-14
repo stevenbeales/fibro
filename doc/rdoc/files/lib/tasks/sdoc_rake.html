@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>sdoc.rake</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            sdoc.rake
+        </h1>
+        <ul class="files">
+            
+            <li>
+                lib/tasks/sdoc.rake
+                
+            </li>
+            <li>Last modified: 2018-05-13 19:46:30 -0400</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p># frozen_string_literal: true</p>
+
+<p># Rakefile require &#39;sdoc&#39; # and use your RDoc task the same way you
+used it before require &#39;rdoc/task&#39; # ensure this file is also
+required in order to use `RDoc::Task`</p>
+
+<p>RDoc::Task.new do |rdoc|</p>
+
+<pre><code>rdoc.rdoc_dir = &#39;doc/rdoc&#39; # name of output directory
+rdoc.generator = &#39;sdoc&#39; # explictly set the sdoc generator
+rdoc.template = &#39;rails&#39; # template used on api.rubyonrails.org
+rdoc.main = &#39;README.md&#39;
+rdoc.rdoc_files.include(&#39;README.md&#39;, &#39;app/services/&#39;, &#39;app/models/&#39;, &#39;app/speech_assets/&#39;, &#39;lib/&#39;, &#39;db/&#39;, &#39;config/&#39;)
+</code></pre>
+
+<p>end</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

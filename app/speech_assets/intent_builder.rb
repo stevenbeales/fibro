@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Abstract class to build custom intents
+# Abstract class to provide base methods used in building custom Alexa intents for voice user interfaces
 class IntentBuilder
   attr_reader :intent
   attr_reader :builder

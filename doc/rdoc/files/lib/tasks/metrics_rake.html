@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>metrics.rake</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            metrics.rake
+        </h1>
+        <ul class="files">
+            
+            <li>
+                lib/tasks/metrics.rake
+                
+            </li>
+            <li>Last modified: 2018-05-13 19:46:58 -0400</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p># frozen_string_literal: true</p>
+
+<p>namespace :metrics do</p>
+
+<pre><code>desc &#39;generate line counts for each module&#39;
+task :lines do
+  total_lines = 0
+  total_codelines = 0
+  lines = 0
+  codelines = 0
+  FileList[&#39;lib     .rb&#39;, &#39;app/   *.rb&#39;, &#39;spec/   *.rb&#39;].each do |file_name|
+    f = File.open(file_name)
+    while (line = f.gets)
+      lines += 1
+      next if line =~ /^\s*$/
+      next if line =~ /^\s*#/
+      codelines += 1
+    end
+    puts &quot;L: #{format(&#39;%4d&#39;, lines)}, LOC #{format(&#39;%4d&#39;, codelines)} | #{file_name}&quot;
+    total_lines     += lines
+    total_codelines += codelines
+    lines = 0
+    codelines = 0
+  end
+
+  puts &quot;Total: Lines #{total_lines}, LOC #{total_codelines}&quot;
+end
+</code></pre>
+
+<p>end</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

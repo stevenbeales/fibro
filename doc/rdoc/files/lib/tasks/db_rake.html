@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>db.rake</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            db.rake
+        </h1>
+        <ul class="files">
+            
+            <li>
+                lib/tasks/db.rake
+                
+            </li>
+            <li>Last modified: 2018-05-04 11:17:55 -0400</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p># frozen_string_literal: true</p>
+
+<p>namespace :db do</p>
+
+<pre><code>desc &#39;Drop, create, migrate then seed the development database&#39;
+task recreate: [&#39;db:drop&#39;, &#39;db:create&#39;, &#39;db:migrate&#39;, &#39;db:seed&#39;] do
+  puts &#39;Reseeding completed.&#39;
+end
+
+desc &#39;Remove schema.rb&#39;
+task remove_schema: [] do
+  File.delete(&#39;./../../db/schema.rb&#39;) if File.exist? &#39;./../../db/schema.rb&#39;
+  puts &#39;Completed.&#39;
+end
+</code></pre>
+
+<p>end</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>
