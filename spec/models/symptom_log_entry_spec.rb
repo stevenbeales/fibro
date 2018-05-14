@@ -20,6 +20,8 @@ RSpec.describe SymptomLogEntry, type: :model do
   include_examples 'default attribute', :score, 5
   include_examples 'default attribute', :severity, 'Moderate'
 
+  include_examples 'invalid create', 'invalid create without required fields'
+
   describe '#number' do
     include_context 'restore attributes'
     include_examples 'number specs', 'score'

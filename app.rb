@@ -22,6 +22,7 @@ require 'logger'
 require_relative 'config/db'
 require_relative 'app/app_constants'
 require_relative 'app/models/init'
+require 'pry-byebug' if test?
 
 # Namespace App under Sinatra
 module Sinatra
@@ -78,42 +79,23 @@ module Sinatra
         @data = request.body.read
         begin
           params.merge!(::JSON.parse(@data))
+          # The request object.
+          @echo_request = AlexaWebService::Request.new(::JSON.parse(@data))
+          @user = User.authenticate(@echo_request.user_id) unless ENV['RACK_ENV'] == 'test'
+
+          # If the request body has been read, you need to rewind it.
+          request.body.rewind
+
+          AlexaWebService::Verify.new(request.env, request.body.read)
         rescue ::JSON::ParserError => exception
           Bugsnag.notify(exception)
-          halt 400, "Bad Request"
+          # @echo_request = ::JSON.parse(File.read('./db/fixtures/LaunchRequest.json')) if ENV['RACK_ENV'] == 'test'
         end
-
-        params.merge!(::JSON.parse(@data))
-
-        # The request object.
-        @echo_request = AlexaWebService::Request.new(::JSON.parse(@data))
-
-        # Boolean: does the Alexa Device handling the response have a screen?
-        # (Needed for AlexaWebService::DisplayDirective support)
-        @display_support = begin
-          ::JSON.parse(@data)["context"]["System"]["device"]["supportedInterfaces"]["Display"].any?
-        rescue ::JSON::ParserError
-          false
-        end
-        # This can be used in your skill as additional verification that the request is coming
-        # from the right place
-        @application_id = @echo_request.application_id
-        @user = User.authenticate(@echo_request.user_id)
-
-        # If the request body has been read, you need to rewind it.
-        request.body.rewind
-        AlexaWebService::Verify.new(request.env, request.body.read)
       end
     end
 
     post '/' do
       content_type :json
-
-      # Uncomment this and include your skill id before submitting application for certification:
-      if production?
-        halt 400, "Invalid Application ID" unless @application_id ==
-                                                  AppConstants::SKILL_ID
-      end
 
       # build_response helper method registered in fibro module
       response = build_response(@echo_request, AlexaWebService::Response.new)

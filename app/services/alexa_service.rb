@@ -16,8 +16,22 @@ class AlexaService
     response
   end
 
+  def condition_response
+    response.end_session = false
+    response.session_attributes = {}
+    response.spoken_response = I18n.t :condition_response
+    response
+  end
+
   def end_session_response
     response.end_session = true
+    response
+  end
+
+  def everybody_hurts_response
+    response.end_session = false
+    response.session_attributes = {}
+    response.spoken_response = I18n.t :everybody_hurts_response
     response
   end
 
@@ -43,6 +57,20 @@ class AlexaService
   def stop_response
     response.end_session = true
     response.spoken_response = I18n.t :stop_response
+    response
+  end
+
+  def symptom_response
+    response.end_session = false
+    response.session_attributes = {}
+    response.spoken_response = I18n.t :symptom_response
+    response
+  end
+
+  def symptom_info_response
+    response.end_session = false
+    response.session_attributes = {}
+    response.spoken_response = I18n.t :symptom_info_response
     response
   end
 end

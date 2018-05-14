@@ -8,9 +8,33 @@ RSpec.describe AlexaService do
 
   it { expect(subject).to be_an AlexaService }
 
+  describe '.condition_response' do
+    it do
+      expect(subject.condition_response.spoken_response).to eq(I18n.t(:condition_response))
+    end
+  end
+
+  describe '.everybody_hurts_response' do
+    it do
+      expect(subject.everybody_hurts_response.spoken_response).to eq(I18n.t(:everybody_hurts_response))
+    end
+  end
+
   describe '.help_response' do
     it do
       expect(subject.help_response.spoken_response).to eq(I18n.t(:help_response))
+    end
+  end
+
+  describe '.symptom_response' do
+    it do
+      expect(subject.symptom_response.spoken_response).to eq(I18n.t(:symptom_response))
+    end
+  end
+
+  describe '.symptom_info_response' do
+    it do
+      expect(subject.symptom_info_response.spoken_response).to eq(I18n.t(:symptom_info_response))
     end
   end
 
@@ -35,6 +59,12 @@ RSpec.describe AlexaService do
   describe '.cancel_response' do
     it do
       expect(subject.cancel_response.spoken_response).to eq(I18n.t(:cancel_response))
+    end
+  end
+
+  describe '.end_session_response' do
+    it do
+      expect(subject.end_session_response.spoken_response).to eq ''
     end
   end
 end

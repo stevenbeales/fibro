@@ -4,3 +4,7 @@ en:
   launch_response: "What would you like to do? Say tests to list tests. Say start Depression to start a Depression test. Say help for more help."
   start_over_response: "What would you like to do now?"
   cancel_response: "OK. What would you like to do now?"
+  condition_response:
+  symptom_response:
+  symptom_info_response:
+  everybody_hurts_response:

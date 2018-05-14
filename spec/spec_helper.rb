@@ -12,7 +12,7 @@ Warning.ignore(/mismatched indentation/)
 module RSpecMixin
   include Rack::Test::Methods
   def app
-    described_class
+    Sinatra::MyApp
   end
 end
 
@@ -22,6 +22,7 @@ Bullet.raise = true # raise an error if n+1 query occurs
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   config.include RSpecMixin
+  config.include Sinatra::Fibro::Helpers
 
   # cleanup database and reload seeds
   config.before(:suite) do
@@ -104,12 +105,10 @@ RSpec.configure do |config|
 
   # It's useful to allow more verbose output when running an
   # individual spec file.
-  if config.files_to_run.one?
-    # Use the documentation formatter for detailed output,
-    # unless a formatter has already been configured
-    # (e.g. via a command-line flag).
-    config.default_formatter = 'doc'
-  end
+  # Use the documentation formatter for detailed output,
+  # unless a formatter has already been configured
+  # (e.g. via a command-line flag).
+  config.default_formatter = 'doc' if config.files_to_run.one?
 
   # Print the 10 slowest examples and example groups at the
   # end of the spec run

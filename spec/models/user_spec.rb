@@ -16,6 +16,8 @@ RSpec.describe User, type: :model do
 
   include_examples 'default attribute', :access_token, ''
 
+  include_examples 'invalid create', 'invalid create without required fields'
+
   describe '.authenticate' do
     it 'creates a user if one does not exist' do
       expect { described_class.authenticate('Strangely') }.to change { described_class.count }.by(1)

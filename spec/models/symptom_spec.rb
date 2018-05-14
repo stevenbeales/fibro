@@ -18,6 +18,8 @@ RSpec.describe Symptom, type: :model do
 
   include_examples 'create!_with_name', 'without a name', TestConstants::TEST_SYMPTOM
 
+  include_examples 'invalid create', 'invalid create without required fields'
+
   describe 'Saving to a database' do
     it 'starts out unpersisted' do
       an_object = described_class.new

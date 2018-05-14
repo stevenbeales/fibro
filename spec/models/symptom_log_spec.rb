@@ -5,6 +5,8 @@ RSpec.describe SymptomLog, type: :model do
 
   include_examples 'valid object creation', described_class
 
+  include_examples 'invalid create', 'invalid create without required fields'
+
   describe '#respond_to?' do
     include_context 'shared attributes'
     include_examples 'respond', %i[user entries symptom_log_entries count add]

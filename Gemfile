@@ -46,6 +46,7 @@ group :development, :test do
   gem 'byebug', '>= 10.0', platforms: %i[mri mingw x64_mingw]
   gem 'fasterer', '>= 0.4', require: false # find slow code
   gem 'overcommit', '>= 0.4', require: false # git hooks
+  gem 'pry-byebug', '>= 3.6', require: false # step by step debugging
   gem 'reek', '>= 4.8', require: false # find code smells
   gem 'rubocop', '>= 0.5', require: false # syntax checking
   gem 'travis', '>= 1.8', require: false # for continuous integrations
