@@ -8,3 +8,8 @@ en:
   symptom_response:
   symptom_info_response:
   everybody_hurts_response:
+  no_response: "No"
+  yes_response: "Yes"
+  next_response: "Next"
+  previous_response: "Previous"
+  resume_response: "Resume"

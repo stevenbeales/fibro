@@ -3,10 +3,9 @@
 
 ## binaries
 **/bin
+
 # Ignore bundler config
 **/.bundle
-# Ignore byebug history
-**/.byebug_history
 
 ## test results
 spec/rspec.txt
@@ -18,8 +17,9 @@ spec/reports
 
 ## Visual Studio code
 **/.vscode
+
+## logs
 log/fibro.log
-log/error.log
 log/bullet.log
 log/test.log
 irb.log

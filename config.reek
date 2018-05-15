@@ -4,6 +4,7 @@ exclude_paths:
   - public
   - db/migrate
   - app/speech_assets
+  - bin
 Attribute:
   enabled: false
   exclude: []
@@ -23,12 +24,12 @@ DataClump:
   min_clump_size: 2
 DuplicateMethodCall:
   enabled: true
-  exclude: [self.registered]
+  exclude: [self.registered, build_response]
   max_calls: 1
   allow_calls: []
 FeatureEnvy:
   enabled: true
-  exclude: [load_items]
+  exclude: []
 InstanceVariableAssumption:
   enabled: true
   exclude: []
@@ -85,14 +86,15 @@ TooManyInstanceVariables:
 TooManyMethods:
   enabled: true
   exclude: []
-  max_methods: 15
+  max_methods: 20
 TooManyStatements:
   enabled: true
   exclude:
   - initialize
   - get_session
   - self.registered
-  max_statements: 7
+  - build_response
+  max_statements: 20
 UncommunicativeMethodName:
   enabled: true
   exclude: []
@@ -134,5 +136,5 @@ UnusedPrivateMethod:
   exclude: []
 UtilityFunction:
   enabled: true
-  exclude: [make_ssml_response, readable_content]
+  exclude: []
   public_methods_only: true

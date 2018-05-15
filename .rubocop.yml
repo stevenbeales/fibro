@@ -95,6 +95,8 @@ Metrics/BlockLength:
     - 'spec/**/*.rb'
     - 'app/speech_assets/*.rb'
 
+Metrics/ClassLength:
+  Max: 150
 Metrics/CyclomaticComplexity:
   Enabled: false
 Metrics/PerceivedComplexity:
