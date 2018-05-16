@@ -1,0 +1,90 @@
+ConditionIntent talk about {Condition}
+ConditionIntent tell me about {Condition}
+ConditionIntent tell me some details about {Condition}
+ConditionIntent tell me symptoms of {Condition}
+ConditionIntent tell me the symptoms of {Condition}
+ConditionIntent tell me the treatment of {Condition}
+ConditionIntent {Condition}
+EverybodyHurtsIntent Everybody Hurts
+SymptomIntent I am feeling {Symptom}
+SymptomIntent I am {Symptom}
+SymptomIntent I feel {Symptom}
+SymptomIntent I have {Symptom}
+SymptomIntent I think I may have {Symptom}
+SymptomIntent I think I might have {Symptom}
+SymptomIntent I {Symptom}
+SymptomIntent {Symptom}
+SymptomInfoIntent Can you tell me about {Symptom}
+SymptomInfoIntent Could untreated {Symptom} be fatal
+SymptomInfoIntent Do you know anything about {Symptom}
+SymptomInfoIntent Get result for {Symptom}
+SymptomInfoIntent I have {Symptom} what does it mean
+SymptomInfoIntent If I feel {Symptom} should I be worried
+SymptomInfoIntent If I feel {Symptom} what could it be
+SymptomInfoIntent Is {Symptom} fatal
+SymptomInfoIntent Should I be scared if {Symptom}
+SymptomInfoIntent Should I be worried if I am {Symptom}
+SymptomInfoIntent Should I be worried if I have {Symptom}
+SymptomInfoIntent Should I go to the doctor if I have {Symptom}
+SymptomInfoIntent Should I go to the doctor if {Symptom}
+SymptomInfoIntent What are feelings of {Symptom}
+SymptomInfoIntent What are the most popular diagnosis that cause {Symptom}
+SymptomInfoIntent What could {Symptom} mean
+SymptomInfoIntent What does it mean to have {Symptom}
+SymptomInfoIntent What if I feel {Symptom}
+SymptomInfoIntent What if I have {Symptom}
+SymptomInfoIntent What is linked to {Symptom}
+SymptomInfoIntent What relates to {Symptom}
+SymptomInfoIntent Will I die if {Symptom}
+SymptomInfoIntent what does it mean if I have {Symptom}
+AMAZON.HelpIntent Any advice
+AMAZON.HelpIntent Any tips
+AMAZON.HelpIntent Do you have instructions
+AMAZON.HelpIntent How do I give commands
+AMAZON.HelpIntent How do I use this app
+AMAZON.HelpIntent How do you work
+AMAZON.HelpIntent How does this work
+AMAZON.HelpIntent I could use help
+AMAZON.HelpIntent I don't know
+AMAZON.HelpIntent I don't know what's going on
+AMAZON.HelpIntent I'm confused
+AMAZON.HelpIntent I'm lost on what to do
+AMAZON.HelpIntent Instructions please
+AMAZON.HelpIntent Please advise
+AMAZON.HelpIntent Please help
+AMAZON.HelpIntent What kind of command should I give
+AMAZON.HelpIntent What type of input should I give
+AMAZON.HelpIntent do not understand
+AMAZON.HelpIntent get help
+AMAZON.HelpIntent help
+AMAZON.HelpIntent help me
+AMAZON.HelpIntent how can I use you
+AMAZON.HelpIntent how do I use you
+AMAZON.HelpIntent repeat again
+AMAZON.HelpIntent say again
+AMAZON.HelpIntent what are you asking about
+AMAZON.HelpIntent what can I ask you
+AMAZON.HelpIntent what can I do
+AMAZON.HelpIntent what can I use this for
+AMAZON.HelpIntent what can you do
+AMAZON.HelpIntent what can you tell me
+AMAZON.HelpIntent what commands can I ask
+AMAZON.HelpIntent what commands can I say
+AMAZON.HelpIntent what do you do
+AMAZON.HelpIntent what do you mean
+AMAZON.HelpIntent what do you refer to
+AMAZON.HelpIntent what questions can I ask
+AMAZON.HelpIntent what should I say
+AMAZON.NextIntent next
+AMAZON.NoIntent no
+AMAZON.PauseIntent pause
+AMAZON.PreviousIntent previous
+AMAZON.RepeatIntent repeat
+AMAZON.ResumeIntent resume
+AMAZON.StartOverIntent go home
+AMAZON.StartOverIntent go to home
+AMAZON.StartOverIntent home
+AMAZON.StartOverIntent re-start
+AMAZON.StartOverIntent start again
+AMAZON.StartOverIntent start over
+AMAZON.YesIntent yes

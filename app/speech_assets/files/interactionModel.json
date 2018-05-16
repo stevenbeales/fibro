@@ -1,0 +1,61 @@
+{
+  "intents": [
+    {
+      "intent": "ConditionIntent",
+      "slots": [
+        {
+          "name": "Condition",
+          "type": "LIST_OF_CONDITIONS"
+        }
+      ]
+    },
+    {
+      "intent": "EverybodyHurtsIntent"
+    },
+    {
+      "intent": "SymptomIntent",
+      "slots": [
+        {
+          "name": "Symptom",
+          "type": "LIST_OF_SYMPTOMS"
+        }
+      ]
+    },
+    {
+      "intent": "SymptomInfoIntent",
+      "slots": [
+        {
+          "name": "SymptomInfo",
+          "type": "LIST_OF_SYMPTOMS"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.NextIntent"
+    },
+    {
+      "intent": "AMAZON.NoIntent"
+    },
+    {
+      "intent": "AMAZON.PauseIntent"
+    },
+    {
+      "intent": "AMAZON.PreviousIntent"
+    },
+    {
+      "intent": "AMAZON.RepeatIntent"
+    },
+    {
+      "intent": "AMAZON.ResumeIntent"
+    },
+    {
+      "intent": "AMAZON.StartOverIntent"
+    },
+    {
+      "intent": "AMAZON.YesIntent"
+    }
+  ]
+}

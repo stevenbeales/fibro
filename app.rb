@@ -42,6 +42,7 @@ module Sinatra
     helpers Sinatra::Cookies
     helpers Sinatra::CustomLogger
 
+    set :root, File.dirname(File.expand_path(__FILE__))
     set :protection, except: :json_csrf
     configure { set :server, :puma }
     set :log_file, File.dirname(__FILE__) + LOG_FILE
