@@ -11,7 +11,7 @@ RSpec.describe Sinatra::MyApp do
   end
   let(:rep) { AlexaWebService::Response.new }
   let(:echo_request) { double }
-  let(:alexa_service) { AlexaService.new(nil, rep) }
+  let(:alexa_service) { AlexaResponse.new(nil, rep) }
 
   it { expect(subject).to be_a Sinatra::MyApp }
 
@@ -28,13 +28,15 @@ RSpec.describe Sinatra::MyApp do
   context 'start and stop intents' do
     it 'should return launch_response from launch_request' do
       allow(echo_request).to receive(:launch_request?).and_return true
-      expect(subject.build_response(echo_request, rep)).to eq alexa_service.launch_response
+      allow(echo_request).to receive(:intent_name).and_return "LaunchRequestIntent"
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t :launch_response
     end
 
     it 'should return end_session_response from end session request' do
       allow(echo_request).to receive(:launch_request?).and_return false
       allow(echo_request).to receive(:session_ended_request?).and_return true
-      expect(subject.build_response(echo_request, rep)).to eq alexa_service.end_session_response
+      allow(echo_request).to receive(:intent_name).and_return "SessionEndedRequest"
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq ''
     end
   end
 
@@ -43,35 +45,56 @@ RSpec.describe Sinatra::MyApp do
       allow(echo_request).to receive(:launch_request?).and_return false
       allow(echo_request).to receive(:session_ended_request?).and_return false
       allow(echo_request).to receive(:intent_name).and_return "ConditionIntent"
-      expect(subject.build_response(echo_request, rep)).to eq alexa_service.condition_response
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:condition_response)
+    end
+
+    it 'should return read_all_response from read all intent request' do
+      allow(echo_request).to receive(:launch_request?).and_return false
+      allow(echo_request).to receive(:session_ended_request?).and_return false
+      allow(echo_request).to receive(:intent_name).and_return "ReadAllIntent"
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:read_all_response)
+    end
+
+    it 'should return read_entry_response from read entry intent request' do
+      allow(echo_request).to receive(:launch_request?).and_return false
+      allow(echo_request).to receive(:session_ended_request?).and_return false
+      allow(echo_request).to receive(:intent_name).and_return "ReadEntryIntent"
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:read_entry_response)
+    end
+
+    it 'should return read_last_response from read last intent request' do
+      allow(echo_request).to receive(:launch_request?).and_return false
+      allow(echo_request).to receive(:session_ended_request?).and_return false
+      allow(echo_request).to receive(:intent_name).and_return "ReadLastIntent"
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:read_last_response)
     end
 
     it 'should return symptom_info_response from symptom info intent request' do
       allow(echo_request).to receive(:launch_request?).and_return false
       allow(echo_request).to receive(:session_ended_request?).and_return false
       allow(echo_request).to receive(:intent_name).and_return "SymptomInfoIntent"
-      expect(subject.build_response(echo_request, rep)).to eq alexa_service.symptom_info_response
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:symptom_info_response)
     end
 
     it 'should return symptom_response from symptom intent request' do
       allow(echo_request).to receive(:launch_request?).and_return false
       allow(echo_request).to receive(:session_ended_request?).and_return false
       allow(echo_request).to receive(:intent_name).and_return "SymptomIntent"
-      expect(subject.build_response(echo_request, rep)).to eq alexa_service.symptom_response
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:symptom_response)
     end
 
     it 'should return everybody_hurts_response from everybody hurts intent request' do
       allow(echo_request).to receive(:launch_request?).and_return false
       allow(echo_request).to receive(:session_ended_request?).and_return false
       allow(echo_request).to receive(:intent_name).and_return "EverybodyHurtsIntent"
-      expect(subject.build_response(echo_request, rep)).to eq alexa_service.everybody_hurts_response
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:everybody_hurts_response)
     end
 
     it 'should return help_response misheard request' do
       allow(echo_request).to receive(:launch_request?).and_return false
       allow(echo_request).to receive(:session_ended_request?).and_return false
       allow(echo_request).to receive(:intent_name).and_return "Blah Blah what"
-      expect(subject.build_response(echo_request, rep)).to eq alexa_service.help_response
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:help_response)
     end
   end
 
@@ -80,77 +103,77 @@ RSpec.describe Sinatra::MyApp do
       allow(echo_request).to receive(:launch_request?).and_return false
       allow(echo_request).to receive(:session_ended_request?).and_return false
       allow(echo_request).to receive(:intent_name).and_return "AMAZON.CancelIntent"
-      expect(subject.build_response(echo_request, rep)).to eq alexa_service.cancel_response
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:cancel_response)
     end
 
     it 'should return cancel_response from Amazon stop intent request' do
       allow(echo_request).to receive(:launch_request?).and_return false
       allow(echo_request).to receive(:session_ended_request?).and_return false
       allow(echo_request).to receive(:intent_name).and_return "AMAZON.StopIntent"
-      expect(subject.build_response(echo_request, rep)).to eq alexa_service.stop_response
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:stop_response)
     end
 
     it 'should return yes_response from Amazon yes intent request' do
       allow(echo_request).to receive(:launch_request?).and_return false
       allow(echo_request).to receive(:session_ended_request?).and_return false
       allow(echo_request).to receive(:intent_name).and_return "AMAZON.YesIntent"
-      expect(subject.build_response(echo_request, rep)).to eq alexa_service.yes_response
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:yes_response)
     end
 
     it 'should return no_response from Amazon no intent request' do
       allow(echo_request).to receive(:launch_request?).and_return false
       allow(echo_request).to receive(:session_ended_request?).and_return false
       allow(echo_request).to receive(:intent_name).and_return "AMAZON.NoIntent"
-      expect(subject.build_response(echo_request, rep)).to eq alexa_service.no_response
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:no_response)
     end
 
     it 'should return next_response from Amazon next intent request' do
       allow(echo_request).to receive(:launch_request?).and_return false
       allow(echo_request).to receive(:session_ended_request?).and_return false
       allow(echo_request).to receive(:intent_name).and_return "AMAZON.NextIntent"
-      expect(subject.build_response(echo_request, rep)).to eq alexa_service.next_response
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:next_response)
     end
 
     it 'should return next_response from Amazon previous intent request' do
       allow(echo_request).to receive(:launch_request?).and_return false
       allow(echo_request).to receive(:session_ended_request?).and_return false
       allow(echo_request).to receive(:intent_name).and_return "AMAZON.PreviousIntent"
-      expect(subject.build_response(echo_request, rep)).to eq alexa_service.previous_response
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:previous_response)
     end
 
     it 'should return next_response from Amazon resume intent request' do
       allow(echo_request).to receive(:launch_request?).and_return false
       allow(echo_request).to receive(:session_ended_request?).and_return false
       allow(echo_request).to receive(:intent_name).and_return "AMAZON.ResumeIntent"
-      expect(subject.build_response(echo_request, rep)).to eq alexa_service.resume_response
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:resume_response)
     end
 
     it 'should return pause_response from Amazon pause intent request' do
       allow(echo_request).to receive(:launch_request?).and_return false
       allow(echo_request).to receive(:session_ended_request?).and_return false
       allow(echo_request).to receive(:intent_name).and_return "AMAZON.PauseIntent"
-      expect(subject.build_response(echo_request, rep)).to eq alexa_service.pause_response
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:pause_response)
     end
 
     it 'should return repeat_response from Amazon repeat intent request' do
       allow(echo_request).to receive(:launch_request?).and_return false
       allow(echo_request).to receive(:session_ended_request?).and_return false
       allow(echo_request).to receive(:intent_name).and_return "AMAZON.RepeatIntent"
-      expect(subject.build_response(echo_request, rep)).to eq alexa_service.repeat_response
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:repeat_response)
     end
 
     it 'should return help_response from Amazon help intent request' do
       allow(echo_request).to receive(:launch_request?).and_return false
       allow(echo_request).to receive(:session_ended_request?).and_return false
       allow(echo_request).to receive(:intent_name).and_return "AMAZON.HelpIntent"
-      expect(subject.build_response(echo_request, rep)).to eq alexa_service.help_response
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:help_response)
     end
 
     it 'should return start_over_response from Amazon start over intent request' do
       allow(echo_request).to receive(:launch_request?).and_return false
       allow(echo_request).to receive(:session_ended_request?).and_return false
       allow(echo_request).to receive(:intent_name).and_return "AMAZON.StartOverIntent"
-      expect(subject.build_response(echo_request, rep)).to eq alexa_service.start_over_response
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:start_over_response)
     end
   end
 

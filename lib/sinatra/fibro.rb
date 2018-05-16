@@ -9,8 +9,8 @@ module Sinatra
     # Helpers
     module Helpers
       def build_response(echo_request, response)
-        alexa_service = AlexaService.new(@user, response)
-        alexa_service.get_response(echo_request)
+        alexa_response = AlexaResponse.new(@user, response)
+        alexa_response.response(echo_request)
       end
     end
 

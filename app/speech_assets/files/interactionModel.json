@@ -13,6 +13,57 @@
       "intent": "EverybodyHurtsIntent"
     },
     {
+      "intent": "ReadAllIntent",
+      "slots": [
+        {
+          "name": "Read",
+          "type": "READ"
+        },
+        {
+          "name": "Log",
+          "type": "LOG"
+        }
+      ]
+    },
+    {
+      "intent": "ReadEntryIntent",
+      "slots": [
+        {
+          "name": "Day",
+          "type": "AMAZON.DATE"
+        },
+        {
+          "name": "Read",
+          "type": "READ"
+        },
+        {
+          "name": "Log",
+          "type": "LOG"
+        },
+        {
+          "name": "Entry",
+          "type": "ENTRY"
+        }
+      ]
+    },
+    {
+      "intent": "ReadLastIntent",
+      "slots": [
+        {
+          "name": "Read",
+          "type": "READ"
+        },
+        {
+          "name": "Log",
+          "type": "LOG"
+        },
+        {
+          "name": "n",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
       "intent": "SymptomIntent",
       "slots": [
         {

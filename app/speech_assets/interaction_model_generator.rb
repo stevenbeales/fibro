@@ -12,6 +12,15 @@ model = AlexaGenerator::InteractionModel.build do |modl|
   modl.add_intent(:EverybodyHurtsIntent) do |intent|
     EverybodyHurtsIntentBuilder.new(intent).add
   end
+  modl.add_intent(:ReadAllIntent) do |intent|
+    ReadAllIntentBuilder.new(intent).add
+  end
+  modl.add_intent(:ReadEntryIntent) do |intent|
+    ReadEntryIntentBuilder.new(intent).add
+  end
+  modl.add_intent(:ReadLastIntent) do |intent|
+    ReadLastIntentBuilder.new(intent).add
+  end
   modl.add_intent(:SymptomIntent) do |intent|
     SymptomIntentBuilder.new(intent).add
   end

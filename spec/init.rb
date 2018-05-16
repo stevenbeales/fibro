@@ -5,6 +5,7 @@ require 'rspec'
 require 'database_cleaner'
 require 'timecop'
 require 'sinatra'
+require 'alexa_web_service'
 require 'factory_bot'
 require './config/db'
 require 'bullet' # needs to initialize after ActiveRecord config

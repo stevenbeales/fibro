@@ -1,12 +1,10 @@
 # frozen_string_literal: true
 
-require 'alexa_web_service'
-
-RSpec.describe AlexaService do
+RSpec.describe AmazonResponse do
   subject { described_class.new(user, AlexaWebService::Response.new) }
   let!(:user) { build(:test_user) }
 
-  it { expect(subject).to be_an AlexaService }
+  it { expect(subject).to be_an AmazonResponse }
 
   describe '.cancel_response' do
     it do
@@ -14,21 +12,9 @@ RSpec.describe AlexaService do
     end
   end
 
-  describe '.condition_response' do
-    it do
-      expect(subject.condition_response.spoken_response).to eq(I18n.t(:condition_response))
-    end
-  end
-
   describe '.end_session_response' do
     it do
       expect(subject.end_session_response.spoken_response).to eq ''
-    end
-  end
-
-  describe '.everybody_hurts_response' do
-    it do
-      expect(subject.everybody_hurts_response.spoken_response).to eq(I18n.t(:everybody_hurts_response))
     end
   end
 
@@ -89,18 +75,6 @@ RSpec.describe AlexaService do
   describe '.stop_response' do
     it do
       expect(subject.stop_response.spoken_response).to eq(I18n.t(:stop_response))
-    end
-  end
-
-  describe '.symptom_response' do
-    it do
-      expect(subject.symptom_response.spoken_response).to eq(I18n.t(:symptom_response))
-    end
-  end
-
-  describe '.symptom_info_response' do
-    it do
-      expect(subject.symptom_info_response.spoken_response).to eq(I18n.t(:symptom_info_response))
     end
   end
 

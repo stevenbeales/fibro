@@ -6,6 +6,19 @@ ConditionIntent tell me the symptoms of {Condition}
 ConditionIntent tell me the treatment of {Condition}
 ConditionIntent {Condition}
 EverybodyHurtsIntent Everybody Hurts
+ReadAllIntent What happened
+ReadAllIntent {Read} all
+ReadAllIntent {Read} everything
+ReadAllIntent {Read} {Log}
+ReadEntryIntent Get {Entry} for {Day}
+ReadEntryIntent Give me {Entry} for {Day}
+ReadEntryIntent What happened on {Day}
+ReadEntryIntent {Read} {Day}
+ReadEntryIntent {Read} {Log} for {Day}
+ReadLastIntent {Read} last
+ReadLastIntent {Read} last {Log}
+ReadLastIntent {Read} last {n}
+ReadLastIntent {Read} last {n} {Log}
 SymptomIntent I am feeling {Symptom}
 SymptomIntent I am {Symptom}
 SymptomIntent I feel {Symptom}
@@ -49,6 +62,7 @@ AMAZON.HelpIntent I don't know
 AMAZON.HelpIntent I don't know what's going on
 AMAZON.HelpIntent I'm confused
 AMAZON.HelpIntent I'm lost on what to do
+AMAZON.HelpIntent I'm stuck
 AMAZON.HelpIntent Instructions please
 AMAZON.HelpIntent Please advise
 AMAZON.HelpIntent Please help
@@ -85,6 +99,9 @@ AMAZON.StartOverIntent go home
 AMAZON.StartOverIntent go to home
 AMAZON.StartOverIntent home
 AMAZON.StartOverIntent re-start
+AMAZON.StartOverIntent start
 AMAZON.StartOverIntent start again
 AMAZON.StartOverIntent start over
+AMAZON.YesIntent OK
+AMAZON.YesIntent OKay
 AMAZON.YesIntent yes
