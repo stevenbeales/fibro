@@ -1,3 +1,10 @@
 # frozen_string_literal: true
 
-require_relative 'alexa_response'
+# BaseResponse must be required before its child classes
+require_relative 'base_response'
+
+require_relative 'alexa_response_handler'
+require_relative 'amazon_response'
+
+require_relative 'read_response'
+require_relative 'symptom_response'

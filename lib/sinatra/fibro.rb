@@ -9,8 +9,8 @@ module Sinatra
     # Helpers
     module Helpers
       def build_response(echo_request, response)
-        alexa_response = AlexaResponse.new(@user, response)
-        alexa_response.response(echo_request)
+        alexa_response = AlexaResponseHandler.new(@user, echo_request, response)
+        alexa_response.response
       end
     end
 

@@ -1,12 +1,7 @@
 # frozen_string_literal: true
 
 # Class to define custom responses to Alexa Amazon built-in intent request
-class AmazonResponse
-  def initialize(echo_request, response)
-    @echo_request = echo_request
-    @response = response
-  end
-
+class AmazonResponse < BaseResponse
   def response
     return launch_response if @echo_request.launch_request?
     return end_session_response if @echo_request.session_ended_request?
@@ -40,10 +35,7 @@ class AmazonResponse
   end
 
   def cancel_response
-    @response.end_session = false
-    @response.session_attributes = {}
-    @response.spoken_response = I18n.t :cancel_response
-    @response
+    construct_start_over_response :cancel_response
   end
 
   def end_session_response
@@ -51,59 +43,36 @@ class AmazonResponse
     @response
   end
 
-  def help_response
-    @response.end_session = false
-    @response.spoken_response = I18n.t :help_response
-    @response
-  end
-
   def launch_response
-    @response.end_session = false
-    @response.spoken_response = I18n.t :launch_response
-    @response
+    construct_response :launch_response
   end
 
   def next_response
-    @response.end_session = false
-    @response.spoken_response = I18n.t :next_response
-    @response
+    construct_response :next_response
   end
 
   def no_response
-    @response.end_session = false
-    @response.spoken_response = I18n.t :no_response
-    @response
+    construct_response :no_response
   end
 
   def pause_response
-    @response.end_session = false
-    @response.spoken_response = I18n.t :pause_response
-    @response
+    construct_response :pause_response
   end
 
   def previous_response
-    @response.end_session = false
-    @response.spoken_response = I18n.t :previous_response
-    @response
+    construct_response :previous_response
   end
 
   def repeat_response
-    @response.end_session = false
-    @response.spoken_response = I18n.t :repeat_response
-    @response
+    construct_response :repeat_response
   end
 
   def resume_response
-    @response.end_session = false
-    @response.spoken_response = I18n.t :resume_response
-    @response
+    construct_response :resume_response
   end
 
   def start_over_response
-    @response.end_session = false
-    @response.session_attributes = {}
-    @response.spoken_response = I18n.t :start_over_response
-    @response
+    construct_start_over_response :start_over_response
   end
 
   def stop_response
@@ -113,8 +82,6 @@ class AmazonResponse
   end
 
   def yes_response
-    @response.end_session = false
-    @response.spoken_response = I18n.t :yes_response
-    @response
+    construct_response :yes_response
   end
 end
