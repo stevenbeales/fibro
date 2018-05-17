@@ -2,7 +2,9 @@
 
 # Represents a Symptom log Entry
 class SymptomLogEntry < ApplicationRecord
+  # Adds support for storing all data changes into audit table
   audited
+  # Adds soft delete support (calling discard rather than destroy)
   include Discard::Model
 
   SEVERITY_ARRAY = %w[None Mild Moderate Severe Very\ Severe].freeze

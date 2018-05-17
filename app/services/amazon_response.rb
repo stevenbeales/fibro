@@ -7,11 +7,6 @@ class AmazonResponse
     @response = response
   end
 
-  def end_session_response
-    @response.end_session = true
-    @response
-  end
-
   def response
     return launch_response if @echo_request.launch_request?
     return end_session_response if @echo_request.session_ended_request?
@@ -44,12 +39,6 @@ class AmazonResponse
     end
   end
 
-  def launch_response
-    @response.end_session = false
-    @response.spoken_response = I18n.t :launch_response
-    @response
-  end
-
   def cancel_response
     @response.end_session = false
     @response.session_attributes = {}
@@ -57,9 +46,20 @@ class AmazonResponse
     @response
   end
 
+  def end_session_response
+    @response.end_session = true
+    @response
+  end
+
   def help_response
     @response.end_session = false
     @response.spoken_response = I18n.t :help_response
+    @response
+  end
+
+  def launch_response
+    @response.end_session = false
+    @response.spoken_response = I18n.t :launch_response
     @response
   end
 

@@ -2,7 +2,9 @@
 
 # Represents a Symptom Log
 class SymptomLog < ApplicationRecord
+  # Adds support for storing all data changes into audit table
   audited
+  # Adds soft delete support (calling discard rather than destroy)
   include Discard::Model
 
   belongs_to :user, inverse_of: :symptom_log

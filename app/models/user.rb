@@ -3,9 +3,13 @@
 # Represents an application user/respondent
 # Users are linked to Alexa users using Alexa session request.user_id
 class User < ApplicationRecord
+  # Adds support for storing all data changes into audit table
   audited
+  # Adds soft delete support (calling discard rather than destroy)
   include Discard::Model
 
+  # Valid characters in Amazon usernames include _@-,=+]*
+  # \A and \z prevent multiline usernames matching
   VALID_USERNAME_REGEX = /\A[a-zA-Z0-9._@\-,=+]*\z/
 
   has_one :symptom_log, inverse_of: :user
@@ -15,10 +19,8 @@ class User < ApplicationRecord
             presence: true,
             format: { with: VALID_USERNAME_REGEX },
             uniqueness: { case_sensitive: false }
-  validates_length_of :user_id, \
-                      within: 1..64, \
-                      too_long: 'pick a shorter name', \
-                      too_short: 'pick a longer name'
+
+  validates_length_of :user_id, within: 1..64
 
   def self.authenticate(user_id)
     user = User.find_or_create_by(user_id: user_id)
