@@ -14,28 +14,25 @@ class AlexaResponseHandler
   end
 
   def response
+    return launch_response if @echo_request.launch_request?
+    return end_session_response if @echo_request.session_ended_request?
+
     case @echo_request.intent_name
-    when 'ConditionIntent'
-      condition_response
-    when 'EverybodyHurtsIntent'
-      everybody_hurts_response
     when /Read/
       read_response = ReadResponse.new(@echo_request, @response)
       read_response.response
     when /Symptom/
       symptom_response = SymptomResponse.new(@echo_request, @response)
       symptom_response.response
-    else
+    when /AMAZON/
       amazon_response = AmazonResponse.new(@echo_request, @response)
       amazon_response.response
+    when 'ConditionIntent'
+      condition_response
+    when 'EverybodyHurtsIntent'
+      everybody_hurts_response
+    else
+      help_response
     end
-  end
-
-  def condition_response
-    construct_response :condition_response
-  end
-
-  def everybody_hurts_response
-    construct_response :everybody_hurts_response
   end
 end

@@ -3,9 +3,6 @@
 # Class to define custom responses to Alexa Amazon built-in intent request
 class AmazonResponse < BaseResponse
   def response
-    return launch_response if @echo_request.launch_request?
-    return end_session_response if @echo_request.session_ended_request?
-
     case @echo_request.intent_name
     when 'AMAZON.NextIntent'
       next_response
@@ -36,15 +33,6 @@ class AmazonResponse < BaseResponse
 
   def cancel_response
     construct_start_over_response :cancel_response
-  end
-
-  def end_session_response
-    @response.end_session = true
-    @response
-  end
-
-  def launch_response
-    construct_response :launch_response
   end
 
   def next_response

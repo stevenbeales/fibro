@@ -15,7 +15,24 @@ module ResponseHelpers
     @response
   end
 
+  def end_session_response
+    @response.end_session = true
+    @response
+  end
+
+  def condition_response
+    construct_response :condition_response
+  end
+
+  def everybody_hurts_response
+    construct_response :everybody_hurts_response
+  end
+
   def help_response
     construct_response :help_response
+  end
+
+  def launch_response
+    construct_response :launch_response
   end
 end
