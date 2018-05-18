@@ -1,7 +1,7 @@
 
 languages:
    Ruby: true
-   JavaScript: true
+   JavaScript: false
    Python: false
    PHP: false
 
@@ -14,6 +14,7 @@ exclude_paths:
  - "log/*"
  - "public//*/*"
  - "coverage//*/*"
+ - "doc//*/*"
 
 
 

@@ -9,29 +9,6 @@ class SymptomInfoIntentBuilder < IntentBuilder
                         'Joint Pain', 'Lymph Node Tenderness', 'Sore Throat', 'Other')
     end
 
-    intent.add_utterance_template('Get result for {Symptom}')
-    intent.add_utterance_template('what does it mean if I have {Symptom}')
-    intent.add_utterance_template('What does it mean to have {Symptom}')
-    intent.add_utterance_template('Should I be worried if I have {Symptom}')
-    intent.add_utterance_template('Should I be worried if I am {Symptom}')
-    intent.add_utterance_template('What if I feel {Symptom}')
-    intent.add_utterance_template('What are feelings of {Symptom}')
-    intent.add_utterance_template('Should I go to the doctor if I have {Symptom}')
-    intent.add_utterance_template('Should I go to the doctor if {Symptom}')
-    intent.add_utterance_template('Should I be scared if {Symptom}')
-    intent.add_utterance_template('What could {Symptom} mean')
-    intent.add_utterance_template('I have {Symptom} what does it mean')
-    intent.add_utterance_template('Can you tell me about {Symptom}')
-    intent.add_utterance_template('What is linked to {Symptom}')
-    intent.add_utterance_template('Do you know anything about {Symptom}')
-    intent.add_utterance_template('What relates to {Symptom}')
-    intent.add_utterance_template('What if I have {Symptom}')
-    intent.add_utterance_template('What could {Symptom} mean')
-    intent.add_utterance_template('If I feel {Symptom} should I be worried')
-    intent.add_utterance_template('If I feel {Symptom} what could it be')
-    intent.add_utterance_template('What are the most popular diagnosis that cause {Symptom}')
-    intent.add_utterance_template('Will I die if {Symptom}')
-    intent.add_utterance_template('Is {Symptom} fatal')
-    intent.add_utterance_template('Could untreated {Symptom} be fatal')
+    SampleIntents::SYMPTOM_INFO_INTENTS.each { |help| intent.add_utterance_template help }
   end
 end

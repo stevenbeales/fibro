@@ -52,9 +52,15 @@ SymptomInfoIntent Will I die if {Symptom}
 SymptomInfoIntent what does it mean if I have {Symptom}
 AMAZON.HelpIntent Any advice
 AMAZON.HelpIntent Any tips
+AMAZON.HelpIntent Do not understand
 AMAZON.HelpIntent Do you have instructions
+AMAZON.HelpIntent Get help
+AMAZON.HelpIntent Help
+AMAZON.HelpIntent Help me
+AMAZON.HelpIntent How can I use you
 AMAZON.HelpIntent How do I give commands
 AMAZON.HelpIntent How do I use this app
+AMAZON.HelpIntent How do I use you
 AMAZON.HelpIntent How do you work
 AMAZON.HelpIntent How does this work
 AMAZON.HelpIntent I could use help
@@ -66,29 +72,22 @@ AMAZON.HelpIntent I'm stuck
 AMAZON.HelpIntent Instructions please
 AMAZON.HelpIntent Please advise
 AMAZON.HelpIntent Please help
+AMAZON.HelpIntent Repeat again
+AMAZON.HelpIntent Say again
+AMAZON.HelpIntent What are you asking about
+AMAZON.HelpIntent What can I ask you
+AMAZON.HelpIntent What can I do
+AMAZON.HelpIntent What can I use this for
+AMAZON.HelpIntent What can you do
+AMAZON.HelpIntent What can you tell me
+AMAZON.HelpIntent What commands can I ask
+AMAZON.HelpIntent What do you do
+AMAZON.HelpIntent What do you mean
+AMAZON.HelpIntent What do you refer to
 AMAZON.HelpIntent What kind of command should I give
+AMAZON.HelpIntent What questions can I ask
+AMAZON.HelpIntent What should I say
 AMAZON.HelpIntent What type of input should I give
-AMAZON.HelpIntent do not understand
-AMAZON.HelpIntent get help
-AMAZON.HelpIntent help
-AMAZON.HelpIntent help me
-AMAZON.HelpIntent how can I use you
-AMAZON.HelpIntent how do I use you
-AMAZON.HelpIntent repeat again
-AMAZON.HelpIntent say again
-AMAZON.HelpIntent what are you asking about
-AMAZON.HelpIntent what can I ask you
-AMAZON.HelpIntent what can I do
-AMAZON.HelpIntent what can I use this for
-AMAZON.HelpIntent what can you do
-AMAZON.HelpIntent what can you tell me
-AMAZON.HelpIntent what commands can I ask
-AMAZON.HelpIntent what commands can I say
-AMAZON.HelpIntent what do you do
-AMAZON.HelpIntent what do you mean
-AMAZON.HelpIntent what do you refer to
-AMAZON.HelpIntent what questions can I ask
-AMAZON.HelpIntent what should I say
 AMAZON.NextIntent next
 AMAZON.NoIntent no
 AMAZON.PauseIntent pause

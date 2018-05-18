@@ -22,11 +22,10 @@ class AmazonResponse < BaseResponse
       stop_response
     when 'AMAZON.CancelIntent'
       cancel_response
-    when 'AMAZON.HelpIntent'
-      help_response
     when 'AMAZON.StartOverIntent'
       start_over_response
     else
+      # Either helpintent was sent explicitly or Alexa did not understand intent
       help_response
     end
   end
