@@ -9,13 +9,6 @@ class SymptomIntentBuilder < IntentBuilder
                         'Joint Pain', 'Lymph Node Tenderness', 'Sore Throat', 'Other')
     end
 
-    intent.add_utterance_template('I feel {Symptom}')
-    intent.add_utterance_template('I am feeling {Symptom}')
-    intent.add_utterance_template('I am {Symptom}')
-    intent.add_utterance_template('I {Symptom}')
-    intent.add_utterance_template('{Symptom}')
-    intent.add_utterance_template('I think I may have {Symptom}')
-    intent.add_utterance_template('I think I might have {Symptom}')
-    intent.add_utterance_template('I have {Symptom}')
+    SampleIntents::SYMPTOM_INTENTS.each { |sample| intent.add_utterance_template sample }
   end
 end

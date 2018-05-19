@@ -3,6 +3,16 @@
 # Static class that contains the Alexa intent samples
 
 class SampleIntents
+  CONDITION_INTENTS = [
+    '{Condition}',
+    'talk about {Condition}',
+    'tell me about {Condition}',
+    'tell me symptoms of {Condition}',
+    'tell me the symptoms of {Condition}',
+    'tell me the treatment of {Condition}',
+    'tell me some details about {Condition}'
+  ].freeze
+
   HELP_INTENTS = [
     'Any advice', 'Any tips', 'Do not understand', 'Do you have instructions', 'Get help', 'Help me',
     'Help', 'How can I use you', 'How do I give commands', 'How do I use this app', 'How do I use you',
@@ -12,6 +22,17 @@ class SampleIntents
     'What can I do', 'What can I use this for', 'What can you do', 'What can you tell me', 'What commands can I ask',
     'What do you do', 'What do you mean', 'What do you refer to', 'What kind of command should I give',
     'What questions can I ask', 'What should I say', 'What type of input should I give'
+  ].freeze
+
+  SYMPTOM_INTENTS = [
+    'I feel {Symptom}',
+    'I am feeling {Symptom}',
+    'I am {Symptom}',
+    'I {Symptom}',
+    '{Symptom}',
+    'I think I may have {Symptom}',
+    'I think I might have {Symptom}',
+    'I have {Symptom}'
   ].freeze
 
   SYMPTOM_INFO_INTENTS = [

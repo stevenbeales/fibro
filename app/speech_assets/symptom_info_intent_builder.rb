@@ -9,6 +9,6 @@ class SymptomInfoIntentBuilder < IntentBuilder
                         'Joint Pain', 'Lymph Node Tenderness', 'Sore Throat', 'Other')
     end
 
-    SampleIntents::SYMPTOM_INFO_INTENTS.each { |help| intent.add_utterance_template help }
+    SampleIntents::SYMPTOM_INFO_INTENTS.each { |sample| intent.add_utterance_template sample }
   end
 end
