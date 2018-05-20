@@ -33,7 +33,7 @@ PreCommit:
   BundleOutdated:
     enabled: true
   Reek:
-    enabled: false
+    enabled: true
   ImageOptim:
     enabled: false
   Mdl:

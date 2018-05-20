@@ -2,11 +2,11 @@
 
 require 'sinatra/base'
 
-# Namespace under Sinatra
+# Namespace in Sinatra namespace
 module Sinatra
   # Main entry point for Alexa request
   module Fibro
-    # Helpers
+    # Helpers to be used in registering Sinatra app
     module Helpers
       def build_response(echo_request, response)
         alexa_response = AlexaResponseHandler.new(@user, echo_request, response)

@@ -60,7 +60,7 @@ NestedIterators:
   ignore_iterators:
   - tap
 NilCheck:
-  enabled: false
+  enabled: true
   exclude: []
 PrimaDonnaMethod:
   enabled: true
@@ -93,7 +93,6 @@ TooManyStatements:
   - initialize
   - get_session
   - self.registered
-  - build_response
   max_statements: 20
 UncommunicativeMethodName:
   enabled: true

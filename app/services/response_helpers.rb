@@ -3,21 +3,21 @@
 # Common methods to construct Alexa responses
 module ResponseHelpers
   def construct_response(spoken_text)
-    @response.end_session = false
-    @response.spoken_response = I18n.t spoken_text
-    @response
+    @echo_response.end_session = false
+    @echo_response.spoken_response = I18n.t spoken_text
+    @echo_response
   end
 
   def construct_start_over_response(spoken_text)
-    @response.end_session = false
-    @response.session_attributes = {}
-    @response.spoken_response = I18n.t spoken_text
-    @response
+    @echo_response.end_session = false
+    @echo_response.session_attributes = {}
+    @echo_response.spoken_response = I18n.t spoken_text
+    @echo_response
   end
 
   def end_session_response
-    @response.end_session = true
-    @response
+    @echo_response.end_session = true
+    @echo_response
   end
 
   def condition_response

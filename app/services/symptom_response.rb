@@ -3,7 +3,7 @@
 # Class to define custom symptom responses to Alexa intent requests
 class SymptomResponse < BaseResponse
   def response
-    case @echo_request.intent_name
+    case echo_request.intent_name
     when 'SymptomInfoIntent'
       symptom_info_response
     when 'SymptomIntent'

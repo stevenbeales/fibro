@@ -3,7 +3,7 @@
 # Class to define custom read responses to Alexa intent requests
 class ReadResponse < BaseResponse
   def response
-    case @echo_request.intent_name
+    case echo_request.intent_name
     when 'ReadAllIntent'
       read_all_response
     when 'ReadEntryIntent'

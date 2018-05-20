@@ -3,17 +3,17 @@
 # Class to define custom responses to Alexa intent request
 class AlexaResponseHandler
   include ResponseHelpers
-  def initialize(user, echo_request, response)
+  def initialize(user, echo_request, echo_response)
     @user = user
     @echo_request = echo_request
-    @response = response
+    @echo_response = echo_response
   end
 
   def response
     return launch_response if @echo_request.launch_request?
     return end_session_response if @echo_request.session_ended_request?
 
-    response_factory = ResponseFactory.new(@echo_request, @response)
+    response_factory = ResponseFactory.new(@echo_request, @echo_response)
     response_factory.response
   end
 end

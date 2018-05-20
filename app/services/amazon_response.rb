@@ -3,7 +3,7 @@
 # Class to define custom responses to Alexa Amazon built-in intent request
 class AmazonResponse < BaseResponse
   def response
-    case @echo_request.intent_name
+    case echo_request.intent_name
     when 'AMAZON.NextIntent'
       next_response
     when 'AMAZON.NoIntent'
@@ -63,9 +63,9 @@ class AmazonResponse < BaseResponse
   end
 
   def stop_response
-    @response.end_session = true
-    @response.spoken_response = I18n.t :stop_response
-    @response
+    echo_response.end_session = true
+    echo_response.spoken_response = I18n.t :stop_response
+    echo_response
   end
 
   def yes_response
