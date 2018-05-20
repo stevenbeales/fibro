@@ -18,10 +18,17 @@ class SampleIntents
     'Help', 'How can I use you', 'How do I give commands', 'How do I use this app', 'How do I use you',
     'How do you work', 'How does this work', 'I could use help', 'I don\'t know what\'s going on',
     'I don\'t know', 'I\'m confused', 'I\'m lost on what to do', 'I\'m stuck', 'Instructions please',
-    'Please advise', 'Please help', 'Repeat again', 'Say again', 'What are you asking about', 'What can I ask you',
+    'Please advise', 'Please help', 'What can I ask you',
     'What can I do', 'What can I use this for', 'What can you do', 'What can you tell me', 'What commands can I ask',
     'What do you do', 'What do you mean', 'What do you refer to', 'What kind of command should I give',
     'What questions can I ask', 'What should I say', 'What type of input should I give'
+  ].freeze
+
+  READ_ALL_INTENTS = [
+    '{Read} {Log}',
+    'What happened',
+    '{Read} all',
+    '{Read} everything'
   ].freeze
 
   READ_ENTRY_INTENTS = [
@@ -37,6 +44,15 @@ class SampleIntents
     '{Read} last {n}',
     '{Read} last',
     '{Read} last {n} {Log}'
+  ].freeze
+
+  REPEAT_INTENTS = [
+    'Again',
+    'Can you repeat that',
+    'Repeat',
+    'Repeat again',
+    'Say again',
+    'What are you asking about'
   ].freeze
 
   START_OVER_INTENTS = [
@@ -85,6 +101,12 @@ class SampleIntents
     'Will I die if {Symptom}',
     'Is {Symptom} fatal',
     'Could untreated {Symptom} be fatal'
+  ].freeze
+
+  SYMPTOM_SLOTS = [
+    'Fatigue', 'Pain', 'Fogginess', 'Memory', 'Poor Sleep', 'Depression', 'Mood Change',
+    'Eyes', 'Light Sensitivity', 'Abdominal Pain', 'Dizzy', 'Balance Problems', 'Headache',
+    'Joint Pain', 'Lymph Node Tenderness', 'Sore Throat', 'Other'
   ].freeze
 
   YES_INTENTS = [

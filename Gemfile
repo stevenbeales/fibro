@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 ruby ENV['CUSTOM_RUBY_VERSION'] || '2.4.4'
 
 gem 'activerecord', '>= 5.2', require: false # ORM
-gem 'activerecord_where_assoc', '>= 0.1', require: false # Where clauses on associations
 gem 'alexa_generator', '>= 0.3.2', require: false # Alexa utterance generator
 gem 'alexa_web_service', '>= 1.0', require: false # Alexa Web Service support
 gem 'audited', '>= 4.7', require: false # adds table auiting support

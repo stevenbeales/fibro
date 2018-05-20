@@ -72,9 +72,6 @@ AMAZON.HelpIntent I'm stuck
 AMAZON.HelpIntent Instructions please
 AMAZON.HelpIntent Please advise
 AMAZON.HelpIntent Please help
-AMAZON.HelpIntent Repeat again
-AMAZON.HelpIntent Say again
-AMAZON.HelpIntent What are you asking about
 AMAZON.HelpIntent What can I ask you
 AMAZON.HelpIntent What can I do
 AMAZON.HelpIntent What can I use this for
@@ -92,7 +89,12 @@ AMAZON.NextIntent next
 AMAZON.NoIntent no
 AMAZON.PauseIntent pause
 AMAZON.PreviousIntent previous
-AMAZON.RepeatIntent repeat
+AMAZON.RepeatIntent Again
+AMAZON.RepeatIntent Can you repeat that
+AMAZON.RepeatIntent Repeat
+AMAZON.RepeatIntent Repeat again
+AMAZON.RepeatIntent Say again
+AMAZON.RepeatIntent What are you asking about
 AMAZON.ResumeIntent resume
 AMAZON.StartOverIntent Go home
 AMAZON.StartOverIntent Go to home

@@ -3,6 +3,6 @@
 # Class to build utterances for Repeat Intent
 class RepeatIntentBuilder < IntentBuilder
   def add
-    intent.add_utterance_template('repeat')
+    SampleIntents::REPEAT_INTENTS.map { |sample| intent.add_utterance_template sample }
   end
 end

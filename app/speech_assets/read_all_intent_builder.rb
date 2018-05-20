@@ -10,9 +10,6 @@ class ReadAllIntentBuilder < IntentBuilder
       slot.add_bindings('log', 'journal', 'diary', 'symptom log')
     end
 
-    intent.add_utterance_template('{Read} {Log}')
-    intent.add_utterance_template('What happened')
-    intent.add_utterance_template('{Read} all')
-    intent.add_utterance_template('{Read} everything')
+    SampleIntents::READ_ALL_INTENTS.map { |sample| intent.add_utterance_template sample }
   end
 end
