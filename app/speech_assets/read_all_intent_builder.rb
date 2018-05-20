@@ -9,6 +9,7 @@ class ReadAllIntentBuilder < IntentBuilder
     add_slot(:Log, :LOG) do |slot|
       slot.add_bindings('log', 'journal', 'diary', 'symptom log')
     end
+
     intent.add_utterance_template('{Read} {Log}')
     intent.add_utterance_template('What happened')
     intent.add_utterance_template('{Read} all')

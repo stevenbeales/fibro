@@ -10,9 +10,7 @@ class ReadLastIntentBuilder < IntentBuilder
       slot.add_bindings('log', 'journal', 'diary', 'symptom log')
     end
     add_slot(:n, AlexaGenerator::Slot::SlotType::NUMBER)
-    intent.add_utterance_template('{Read} last {Log}')
-    intent.add_utterance_template('{Read} last {n}')
-    intent.add_utterance_template('{Read} last')
-    intent.add_utterance_template('{Read} last {n} {Log}')
+
+    SampleIntents::READ_LAST_INTENTS.each { |sample| intent.add_utterance_template sample }
   end
 end

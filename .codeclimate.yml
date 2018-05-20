@@ -5,6 +5,11 @@ languages:
    Python: false
    PHP: false
 
+engines:
+  rubocop:
+    enabled: true
+    channel: rubocop-0-54
+
 exclude_paths:
  - "lib/tasks/*"
  - "script/*"

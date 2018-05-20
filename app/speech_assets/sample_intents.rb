@@ -24,6 +24,31 @@ class SampleIntents
     'What questions can I ask', 'What should I say', 'What type of input should I give'
   ].freeze
 
+  READ_ENTRY_INTENTS = [
+    '{Read} {Log} for {Day}',
+    'Get {Entry} for {Day}',
+    'Give me {Entry} for {Day}',
+    'What happened on {Day}',
+    '{Read} {Day}'
+  ].freeze
+
+  READ_LAST_INTENTS = [
+    '{Read} last {Log}',
+    '{Read} last {n}',
+    '{Read} last',
+    '{Read} last {n} {Log}'
+  ].freeze
+
+  START_OVER_INTENTS = [
+    'Go home',
+    'Go to home',
+    'Home',
+    'Re-start',
+    'Start',
+    'Start over',
+    'Start again'
+  ].freeze
+
   SYMPTOM_INTENTS = [
     'I feel {Symptom}',
     'I am feeling {Symptom}',
@@ -60,5 +85,11 @@ class SampleIntents
     'Will I die if {Symptom}',
     'Is {Symptom} fatal',
     'Could untreated {Symptom} be fatal'
+  ].freeze
+
+  YES_INTENTS = [
+    'OK',
+    'Okay',
+    'Yes'
   ].freeze
 end

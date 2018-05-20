@@ -94,13 +94,13 @@ AMAZON.PauseIntent pause
 AMAZON.PreviousIntent previous
 AMAZON.RepeatIntent repeat
 AMAZON.ResumeIntent resume
-AMAZON.StartOverIntent go home
-AMAZON.StartOverIntent go to home
-AMAZON.StartOverIntent home
-AMAZON.StartOverIntent re-start
-AMAZON.StartOverIntent start
-AMAZON.StartOverIntent start again
-AMAZON.StartOverIntent start over
+AMAZON.StartOverIntent Go home
+AMAZON.StartOverIntent Go to home
+AMAZON.StartOverIntent Home
+AMAZON.StartOverIntent Re-start
+AMAZON.StartOverIntent Start
+AMAZON.StartOverIntent Start again
+AMAZON.StartOverIntent Start over
 AMAZON.YesIntent OK
-AMAZON.YesIntent OKay
-AMAZON.YesIntent yes
+AMAZON.YesIntent Okay
+AMAZON.YesIntent Yes

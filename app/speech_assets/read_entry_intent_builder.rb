@@ -13,10 +13,6 @@ class ReadEntryIntentBuilder < IntentBuilder
     add_slot(:Entry, :ENTRY) do |slot|
       slot.add_bindings('entry', 'event')
     end
-    intent.add_utterance_template('{Read} {Log} for {Day}')
-    intent.add_utterance_template('Get {Entry} for {Day}')
-    intent.add_utterance_template('Give me {Entry} for {Day}')
-    intent.add_utterance_template('What happened on {Day}')
-    intent.add_utterance_template('{Read} {Day}')
+    SampleIntents::READ_ENTRY_INTENTS.each { |sample| intent.add_utterance_template sample }
   end
 end

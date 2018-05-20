@@ -3,8 +3,6 @@
 # Class to build utterances for Yes Intent
 class YesIntentBuilder < IntentBuilder
   def add
-    intent.add_utterance_template('OK')
-    intent.add_utterance_template('OKay')
-    intent.add_utterance_template('yes')
+    SampleIntents::YES_INTENTS.each { |sample| intent.add_utterance_template sample }
   end
 end

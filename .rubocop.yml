@@ -1,10 +1,12 @@
 AllCops:
+  DisplayCopNames: true
   Exclude:
     - 'node_modules/**/*'
     - 'vendor/**/*'
     - '.git/**/*'
     - 'db/schema.rb'
     - 'bin/**/*'
+    - 'doc/**/*'
     - 'public/**/*'
     - 'script/**/*'
   TargetRubyVersion: 2.5
@@ -76,6 +78,14 @@ Layout/Tab:
 Lint/Debugger:
   Enabled: true
 
+# Annoying when used with some api that have blocks with sometimes useful parameters
+Lint/UnusedBlockArgument:
+  Enabled: false
+
+# Annoying because it wines for &block parameters, which helps make signature more explicit
+Lint/UnusedMethodArgument:
+  Enabled: false
+
 # Align `end` with the matching keyword or starting expression except for
 # assignments, where it should be aligned with the LHS.
 Layout/EndAlignment:
@@ -86,17 +96,18 @@ Layout/TrailingWhitespace:
   Description: 'Avoid trailing whitespace.'
   StyleGuide: '#no-trailing-whitespace'
   Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockNesting:
+  Enabled: false
 
 Metrics/BlockLength:
-  Max: 50
-  Exclude:
-    - 'Rakefile'
-    - '**/*.rake'
-    - 'spec/**/*.rb'
-    - 'app/speech_assets/*.rb'
+  Enabled: false
 
 Metrics/ClassLength:
-  Max: 150
+  Enabled: false
+
 Metrics/CyclomaticComplexity:
   Enabled: false
 Metrics/PerceivedComplexity:
@@ -107,15 +118,21 @@ Metrics/LineLength:
 Metrics/MethodLength:
   Max: 50
 
-Metrics/AbcSize:
-  Max: 100
-
 # Prefer &&/|| over and/or.
 Style/AndOr:
   Enabled: true
 
+Style/AsciiComments:
+  Enabled: false
+
 Style/BracesAroundHashParameters:
   Enabled: true
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/ConditionalAssignment:
+  Enabled: false
 
 Style/CollectionMethods:
   Description: 'Preferred collection methods.'
@@ -147,4 +164,7 @@ Style/MethodDefParentheses:
   Enabled: true
 
 Style/DoubleNegation:
+  Enabled: false
+
+Style/WordArray:
   Enabled: false
