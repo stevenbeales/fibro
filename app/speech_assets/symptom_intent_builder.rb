@@ -7,6 +7,6 @@ class SymptomIntentBuilder < IntentBuilder
       slot.add_bindings(SampleIntents::SYMPTOM_SLOTS)
     end
 
-    SampleIntents::SYMPTOM_INTENTS.map { |sample| intent.add_utterance_template sample }
+    add_intents(SampleIntents::SYMPTOM_INTENTS)
   end
 end

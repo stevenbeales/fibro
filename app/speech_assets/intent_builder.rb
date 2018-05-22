@@ -16,4 +16,10 @@ class IntentBuilder
   def add_slot(name, type, &block)
     intent.add_slot(name, type, &block)
   end
+
+  protected
+
+  def add_intents(intents)
+    intents.map { |sample| intent.add_utterance_template sample }
+  end
 end

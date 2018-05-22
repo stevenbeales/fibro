@@ -11,6 +11,6 @@ class ReadLastIntentBuilder < IntentBuilder
     end
     add_slot(:n, AlexaGenerator::Slot::SlotType::NUMBER)
 
-    SampleIntents::READ_LAST_INTENTS.map { |sample| intent.add_utterance_template sample }
+    add_intents(SampleIntents::READ_LAST_INTENTS)
   end
 end

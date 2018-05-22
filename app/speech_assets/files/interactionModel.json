@@ -82,6 +82,9 @@
       ]
     },
     {
+      "intent": "AMAZON.CancelIntent"
+    },
+    {
       "intent": "AMAZON.HelpIntent"
     },
     {
@@ -104,6 +107,9 @@
     },
     {
       "intent": "AMAZON.StartOverIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
     },
     {
       "intent": "AMAZON.YesIntent"

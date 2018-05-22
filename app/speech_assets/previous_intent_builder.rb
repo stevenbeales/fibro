@@ -3,6 +3,6 @@
 # Class to build utterances for Yes Intent
 class PreviousIntentBuilder < IntentBuilder
   def add
-    intent.add_utterance_template('previous')
+    add_intents(SampleIntents::PREVIOUS_INTENTS)
   end
 end

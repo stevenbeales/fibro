@@ -3,6 +3,6 @@
 # Class to build utterances for Yes Intent
 class YesIntentBuilder < IntentBuilder
   def add
-    SampleIntents::YES_INTENTS.map { |sample| intent.add_utterance_template sample }
+    add_intents(SampleIntents::YES_INTENTS)
   end
 end

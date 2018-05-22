@@ -3,19 +3,19 @@ exclude_paths:
   - script
   - public
   - db/migrate
-  - app/speech_assets
+  - doc
   - bin
 Attribute:
-  enabled: false
+  enabled: true
   exclude: []
 BooleanParameter:
-  enabled: false
+  enabled: true
   exclude: []
 ClassVariable:
   enabled: true
   exclude: []
 ControlParameter:
-  enabled: false
+  enabled: true
   exclude: []
 DataClump:
   enabled: true
@@ -24,7 +24,7 @@ DataClump:
   min_clump_size: 2
 DuplicateMethodCall:
   enabled: true
-  exclude: [self.registered, build_response]
+  exclude: []
   max_calls: 1
   allow_calls: []
 FeatureEnvy:
@@ -34,7 +34,7 @@ InstanceVariableAssumption:
   enabled: true
   exclude: []
 IrresponsibleModule:
-  enabled: false
+  enabled: true
   exclude: []
 LongParameterList:
   enabled: true
@@ -77,7 +77,7 @@ Syntax:
   exclude: []
 TooManyConstants:
   enabled: true
-  exclude: [AppConstants, TestConstants]
+  exclude: [AppConstants, SampleIntents, TestConstants]
   max_constants: 5
 TooManyInstanceVariables:
   enabled: true
@@ -131,7 +131,7 @@ UnusedParameters:
   enabled: true
   exclude: []
 UnusedPrivateMethod:
-  enabled: false
+  enabled: true
   exclude: []
 UtilityFunction:
   enabled: true

@@ -13,6 +13,7 @@ class ReadEntryIntentBuilder < IntentBuilder
     add_slot(:Entry, :ENTRY) do |slot|
       slot.add_bindings('entry', 'event')
     end
-    SampleIntents::READ_ENTRY_INTENTS.map { |sample| intent.add_utterance_template sample }
+
+    add_intents(SampleIntents::READ_ENTRY_INTENTS)
   end
 end

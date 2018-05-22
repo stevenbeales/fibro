@@ -3,6 +3,10 @@
 # Static class that contains the Alexa intent samples
 
 class SampleIntents
+  CANCEL_INTENTS = [
+    'Cancel'
+  ].freeze
+
   CONDITION_INTENTS = [
     '{Condition}',
     'talk about {Condition}',
@@ -13,15 +17,40 @@ class SampleIntents
     'tell me some details about {Condition}'
   ].freeze
 
+  EVERYBODY_HURTS_INTENTS = [
+    'Everybody Hurts'
+  ].freeze
+
   HELP_INTENTS = [
-    'Any advice', 'Any tips', 'Do not understand', 'Do you have instructions', 'Get help', 'Help me',
-    'Help', 'How can I use you', 'How do I give commands', 'How do I use this app', 'How do I use you',
-    'How do you work', 'How does this work', 'I could use help', 'I don\'t know what\'s going on',
-    'I don\'t know', 'I\'m confused', 'I\'m lost on what to do', 'I\'m stuck', 'Instructions please',
-    'Please advise', 'Please help', 'What can I ask you',
-    'What can I do', 'What can I use this for', 'What can you do', 'What can you tell me', 'What commands can I ask',
+    'Any advice', 'Any tips', 'Do not understand', 'Do you have instructions', 'Get help',
+    'Help', 'Help me', 'How can I use you', 'How do I give commands', 'How do I use this app',
+    'How do I use you', 'How do you work', 'How does this work', 'I could use help',
+    'I don\'t know what\'s going on', 'I don\'t know', 'I\'m confused', 'I\'m lost on what to do',
+    'I\'m stuck', 'Instructions please', 'Please advise', 'Please help',
+    'What can I answer', 'What can I ask you', 'What can I do', 'What can I use this for',
+    'What can you do', 'What can you tell me', 'What commands can I ask',
     'What do you do', 'What do you mean', 'What do you refer to', 'What kind of command should I give',
     'What questions can I ask', 'What should I say', 'What type of input should I give'
+  ].freeze
+
+  NEXT_INTENTS = [
+    'Next',
+    'Now what'
+  ].freeze
+
+  NO_INTENTS = [
+    'Nah',
+    'Nein',
+    'No',
+    'Non'
+  ].freeze
+
+  PAUSE_INTENTS = [
+    'Pause'
+  ].freeze
+
+  PREVIOUS_INTENTS = [
+    'Previous'
   ].freeze
 
   READ_ALL_INTENTS = [
@@ -55,6 +84,10 @@ class SampleIntents
     'What are you asking about'
   ].freeze
 
+  RESUME_INTENTS = [
+    'Resume'
+  ].freeze
+
   START_OVER_INTENTS = [
     'Go home',
     'Go to home',
@@ -63,6 +96,17 @@ class SampleIntents
     'Start',
     'Start over',
     'Start again'
+  ].freeze
+
+  STOP_INTENTS = [
+    'Adios',
+    'Arrivederci',
+    'Au Revoir',
+    'Auf Wiedersehn',
+    'Goodbye',
+    'Good-bye',
+    'No mas',
+    'Stop'
   ].freeze
 
   SYMPTOM_INTENTS = [
@@ -110,8 +154,16 @@ class SampleIntents
   ].freeze
 
   YES_INTENTS = [
+    'Da',
+    'Got it',
+    'Let\'s do it',
+    'Ja',
     'OK',
     'Okay',
+    'Roger that',
+    'Sounds good',
+    'Super',
+    'Yep',
     'Yes'
   ].freeze
 end

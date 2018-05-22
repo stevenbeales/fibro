@@ -10,6 +10,6 @@ class ReadAllIntentBuilder < IntentBuilder
       slot.add_bindings('log', 'journal', 'diary', 'symptom log')
     end
 
-    SampleIntents::READ_ALL_INTENTS.map { |sample| intent.add_utterance_template sample }
+    add_intents(SampleIntents::READ_ALL_INTENTS)
   end
 end

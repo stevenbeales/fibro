@@ -3,6 +3,6 @@
 # Class to build utterances for Next Intent
 class NextIntentBuilder < IntentBuilder
   def add
-    intent.add_utterance_template('next')
+    add_intents(SampleIntents::NEXT_INTENTS)
   end
 end

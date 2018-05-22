@@ -7,6 +7,6 @@ class ConditionIntentBuilder < IntentBuilder
       slot.add_bindings('Fibromyalgia', 'Fibro')
     end
 
-    SampleIntents::CONDITION_INTENTS.map { |sample| intent.add_utterance_template sample }
+    add_intents(SampleIntents::CONDITION_INTENTS)
   end
 end
