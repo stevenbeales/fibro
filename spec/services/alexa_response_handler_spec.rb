@@ -7,22 +7,24 @@ RSpec.describe AlexaResponseHandler do
 
   it { expect(subject).to be_an AlexaResponseHandler }
 
-  describe '.condition_response' do
-    it do
-      expect(subject.condition_response.spoken_response).to eq(I18n.t(:condition_response))
-    end
-  end
-
-  describe '.everybody_hurts_response' do
-    it do
-      expect(subject.everybody_hurts_response.spoken_response).to eq(I18n.t(:everybody_hurts_response))
-    end
-  end
-
   describe 'responses' do
     before(:each) do
       allow(echo_request).to receive(:launch_request?).and_return(false)
       allow(echo_request).to receive(:session_ended_request?).and_return(false)
+    end
+
+    describe '.condition_response' do
+      it do
+        allow(echo_request).to receive(:intent_name).and_return('ConditionIntent')
+        expect(subject.response.spoken_response).to eq(I18n.t(:condition_response))
+      end
+    end
+
+    describe '.everybody_hurts_response' do
+      it do
+        allow(echo_request).to receive(:intent_name).and_return('EverybodyHurtsIntent')
+        expect(subject.response.spoken_response).to eq(I18n.t(:everybody_hurts_response))
+      end
     end
 
     describe '.read_all_response' do

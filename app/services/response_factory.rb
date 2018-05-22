@@ -11,18 +11,13 @@ class ResponseFactory
   def response
     case @echo_request.intent_name
     when /Read/
-      read_response = ReadResponse.new(@echo_request, @echo_response)
-      read_response.response
+      ReadResponse.new(@echo_request, @echo_response).response
     when /Symptom/
-      symptom_response = SymptomResponse.new(@echo_request, @echo_response)
-      symptom_response.response
+      SymptomResponse.new(@echo_request, @echo_response).response
     when /AMAZON/
-      amazon_response = AmazonResponse.new(@echo_request, @echo_response)
-      amazon_response.response
-    when 'ConditionIntent'
-      condition_response
-    when 'EverybodyHurtsIntent'
-      everybody_hurts_response
+      AmazonResponse.new(@echo_request, @echo_response).response
+    when 'ConditionIntent', 'EverybodyHurtsIntent'
+      ConditionResponse.new(@echo_request, @echo_response).response
     else
       help_response
     end

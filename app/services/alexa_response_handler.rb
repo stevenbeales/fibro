@@ -13,7 +13,6 @@ class AlexaResponseHandler
     return launch_response if @echo_request.launch_request?
     return end_session_response if @echo_request.session_ended_request?
 
-    response_factory = ResponseFactory.new(@echo_request, @echo_response)
-    response_factory.response
+    ResponseFactory.new(@echo_request, @echo_response).response
   end
 end
