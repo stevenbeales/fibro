@@ -3,9 +3,7 @@
 RSpec.describe HelpIntentBuilder do
   subject { HelpIntentBuilder.new(model) }
   let(:model) do
-    AlexaGenerator::InteractionModel.build do |modl|
-      modl.add_intent(:FibromyalgiaInformationIntent)
-    end
+    AlexaGenerator::InteractionModel.build { |modl| modl.add_intent(:AHelpIntent) }
   end
   let(:intent) { model.intents.first }
 

@@ -25,7 +25,7 @@ DataClump:
 DuplicateMethodCall:
   enabled: true
   exclude: []
-  max_calls: 1
+  max_calls: 2
   allow_calls: []
 FeatureEnvy:
   enabled: true
@@ -56,7 +56,7 @@ ModuleInitialize:
 NestedIterators:
   enabled: true
   exclude: []
-  max_allowed_nesting: 2
+  max_allowed_nesting: 3
   ignore_iterators:
   - tap
 NilCheck:

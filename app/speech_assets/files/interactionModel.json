@@ -1,118 +1,123 @@
 {
-  "intents": [
-    {
-      "intent": "ConditionIntent",
-      "slots": [
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "fibro friend",
+      "intents": [
         {
-          "name": "Condition",
-          "type": "LIST_OF_CONDITIONS"
-        }
-      ]
-    },
-    {
-      "intent": "EverybodyHurtsIntent"
-    },
-    {
-      "intent": "ReadAllIntent",
-      "slots": [
-        {
-          "name": "Read",
-          "type": "READ"
+          "intent": "ConditionIntent",
+          "slots": [
+            {
+              "name": "Condition",
+              "type": "LIST_OF_CONDITIONS"
+            }
+          ]
         },
         {
-          "name": "Log",
-          "type": "LOG"
-        }
-      ]
-    },
-    {
-      "intent": "ReadEntryIntent",
-      "slots": [
-        {
-          "name": "Day",
-          "type": "AMAZON.DATE"
+          "intent": "EverybodyHurtsIntent"
         },
         {
-          "name": "Read",
-          "type": "READ"
+          "intent": "ReadAllIntent",
+          "slots": [
+            {
+              "name": "Read",
+              "type": "READ"
+            },
+            {
+              "name": "Log",
+              "type": "LOG"
+            }
+          ]
         },
         {
-          "name": "Log",
-          "type": "LOG"
+          "intent": "ReadEntryIntent",
+          "slots": [
+            {
+              "name": "Day",
+              "type": "AMAZON.DATE"
+            },
+            {
+              "name": "Read",
+              "type": "READ"
+            },
+            {
+              "name": "Log",
+              "type": "LOG"
+            },
+            {
+              "name": "Entry",
+              "type": "ENTRY"
+            }
+          ]
         },
         {
-          "name": "Entry",
-          "type": "ENTRY"
-        }
-      ]
-    },
-    {
-      "intent": "ReadLastIntent",
-      "slots": [
-        {
-          "name": "Read",
-          "type": "READ"
+          "intent": "ReadLastIntent",
+          "slots": [
+            {
+              "name": "Read",
+              "type": "READ"
+            },
+            {
+              "name": "Log",
+              "type": "LOG"
+            },
+            {
+              "name": "n",
+              "type": "AMAZON.NUMBER"
+            }
+          ]
         },
         {
-          "name": "Log",
-          "type": "LOG"
+          "intent": "SymptomIntent",
+          "slots": [
+            {
+              "name": "Symptom",
+              "type": "LIST_OF_SYMPTOMS"
+            }
+          ]
         },
         {
-          "name": "n",
-          "type": "AMAZON.NUMBER"
-        }
-      ]
-    },
-    {
-      "intent": "SymptomIntent",
-      "slots": [
+          "intent": "SymptomInfoIntent",
+          "slots": [
+            {
+              "name": "SymptomInfo",
+              "type": "LIST_OF_SYMPTOMS"
+            }
+          ]
+        },
         {
-          "name": "Symptom",
-          "type": "LIST_OF_SYMPTOMS"
-        }
-      ]
-    },
-    {
-      "intent": "SymptomInfoIntent",
-      "slots": [
+          "intent": "AMAZON.CancelIntent"
+        },
         {
-          "name": "SymptomInfo",
-          "type": "LIST_OF_SYMPTOMS"
+          "intent": "AMAZON.HelpIntent"
+        },
+        {
+          "intent": "AMAZON.NextIntent"
+        },
+        {
+          "intent": "AMAZON.NoIntent"
+        },
+        {
+          "intent": "AMAZON.PauseIntent"
+        },
+        {
+          "intent": "AMAZON.PreviousIntent"
+        },
+        {
+          "intent": "AMAZON.RepeatIntent"
+        },
+        {
+          "intent": "AMAZON.ResumeIntent"
+        },
+        {
+          "intent": "AMAZON.StartOverIntent"
+        },
+        {
+          "intent": "AMAZON.StopIntent"
+        },
+        {
+          "intent": "AMAZON.YesIntent"
         }
       ]
-    },
-    {
-      "intent": "AMAZON.CancelIntent"
-    },
-    {
-      "intent": "AMAZON.HelpIntent"
-    },
-    {
-      "intent": "AMAZON.NextIntent"
-    },
-    {
-      "intent": "AMAZON.NoIntent"
-    },
-    {
-      "intent": "AMAZON.PauseIntent"
-    },
-    {
-      "intent": "AMAZON.PreviousIntent"
-    },
-    {
-      "intent": "AMAZON.RepeatIntent"
-    },
-    {
-      "intent": "AMAZON.ResumeIntent"
-    },
-    {
-      "intent": "AMAZON.StartOverIntent"
-    },
-    {
-      "intent": "AMAZON.StopIntent"
-    },
-    {
-      "intent": "AMAZON.YesIntent"
     }
-  ]
+  }
 }

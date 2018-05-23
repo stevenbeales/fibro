@@ -25,22 +25,13 @@ if test?
                      Stop: StopIntentBuilder,
                      Yes: YesIntentBuilder }
 
-  model = AlexaGenerator::InteractionModel.build do |modl|
-    custom_intents.each do |key, value|
-      modl.add_intent(key) do |intent|
-        value.new(intent).add
-      end
-    end
-    amazon_intents.each do |key, value|
-      modl.add_intent(%(AMAZON.#{key}Intent)) do |intent|
-        value.new(intent).add
-      end
-    end
-  end
+  interaction_model = InteractionModelBuilder.new(builder_class: AlexaGenerator::InteractionModel,
+                                                  custom_intents: custom_intents,
+                                                  amazon_intents: amazon_intents).model
 
-  json_schema = JsonInteractionModel.new(model)
+  json_schema = JsonInteractionModel.new(interaction_model, AppConstants::INVOCATION_NAME)
   json_schema.save("./#{AppConstants::SPEECH_FOLDER}/interactionModel.json")
 
-  utterances = UtterancesModel.new(model)
+  utterances = UtterancesModel.new(interaction_model)
   utterances.save("./#{AppConstants::SPEECH_FOLDER}/SampleUtterances.txt")
 end
