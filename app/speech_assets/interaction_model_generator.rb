@@ -38,12 +38,9 @@ if test?
     end
   end
 
-  interaction_model_file = File.open("./#{AppConstants::SPEECH_FOLDER}/interactionModel.json", 'w+')
   json_schema = JsonInteractionModel.new(model)
-  interaction_model_file.puts json_schema.schema
-  interaction_model_file.close
-  utterances_file = File.open("./#{AppConstants::SPEECH_FOLDER}/SampleUtterances.txt", 'w+')
+  json_schema.save("./#{AppConstants::SPEECH_FOLDER}/interactionModel.json")
+
   utterances = UtterancesModel.new(model)
-  utterances.describe { |a| utterances_file.puts a }
-  utterances_file.close
+  utterances.save("./#{AppConstants::SPEECH_FOLDER}/SampleUtterances.txt")
 end

@@ -4,6 +4,8 @@
 class AmazonResponse < BaseResponse
   def response
     case echo_request.intent_name
+    when 'AMAZON.CancelIntent'
+      cancel_response
     when 'AMAZON.NextIntent'
       next_response
     when 'AMAZON.NoIntent'
@@ -16,14 +18,12 @@ class AmazonResponse < BaseResponse
       repeat_response
     when 'AMAZON.ResumeIntent'
       resume_response
-    when 'AMAZON.YesIntent'
-      yes_response
-    when 'AMAZON.StopIntent'
-      stop_response
-    when 'AMAZON.CancelIntent'
-      cancel_response
     when 'AMAZON.StartOverIntent'
       start_over_response
+    when 'AMAZON.StopIntent'
+      stop_response
+    when 'AMAZON.YesIntent'
+      yes_response
     else
       # Either helpintent was sent explicitly or Alexa did not understand intent
       help_response

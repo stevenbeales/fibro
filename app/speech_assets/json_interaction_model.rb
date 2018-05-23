@@ -10,6 +10,14 @@ class JsonInteractionModel
     @model = model
   end
 
+  def save(filename)
+    File.open(filename, 'w+') do |line|
+      line.puts schema
+    end
+  end
+
+  protected
+
   def schema
     JSON.pretty_generate(model.intent_schema)
   end

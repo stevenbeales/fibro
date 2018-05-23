@@ -15,8 +15,8 @@
 
   
     
-    <meta name="description" content="Helpers.">
-    <meta property="og:description" content="Helpers.">
+    <meta name="description" content="Helpers to be used in registering Sinatra app.">
+    <meta property="og:description" content="Helpers to be used in registering Sinatra app.">
   
 
     <meta name="keywords" content="Sinatra::Fibro::Helpers class">
@@ -44,7 +44,8 @@
   
     <div class="description">
       
-<p><a href="Helpers.html">Helpers</a></p>
+<p><a href="Helpers.html">Helpers</a> to be used in registering <a
+href="../../Sinatra.html">Sinatra</a> app</p>
 
     </div>
   
@@ -131,45 +132,8 @@
               <div id="method-i-build_response_source" class="dyn-source">
                 <pre><span class="ruby-comment"># File lib/sinatra/fibro.rb, line 11</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">build_response</span>(<span class="ruby-identifier">echo_request</span>, <span class="ruby-identifier">response</span>)
-  <span class="ruby-identifier">alexa_service</span> = <span class="ruby-constant">AlexaService</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@user</span>, <span class="ruby-identifier">response</span>)
-  <span class="ruby-keyword">return</span> <span class="ruby-identifier">alexa_service</span>.<span class="ruby-identifier">launch_response</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">echo_request</span>.<span class="ruby-identifier">launch_request?</span>
-  <span class="ruby-keyword">return</span> <span class="ruby-identifier">alexa_service</span>.<span class="ruby-identifier">end_session_response</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">echo_request</span>.<span class="ruby-identifier">session_ended_request?</span>
-
-  <span class="ruby-identifier">response</span> =  <span class="ruby-keyword">case</span> <span class="ruby-identifier">echo_request</span>.<span class="ruby-identifier">intent_name</span>
-              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;ConditionIntent&quot;</span>
-                <span class="ruby-identifier">alexa_service</span>.<span class="ruby-identifier">condition_response</span>
-              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;SymptomInfoIntent&quot;</span>
-                <span class="ruby-identifier">alexa_service</span>.<span class="ruby-identifier">symptom_info_response</span>
-              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;SymptomIntent&quot;</span>
-                <span class="ruby-identifier">alexa_service</span>.<span class="ruby-identifier">symptom_response</span>
-              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;EverybodyHurtsIntent&quot;</span>
-                <span class="ruby-identifier">alexa_service</span>.<span class="ruby-identifier">everybody_hurts_response</span>
-              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;AMAZON.NextIntent&quot;</span>
-                <span class="ruby-identifier">alexa_service</span>.<span class="ruby-identifier">next_response</span>
-              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;AMAZON.NoIntent&quot;</span>
-                <span class="ruby-identifier">alexa_service</span>.<span class="ruby-identifier">no_response</span>
-              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;AMAZON.PauseIntent&quot;</span>
-                <span class="ruby-identifier">alexa_service</span>.<span class="ruby-identifier">pause_response</span>
-              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;AMAZON.PreviousIntent&quot;</span>
-                <span class="ruby-identifier">alexa_service</span>.<span class="ruby-identifier">previous_response</span>
-              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;AMAZON.RepeatIntent&quot;</span>
-                <span class="ruby-identifier">alexa_service</span>.<span class="ruby-identifier">repeat_response</span>
-              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;AMAZON.ResumeIntent&quot;</span>
-                <span class="ruby-identifier">alexa_service</span>.<span class="ruby-identifier">resume_response</span>
-              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;AMAZON.YesIntent&quot;</span>
-                <span class="ruby-identifier">alexa_service</span>.<span class="ruby-identifier">yes_response</span>
-              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;AMAZON.StopIntent&quot;</span>
-                <span class="ruby-identifier">alexa_service</span>.<span class="ruby-identifier">stop_response</span>
-              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;AMAZON.CancelIntent&quot;</span>
-                <span class="ruby-identifier">alexa_service</span>.<span class="ruby-identifier">cancel_response</span>
-              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;AMAZON.HelpIntent&quot;</span>
-                <span class="ruby-identifier">alexa_service</span>.<span class="ruby-identifier">help_response</span>
-              <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;AMAZON.StartOverIntent&quot;</span>
-                <span class="ruby-identifier">alexa_service</span>.<span class="ruby-identifier">start_over_response</span>
-              <span class="ruby-keyword">else</span>
-                <span class="ruby-identifier">alexa_service</span>.<span class="ruby-identifier">help_response</span>
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">response</span>
+  <span class="ruby-identifier">alexa_response</span> = <span class="ruby-constant">AlexaResponseHandler</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@user</span>, <span class="ruby-identifier">echo_request</span>, <span class="ruby-identifier">response</span>)
+  <span class="ruby-identifier">alexa_response</span>.<span class="ruby-identifier">response</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>

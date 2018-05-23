@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SampleIntents</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="SampleIntents">
+
+  
+    
+    <meta name="description" content="Static class that contains the Alexa intent samples.">
+    <meta property="og:description" content="Static class that contains the Alexa intent samples.">
+  
+
+    <meta name="keywords" content="SampleIntents class">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            SampleIntents
+            
+                <span class="parent">&lt;
+                    
+                    Object
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/speech_assets/sample_intents_rb.html">app/speech_assets/sample_intents.rb</a></li>
+            
+            <li><a href="../files/app/speech_assets/start_over_intent_builder_rb.html">app/speech_assets/start_over_intent_builder.rb</a></li>
+            
+            <li><a href="../files/app/speech_assets/stop_intent_builder_rb.html">app/speech_assets/stop_intent_builder.rb</a></li>
+            
+            <li><a href="../files/app/speech_assets/symptom_info_intent_builder_rb.html">app/speech_assets/symptom_info_intent_builder.rb</a></li>
+            
+            <li><a href="../files/app/speech_assets/symptom_intent_builder_rb.html">app/speech_assets/symptom_intent_builder.rb</a></li>
+            
+            <li><a href="../files/app/speech_assets/yes_intent_builder_rb.html">app/speech_assets/yes_intent_builder.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Static class that contains the Alexa intent samples</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">CANCEL_INTENTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;Cancel&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CONDITION_INTENTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;{Condition}&#39;,
+&#39;talk about {Condition}&#39;,
+&#39;tell me about {Condition}&#39;,
+&#39;tell me symptoms of {Condition}&#39;,
+&#39;tell me the symptoms of {Condition}&#39;,
+&#39;tell me the treatment of {Condition}&#39;,
+&#39;tell me some details about {Condition}&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">EVERYBODY_HURTS_INTENTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;Everybody Hurts&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">HELP_INTENTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;Any advice&#39;, &#39;Any tips&#39;, &#39;Do not understand&#39;, &#39;Do you have instructions&#39;, &#39;Get help&#39;,
+&#39;Help&#39;, &#39;Help me&#39;, &#39;How can I use you&#39;, &#39;How do I give commands&#39;, &#39;How do I use this app&#39;,
+&#39;How do I use you&#39;, &#39;How do you work&#39;, &#39;How does this work&#39;, &#39;I could use help&#39;,
+&#39;I don\&#39;t know what\&#39;s going on&#39;, &#39;I don\&#39;t know&#39;, &#39;I\&#39;m confused&#39;, &#39;I\&#39;m lost on what to do&#39;,
+&#39;I\&#39;m stuck&#39;, &#39;Instructions please&#39;, &#39;Please advise&#39;, &#39;Please help&#39;,
+&#39;What can I answer&#39;, &#39;What can I ask you&#39;, &#39;What can I do&#39;, &#39;What can I use this for&#39;,
+&#39;What can you do&#39;, &#39;What can you tell me&#39;, &#39;What commands can I ask&#39;,
+&#39;What do you do&#39;, &#39;What do you mean&#39;, &#39;What do you refer to&#39;, &#39;What kind of command should I give&#39;,
+&#39;What questions can I ask&#39;, &#39;What should I say&#39;, &#39;What type of input should I give&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">NEXT_INTENTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;Next&#39;,
+&#39;Now what&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">NO_INTENTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;Nah&#39;,
+&#39;Nein&#39;,
+&#39;No&#39;,
+&#39;Non&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">PAUSE_INTENTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;Pause&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">PREVIOUS_INTENTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;Previous&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">READ_ALL_INTENTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;{Read} {Log}&#39;,
+&#39;What happened&#39;,
+&#39;{Read} all&#39;,
+&#39;{Read} everything&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">READ_ENTRY_INTENTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;{Read} {Log} for {Day}&#39;,
+&#39;Get {Entry} for {Day}&#39;,
+&#39;Give me {Entry} for {Day}&#39;,
+&#39;What happened on {Day}&#39;,
+&#39;{Read} {Day}&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">READ_LAST_INTENTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;{Read} last {Log}&#39;,
+&#39;{Read} last {n}&#39;,
+&#39;{Read} last&#39;,
+&#39;{Read} last {n} {Log}&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">REPEAT_INTENTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;Again&#39;,
+&#39;Can you repeat that&#39;,
+&#39;Repeat&#39;,
+&#39;Repeat again&#39;,
+&#39;Say again&#39;,
+&#39;What are you asking about&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">RESUME_INTENTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;Resume&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">START_OVER_INTENTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;Go home&#39;,
+&#39;Go to home&#39;,
+&#39;Home&#39;,
+&#39;Re-start&#39;,
+&#39;Start&#39;,
+&#39;Start over&#39;,
+&#39;Start again&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">STOP_INTENTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;Adios&#39;,
+&#39;Arrivederci&#39;,
+&#39;Au Revoir&#39;,
+&#39;Auf Wiedersehn&#39;,
+&#39;Goodbye&#39;,
+&#39;Good-bye&#39;,
+&#39;No mas&#39;,
+&#39;Stop&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">SYMPTOM_INFO_INTENTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;Get result for {Symptom}&#39;,
+&#39;what does it mean if I have {Symptom}&#39;,
+&#39;What does it mean to have {Symptom}&#39;,
+&#39;Should I be worried if I have {Symptom}&#39;,
+&#39;Should I be worried if I am {Symptom}&#39;,
+&#39;What if I feel {Symptom}&#39;,
+&#39;What are feelings of {Symptom}&#39;,
+&#39;Should I go to the doctor if I have {Symptom}&#39;,
+&#39;Should I go to the doctor if {Symptom}&#39;,
+&#39;Should I be scared if {Symptom}&#39;,
+&#39;What could {Symptom} mean&#39;,
+&#39;I have {Symptom} what does it mean&#39;,
+&#39;Can you tell me about {Symptom}&#39;,
+&#39;What is linked to {Symptom}&#39;,
+&#39;Do you know anything about {Symptom}&#39;,
+&#39;What relates to {Symptom}&#39;,
+&#39;What if I have {Symptom}&#39;,
+&#39;What could {Symptom} mean&#39;,
+&#39;If I feel {Symptom} should I be worried&#39;,
+&#39;If I feel {Symptom} what could it be&#39;,
+&#39;What are the most popular diagnosis that cause {Symptom}&#39;,
+&#39;Will I die if {Symptom}&#39;,
+&#39;Is {Symptom} fatal&#39;,
+&#39;Could untreated {Symptom} be fatal&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">SYMPTOM_INTENTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;I feel {Symptom}&#39;,
+&#39;I am feeling {Symptom}&#39;,
+&#39;I am {Symptom}&#39;,
+&#39;I {Symptom}&#39;,
+&#39;{Symptom}&#39;,
+&#39;I think I may have {Symptom}&#39;,
+&#39;I think I might have {Symptom}&#39;,
+&#39;I have {Symptom}&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">SYMPTOM_SLOTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;Fatigue&#39;, &#39;Pain&#39;, &#39;Fogginess&#39;, &#39;Memory&#39;, &#39;Poor Sleep&#39;, &#39;Depression&#39;, &#39;Mood Change&#39;,
+&#39;Eyes&#39;, &#39;Light Sensitivity&#39;, &#39;Abdominal Pain&#39;, &#39;Dizzy&#39;, &#39;Balance Problems&#39;, &#39;Headache&#39;,
+&#39;Joint Pain&#39;, &#39;Lymph Node Tenderness&#39;, &#39;Sore Throat&#39;, &#39;Other&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">YES_INTENTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;Da&#39;,
+&#39;Got it&#39;,
+&#39;Let\&#39;s do it&#39;,
+&#39;Ja&#39;,
+&#39;OK&#39;,
+&#39;Okay&#39;,
+&#39;Roger that&#39;,
+&#39;Sounds good&#39;,
+&#39;Super&#39;,
+&#39;Yep&#39;,
+&#39;Yes&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

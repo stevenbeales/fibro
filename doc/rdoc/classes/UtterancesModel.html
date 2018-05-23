@@ -21,7 +21,7 @@
 
     <meta name="keywords" content="UtterancesModel class">
   
-    <meta name="keywords" content="new, describe">
+    <meta name="keywords" content="new, describe, save">
   
 </head>
 
@@ -90,6 +90,18 @@
               
               <li>
                 <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-save">save</a>
               </li>
             
           </ul>
@@ -206,6 +218,45 @@
   <span class="ruby-identifier">model</span>.<span class="ruby-identifier">intents</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">intent</span>, <span class="ruby-identifier">_value</span><span class="ruby-operator">|</span>
     <span class="ruby-keyword">yield</span> <span class="ruby-identifier">model</span>.<span class="ruby-identifier">sample_utterances</span>(<span class="ruby-identifier">intent</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-save">
+            
+              <b>save</b>(filename)
+            
+            <a href="../classes/UtterancesModel.html#method-i-save" name="method-i-save" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-save_source')" id="l_method-i-save_source">show</a>
+                
+              </p>
+              <div id="method-i-save_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">save</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">utterances_file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-string">&#39;w+&#39;</span>)
+  <span class="ruby-identifier">describe</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span> <span class="ruby-identifier">utterances_file</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">a</span> }
+  <span class="ruby-identifier">utterances_file</span>.<span class="ruby-identifier">close</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>

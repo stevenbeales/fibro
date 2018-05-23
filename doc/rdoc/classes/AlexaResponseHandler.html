@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AlexaResponseHandler</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="AlexaResponseHandler">
+
+  
+    
+    <meta name="description" content="Class to define custom responses to Alexa intent request.">
+    <meta property="og:description" content="Class to define custom responses to Alexa intent request.">
+  
+
+    <meta name="keywords" content="AlexaResponseHandler class">
+  
+    <meta name="keywords" content="new, response">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            AlexaResponseHandler
+            
+                <span class="parent">&lt;
+                    
+                    Object
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/services/alexa_response_handler_rb.html">app/services/alexa_response_handler.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Class to define custom responses to Alexa intent request</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-response">response</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="ResponseHelpers.html">
+              ResponseHelpers
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <b>new</b>(user, echo_request, echo_response)
+            
+            <a href="../classes/AlexaResponseHandler.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/services/alexa_response_handler.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">user</span>, <span class="ruby-identifier">echo_request</span>, <span class="ruby-identifier">echo_response</span>)
+  <span class="ruby-ivar">@user</span> = <span class="ruby-identifier">user</span>
+  <span class="ruby-ivar">@echo_request</span> = <span class="ruby-identifier">echo_request</span>
+  <span class="ruby-ivar">@echo_response</span> = <span class="ruby-identifier">echo_response</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-response">
+            
+              <b>response</b>()
+            
+            <a href="../classes/AlexaResponseHandler.html#method-i-response" name="method-i-response" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-response_source')" id="l_method-i-response_source">show</a>
+                
+              </p>
+              <div id="method-i-response_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/services/alexa_response_handler.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">response</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">launch_response</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@echo_request</span>.<span class="ruby-identifier">launch_request?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">end_session_response</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@echo_request</span>.<span class="ruby-identifier">session_ended_request?</span>
+
+  <span class="ruby-constant">ResponseFactory</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@echo_request</span>, <span class="ruby-ivar">@echo_response</span>).<span class="ruby-identifier">response</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

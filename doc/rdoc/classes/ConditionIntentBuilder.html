@@ -140,13 +140,8 @@
   <span class="ruby-identifier">add_slot</span>(<span class="ruby-value">:Condition</span>, <span class="ruby-value">:LIST_OF_CONDITIONS</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">slot</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">slot</span>.<span class="ruby-identifier">add_bindings</span>(<span class="ruby-string">&#39;Fibromyalgia&#39;</span>, <span class="ruby-string">&#39;Fibro&#39;</span>)
   <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add_utterance_template</span>(<span class="ruby-string">&#39;{Condition}&#39;</span>)
-  <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add_utterance_template</span>(<span class="ruby-string">&#39;tell me about {Condition}&#39;</span>)
-  <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add_utterance_template</span>(<span class="ruby-string">&#39;talk about {Condition}&#39;</span>)
-  <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add_utterance_template</span>(<span class="ruby-string">&#39;tell me symptoms of {Condition}&#39;</span>)
-  <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add_utterance_template</span>(<span class="ruby-string">&#39;tell me the symptoms of {Condition}&#39;</span>)
-  <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add_utterance_template</span>(<span class="ruby-string">&#39;tell me the treatment of {Condition}&#39;</span>)
-  <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add_utterance_template</span>(<span class="ruby-string">&#39;tell me some details about {Condition}&#39;</span>)
+
+  <span class="ruby-identifier">add_intents</span>(<span class="ruby-constant">SampleIntents</span><span class="ruby-operator">::</span><span class="ruby-constant">CONDITION_INTENTS</span>)
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>

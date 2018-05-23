@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AmazonResponse</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="AmazonResponse">
+
+  
+    
+    <meta name="description" content="Class to define custom responses to Alexa Amazon built-in intent request.">
+    <meta property="og:description" content="Class to define custom responses to Alexa Amazon built-in intent request.">
+  
+
+    <meta name="keywords" content="AmazonResponse class">
+  
+    <meta name="keywords" content="response">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            AmazonResponse
+            
+                <span class="parent">&lt;
+                    
+                    <a href="BaseResponse.html">BaseResponse</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/services/amazon_response_rb.html">app/services/amazon_response.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Class to define custom responses to Alexa Amazon built-in intent request</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-response">response</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-response">
+            
+              <b>response</b>()
+            
+            <a href="../classes/AmazonResponse.html#method-i-response" name="method-i-response" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-response_source')" id="l_method-i-response_source">show</a>
+                
+              </p>
+              <div id="method-i-response_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/services/amazon_response.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">response</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">echo_request</span>.<span class="ruby-identifier">intent_name</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;AMAZON.CancelIntent&#39;</span>
+    <span class="ruby-identifier">cancel_response</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;AMAZON.NextIntent&#39;</span>
+    <span class="ruby-identifier">next_response</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;AMAZON.NoIntent&#39;</span>
+    <span class="ruby-identifier">no_response</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;AMAZON.PauseIntent&#39;</span>
+    <span class="ruby-identifier">pause_response</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;AMAZON.PreviousIntent&#39;</span>
+    <span class="ruby-identifier">previous_response</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;AMAZON.RepeatIntent&#39;</span>
+    <span class="ruby-identifier">repeat_response</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;AMAZON.ResumeIntent&#39;</span>
+    <span class="ruby-identifier">resume_response</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;AMAZON.StartOverIntent&#39;</span>
+    <span class="ruby-identifier">start_over_response</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;AMAZON.StopIntent&#39;</span>
+    <span class="ruby-identifier">stop_response</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;AMAZON.YesIntent&#39;</span>
+    <span class="ruby-identifier">yes_response</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-comment"># Either helpintent was sent explicitly or Alexa did not understand intent</span>
+    <span class="ruby-identifier">help_response</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

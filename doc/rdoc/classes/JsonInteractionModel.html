@@ -21,7 +21,7 @@
 
     <meta name="keywords" content="JsonInteractionModel class">
   
-    <meta name="keywords" content="new, schema">
+    <meta name="keywords" content="new, save, schema">
   
 </head>
 
@@ -86,6 +86,11 @@
         <dt>S</dt>
         <dd>
           <ul>
+            
+              
+              <li>
+                <a href="#method-i-save">save</a>,
+              </li>
             
               
               <li>
@@ -174,6 +179,48 @@
       <div class="sectiontitle">Instance Public methods</div>
       
         <div class="method">
+          <div class="title method-title" id="method-i-save">
+            
+              <b>save</b>(filename)
+            
+            <a href="../classes/JsonInteractionModel.html#method-i-save" name="method-i-save" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-save_source')" id="l_method-i-save_source">show</a>
+                
+              </p>
+              <div id="method-i-save_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">save</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-identifier">interaction_model_file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-string">&#39;w+&#39;</span>)
+  <span class="ruby-identifier">interaction_model_file</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">schema</span>
+  <span class="ruby-identifier">interaction_model_file</span>.<span class="ruby-identifier">close</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
           <div class="title method-title" id="method-i-schema">
             
               <b>schema</b>()
@@ -201,7 +248,7 @@
                 
               </p>
               <div id="method-i-schema_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 13</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">schema</span>
   <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">pretty_generate</span>(<span class="ruby-identifier">model</span>.<span class="ruby-identifier">intent_schema</span>)
 <span class="ruby-keyword">end</span></pre>

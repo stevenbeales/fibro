@@ -134,7 +134,8 @@ using Alexa session request.user_id</p>
           
             <tr valign='top'>
               <td>&nbsp;</td>
-              <td colspan="2" class="attr-desc"></td>
+              <td colspan="2" class="attr-desc"><p>Valid characters in Amazon usernames include _@-,=+]* A and z prevent
+multiline usernames matching</p></td>
             </tr>
           
         
@@ -177,7 +178,7 @@ using Alexa session request.user_id</p>
                 
               </p>
               <div id="method-c-authenticate_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/models/user.rb, line 23</span>
+                <pre><span class="ruby-comment"># File app/models/user.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">authenticate</span>(<span class="ruby-identifier">user_id</span>)
   <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find_or_create_by</span>(<span class="ruby-value">user_id:</span> <span class="ruby-identifier">user_id</span>)
   <span class="ruby-identifier">user</span>
@@ -219,7 +220,7 @@ using Alexa session request.user_id</p>
                 
               </p>
               <div id="method-i-to_s_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/models/user.rb, line 28</span>
+                <pre><span class="ruby-comment"># File app/models/user.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
   <span class="ruby-identifier">user_id</span>
 <span class="ruby-keyword">end</span></pre>

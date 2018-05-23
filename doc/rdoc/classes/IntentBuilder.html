@@ -15,13 +15,13 @@
 
   
     
-    <meta name="description" content="Abstract class to build custom intents.">
-    <meta property="og:description" content="Abstract class to build custom intents.">
+    <meta name="description" content="Abstract class to provide base methods used in building custom Alexa intents for voice user interfaces.">
+    <meta property="og:description" content="Abstract class to provide base methods used in building custom Alexa intents for voice user interfaces.">
   
 
     <meta name="keywords" content="IntentBuilder class">
   
-    <meta name="keywords" content="new, add, add_slot">
+    <meta name="keywords" content="new, add, add_slot, add_intents">
   
 </head>
 
@@ -50,7 +50,8 @@
   
     <div class="description">
       
-<p>Abstract class to build custom intents</p>
+<p>Abstract class to provide base methods used in building custom Alexa
+intents for voice user interfaces</p>
 
     </div>
   
@@ -78,6 +79,11 @@
               
               <li>
                 <a href="#method-i-add">add</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-add_intents">add_intents</a>,
               </li>
             
               
@@ -254,6 +260,46 @@
                 <pre><span class="ruby-comment"># File app/speech_assets/intent_builder.rb, line 16</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_slot</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">type</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add_slot</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">type</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-add_intents">
+            
+              <b>add_intents</b>(intents)
+            
+            <a href="../classes/IntentBuilder.html#method-i-add_intents" name="method-i-add_intents" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-add_intents_source')" id="l_method-i-add_intents_source">show</a>
+                
+              </p>
+              <div id="method-i-add_intents_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/intent_builder.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_intents</span>(<span class="ruby-identifier">intents</span>)
+  <span class="ruby-identifier">intents</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">sample</span><span class="ruby-operator">|</span> <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add_utterance_template</span> <span class="ruby-identifier">sample</span> }
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>

@@ -138,19 +138,10 @@
                 <pre><span class="ruby-comment"># File app/speech_assets/symptom_intent_builder.rb, line 5</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add</span>
   <span class="ruby-identifier">add_slot</span>(<span class="ruby-value">:Symptom</span>, <span class="ruby-value">:LIST_OF_SYMPTOMS</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">slot</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">slot</span>.<span class="ruby-identifier">add_bindings</span>(<span class="ruby-string">&#39;Fatigue&#39;</span>, <span class="ruby-string">&#39;Pain&#39;</span>, <span class="ruby-string">&#39;Fogginess&#39;</span>, <span class="ruby-string">&#39;Memory&#39;</span>, <span class="ruby-string">&#39;Poor Sleep&#39;</span>, <span class="ruby-string">&#39;Depression&#39;</span>, <span class="ruby-string">&#39;Mood Change&#39;</span>,
-                      <span class="ruby-string">&#39;Eyes&#39;</span>, <span class="ruby-string">&#39;Light Sensitivity&#39;</span>, <span class="ruby-string">&#39;Abdominal Pain&#39;</span>, <span class="ruby-string">&#39;Dizzy&#39;</span>, <span class="ruby-string">&#39;Balance Problems&#39;</span>, <span class="ruby-string">&#39;Headache&#39;</span>,
-                      <span class="ruby-string">&#39;Joint Pain&#39;</span>, <span class="ruby-string">&#39;Lymph Node Tenderness&#39;</span>, <span class="ruby-string">&#39;Sore Throat&#39;</span>, <span class="ruby-string">&#39;Other&#39;</span>)
+    <span class="ruby-identifier">slot</span>.<span class="ruby-identifier">add_bindings</span>(<span class="ruby-constant">SampleIntents</span><span class="ruby-operator">::</span><span class="ruby-constant">SYMPTOM_SLOTS</span>)
   <span class="ruby-keyword">end</span>
 
-  <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add_utterance_template</span>(<span class="ruby-string">&#39;I feel {Symptom}&#39;</span>)
-  <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add_utterance_template</span>(<span class="ruby-string">&#39;I am feeling {Symptom}&#39;</span>)
-  <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add_utterance_template</span>(<span class="ruby-string">&#39;I am {Symptom}&#39;</span>)
-  <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add_utterance_template</span>(<span class="ruby-string">&#39;I {Symptom}&#39;</span>)
-  <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add_utterance_template</span>(<span class="ruby-string">&#39;{Symptom}&#39;</span>)
-  <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add_utterance_template</span>(<span class="ruby-string">&#39;I think I may have {Symptom}&#39;</span>)
-  <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add_utterance_template</span>(<span class="ruby-string">&#39;I think I might have {Symptom}&#39;</span>)
-  <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add_utterance_template</span>(<span class="ruby-string">&#39;I have {Symptom}&#39;</span>)
+  <span class="ruby-identifier">add_intents</span>(<span class="ruby-constant">SampleIntents</span><span class="ruby-operator">::</span><span class="ruby-constant">SYMPTOM_INTENTS</span>)
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
