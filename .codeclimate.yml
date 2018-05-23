@@ -10,6 +10,20 @@ engines:
     enabled: true
     channel: rubocop-0-54
 
+plugins:
+  bundler-audit:
+    enabled: true
+  fixme:
+    enabled: true
+     config:
+      strings:
+      - FIXME
+      - BUG
+      - CUSTOM
+      - TODO
+  rubocop:
+    enabled: true
+
 exclude_paths:
  - "lib/tasks/*"
  - "script/*"
