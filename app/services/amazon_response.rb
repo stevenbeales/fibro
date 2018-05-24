@@ -18,7 +18,7 @@ class AmazonResponse < BaseResponse
   end
 
   # If we try to fire a response_method but don't find one
-  # Fire help_response
+  # fire help_response
   def method_missing(method_name, *arguments, &block)
     if method_name.to_s.include?('response')
       help_response
@@ -27,7 +27,7 @@ class AmazonResponse < BaseResponse
     end
   end
 
-  private
+  protected
 
   # Fires the correct response method for an Alexa built-in intent
   # Example

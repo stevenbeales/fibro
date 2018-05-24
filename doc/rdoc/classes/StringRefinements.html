@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>StringRefinements</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="StringRefinements">
+
+  
+    
+    <meta name="description" content="Add methods to String class without monkey patching.">
+    <meta property="og:description" content="Add methods to String class without monkey patching.">
+  
+
+    <meta name="keywords" content="StringRefinements class">
+  
+    <meta name="keywords" content="camelize, indent, remove_first_line, snakecase">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span>
+            StringRefinements
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/lib/refinements/string_refinements_rb.html">lib/refinements/string_refinements.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Add methods to String class without monkey patching</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-camelize">camelize</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-indent">indent</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-remove_first_line">remove_first_line</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-snakecase">snakecase</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-camelize">
+            
+              <b>camelize</b>()
+            
+            <a href="../classes/StringRefinements.html#method-i-camelize" name="method-i-camelize" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-camelize_source')" id="l_method-i-camelize_source">show</a>
+                
+              </p>
+              <div id="method-i-camelize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/refinements/string_refinements.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">camelize</span>
+  <span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;_&quot;</span>).<span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:capitalize!</span>).<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-indent">
+            
+              <b>indent</b>(amount, indent_string = nil)
+            
+            <a href="../classes/StringRefinements.html#method-i-indent" name="method-i-indent" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-indent_source')" id="l_method-i-indent_source">show</a>
+                
+              </p>
+              <div id="method-i-indent_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/refinements/string_refinements.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">indent</span>(<span class="ruby-identifier">amount</span>, <span class="ruby-identifier">indent_string</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">indent_string</span> = <span class="ruby-identifier">indent_string</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span>[<span class="ruby-regexp">/^[ \t]/</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot; &quot;</span>
+  <span class="ruby-identifier">re</span> = <span class="ruby-regexp">/^(?!$)/</span>
+  <span class="ruby-identifier">gsub!</span>(<span class="ruby-identifier">re</span>, <span class="ruby-identifier">indent_string</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">amount</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-remove_first_line">
+            
+              <b>remove_first_line</b>()
+            
+            <a href="../classes/StringRefinements.html#method-i-remove_first_line" name="method-i-remove_first_line" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-remove_first_line_source')" id="l_method-i-remove_first_line_source">show</a>
+                
+              </p>
+              <div id="method-i-remove_first_line_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/refinements/string_refinements.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">remove_first_line</span>
+  <span class="ruby-identifier">first_newline</span> = (<span class="ruby-identifier">index</span>(<span class="ruby-string">&quot;\n&quot;</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">slice!</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">first_newline</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&quot;\n&quot;</span>, <span class="ruby-string">&#39;&#39;</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-snakecase">
+            
+              <b>snakecase</b>()
+            
+            <a href="../classes/StringRefinements.html#method-i-snakecase" name="method-i-snakecase" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-snakecase_source')" id="l_method-i-snakecase_source">show</a>
+                
+              </p>
+              <div id="method-i-snakecase_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/refinements/string_refinements.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">snakecase</span>
+  <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/([A-Z]+)([A-Z][a-z])/</span>, <span class="ruby-string">&#39;\1_\2&#39;</span>)
+    .<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/([a-z\d])([A-Z])/</span>, <span class="ruby-string">&#39;\1_\2&#39;</span>)
+    .<span class="ruby-identifier">tr</span>(<span class="ruby-string">&#39;-&#39;</span>, <span class="ruby-string">&#39;_&#39;</span>)
+    .<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\s/</span>, <span class="ruby-string">&#39;_&#39;</span>)
+    .<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/__+/</span>, <span class="ruby-string">&#39;_&#39;</span>)
+    .<span class="ruby-identifier">downcase</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

@@ -185,7 +185,8 @@
 
           
             <div class="description">
-              
+              <p>return response to Echo request if we can&#39;t respond immediately, use a
+factory to match response to request</p>
             </div>
           
 
@@ -203,7 +204,7 @@
                 
               </p>
               <div id="method-i-response_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/services/alexa_response_handler.rb, line 12</span>
+                <pre><span class="ruby-comment"># File app/services/alexa_response_handler.rb, line 14</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">response</span>
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">launch_response</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@echo_request</span>.<span class="ruby-identifier">launch_request?</span>
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">end_session_response</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@echo_request</span>.<span class="ruby-identifier">session_ended_request?</span>

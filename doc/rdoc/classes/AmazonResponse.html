@@ -21,7 +21,7 @@
 
     <meta name="keywords" content="AmazonResponse class">
   
-    <meta name="keywords" content="response">
+    <meta name="keywords" content="response, respond_to_missing?, method_missing, intent_to_response">
   
 </head>
 
@@ -71,9 +71,38 @@
     <div class="sectiontitle">Methods</div>
     <dl class="methods">
       
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-intent_to_response">intent_to_response</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-method_missing">method_missing</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
         <dt>R</dt>
         <dd>
           <ul>
+            
+              
+              <li>
+                <a href="#method-i-respond_to_missing-3F">respond_to_missing?</a>,
+              </li>
             
               
               <li>
@@ -108,6 +137,85 @@
       <div class="sectiontitle">Instance Public methods</div>
       
         <div class="method">
+          <div class="title method-title" id="method-i-method_missing">
+            
+              <b>method_missing</b>(method_name, *arguments, &amp;block)
+            
+            <a href="../classes/AmazonResponse.html#method-i-method_missing" name="method-i-method_missing" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>If we try to fire a response_method but don&#39;t find one fire
+help_response</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-method_missing_source')" id="l_method-i-method_missing_source">show</a>
+                
+              </p>
+              <div id="method-i-method_missing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/services/amazon_response.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">method_missing</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">arguments</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">method_name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&#39;response&#39;</span>)
+    <span class="ruby-identifier">help_response</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-respond_to_missing-3F">
+            
+              <b>respond_to_missing?</b>(method_name, include_private = false)
+            
+            <a href="../classes/AmazonResponse.html#method-i-respond_to_missing-3F" name="method-i-respond_to_missing-3F" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Respond true if it is a response method call</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-respond_to_missing-3F_source')" id="l_method-i-respond_to_missing-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-respond_to_missing-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/services/amazon_response.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">respond_to_missing?</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">include_private</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">method_name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&#39;response&#39;</span>) <span class="ruby-operator">||</span> <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
           <div class="title method-title" id="method-i-response">
             
               <b>response</b>()
@@ -117,7 +225,7 @@
 
           
             <div class="description">
-              
+              <p>Response to Echo request</p>
             </div>
           
 
@@ -135,33 +243,87 @@
                 
               </p>
               <div id="method-i-response_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/services/amazon_response.rb, line 5</span>
+                <pre><span class="ruby-comment"># File app/services/amazon_response.rb, line 11</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">response</span>
-  <span class="ruby-keyword">case</span> <span class="ruby-identifier">echo_request</span>.<span class="ruby-identifier">intent_name</span>
-  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;AMAZON.CancelIntent&#39;</span>
-    <span class="ruby-identifier">cancel_response</span>
-  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;AMAZON.NextIntent&#39;</span>
-    <span class="ruby-identifier">next_response</span>
-  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;AMAZON.NoIntent&#39;</span>
-    <span class="ruby-identifier">no_response</span>
-  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;AMAZON.PauseIntent&#39;</span>
-    <span class="ruby-identifier">pause_response</span>
-  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;AMAZON.PreviousIntent&#39;</span>
-    <span class="ruby-identifier">previous_response</span>
-  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;AMAZON.RepeatIntent&#39;</span>
-    <span class="ruby-identifier">repeat_response</span>
-  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;AMAZON.ResumeIntent&#39;</span>
-    <span class="ruby-identifier">resume_response</span>
-  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;AMAZON.StartOverIntent&#39;</span>
-    <span class="ruby-identifier">start_over_response</span>
-  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;AMAZON.StopIntent&#39;</span>
-    <span class="ruby-identifier">stop_response</span>
-  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;AMAZON.YesIntent&#39;</span>
-    <span class="ruby-identifier">yes_response</span>
-  <span class="ruby-keyword">else</span>
-    <span class="ruby-comment"># Either helpintent was sent explicitly or Alexa did not understand intent</span>
-    <span class="ruby-identifier">help_response</span>
-  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">intent_to_response</span>(<span class="ruby-identifier">echo_request</span>.<span class="ruby-identifier">intent_name</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-intent_to_response">
+            
+              <b>intent_to_response</b>(intent)
+            
+            <a href="../classes/AmazonResponse.html#method-i-intent_to_response" name="method-i-intent_to_response" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Fires the correct response method for an Alexa built-in intent Example  <a
+href="AmazonResponse.html#method-i-intent_to_response">#intent_to_response</a>(&#39;AMAZON.CancelIntent&#39;)
+=&gt; cancel_response  <a
+href="AmazonResponse.html#method-i-intent_to_response">#intent_to_response</a>(&#39;FAKE_Intent&#39;)
+=&gt; help_response (using methiod_missing)</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-intent_to_response_source')" id="l_method-i-intent_to_response_source">show</a>
+                
+              </p>
+              <div id="method-i-intent_to_response_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/services/amazon_response.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">intent_to_response</span>(<span class="ruby-identifier">intent</span>)
+  <span class="ruby-comment"># Extract text in-between AMAZON. and Intent</span>
+  <span class="ruby-comment"># append _response</span>
+  <span class="ruby-comment"># turn into snakecase</span>
+  <span class="ruby-comment"># fire method</span>
+  <span class="ruby-identifier">public_send</span>(<span class="ruby-identifier">intent</span>
+              .<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&#39;AMAZON.&#39;</span>, <span class="ruby-string">&#39;&#39;</span>)
+              .<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&#39;Intent&#39;</span>, <span class="ruby-string">&#39;&#39;</span>)
+              .<span class="ruby-identifier">concat</span>(<span class="ruby-string">&#39;_response&#39;</span>)
+              .<span class="ruby-identifier">snakecase</span>)
+
+  <span class="ruby-comment">#  case echo_request.intent_name</span>
+  <span class="ruby-comment">#    when &#39;AMAZON.CancelIntent&#39;</span>
+  <span class="ruby-comment">#      cancel_response</span>
+  <span class="ruby-comment">#    when &#39;AMAZON.NextIntent&#39;</span>
+  <span class="ruby-comment">#      next_response</span>
+  <span class="ruby-comment">#    when &#39;AMAZON.NoIntent&#39;</span>
+  <span class="ruby-comment">#      no_response</span>
+  <span class="ruby-comment">#    when &#39;AMAZON.PauseIntent&#39;</span>
+  <span class="ruby-comment">#      pause_response</span>
+  <span class="ruby-comment">#    when &#39;AMAZON.PreviousIntent&#39;</span>
+  <span class="ruby-comment">#      previous_response</span>
+  <span class="ruby-comment">#    when &#39;AMAZON.RepeatIntent&#39;</span>
+  <span class="ruby-comment">#      repeat_response</span>
+  <span class="ruby-comment">#    when &#39;AMAZON.ResumeIntent&#39;</span>
+  <span class="ruby-comment">#      resume_response</span>
+  <span class="ruby-comment">#    when &#39;AMAZON.StartOverIntent&#39;</span>
+  <span class="ruby-comment">#      start_over_response</span>
+  <span class="ruby-comment">#    when &#39;AMAZON.StopIntent&#39;</span>
+  <span class="ruby-comment">#      stop_response</span>
+  <span class="ruby-comment">#    when &#39;AMAZON.YesIntent&#39;</span>
+  <span class="ruby-comment">#      yes_response</span>
+  <span class="ruby-comment">#    else</span>
+  <span class="ruby-comment">#      Either helpintent was sent explicitly or Alexa did not understand intent</span>
+  <span class="ruby-comment">#      help_response</span>
+  <span class="ruby-comment">#  end</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>

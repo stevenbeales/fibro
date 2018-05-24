@@ -21,7 +21,7 @@
 
     <meta name="keywords" content="JsonInteractionModel class">
   
-    <meta name="keywords" content="new, save, schema">
+    <meta name="keywords" content="new, save, footer, header, schema">
   
 </head>
 
@@ -70,6 +70,30 @@
     <!-- Method ref -->
     <div class="sectiontitle">Methods</div>
     <dl class="methods">
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-footer">footer</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-header">header</a>
+              </li>
+            
+          </ul>
+        </dd>
       
         <dt>N</dt>
         <dd>
@@ -125,6 +149,14 @@
             <td class='attr-rw'>
               [R]
             </td>
+            <td class='attr-name'>invocation</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
             <td class='attr-name'>model</td>
             <td class='attr-desc'></td>
           </tr>
@@ -140,7 +172,7 @@
         <div class="method">
           <div class="title method-title" id="method-c-new">
             
-              <b>new</b>(model)
+              <b>new</b>(model, invocation)
             
             <a href="../classes/JsonInteractionModel.html#method-c-new" name="method-c-new" class="permalink">Link</a>
           </div>
@@ -165,9 +197,10 @@
                 
               </p>
               <div id="method-c-new_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 9</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">model</span>)
+                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">model</span>, <span class="ruby-identifier">invocation</span>)
   <span class="ruby-ivar">@model</span> = <span class="ruby-identifier">model</span>
+  <span class="ruby-ivar">@invocation</span> = <span class="ruby-identifier">invocation</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
@@ -206,11 +239,13 @@
                 
               </p>
               <div id="method-i-save_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 13</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 19</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">save</span>(<span class="ruby-identifier">filename</span>)
-  <span class="ruby-identifier">interaction_model_file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-string">&#39;w+&#39;</span>)
-  <span class="ruby-identifier">interaction_model_file</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">schema</span>
-  <span class="ruby-identifier">interaction_model_file</span>.<span class="ruby-identifier">close</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-string">&#39;w+&#39;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">pretty_generate</span>(
+      <span class="ruby-identifier">line</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-node">%(#{header}\n#{schema.remove_first_line.indent(4)}\n#{footer})</span>)
+    )
+  <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
@@ -220,6 +255,86 @@
       
       <div class="sectiontitle">Instance Protected methods</div>
       
+        <div class="method">
+          <div class="title method-title" id="method-i-footer">
+            
+              <b>footer</b>()
+            
+            <a href="../classes/JsonInteractionModel.html#method-i-footer" name="method-i-footer" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-footer_source')" id="l_method-i-footer_source">show</a>
+                
+              </p>
+              <div id="method-i-footer_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">footer</span>
+  <span class="ruby-string">&quot;  }\n}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-header">
+            
+              <b>header</b>()
+            
+            <a href="../classes/JsonInteractionModel.html#method-i-header" name="method-i-header" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-header_source')" id="l_method-i-header_source">show</a>
+                
+              </p>
+              <div id="method-i-header_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 33</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">header</span>
+    <span class="ruby-identifier">&lt;&lt;-HEADER</span>
+<span class="ruby-value">  {
+  &quot;interactionModel&quot;: {
+    &quot;languageModel&quot;: {
+      &quot;invocationName&quot;: &quot;#{invocation}&quot;,
+</span><span class="ruby-identifier">    HEADER</span>
+      .<span class="ruby-identifier">strip</span>
+  <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
         <div class="method">
           <div class="title method-title" id="method-i-schema">
             
@@ -248,7 +363,7 @@
                 
               </p>
               <div id="method-i-schema_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 21</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 43</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">schema</span>
   <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">pretty_generate</span>(<span class="ruby-identifier">model</span>.<span class="ruby-identifier">intent_schema</span>)
 <span class="ruby-keyword">end</span></pre>

@@ -24,7 +24,7 @@
                 app/speech_assets/files/interactionModel.json
                 
             </li>
-            <li>Last modified: 2018-05-22 15:43:40 -0400</li>
+            <li>Last modified: 2018-05-24 00:15:15 -0400</li>
         </ul>
     </div>
 
@@ -35,122 +35,127 @@
       
 <p>{</p>
 
-<pre><code>&quot;intents&quot;: [
-  {
-    &quot;intent&quot;: &quot;ConditionIntent&quot;,
-    &quot;slots&quot;: [
+<pre><code>&quot;interactionModel&quot;: {
+  &quot;languageModel&quot;: {
+    &quot;invocationName&quot;: &quot;fibro friend&quot;,
+    &quot;intents&quot;: [
       {
-        &quot;name&quot;: &quot;Condition&quot;,
-        &quot;type&quot;: &quot;LIST_OF_CONDITIONS&quot;
-      }
-    ]
-  },
-  {
-    &quot;intent&quot;: &quot;EverybodyHurtsIntent&quot;
-  },
-  {
-    &quot;intent&quot;: &quot;ReadAllIntent&quot;,
-    &quot;slots&quot;: [
-      {
-        &quot;name&quot;: &quot;Read&quot;,
-        &quot;type&quot;: &quot;READ&quot;
+        &quot;intent&quot;: &quot;ConditionIntent&quot;,
+        &quot;slots&quot;: [
+          {
+            &quot;name&quot;: &quot;Condition&quot;,
+            &quot;type&quot;: &quot;LIST_OF_CONDITIONS&quot;
+          }
+        ]
       },
       {
-        &quot;name&quot;: &quot;Log&quot;,
-        &quot;type&quot;: &quot;LOG&quot;
-      }
-    ]
-  },
-  {
-    &quot;intent&quot;: &quot;ReadEntryIntent&quot;,
-    &quot;slots&quot;: [
-      {
-        &quot;name&quot;: &quot;Day&quot;,
-        &quot;type&quot;: &quot;AMAZON.DATE&quot;
+        &quot;intent&quot;: &quot;EverybodyHurtsIntent&quot;
       },
       {
-        &quot;name&quot;: &quot;Read&quot;,
-        &quot;type&quot;: &quot;READ&quot;
+        &quot;intent&quot;: &quot;ReadAllIntent&quot;,
+        &quot;slots&quot;: [
+          {
+            &quot;name&quot;: &quot;Read&quot;,
+            &quot;type&quot;: &quot;READ&quot;
+          },
+          {
+            &quot;name&quot;: &quot;Log&quot;,
+            &quot;type&quot;: &quot;LOG&quot;
+          }
+        ]
       },
       {
-        &quot;name&quot;: &quot;Log&quot;,
-        &quot;type&quot;: &quot;LOG&quot;
+        &quot;intent&quot;: &quot;ReadEntryIntent&quot;,
+        &quot;slots&quot;: [
+          {
+            &quot;name&quot;: &quot;Day&quot;,
+            &quot;type&quot;: &quot;AMAZON.DATE&quot;
+          },
+          {
+            &quot;name&quot;: &quot;Read&quot;,
+            &quot;type&quot;: &quot;READ&quot;
+          },
+          {
+            &quot;name&quot;: &quot;Log&quot;,
+            &quot;type&quot;: &quot;LOG&quot;
+          },
+          {
+            &quot;name&quot;: &quot;Entry&quot;,
+            &quot;type&quot;: &quot;ENTRY&quot;
+          }
+        ]
       },
       {
-        &quot;name&quot;: &quot;Entry&quot;,
-        &quot;type&quot;: &quot;ENTRY&quot;
-      }
-    ]
-  },
-  {
-    &quot;intent&quot;: &quot;ReadLastIntent&quot;,
-    &quot;slots&quot;: [
-      {
-        &quot;name&quot;: &quot;Read&quot;,
-        &quot;type&quot;: &quot;READ&quot;
+        &quot;intent&quot;: &quot;ReadLastIntent&quot;,
+        &quot;slots&quot;: [
+          {
+            &quot;name&quot;: &quot;Read&quot;,
+            &quot;type&quot;: &quot;READ&quot;
+          },
+          {
+            &quot;name&quot;: &quot;Log&quot;,
+            &quot;type&quot;: &quot;LOG&quot;
+          },
+          {
+            &quot;name&quot;: &quot;n&quot;,
+            &quot;type&quot;: &quot;AMAZON.NUMBER&quot;
+          }
+        ]
       },
       {
-        &quot;name&quot;: &quot;Log&quot;,
-        &quot;type&quot;: &quot;LOG&quot;
+        &quot;intent&quot;: &quot;SymptomIntent&quot;,
+        &quot;slots&quot;: [
+          {
+            &quot;name&quot;: &quot;Symptom&quot;,
+            &quot;type&quot;: &quot;LIST_OF_SYMPTOMS&quot;
+          }
+        ]
       },
       {
-        &quot;name&quot;: &quot;n&quot;,
-        &quot;type&quot;: &quot;AMAZON.NUMBER&quot;
-      }
-    ]
-  },
-  {
-    &quot;intent&quot;: &quot;SymptomIntent&quot;,
-    &quot;slots&quot;: [
+        &quot;intent&quot;: &quot;SymptomInfoIntent&quot;,
+        &quot;slots&quot;: [
+          {
+            &quot;name&quot;: &quot;SymptomInfo&quot;,
+            &quot;type&quot;: &quot;LIST_OF_SYMPTOMS&quot;
+          }
+        ]
+      },
       {
-        &quot;name&quot;: &quot;Symptom&quot;,
-        &quot;type&quot;: &quot;LIST_OF_SYMPTOMS&quot;
-      }
-    ]
-  },
-  {
-    &quot;intent&quot;: &quot;SymptomInfoIntent&quot;,
-    &quot;slots&quot;: [
+        &quot;intent&quot;: &quot;AMAZON.CancelIntent&quot;
+      },
       {
-        &quot;name&quot;: &quot;SymptomInfo&quot;,
-        &quot;type&quot;: &quot;LIST_OF_SYMPTOMS&quot;
+        &quot;intent&quot;: &quot;AMAZON.HelpIntent&quot;
+      },
+      {
+        &quot;intent&quot;: &quot;AMAZON.NextIntent&quot;
+      },
+      {
+        &quot;intent&quot;: &quot;AMAZON.NoIntent&quot;
+      },
+      {
+        &quot;intent&quot;: &quot;AMAZON.PauseIntent&quot;
+      },
+      {
+        &quot;intent&quot;: &quot;AMAZON.PreviousIntent&quot;
+      },
+      {
+        &quot;intent&quot;: &quot;AMAZON.RepeatIntent&quot;
+      },
+      {
+        &quot;intent&quot;: &quot;AMAZON.ResumeIntent&quot;
+      },
+      {
+        &quot;intent&quot;: &quot;AMAZON.StartOverIntent&quot;
+      },
+      {
+        &quot;intent&quot;: &quot;AMAZON.StopIntent&quot;
+      },
+      {
+        &quot;intent&quot;: &quot;AMAZON.YesIntent&quot;
       }
     ]
-  },
-  {
-    &quot;intent&quot;: &quot;AMAZON.CancelIntent&quot;
-  },
-  {
-    &quot;intent&quot;: &quot;AMAZON.HelpIntent&quot;
-  },
-  {
-    &quot;intent&quot;: &quot;AMAZON.NextIntent&quot;
-  },
-  {
-    &quot;intent&quot;: &quot;AMAZON.NoIntent&quot;
-  },
-  {
-    &quot;intent&quot;: &quot;AMAZON.PauseIntent&quot;
-  },
-  {
-    &quot;intent&quot;: &quot;AMAZON.PreviousIntent&quot;
-  },
-  {
-    &quot;intent&quot;: &quot;AMAZON.RepeatIntent&quot;
-  },
-  {
-    &quot;intent&quot;: &quot;AMAZON.ResumeIntent&quot;
-  },
-  {
-    &quot;intent&quot;: &quot;AMAZON.StartOverIntent&quot;
-  },
-  {
-    &quot;intent&quot;: &quot;AMAZON.StopIntent&quot;
-  },
-  {
-    &quot;intent&quot;: &quot;AMAZON.YesIntent&quot;
   }
-]
+}
 </code></pre>
 
 <p>}</p>
