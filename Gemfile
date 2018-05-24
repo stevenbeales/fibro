@@ -4,8 +4,8 @@ source 'https://rubygems.org'
 ruby ENV['CUSTOM_RUBY_VERSION'] || '2.4.4'
 
 gem 'activerecord', '>= 5.2', require: false # ORM
-gem 'alexa_generator', '>= 0.3.2', require: false # Alexa utterance generator
-gem 'alexa_rubykit', ' >= 1.3.1', require: false # Alternative Alexa Web Service support with better directives
+gem 'alexa_generator', '>= 0.3', require: false # Alexa utterance generator
+gem 'alexa_rubykit', '>= 1.3', require: false # Alternative Alexa Web Service support with better directives
 gem 'alexa_web_service', '>= 1.0', require: false # Alexa Web Service support
 gem 'audited', '>= 4.7', require: false # adds table auiting support
 gem 'bugsnag', '>= 6.6', require: false # online bug reporting
@@ -27,7 +27,7 @@ gem 'sinatra-initializers', '>= 0.1', require: false # config initializers for s
 gem 'validates_timeliness', '>= 4.0', require: false # validate dates and times
 
 group :test do
-  gem 'database_cleaner', '>=1.6', require: false # for test database cleaning
+  gem 'database_cleaner', '>= 1.6', require: false # for test database cleaning
   gem 'factory_bot', '>= 4.0', require: false # for test data setup
   gem 'fuubar', '>= 2.3', require: false # rspec formatter
   gem 'rack-test', '>= 1.0', require: false # for testing rake servers

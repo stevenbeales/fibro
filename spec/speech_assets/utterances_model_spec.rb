@@ -9,13 +9,11 @@ RSpec.describe UtterancesModel do
           slot.add_bindings('Fibromyalgia', 'Fibro')
         end
         intent.add_utterance_template('{Condition}')
-        intent.add_utterance_template('tell me about {Condition}')
-        intent.add_utterance_template('talk about {Condition}')
       end
     end
   end
 
   it 'can describe custom slots' do
-    expect { |a| subject.describe(&a) }.to yield_control
+    expect { |utterance| subject.describe(&utterance) }.to yield_control
   end
 end

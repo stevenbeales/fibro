@@ -12,7 +12,7 @@ rescue LoadError
   puts 'ignoring rspec in production'
 end
 
-Dir.glob('lib/tasks/*.rake').each { |r| load r }
+Dir.glob('lib/tasks/*.rake').each { |task| load task }
 
 require 'bundler/audit/task'
 Bundler::Audit::Task.new

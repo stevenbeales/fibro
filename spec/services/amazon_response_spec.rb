@@ -2,9 +2,29 @@
 
 RSpec.describe AmazonResponse do
   subject { described_class.new(user, AlexaWebService::Response.new) }
-  let!(:user) { build(:test_user) }
+  let(:user) { build(:test_user) }
 
   it { expect(subject).to be_an AmazonResponse }
+
+  describe '.respond_to?' do
+    it do
+      expect(subject.respond_to?(:fake_response)).to eq true
+    end
+
+    it do
+      expect(subject.respond_to?(:fake)).to eq false
+    end
+  end
+
+  describe '.method_missing' do
+    it do
+      expect(subject.fake_response.spoken_response).to eq(I18n.t(:help_response))
+    end
+
+    it do
+      expect { subject.fake }.to raise_error(NoMethodError)
+    end
+  end
 
   describe '.cancel_response' do
     it do

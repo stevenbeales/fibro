@@ -7,7 +7,6 @@ RSpec.describe IntentBuilder do
       modl.add_intent(:FibromyalgiaInformationIntent)
     end
   end
-  let(:intent) { model.intents.first }
 
   it 'is an abstract class' do
     expect { subject.add }.to raise_error NotImplementedError

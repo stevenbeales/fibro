@@ -3,7 +3,9 @@ AllCops:
   Exclude:
     - 'node_modules/**/*'
     - 'vendor/**/*'
+    - '.bundle/**/*'
     - '.git/**/*'
+    - '.vscode/**/*'
     - 'db/schema.rb'
     - 'bin/**/*'
     - 'doc/**/*'
@@ -109,9 +111,9 @@ Metrics/ClassLength:
   Enabled: false
 
 Metrics/CyclomaticComplexity:
-  Enabled: false
+  Enabled: true
 Metrics/PerceivedComplexity:
-  Enabled: false
+  Enabled: true
 Metrics/LineLength:
   Max: 120
 

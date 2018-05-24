@@ -5,7 +5,6 @@ RSpec.describe HelpIntentBuilder do
   let(:model) do
     AlexaGenerator::InteractionModel.build { |modl| modl.add_intent(:AHelpIntent) }
   end
-  let(:intent) { model.intents.first }
 
   it 'is not an abstract class' do
     expect { subject.add }.not_to raise_error NotImplementedError
