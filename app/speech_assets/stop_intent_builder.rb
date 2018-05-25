@@ -2,7 +2,18 @@
 
 # Class to build utterances for Stop Intent
 class StopIntentBuilder < IntentBuilder
+  STOP_INTENTS = [
+    'Adios',
+    'Arrivederci',
+    'Au Revoir',
+    'Auf Wiedersehn',
+    'Goodbye',
+    'Good-bye',
+    'No mas',
+    'Stop'
+  ].freeze
+
   def add
-    add_intents(SampleIntents::STOP_INTENTS)
+    add_intents(STOP_INTENTS)
   end
 end

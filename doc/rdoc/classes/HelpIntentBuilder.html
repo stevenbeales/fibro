@@ -97,6 +97,34 @@
     
 
     
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">HELP_INTENTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;Any advice&#39;, &#39;Any tips&#39;, &#39;Do not understand&#39;, &#39;Do you have instructions&#39;, &#39;Get help&#39;,
+&#39;Help&#39;, &#39;Help me&#39;, &#39;How can I use you&#39;, &#39;How do I give commands&#39;, &#39;How do I use this app&#39;,
+&#39;How do I use you&#39;, &#39;How do you work&#39;, &#39;How does this work&#39;, &#39;I could use help&#39;,
+&#39;I don\&#39;t know what\&#39;s going on&#39;, &#39;I don\&#39;t know&#39;, &#39;I\&#39;m confused&#39;, &#39;I\&#39;m lost on what to do&#39;,
+&#39;I\&#39;m stuck&#39;, &#39;Instructions please&#39;, &#39;Please advise&#39;, &#39;Please help&#39;,
+&#39;What can I answer&#39;, &#39;What can I ask you&#39;, &#39;What can I do&#39;, &#39;What can I use this for&#39;,
+&#39;What can you do&#39;, &#39;What can you tell me&#39;, &#39;What commands can I ask&#39;,
+&#39;What do you do&#39;, &#39;What do you mean&#39;, &#39;What do you refer to&#39;, &#39;What kind of command should I give&#39;,
+&#39;What questions can I ask&#39;, &#39;What should I say&#39;, &#39;What type of input should I give&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
 
 
     
@@ -135,9 +163,9 @@
                 
               </p>
               <div id="method-i-add_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/help_intent_builder.rb, line 6</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/help_intent_builder.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add</span>
-  <span class="ruby-identifier">add_intents</span>(<span class="ruby-constant">SampleIntents</span><span class="ruby-operator">::</span><span class="ruby-constant">HELP_INTENTS</span>)
+  <span class="ruby-identifier">add_intents</span>(<span class="ruby-constant">HELP_INTENTS</span>)
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>

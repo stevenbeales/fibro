@@ -38,12 +38,9 @@ group :test do
 end
 
 group :development, :test do
-  gem 'better_errors', '>= 2.4', require: false # better error logging
-  gem 'binding_of_caller', '>= 0.8', require: false # helps better_errors provide more detailed debugging
   gem 'bullet', '>= 5.7', require: false # find slow ActiveRecord queries
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', '>= 10.0', platforms: %i[mri mingw x64_mingw]
-  gem 'fasterer', '>= 0.4', require: false # find slow code
   gem 'overcommit', '>= 0.4', require: false # git hooks
   gem 'pry-byebug', '>= 3.6', require: false # step by step debugging
   gem 'reek', '>= 4.8', require: false # find code smells
@@ -61,7 +58,5 @@ group :production, :test do
 end
 
 group :windows do
-  # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-  gem 'tzinfo-data', '>= 1', require: false if Gem.win_platform?
   gem 'win32console', '>= 1.3 ', require: false if Gem.win_platform? # color code coverage
 end

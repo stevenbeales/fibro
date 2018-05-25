@@ -8,45 +8,22 @@
 # Copyright:: Copyright (c) 2018 Ardint
 # License::   MIT
 
-require 'sinatra'
-require 'sinatra/base'
-require 'sinatra/activerecord'
-require 'sinatra-initializers'
-require 'sinatra/contrib'
-require 'sinatra/cookies'
-require 'sinatra/custom_logger'
-require_relative 'lib/sinatra/fibro'
-require 'sinatra/reloader' if development?
-require 'alexa_web_service'
-require 'logger'
-require_relative 'config/db'
-require_relative 'app/app_constants'
-require_relative 'app/models/init'
-require 'pry-byebug' if test?
+require_relative 'init'
 
 # Namespace App under Sinatra
 module Sinatra
   # Main App Class and Entry Point
   class MyApp < Sinatra::Base
-    configure :development, :test do
-      register Sinatra::Reloader
-    end
-
-    include AppConstants
-
     register Sinatra::Fibro
     register Sinatra::Contrib
     register Sinatra::Initializers
     register Sinatra::ActiveRecordExtension
-
-    helpers Sinatra::Cookies
     helpers Sinatra::CustomLogger
 
     set :root, File.dirname(File.expand_path(__FILE__))
     set :protection, except: :json_csrf
     configure { set :server, :puma }
-    set :log_file, File.dirname(__FILE__) + LOG_FILE
-    enable :inline_templates
+    set :log_file, File.dirname(__FILE__) + AppConstants::LOG_FILE
     enable :sessions
     enable :logging
 
@@ -60,7 +37,7 @@ module Sinatra
     # custom logging
     configure do
       logger = Logger.new(File.open("#{root}/log/#{environment}.log", 'a+'))
-      logger.level = Logger::DEBUG if development?
+      logger.level = Logger::DEBUG unless production?
       set :logger, logger
     end
 

@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 require 'alexa_generator'
-require_relative 'intent_builder'
+require_relative 'samples'
 
+require_relative 'intent_builder'
 require_relative 'cancel_intent_builder'
 require_relative 'condition_intent_builder'
 require_relative 'everybody_hurts_intent_builder'
@@ -22,6 +23,8 @@ require_relative 'symptom_intent_builder'
 require_relative 'symptom_info_intent_builder'
 require_relative 'yes_intent_builder'
 
+require_relative 'custom_intent'
+require_relative 'amazon_intent'
 require_relative 'interaction_model_builder'
 require_relative 'json_interaction_model'
 require_relative 'utterances_model'

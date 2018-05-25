@@ -15,8 +15,8 @@
 
   
     
-    <meta name="description" content="Class to generate JSON Interaction Model.">
-    <meta property="og:description" content="Class to generate JSON Interaction Model.">
+    <meta name="description" content="Class to generate JSON Interaction Model  This class takes a generated JSON model in Alexa 1.">
+    <meta property="og:description" content="Class to generate JSON Interaction Model  This class takes a generated JSON model in Alexa 1.">
   
 
     <meta name="keywords" content="JsonInteractionModel class">
@@ -51,6 +51,9 @@
     <div class="description">
       
 <p>Class to generate JSON Interaction Model</p>
+
+<p>This class takes a generated JSON model in Alexa 1.0 JSON format from 2016
+and then wraps and enhances the output with new 2018 JSON objects</p>
 
     </div>
   
@@ -179,7 +182,7 @@
 
           
             <div class="description">
-              
+              <p>Model is an Alexa 1.0 JSON Object. Invocation is the Alexa Invocation Name.</p>
             </div>
           
 
@@ -197,7 +200,7 @@
                 
               </p>
               <div id="method-c-new_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 14</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 19</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">model</span>, <span class="ruby-identifier">invocation</span>)
   <span class="ruby-ivar">@model</span> = <span class="ruby-identifier">model</span>
   <span class="ruby-ivar">@invocation</span> = <span class="ruby-identifier">invocation</span>
@@ -221,7 +224,7 @@
 
           
             <div class="description">
-              
+              <p>Save model to a JSON file</p>
             </div>
           
 
@@ -239,7 +242,7 @@
                 
               </p>
               <div id="method-i-save_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 19</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">save</span>(<span class="ruby-identifier">filename</span>)
   <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-string">&#39;w+&#39;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
     <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">pretty_generate</span>(
@@ -283,7 +286,7 @@
                 
               </p>
               <div id="method-i-footer_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 29</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">footer</span>
   <span class="ruby-string">&quot;  }\n}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -320,7 +323,7 @@
                 
               </p>
               <div id="method-i-header_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 33</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 39</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">header</span>
     <span class="ruby-identifier">&lt;&lt;-HEADER</span>
 <span class="ruby-value">  {
@@ -363,7 +366,7 @@
                 
               </p>
               <div id="method-i-schema_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 43</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/json_interaction_model.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">schema</span>
   <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">pretty_generate</span>(<span class="ruby-identifier">model</span>.<span class="ruby-identifier">intent_schema</span>)
 <span class="ruby-keyword">end</span></pre>

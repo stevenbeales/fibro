@@ -2,7 +2,11 @@
 
 # Class to build utterances for Pause Intent
 class PauseIntentBuilder < IntentBuilder
+  PAUSE_INTENTS = [
+    'Pause'
+  ].freeze
+
   def add
-    add_intents(SampleIntents::PAUSE_INTENTS)
+    add_intents(PAUSE_INTENTS)
   end
 end

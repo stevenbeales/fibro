@@ -2,15 +2,22 @@
 
 # Class to build ReadLast Intent
 class ReadLastIntentBuilder < IntentBuilder
+  READ_LAST_INTENTS = [
+    '{Read} last {Log}',
+    '{Read} last {n}',
+    '{Read} last',
+    '{Read} last {n} {Log}'
+  ].freeze
+
   def add
     add_slot(:Read, :READ) do |slot|
-      slot.add_bindings('read', 'speak')
+      slot.add_bindings(Samples::READ_SLOTS)
     end
     add_slot(:Log, :LOG) do |slot|
-      slot.add_bindings('log', 'journal', 'diary', 'symptom log')
+      slot.add_bindings(Samples::LOG_SLOTS)
     end
     add_slot(:n, AlexaGenerator::Slot::SlotType::NUMBER)
 
-    add_intents(SampleIntents::READ_LAST_INTENTS)
+    add_intents(READ_LAST_INTENTS)
   end
 end

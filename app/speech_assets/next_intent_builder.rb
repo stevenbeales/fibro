@@ -2,7 +2,13 @@
 
 # Class to build utterances for Next Intent
 class NextIntentBuilder < IntentBuilder
+  NEXT_INTENTS = [
+    'Another',
+    'Next',
+    'Now what'
+  ].freeze
+
   def add
-    add_intents(SampleIntents::NEXT_INTENTS)
+    add_intents(NEXT_INTENTS)
   end
 end

@@ -4,6 +4,7 @@ require_relative 'init'
 require './app/app_constants'
 
 # regenerate the interaction model and sample utterances speech assets for Alexa if in test environment
+# entry point to regeneration of the interactionModel.json and sampleUtterances.txt files
 if test?
   custom_intents = { ConditionIntent: ConditionIntentBuilder,
                      EverybodyHurtsIntent: EverybodyHurtsIntentBuilder,

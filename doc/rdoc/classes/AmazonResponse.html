@@ -146,7 +146,7 @@
 
           
             <div class="description">
-              <p>If we try to fire a response_method but don&#39;t find one fire
+              <p>If we try to fire a response_method but don&#39;t find one, fire
 help_response</p>
             </div>
           
@@ -165,7 +165,7 @@ help_response</p>
                 
               </p>
               <div id="method-i-method_missing_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/services/amazon_response.rb, line 22</span>
+                <pre><span class="ruby-comment"># File app/services/amazon_response.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">method_missing</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">arguments</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">method_name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&#39;response&#39;</span>)
     <span class="ruby-identifier">help_response</span>
@@ -265,9 +265,13 @@ help_response</p>
 
           
             <div class="description">
-              <p>Fires the correct response method for an Alexa built-in intent Example  <a
+              <p>Fires the correct response method for an Alexa built-in intent</p>
+
+<p>==== Examples</p>
+
+<p># <a
 href="AmazonResponse.html#method-i-intent_to_response">#intent_to_response</a>(&#39;AMAZON.CancelIntent&#39;)
-=&gt; cancel_response  <a
+=&gt; cancel_response  # <a
 href="AmazonResponse.html#method-i-intent_to_response">#intent_to_response</a>(&#39;FAKE_Intent&#39;)
 =&gt; help_response (using methiod_missing)</p>
             </div>
@@ -287,7 +291,7 @@ href="AmazonResponse.html#method-i-intent_to_response">#intent_to_response</a>(&
                 
               </p>
               <div id="method-i-intent_to_response_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/services/amazon_response.rb, line 36</span>
+                <pre><span class="ruby-comment"># File app/services/amazon_response.rb, line 37</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">intent_to_response</span>(<span class="ruby-identifier">intent</span>)
   <span class="ruby-comment"># Extract text in-between AMAZON. and Intent</span>
   <span class="ruby-comment"># append _response</span>
@@ -297,7 +301,7 @@ href="AmazonResponse.html#method-i-intent_to_response">#intent_to_response</a>(&
               .<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&#39;AMAZON.&#39;</span>, <span class="ruby-string">&#39;&#39;</span>)
               .<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&#39;Intent&#39;</span>, <span class="ruby-string">&#39;&#39;</span>)
               .<span class="ruby-identifier">concat</span>(<span class="ruby-string">&#39;_response&#39;</span>)
-              .<span class="ruby-identifier">snakecase</span>)
+              .<span class="ruby-identifier">snake_case</span>)
 
   <span class="ruby-comment">#  case echo_request.intent_name</span>
   <span class="ruby-comment">#    when &#39;AMAZON.CancelIntent&#39;</span>

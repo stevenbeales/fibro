@@ -7,15 +7,21 @@ require './lib/refinements/string_refinements'
 using StringRefinements
 
 # Class to generate JSON Interaction Model
+#
+# This class takes a generated JSON model in Alexa 1.0 JSON format from 2016
+# and then wraps and enhances the output with new 2018 JSON objects
 class JsonInteractionModel
   attr_reader :model
   attr_reader :invocation
 
+  # Model is an Alexa 1.0 JSON Object.
+  # Invocation is the Alexa Invocation Name.
   def initialize(model, invocation)
     @model = model
     @invocation = invocation
   end
 
+  # Save model to a JSON file
   def save(filename)
     File.open(filename, 'w+') do |line|
       JSON.pretty_generate(

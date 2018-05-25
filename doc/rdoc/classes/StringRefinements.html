@@ -15,13 +15,13 @@
 
   
     
-    <meta name="description" content="Add methods to String class without monkey patching.">
-    <meta property="og:description" content="Add methods to String class without monkey patching.">
+    <meta name="description" content="Add methods to String class using refinements rather than monkey patching.">
+    <meta property="og:description" content="Add methods to String class using refinements rather than monkey patching.">
   
 
     <meta name="keywords" content="StringRefinements class">
   
-    <meta name="keywords" content="camelize, indent, remove_first_line, snakecase">
+    <meta name="keywords" content="camelize, indent, remove_first_line, snake_case">
   
 </head>
 
@@ -44,7 +44,7 @@
   
     <div class="description">
       
-<p>Add methods to String class without monkey patching</p>
+<p>Add methods to String class using refinements rather than monkey patching</p>
 
     </div>
   
@@ -107,7 +107,7 @@
             
               
               <li>
-                <a href="#method-i-snakecase">snakecase</a>
+                <a href="#method-i-snake_case">snake_case</a>
               </li>
             
           </ul>
@@ -147,7 +147,14 @@
 
           
             <div class="description">
-              
+              <p>CamelCases a <a
+href="StringRefinements.html#method-i-snake_case">#snake_case</a> string</p>
+
+<p>== Examples</p>
+
+<p>“string_refinements”.camelize # =&gt; “StringRefinements”</p>
+
+<p>“StringRefinements”.camelize # =&gt; “Stringrefinements”</p>
             </div>
           
 
@@ -165,7 +172,7 @@
                 
               </p>
               <div id="method-i-camelize_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/refinements/string_refinements.rb, line 6</span>
+                <pre><span class="ruby-comment"># File lib/refinements/string_refinements.rb, line 14</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">camelize</span>
   <span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;_&quot;</span>).<span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:capitalize!</span>).<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -184,7 +191,19 @@
 
           
             <div class="description">
-              
+              <p>Indent a multiline string</p>
+
+<p>== Attributes</p>
+<ul><li>
+<p><code>amount</code> - Number of characters to indent each line of string</p>
+</li><li>
+<p><code>indent_string</code> - Optional parameter. If blank, will pad with
+spaces. Otherwise will pad with indent_string.</p>
+</li></ul>
+
+<p>== Examples</p>
+
+<p>“Abc<br>  def<br>  ghi”.indent(1) # =&gt;<br>  “ Abc<br>  def<br>  ghi”</p>
             </div>
           
 
@@ -202,7 +221,7 @@
                 
               </p>
               <div id="method-i-indent_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/refinements/string_refinements.rb, line 10</span>
+                <pre><span class="ruby-comment"># File lib/refinements/string_refinements.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">indent</span>(<span class="ruby-identifier">amount</span>, <span class="ruby-identifier">indent_string</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">indent_string</span> = <span class="ruby-identifier">indent_string</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span>[<span class="ruby-regexp">/^[ \t]/</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot; &quot;</span>
   <span class="ruby-identifier">re</span> = <span class="ruby-regexp">/^(?!$)/</span>
@@ -224,7 +243,11 @@
 
           
             <div class="description">
-              
+              <p>Removes first line from a string</p>
+
+<p>== Examples</p>
+
+<p>“Abc<br>  def<br>  ghi”.remove_first_line # =&gt;<br>  “def<br>  ghi”</p>
             </div>
           
 
@@ -242,7 +265,7 @@
                 
               </p>
               <div id="method-i-remove_first_line_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/refinements/string_refinements.rb, line 17</span>
+                <pre><span class="ruby-comment"># File lib/refinements/string_refinements.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">remove_first_line</span>
   <span class="ruby-identifier">first_newline</span> = (<span class="ruby-identifier">index</span>(<span class="ruby-string">&quot;\n&quot;</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
   <span class="ruby-identifier">slice!</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">first_newline</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-string">&quot;\n&quot;</span>, <span class="ruby-string">&#39;&#39;</span>)
@@ -254,16 +277,20 @@
           </div>
         
         <div class="method">
-          <div class="title method-title" id="method-i-snakecase">
+          <div class="title method-title" id="method-i-snake_case">
             
-              <b>snakecase</b>()
+              <b>snake_case</b>()
             
-            <a href="../classes/StringRefinements.html#method-i-snakecase" name="method-i-snakecase" class="permalink">Link</a>
+            <a href="../classes/StringRefinements.html#method-i-snake_case" name="method-i-snake_case" class="permalink">Link</a>
           </div>
 
           
             <div class="description">
-              
+              <p>snake_cases a CamelCase string</p>
+
+<p>== Examples</p>
+
+<p>“StringRefinements”.snake_case # =&gt; “string_refinements”</p>
             </div>
           
 
@@ -277,12 +304,12 @@
               
               <p class="source-link">
                 Source:
-                <a href="javascript:toggleSource('method-i-snakecase_source')" id="l_method-i-snakecase_source">show</a>
+                <a href="javascript:toggleSource('method-i-snake_case_source')" id="l_method-i-snake_case_source">show</a>
                 
               </p>
-              <div id="method-i-snakecase_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/refinements/string_refinements.rb, line 23</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">snakecase</span>
+              <div id="method-i-snake_case_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/refinements/string_refinements.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">snake_case</span>
   <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/([A-Z]+)([A-Z][a-z])/</span>, <span class="ruby-string">&#39;\1_\2&#39;</span>)
     .<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/([a-z\d])([A-Z])/</span>, <span class="ruby-string">&#39;\1_\2&#39;</span>)
     .<span class="ruby-identifier">tr</span>(<span class="ruby-string">&#39;-&#39;</span>, <span class="ruby-string">&#39;_&#39;</span>)

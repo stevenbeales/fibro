@@ -18,22 +18,17 @@ class InteractionModelBuilder
 
   private
 
-  def add(value, intent)
-    value.new(intent).add
+  def add_intents(modl, klass, intents)
+    intents.each do |key, value|
+      intent = klass.new(modl, key, value)
+      intent.add
+    end
   end
 
   def generate
     @model = builder_class.build do |modl|
-      custom_intents.each do |key, value|
-        modl.add_intent(key) do |intent|
-          add(value, intent)
-        end
-      end
-      amazon_intents.each do |key, value|
-        modl.add_intent(%(AMAZON.#{key}Intent)) do |intent|
-          add(value, intent)
-        end
-      end
+      add_intents(modl, CustomIntent, custom_intents)
+      add_intents(modl, AmazonIntent, amazon_intents)
     end
   end
 end

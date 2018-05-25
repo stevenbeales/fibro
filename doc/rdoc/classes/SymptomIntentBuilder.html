@@ -97,6 +97,33 @@
     
 
     
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">SYMPTOM_INTENTS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&#39;I feel {Symptom}&#39;,
+&#39;I am feeling {Symptom}&#39;,
+&#39;I am {Symptom}&#39;,
+&#39;I {Symptom}&#39;,
+&#39;{Symptom}&#39;,
+&#39;I think I may have {Symptom}&#39;,
+&#39;I think I might have {Symptom}&#39;,
+&#39;I have {Symptom}&#39;
+].freeze</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
 
 
     
@@ -135,13 +162,13 @@
                 
               </p>
               <div id="method-i-add_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/symptom_intent_builder.rb, line 5</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/symptom_intent_builder.rb, line 16</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add</span>
   <span class="ruby-identifier">add_slot</span>(<span class="ruby-value">:Symptom</span>, <span class="ruby-value">:LIST_OF_SYMPTOMS</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">slot</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">slot</span>.<span class="ruby-identifier">add_bindings</span>(<span class="ruby-constant">SampleIntents</span><span class="ruby-operator">::</span><span class="ruby-constant">SYMPTOM_SLOTS</span>)
+    <span class="ruby-identifier">slot</span>.<span class="ruby-identifier">add_bindings</span>(<span class="ruby-constant">Samples</span><span class="ruby-operator">::</span><span class="ruby-constant">SYMPTOM_SLOTS</span>)
   <span class="ruby-keyword">end</span>
 
-  <span class="ruby-identifier">add_intents</span>(<span class="ruby-constant">SampleIntents</span><span class="ruby-operator">::</span><span class="ruby-constant">SYMPTOM_INTENTS</span>)
+  <span class="ruby-identifier">add_intents</span>(<span class="ruby-constant">SYMPTOM_INTENTS</span>)
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>

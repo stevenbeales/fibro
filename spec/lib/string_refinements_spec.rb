@@ -6,8 +6,16 @@ using StringRefinements
 
 RSpec.describe StringRefinements do
   describe '#camelize' do
-    it 'should convert StringRefinements to string_refinements' do
+    it 'should convert string_refinements to StringRefinements' do
+      expect('string_refinements'.camelize).to eq 'StringRefinements'
+    end
+
+    it 'should convert StringRefinements to Stringrefinements' do
       expect('StringRefinements'.camelize).to eq 'Stringrefinements'
+    end
+
+    it 'should be opposite of snakecase' do
+      expect('StringRefinements'.snake_case.camelize).to eq 'StringRefinements'
     end
   end
 
@@ -51,9 +59,9 @@ RSpec.describe StringRefinements do
     end
   end
 
-  describe '#snakecase' do
+  describe '#snake_case' do
     it 'should convert StringRefinements to string_refinements' do
-      expect('StringRefinements'.snakecase).to eq 'string_refinements'
+      expect('StringRefinements'.snake_case).to eq 'string_refinements'
     end
   end
 end

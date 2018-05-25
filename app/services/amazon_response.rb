@@ -17,8 +17,7 @@ class AmazonResponse < BaseResponse
     method_name.to_s.include?('response') || super
   end
 
-  # If we try to fire a response_method but don't find one
-  # fire help_response
+  # If we try to fire a response_method but don't find one, fire help_response
   def method_missing(method_name, *arguments, &block)
     if method_name.to_s.include?('response')
       help_response
@@ -30,9 +29,11 @@ class AmazonResponse < BaseResponse
   protected
 
   # Fires the correct response method for an Alexa built-in intent
-  # Example
-  #   intent_to_response('AMAZON.CancelIntent') => cancel_response
-  #   intent_to_response('FAKE_Intent') => help_response (using methiod_missing)
+  #
+  # ==== Examples
+  #
+  #  # intent_to_response('AMAZON.CancelIntent') => cancel_response
+  #  # intent_to_response('FAKE_Intent') => help_response (using methiod_missing)
   def intent_to_response(intent)
     # Extract text in-between AMAZON. and Intent
     # append _response
@@ -42,32 +43,32 @@ class AmazonResponse < BaseResponse
                 .gsub('AMAZON.', '')
                 .gsub('Intent', '')
                 .concat('_response')
-                .snakecase)
+                .snake_case)
 
-    #  case echo_request.intent_name
-    #    when 'AMAZON.CancelIntent'
-    #      cancel_response
-    #    when 'AMAZON.NextIntent'
-    #      next_response
-    #    when 'AMAZON.NoIntent'
-    #      no_response
-    #    when 'AMAZON.PauseIntent'
-    #      pause_response
-    #    when 'AMAZON.PreviousIntent'
-    #      previous_response
-    #    when 'AMAZON.RepeatIntent'
-    #      repeat_response
-    #    when 'AMAZON.ResumeIntent'
-    #      resume_response
-    #    when 'AMAZON.StartOverIntent'
-    #      start_over_response
-    #    when 'AMAZON.StopIntent'
-    #      stop_response
-    #    when 'AMAZON.YesIntent'
-    #      yes_response
-    #    else
-    #      Either helpintent was sent explicitly or Alexa did not understand intent
-    #      help_response
-    #  end
+    #  case echo_request.intent_name  
+    #    when 'AMAZON.CancelIntent'  
+    #      cancel_response  
+    #    when 'AMAZON.NextIntent'  
+    #      next_response  
+    #    when 'AMAZON.NoIntent'  
+    #      no_response  
+    #    when 'AMAZON.PauseIntent'  
+    #      pause_response  
+    #    when 'AMAZON.PreviousIntent'  
+    #      previous_response  
+    #    when 'AMAZON.RepeatIntent'  
+    #      repeat_response  
+    #    when 'AMAZON.ResumeIntent'  
+    #      resume_response  
+    #    when 'AMAZON.StartOverIntent'  
+    #      start_over_response  
+    #    when 'AMAZON.StopIntent'  
+    #      stop_response  
+    #    when 'AMAZON.YesIntent'  
+    #      yes_response  
+    #    else  
+    #      Either helpintent was sent explicitly or Alexa did not understand intent  
+    #      help_response  
+    #  end  
   end
 end

@@ -4,4 +4,4 @@
 configure :test, :production do
   require 'rack/ssl'
   use Rack::SSL
-end 
+end
