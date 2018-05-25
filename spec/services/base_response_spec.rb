@@ -7,4 +7,24 @@ RSpec.describe BaseResponse do
   it 'raises a not implemented error' do
     expect { subject.response }.to raise_error NotImplementedError
   end
+
+  describe '.respond_to?' do
+    it do
+      expect(subject.respond_to?(:fake_response)).to eq true
+    end
+
+    it do
+      expect(subject.respond_to?(:fake)).to eq false
+    end
+  end
+
+  describe '.method_missing' do
+    it do
+      expect(subject.fake_response.spoken_response).to eq(I18n.t(:help_response))
+    end
+
+    it do
+      expect { subject.fake }.to raise_error(NoMethodError)
+    end
+  end
 end

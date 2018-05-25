@@ -77,7 +77,7 @@ Syntax:
   exclude: []
 TooManyConstants:
   enabled: true
-  exclude: [AppConstants, SampleIntents, TestConstants]
+  exclude: [AppConstants, Samples, TestConstants]
   max_constants: 5
 TooManyInstanceVariables:
   enabled: true
@@ -89,10 +89,7 @@ TooManyMethods:
   max_methods: 20
 TooManyStatements:
   enabled: true
-  exclude:
-  - initialize
-  - get_session
-  - self.registered
+  exclude: []
   max_statements: 20
 UncommunicativeMethodName:
   enabled: true

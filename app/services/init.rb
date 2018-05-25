@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require './lib/refinements/string_refinements'
+
 require_relative 'response_helpers'
 # BaseResponse must be required before its child classes
 require_relative 'base_response'

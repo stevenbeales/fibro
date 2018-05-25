@@ -35,6 +35,10 @@ To generate the skill documentation -
 
 1) rake rdoc
 
+To regenerate the documentation -
+
+1) rake rerdoc
+
 ## Contributing
 
 See the [Contribution Guidelines](https://github.com/stevenbeales/fibro/blob/master/CONTRIBUTING.md)
@@ -48,7 +52,6 @@ Overcommit Git hooks exist to check check-in comments and to verify code against
 1) Reek (check for code smells - see ./config.reek for configuration)
 2) Bundle-audit (check for security vulnerabilities)
 3) Rubocop (lint code - see ./rubocop.yml for configuration)
-4) Fasterer (performance checks - see ./fasterer.yml for configuration)
 
 See ./overcommit.yml for Overcommit configuration
 
