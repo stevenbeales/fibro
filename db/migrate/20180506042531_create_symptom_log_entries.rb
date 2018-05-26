@@ -9,6 +9,7 @@ class CreateSymptomLogEntries < ActiveRecord::Migration[5.2]
       t.datetime :entry_date, null: false, index: true, default: -> { 'CURRENT_TIMESTAMP' }
       t.integer :severity, null: false, default: 2
       t.integer :score, null: false, default: 5
+      t.column :duration, :interval
       t.timestamps null: false, default: -> { 'CURRENT_TIMESTAMP' }
       t.datetime :discarded_at
     end

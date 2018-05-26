@@ -23,12 +23,14 @@ Bullet.raise = true # raise an error if n+1 query occurs
 RSpec.configure do |config|
   config.include RSpecMixin
   config.include Sinatra::Fibro::Helpers
+  config.include FactoryBot::Syntax::Methods
 
   # cleanup database and reload seeds
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
     require './db/seeds'
+    FactoryBot.find_definitions
   end
 
   config.before(:each) do
@@ -49,12 +51,6 @@ RSpec.configure do |config|
     Timecop.return
   end
 
-  config.include FactoryBot::Syntax::Methods
-
-  config.before(:suite) do
-    FactoryBot.find_definitions
-  end
-
   # rspec-expectations config goes here.
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
@@ -69,8 +65,7 @@ RSpec.configure do |config|
   # rspec-mocks config goes here.
   config.mock_with :rspec do |mocks|
     # Prevents you from mocking or stubbing a method that does not exist on
-    # a real object. This is generally recommended, and will default to
-    # `true` in RSpec 4.
+    # a real object. This is recommended, and will default to `true` in RSpec 4.
     mocks.verify_partial_doubles = true
 
     # This option should be set when all dependencies are being loaded
@@ -95,9 +90,7 @@ RSpec.configure do |config|
   # the `--only-failures` and `--next-failure` CLI options.
   config.example_status_persistence_file_path = 'spec/examples.txt'
 
-  # Limits the available syntax to the non-monkey patched syntax that is
-  # recommended. For more details, see:
-  #   - http://rspec.info/blog/2014/05/notable-changes-in-rspec-3/#zero-monkey-patching-mode
+  # Limits the available syntax to the non-monkey patched syntax
   config.disable_monkey_patching!
 
   # This setting enables warnings

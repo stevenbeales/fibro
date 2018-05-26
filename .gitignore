@@ -1,9 +1,6 @@
 ## Ruby gems
 **/vendor
 
-## binaries
-**/bin
-
 # Ignore bundler config
 **/.bundle
 

@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2018_05_06_042531) do
     t.datetime "entry_date", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.integer "severity", default: 2, null: false
     t.integer "score", default: 5, null: false
+    t.interval "duration"
     t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.datetime "discarded_at"

@@ -61,9 +61,9 @@ module ResponseHelpers
   end
 
   def stop_response
-    echo_response.end_session = true
-    echo_response.spoken_response = I18n.t :stop_response
-    echo_response
+    @echo_response.end_session = true
+    @echo_response.spoken_response = I18n.t :stop_response
+    @echo_response
   end
 
   def yes_response

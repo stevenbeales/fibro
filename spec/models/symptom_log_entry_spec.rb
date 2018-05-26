@@ -27,6 +27,33 @@ RSpec.describe SymptomLogEntry, type: :model do
     include_examples 'number specs', 'score'
   end
 
+  describe 'duration' do
+    it 'supports time interval in hours' do
+      subject.duration = '2 hours'
+      subject.save!
+    end
+
+    it 'supports time interval in days' do
+      subject.duration = '2 days'
+      subject.save!
+    end
+
+    it 'supports time interval in minutes' do
+      subject.duration = '2 minutes'
+      subject.save!
+    end
+    
+    it 'supports time interval in months' do
+      subject.duration = '5 months'
+      subject.save!
+    end
+
+    it 'supports time interval in years' do
+      subject.duration = '3 years'
+      subject.save!
+    end
+  end
+
   describe 'Saving to a database' do
     it 'starts out unpersisted' do
       an_object = described_class.new

@@ -63,5 +63,13 @@ RSpec.describe StringRefinements do
     it 'should convert StringRefinements to string_refinements' do
       expect('StringRefinements'.snake_case).to eq 'string_refinements'
     end
+
+    it 'should convert ConditionIntent to condition_intent' do
+      expect('ConditionIntent'.snake_case).to eq 'condition_intent'
+    end
+
+    it 'should convert EverybodyHurtsIntent to everybody_hurts_intent' do
+      expect('EverybodyHurtsIntent'.snake_case).to eq 'everybody_hurts_intent'
+    end
   end
 end

@@ -27,8 +27,8 @@ class InteractionModelBuilder
 
   def generate
     @model = builder_class.build do |modl|
-      add_intents(modl, CustomIntent, custom_intents)
-      add_intents(modl, AmazonIntent, amazon_intents)
+      add_intents(modl, CustomIntent, @custom_intents)
+      add_intents(modl, AmazonIntent, @amazon_intents)
     end
   end
 end
