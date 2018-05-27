@@ -14,8 +14,10 @@ class YesIntentBuilder < IntentBuilder
     'Roger that',
     'Sounds good',
     'Super',
+    'Sure',
     'Yep',
-    'Yes'
+    'Yes',
+    'Yes please'
   ].freeze
 
   def add

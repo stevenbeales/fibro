@@ -83,4 +83,10 @@ RSpec.describe AmazonResponse do
       expect(subject.yes_response.spoken_response).to eq(I18n.t(:yes_response))
     end
   end
+
+  describe '.fallback_response' do
+    it do
+      expect(subject.fallback_response.spoken_response).to eq(I18n.t(:fallback_response))
+    end
+  end
 end

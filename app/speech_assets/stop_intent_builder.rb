@@ -10,6 +10,8 @@ class StopIntentBuilder < IntentBuilder
     'Goodbye',
     'Good-bye',
     'No mas',
+    'Off',
+    'Shut up',
     'Stop'
   ].freeze
 

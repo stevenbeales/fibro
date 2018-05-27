@@ -88,6 +88,9 @@
           "intent": "AMAZON.CancelIntent"
         },
         {
+          "intent": "AMAZON.FallbackIntent"
+        },
+        {
           "intent": "AMAZON.HelpIntent"
         },
         {

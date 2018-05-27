@@ -98,7 +98,7 @@ RSpec.describe Sinatra::MyApp do
       expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:cancel_response)
     end
 
-    it 'should return cancel_response from Amazon stop intent request' do
+    it 'should return stop_response from Amazon stop intent request' do
       allow(echo_request).to receive(:intent_name).and_return "AMAZON.StopIntent"
       expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:stop_response)
     end
@@ -118,19 +118,19 @@ RSpec.describe Sinatra::MyApp do
       expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:next_response)
     end
 
-    it 'should return next_response from Amazon previous intent request' do
+    it 'should return pause_response from Amazon pause intent request' do
+      allow(echo_request).to receive(:intent_name).and_return "AMAZON.PauseIntent"
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:pause_response)
+    end
+
+    it 'should return previous_response from Amazon previous intent request' do
       allow(echo_request).to receive(:intent_name).and_return "AMAZON.PreviousIntent"
       expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:previous_response)
     end
 
-    it 'should return next_response from Amazon resume intent request' do
+    it 'should return resume_response from Amazon resume intent request' do
       allow(echo_request).to receive(:intent_name).and_return "AMAZON.ResumeIntent"
       expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:resume_response)
-    end
-
-    it 'should return pause_response from Amazon pause intent request' do
-      allow(echo_request).to receive(:intent_name).and_return "AMAZON.PauseIntent"
-      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:pause_response)
     end
 
     it 'should return repeat_response from Amazon repeat intent request' do
@@ -146,6 +146,11 @@ RSpec.describe Sinatra::MyApp do
     it 'should return start_over_response from Amazon start over intent request' do
       allow(echo_request).to receive(:intent_name).and_return "AMAZON.StartOverIntent"
       expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:start_over_response)
+    end
+
+    it 'should return fallback_response from Amazon fall back intent request' do
+      allow(echo_request).to receive(:intent_name).and_return "AMAZON.FallbackIntent"
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:fallback_response)
     end
   end
 

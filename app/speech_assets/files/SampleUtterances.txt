@@ -51,8 +51,12 @@ SymptomInfoIntent What relates to {Symptom}
 SymptomInfoIntent Will I die if {Symptom}
 SymptomInfoIntent what does it mean if I have {Symptom}
 AMAZON.CancelIntent Cancel
+AMAZON.CancelIntent Forget it
+AMAZON.CancelIntent Never mind
+AMAZON.FallbackIntent Fall back
 AMAZON.HelpIntent Any advice
 AMAZON.HelpIntent Any tips
+AMAZON.HelpIntent Can you help me
 AMAZON.HelpIntent Do not understand
 AMAZON.HelpIntent Do you have instructions
 AMAZON.HelpIntent Get help
@@ -90,25 +94,33 @@ AMAZON.HelpIntent What type of input should I give
 AMAZON.NextIntent Another
 AMAZON.NextIntent Next
 AMAZON.NextIntent Now what
+AMAZON.NextIntent Skip
+AMAZON.NextIntent Skip forward
 AMAZON.NoIntent Nah
 AMAZON.NoIntent Nein
 AMAZON.NoIntent No
+AMAZON.NoIntent No thanks
 AMAZON.NoIntent No way
 AMAZON.NoIntent Non
 AMAZON.NoIntent Nyet
 AMAZON.PauseIntent Pause
+AMAZON.PauseIntent Pause that
+AMAZON.PreviousIntent Back up
+AMAZON.PreviousIntent Go back
 AMAZON.PreviousIntent Previous
+AMAZON.PreviousIntent Skip back
 AMAZON.RepeatIntent Again
 AMAZON.RepeatIntent Can you repeat that
 AMAZON.RepeatIntent One more time
 AMAZON.RepeatIntent Repeat
 AMAZON.RepeatIntent Repeat again
+AMAZON.RepeatIntent Repeat that
 AMAZON.RepeatIntent Say again
+AMAZON.RepeatIntent Say that again
 AMAZON.RepeatIntent What are you asking about
+AMAZON.ResumeIntent Continue
+AMAZON.ResumeIntent Keep Going
 AMAZON.ResumeIntent Resume
-AMAZON.StartOverIntent Go home
-AMAZON.StartOverIntent Go to home
-AMAZON.StartOverIntent Home
 AMAZON.StartOverIntent Re-start
 AMAZON.StartOverIntent Start
 AMAZON.StartOverIntent Start again
@@ -120,6 +132,8 @@ AMAZON.StopIntent Auf Wiedersehn
 AMAZON.StopIntent Good-bye
 AMAZON.StopIntent Goodbye
 AMAZON.StopIntent No mas
+AMAZON.StopIntent Off
+AMAZON.StopIntent Shut up
 AMAZON.StopIntent Stop
 AMAZON.YesIntent Bien Sur
 AMAZON.YesIntent Da
@@ -132,5 +146,7 @@ AMAZON.YesIntent Oui
 AMAZON.YesIntent Roger that
 AMAZON.YesIntent Sounds good
 AMAZON.YesIntent Super
+AMAZON.YesIntent Sure
 AMAZON.YesIntent Yep
 AMAZON.YesIntent Yes
+AMAZON.YesIntent Yes please

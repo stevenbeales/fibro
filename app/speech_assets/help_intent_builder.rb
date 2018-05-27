@@ -3,7 +3,7 @@
 # Class to build utterances for Help Intent
 class HelpIntentBuilder < IntentBuilder
   HELP_INTENTS = [
-    'Any advice', 'Any tips', 'Do not understand', 'Do you have instructions', 'Get help',
+    'Any advice', 'Any tips', 'Can you help me', 'Do not understand', 'Do you have instructions', 'Get help',
     'Help', 'Help me', 'How can I use you', 'How do I give commands', 'How do I use this app',
     'How do I use you', 'How do you work', 'How does this work', 'I could use help',
     'I don\'t know what\'s going on', 'I don\'t know', 'I\'m confused', 'I\'m lost on what to do',

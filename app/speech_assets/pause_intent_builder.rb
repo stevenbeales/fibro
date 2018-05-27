@@ -3,7 +3,8 @@
 # Class to build utterances for Pause Intent
 class PauseIntentBuilder < IntentBuilder
   PAUSE_INTENTS = [
-    'Pause'
+    'Pause',
+    'Pause that'
   ].freeze
 
   def add

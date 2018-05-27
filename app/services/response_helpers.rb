@@ -23,6 +23,10 @@ module ResponseHelpers
     @echo_response.end_session = true
     @echo_response
   end
+ 
+  def fallback_response
+    construct_response :fallback_response
+  end
 
   def help_response
     construct_response :help_response

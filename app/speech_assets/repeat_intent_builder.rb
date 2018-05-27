@@ -8,7 +8,9 @@ class RepeatIntentBuilder < IntentBuilder
     'One more time',
     'Repeat',
     'Repeat again',
+    'Repeat that',
     'Say again',
+    'Say that again',
     'What are you asking about'
   ].freeze
 

@@ -15,6 +15,7 @@ if test?
                      SymptomInfoIntent: SymptomInfoIntentBuilder }
 
   amazon_intents = { Cancel: CancelIntentBuilder,
+                     Fallback: FallbackIntentBuilder,
                      Help: HelpIntentBuilder,
                      Next: NextIntentBuilder,
                      No: NoIntentBuilder,

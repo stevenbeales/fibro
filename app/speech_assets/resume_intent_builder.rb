@@ -3,6 +3,8 @@
 # Class to build utterances for Resume Intent
 class ResumeIntentBuilder < IntentBuilder
   RESUME_INTENTS = [
+    'Continue',
+    'Keep Going',
     'Resume'
   ].freeze
 

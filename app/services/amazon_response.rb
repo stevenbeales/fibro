@@ -32,6 +32,8 @@ class AmazonResponse < BaseResponse
     #  case echo_request.intent_name  
     #    when 'AMAZON.CancelIntent'  
     #      cancel_response  
+    #    when 'AMAZON.FallbackIntent'
+    #      fallback_response
     #    when 'AMAZON.NextIntent'  
     #      next_response  
     #    when 'AMAZON.NoIntent'  

@@ -3,7 +3,10 @@
 # Class to build utterances for Previous Intent
 class PreviousIntentBuilder < IntentBuilder
   PREVIOUS_INTENTS = [
-    'Previous'
+    'Back up',
+    'Go back',
+    'Previous',
+    'Skip back'
   ].freeze
 
   def add

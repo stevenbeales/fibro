@@ -5,7 +5,9 @@ class NextIntentBuilder < IntentBuilder
   NEXT_INTENTS = [
     'Another',
     'Next',
-    'Now what'
+    'Now what',
+    'Skip',
+    'Skip forward'
   ].freeze
 
   def add

@@ -7,6 +7,7 @@ class NoIntentBuilder < IntentBuilder
     'Nein',
     'No',
     'Non',
+    'No thanks',
     'No way',
     'Nyet'
   ].freeze

@@ -3,7 +3,9 @@
 # Class to build utterances for Cancel Intent
 class CancelIntentBuilder < IntentBuilder
   CANCEL_INTENTS = [
-    'Cancel'
+    'Cancel',
+    'Forget it',
+    'Never mind'
   ].freeze
 
   def add
