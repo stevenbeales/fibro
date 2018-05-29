@@ -1,39 +1,33 @@
 # frozen_string_literal: true
 
-require_relative 'init'
-require './app/app_constants'
+unless defined? INTERACTION_MODEL_GENERATOR_LOADED 
+  INTERACTION_MODEL_GENERATOR_LOADED = 1
 
-# Regenerate the interaction model and sample utterances speech assets for Alexa if in test environment  
-# Entry point to regeneration of the interactionModel.json and sampleUtterances.txt files
-if test?
-  custom_intents = { ConditionIntent: ConditionIntentBuilder,
-                     EverybodyHurtsIntent: EverybodyHurtsIntentBuilder,
-                     ReadAllIntent: ReadAllIntentBuilder,
-                     ReadEntryIntent: ReadEntryIntentBuilder,
-                     ReadLastIntent: ReadLastIntentBuilder,
-                     SymptomIntent: SymptomIntentBuilder,
-                     SymptomInfoIntent: SymptomInfoIntentBuilder }
+  require_relative 'init'
+  require './app/app_constants'
+  require 'pp'
+  require './lib/refinements/intent_refinements'
 
-  amazon_intents = { Cancel: CancelIntentBuilder,
-                     Fallback: FallbackIntentBuilder,
-                     Help: HelpIntentBuilder,
-                     Next: NextIntentBuilder,
-                     No: NoIntentBuilder,
-                     Pause: PauseIntentBuilder,
-                     Previous: PreviousIntentBuilder,
-                     Repeat: RepeatIntentBuilder,
-                     Resume: ResumeIntentBuilder,
-                     StartOver: StartOverIntentBuilder,
-                     Stop: StopIntentBuilder,
-                     Yes: YesIntentBuilder }
+  using IntentRefinements
 
-  interaction_model = InteractionModelBuilder.new(builder_class: AlexaGenerator::InteractionModel,
-                                                  custom_intents: custom_intents,
-                                                  amazon_intents: amazon_intents).model
+  if test?
 
-  json_schema = JsonInteractionModel.new(interaction_model, AppConstants::INVOCATION_NAME)
-  json_schema.save("./#{AppConstants::SPEECH_FOLDER}/interactionModel.json")
+    # Regenerate the interaction model and sample utterances speech assets for Alexa if in test environment  
+    # Entry point to regeneration of the interactionModel.json and sampleUtterances.txt files
+      
+    # Build an in memory JSON Interaction Model in Alexa 1.0 format
+    interaction_model = InteractionModelBuilder.new(builder_class: AlexaGenerator::InteractionModel,
+                                                    custom_intents: Intents::CUSTOM_INTENTS,
+                                                    amazon_intents: Intents::AMAZON_INTENTS).model
 
-  utterances = UtterancesModel.new(interaction_model)
-  utterances.save("./#{AppConstants::SPEECH_FOLDER}/SampleUtterances.txt")
+    # Convert the model into Alexa 2.0 format and save to interactionModel.json
+    json_schema = JsonBaseModel.new(model: interaction_model)
+    
+    # Create the sample utterances file in Alexa 1.0 format
+    utterances = UtterancesModel.new(model: interaction_model)
+    utterances.save("./#{AppConstants::SPEECH_FOLDER}/SampleUtterances.txt")
+
+    combiner = JsonInteractionModel.new(utterance_model: utterances.model, interaction_model: json_schema)
+    combiner.save("./#{AppConstants::SPEECH_FOLDER}/interactionModel.json")
+  end
 end

@@ -24,9 +24,12 @@ require_relative 'symptom_intent_builder'
 require_relative 'symptom_info_intent_builder'
 require_relative 'yes_intent_builder'
 
+require_relative 'json_file_output'
+require_relative 'intents'
 require_relative 'custom_intent'
 require_relative 'amazon_intent'
 require_relative 'interaction_model_builder'
+require_relative 'json_base_model'
 require_relative 'json_interaction_model'
 require_relative 'utterances_model'
 require_relative 'interaction_model_generator' # must come after json_interaction and utterances

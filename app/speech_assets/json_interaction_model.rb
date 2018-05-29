@@ -1,52 +1,75 @@
 # frozen_string_literal: true
 
-require 'json'
+require './lib/refinements/intent_refinements'
 require './lib/refinements/string_refinements'
 
-# add indent and remove_first_line methods to string
+# add indent methods to string
 using StringRefinements
+using IntentRefinements
 
-# Class to generate JSON Interaction Model
-#
-# This class takes a generated JSON model in Alexa 1.0 JSON format from 2016
-# and then wraps and enhances the output with new 2018 JSON objects
+# Combines Schema in Amazon Alexa 1.0 format with Samples to build schema in Alexa 2.0 format
 class JsonInteractionModel
-  attr_reader :model
-  attr_reader :invocation
-
-  # Model is an Alexa 1.0 JSON Object.
-  # Invocation is the Alexa Invocation Name.
-  def initialize(model, invocation)
-    @model = model
-    @invocation = invocation
+  def initialize(utterance_model:, interaction_model:)
+    @intents = interaction_model.intents
+    @utterance_model = utterance_model
+    @intents_plus_samples = {}
   end
 
-  # Save model to a JSON file
+  # returns a list of sample utterances in format: [Intent] [Sample] e.g. ConditionIntent talk about {Condition}
+  def samples
+    samples = []
+    @intents.each { |intent| samples.concat([sample_from_intent(intent[:intent])]) }
+    samples
+  end
+
   def save(filename)
-    File.open(filename, 'w+') do |line|
-      JSON.pretty_generate(
-        line.puts(%(#{header}\n#{schema.remove_first_line.indent(4)}\n#{footer}))
-      )
+    JsonFileOutput.new(intent_schema, filename)
+  end
+
+  protected 
+
+  def add_intents(intents, intent)
+    if intent.slots.any?
+      slots = []
+      intent.slots.each { |slot| slots << { name: slot.name, type: slot.type } }
+      intents << { intent: intent.name, slots: slots, samples: intent.samples }
+    else
+      intents << { intent: intent.name, samples: intent.samples }
     end
   end
 
-  protected
+  def combine_samples
+    sample_array = []
 
-  def footer
-    "  }\n}"
+    @utterance_model.intents.each_with_index do |intent, index|
+      sample_array.concat([intent[1].add_samples(samples, index)])
+    end
+
+    Hash[@intents_plus_samples.map { |intent| [intent.name, intent] }]
   end
 
-  def header
-    <<-HEADER
-  {
-  "interactionModel": {
-    "languageModel": {
-      "invocationName": "#{invocation}",
-    HEADER
-      .strip
+  def intents_plus_samples
+    return @intents_plus_samples if @intents_plus_samples.size.positive?
+ 
+    @intents_plus_samples = combine_samples
   end
 
-  def schema
-    JSON.pretty_generate(model.intent_schema)
+  def indifferent_access(intent)
+    return intent if intent.include?('AMAZON') 
+   
+    intent.to_sym
+  end
+ 
+  def sample_from_intent(intent)
+    # the sample utterance is taken from the model.sample_utterances list but Amazon and Custom intents  
+    # are indexed with strings or symbols respectively so we call indifferent_access to access the samples. 
+    
+    @utterance_model.sample_utterances(indifferent_access(intent))
+  end
+
+  def intent_schema
+    intents = []
+    intents_plus_samples.values.each { |intent| add_intents(intents, intent) } 
+    { intents: intents }
   end
 end

@@ -4,7 +4,7 @@
 class UtterancesModel
   attr_reader :model
 
-  def initialize(model)
+  def initialize(model:)
     @model = model
   end
 

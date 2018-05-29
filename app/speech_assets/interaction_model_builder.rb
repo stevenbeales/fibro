@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Builds interaction Model
+# Builds interaction Model in Amazon Alexa 1.0 format
 class InteractionModelBuilder
   attr_reader :builder_class
   attr_reader :custom_intents

@@ -1,4 +1,4 @@
-{
+  {
   "interactionModel": {
     "languageModel": {
       "invocationName": "fibro friend",
@@ -10,10 +10,22 @@
               "name": "Condition",
               "type": "LIST_OF_CONDITIONS"
             }
+          ],
+          "samples": [
+            "talk about {Condition}",
+            "tell me about {Condition}",
+            "tell me some details about {Condition}",
+            "tell me symptoms of {Condition}",
+            "tell me the symptoms of {Condition}",
+            "tell me the treatment of {Condition}",
+            "{Condition}"
           ]
         },
         {
-          "intent": "EverybodyHurtsIntent"
+          "intent": "EverybodyHurtsIntent",
+          "samples": [
+            "Everybody Hurts"
+          ]
         },
         {
           "intent": "ReadAllIntent",
@@ -26,6 +38,12 @@
               "name": "Log",
               "type": "LOG"
             }
+          ],
+          "samples": [
+            "What happened",
+            "{Read} all",
+            "{Read} everything",
+            "{Read} {Log}"
           ]
         },
         {
@@ -47,6 +65,13 @@
               "name": "Entry",
               "type": "ENTRY"
             }
+          ],
+          "samples": [
+            "Get {Entry} for {Day}",
+            "Give me {Entry} for {Day}",
+            "What happened on {Day}",
+            "{Read} {Day}",
+            "{Read} {Log} for {Day}"
           ]
         },
         {
@@ -64,6 +89,12 @@
               "name": "n",
               "type": "AMAZON.NUMBER"
             }
+          ],
+          "samples": [
+            "{Read} last",
+            "{Read} last {Log}",
+            "{Read} last {n}",
+            "{Read} last {n} {Log}"
           ]
         },
         {
@@ -73,6 +104,16 @@
               "name": "Symptom",
               "type": "LIST_OF_SYMPTOMS"
             }
+          ],
+          "samples": [
+            "I am feeling {Symptom}",
+            "I am {Symptom}",
+            "I feel {Symptom}",
+            "I have {Symptom}",
+            "I think I may have {Symptom}",
+            "I think I might have {Symptom}",
+            "I {Symptom}",
+            "{Symptom}"
           ]
         },
         {
@@ -82,43 +123,192 @@
               "name": "SymptomInfo",
               "type": "LIST_OF_SYMPTOMS"
             }
+          ],
+          "samples": [
+            "Can you tell me about {Symptom}",
+            "Could untreated {Symptom} be fatal",
+            "Do you know anything about {Symptom}",
+            "Get result for {Symptom}",
+            "I have {Symptom} what does it mean",
+            "If I feel {Symptom} should I be worried",
+            "If I feel {Symptom} what could it be",
+            "Is {Symptom} fatal",
+            "Should I be scared if {Symptom}",
+            "Should I be worried if I am {Symptom}",
+            "Should I be worried if I have {Symptom}",
+            "Should I go to the doctor if I have {Symptom}",
+            "Should I go to the doctor if {Symptom}",
+            "What are feelings of {Symptom}",
+            "What are the most popular diagnosis that cause {Symptom}",
+            "What could {Symptom} mean",
+            "What does it mean to have {Symptom}",
+            "What if I feel {Symptom}",
+            "What if I have {Symptom}",
+            "What is linked to {Symptom}",
+            "What relates to {Symptom}",
+            "Will I die if {Symptom}",
+            "what does it mean if I have {Symptom}"
           ]
         },
         {
-          "intent": "AMAZON.CancelIntent"
+          "intent": "AMAZON.CancelIntent",
+          "samples": [
+            "Cancel",
+            "Forget it",
+            "Never mind"
+          ]
         },
         {
-          "intent": "AMAZON.FallbackIntent"
+          "intent": "AMAZON.FallbackIntent",
+          "samples": [
+            "Fall back"
+          ]
         },
         {
-          "intent": "AMAZON.HelpIntent"
+          "intent": "AMAZON.HelpIntent",
+          "samples": [
+            "Any advice",
+            "Any tips",
+            "Can you help me",
+            "Do not understand",
+            "Do you have instructions",
+            "Get help",
+            "Help",
+            "Help me",
+            "How can I use you",
+            "How do I give commands",
+            "How do I use this app",
+            "How do I use you",
+            "How do you work",
+            "How does this work",
+            "I could use help",
+            "I don't know",
+            "I don't know what's going on",
+            "I'm confused",
+            "I'm lost on what to do",
+            "I'm stuck",
+            "Instructions please",
+            "Please advise",
+            "Please help",
+            "What can I answer",
+            "What can I ask you",
+            "What can I do",
+            "What can I use this for",
+            "What can you do",
+            "What can you tell me",
+            "What commands can I ask",
+            "What do you do",
+            "What do you mean",
+            "What do you refer to",
+            "What kind of command should I give",
+            "What questions can I ask",
+            "What should I say",
+            "What type of input should I give"
+          ]
         },
         {
-          "intent": "AMAZON.NextIntent"
+          "intent": "AMAZON.NextIntent",
+          "samples": [
+            "Another",
+            "Next",
+            "Now what",
+            "Skip",
+            "Skip forward"
+          ]
         },
         {
-          "intent": "AMAZON.NoIntent"
+          "intent": "AMAZON.NoIntent",
+          "samples": [
+            "Nah",
+            "Nein",
+            "No",
+            "No thanks",
+            "No way",
+            "Non",
+            "Nyet"
+          ]
         },
         {
-          "intent": "AMAZON.PauseIntent"
+          "intent": "AMAZON.PauseIntent",
+          "samples": [
+            "Pause",
+            "Pause that"
+          ]
         },
         {
-          "intent": "AMAZON.PreviousIntent"
+          "intent": "AMAZON.PreviousIntent",
+          "samples": [
+            "Back up",
+            "Go back",
+            "Previous",
+            "Skip back"
+          ]
         },
         {
-          "intent": "AMAZON.RepeatIntent"
+          "intent": "AMAZON.RepeatIntent",
+          "samples": [
+            "Again",
+            "Can you repeat that",
+            "One more time",
+            "Repeat",
+            "Repeat again",
+            "Repeat that",
+            "Say again",
+            "Say that again",
+            "What are you asking about"
+          ]
         },
         {
-          "intent": "AMAZON.ResumeIntent"
+          "intent": "AMAZON.ResumeIntent",
+          "samples": [
+            "Continue",
+            "Keep Going",
+            "Resume"
+          ]
         },
         {
-          "intent": "AMAZON.StartOverIntent"
+          "intent": "AMAZON.StartOverIntent",
+          "samples": [
+            "Re-start",
+            "Start",
+            "Start again",
+            "Start over"
+          ]
         },
         {
-          "intent": "AMAZON.StopIntent"
+          "intent": "AMAZON.StopIntent",
+          "samples": [
+            "Adios",
+            "Arrivederci",
+            "Au Revoir",
+            "Auf Wiedersehn",
+            "Good-bye",
+            "Goodbye",
+            "No mas",
+            "Off",
+            "Shut up",
+            "Stop"
+          ]
         },
         {
-          "intent": "AMAZON.YesIntent"
+          "intent": "AMAZON.YesIntent",
+          "samples": [
+            "Bien Sur",
+            "Da",
+            "Got it",
+            "Ja",
+            "Let's do it",
+            "OK",
+            "Okay",
+            "Oui",
+            "Roger that",
+            "Sounds good",
+            "Super",
+            "Sure",
+            "Yep",
+            "Yes",
+            "Yes please"
+          ]
         }
       ]
     }
