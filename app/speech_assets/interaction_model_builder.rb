@@ -2,16 +2,8 @@
 
 # Builds interaction Model in Amazon Alexa 1.0 format
 class InteractionModelBuilder
-  attr_reader :builder_class
-  attr_reader :custom_intents
-  attr_reader :amazon_intents
-
-  def initialize(builder_class:, custom_intents:, amazon_intents:)
-    @builder_class = builder_class
-    @custom_intents = custom_intents
-    @amazon_intents = amazon_intents
-  end
-
+  include Concord.new(:builder_class, :custom_intents, :amazon_intents)
+ 
   def model
     @model ||= generate
   end

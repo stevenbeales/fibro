@@ -2,12 +2,7 @@
 
 # Abstract class to provide base methods used in building custom Alexa intents for voice user interfaces
 class IntentBuilder
-  attr_reader :intent
-  attr_reader :builder
-
-  def initialize(intent)
-    @intent = intent
-  end
+  include Concord.new(:intent)
 
   def add
     raise NotImplementedError

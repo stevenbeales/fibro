@@ -5,7 +5,6 @@ unless defined? INTERACTION_MODEL_GENERATOR_LOADED
 
   require_relative 'init'
   require './app/app_constants'
-  require 'pp'
   require './lib/refinements/intent_refinements'
 
   using IntentRefinements
@@ -16,18 +15,15 @@ unless defined? INTERACTION_MODEL_GENERATOR_LOADED
     # Entry point to regeneration of the interactionModel.json and sampleUtterances.txt files
       
     # Build an in memory JSON Interaction Model in Alexa 1.0 format
-    interaction_model = InteractionModelBuilder.new(builder_class: AlexaGenerator::InteractionModel,
-                                                    custom_intents: Intents::CUSTOM_INTENTS,
-                                                    amazon_intents: Intents::AMAZON_INTENTS).model
-
-    # Convert the model into Alexa 2.0 format and save to interactionModel.json
-    json_schema = JsonBaseModel.new(model: interaction_model)
-    
+    interaction_model = InteractionModelBuilder.new(AlexaGenerator::InteractionModel,
+                                                    IntentBuilders::CUSTOM_INTENTS,
+                                                    IntentBuilders::AMAZON_INTENTS).model
     # Create the sample utterances file in Alexa 1.0 format
-    utterances = UtterancesModel.new(model: interaction_model)
+    utterances = UtterancesModel.new(interaction_model)
     utterances.save("./#{AppConstants::SPEECH_FOLDER}/SampleUtterances.txt")
-
-    combiner = JsonInteractionModel.new(utterance_model: utterances.model, interaction_model: json_schema)
+ 
+    # Create the interaction model in Alexa 2.0 format
+    combiner = JsonInteractionModel.new(utterances, interaction_model)
     combiner.save("./#{AppConstants::SPEECH_FOLDER}/interactionModel.json")
   end
 end

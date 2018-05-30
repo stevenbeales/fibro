@@ -6,14 +6,7 @@ using StringRefinements
 # Abstract base class to define custom responses to Alexa intent requests
 class BaseResponse
   include ResponseHelpers
-
-  attr_reader :echo_request
-  attr_reader :echo_response
-
-  def initialize(echo_request, echo_response)
-    @echo_request = echo_request
-    @echo_response = echo_response
-  end
+  include Concord.new(:echo_request, :echo_response) 
 
   # Respond true if it is a response method call
   def respond_to_missing?(method_name, include_private = false)

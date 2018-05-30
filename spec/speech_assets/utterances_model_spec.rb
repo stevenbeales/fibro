@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe UtterancesModel do
-  subject { UtterancesModel.new(model: model) }
+  subject { UtterancesModel.new(model) }
   let(:model) do
     AlexaGenerator::InteractionModel.build do |modl|
       modl.add_intent(:FibromyalgiaInformationIntent) do |intent|

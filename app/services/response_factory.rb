@@ -3,11 +3,8 @@
 # Factory class that returns the correct Response Class for a Alexa request
 class ResponseFactory
   include ResponseHelpers
-  def initialize(echo_request, echo_response)
-    @echo_request = echo_request
-    @echo_response = echo_response
-  end
-
+  include Concord.new(:echo_request, :echo_response) 
+  
   def response
     case @echo_request.intent_name
     when /Read/

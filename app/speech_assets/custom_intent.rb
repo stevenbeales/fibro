@@ -2,15 +2,7 @@
 
 # Class to build Custom Intent within Interaction Model Builder
 class CustomIntent
-  attr_reader :model
-  attr_reader :key
-  attr_reader :value
-
-  def initialize(model, key, value)
-    @model = model
-    @key = key
-    @value = value
-  end
+  include Concord.new(:model, :key, :value)
 
   def add
     model.add_intent(key) do |intent|

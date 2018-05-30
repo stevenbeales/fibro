@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Static class that contains our Alexa intents and their builders in hashes.
-class Intents
+class IntentBuilders
   CUSTOM_INTENTS = { ConditionIntent: ConditionIntentBuilder,
                      EverybodyHurtsIntent: EverybodyHurtsIntentBuilder,
                      ReadAllIntent: ReadAllIntentBuilder,

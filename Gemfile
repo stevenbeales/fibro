@@ -10,6 +10,7 @@ gem 'alexa_web_service', '>= 1.0', require: false # Alexa Web Service support
 gem 'audited', '>= 4.7', require: false # adds table auiting support
 gem 'bugsnag', '>= 6.6', require: false # online bug reporting
 gem 'bundler-audit', '>= 0.6', require: false # check gems for security issues
+gem 'concord', '>= 0.1.5', require: false # easier class composition
 gem 'default_value_for', '>= 3.0', require: false # set default values
 gem 'discard', '>= 1.0', require: false # soft deletes
 gem 'dotenv', '>= 2.2', require: false # adds environment variables from .env files
