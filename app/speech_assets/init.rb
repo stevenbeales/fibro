@@ -29,7 +29,7 @@ require_relative 'intent_builders'
 require_relative 'custom_intent'
 require_relative 'amazon_intent'
 require_relative 'json_file_output'
-require_relative 'interaction_model_builder'
+require_relative 'interim_model_builder'
 require_relative 'json_interaction_model'
 require_relative 'utterances_model'
-require_relative 'interaction_model_generator' # must come after json_interaction and utterances
+require_relative 'speech_asset_generator' # must come after json_interaction and utterances

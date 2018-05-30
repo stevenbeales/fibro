@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Builds interaction Model in Amazon Alexa 1.0 format
-class InteractionModelBuilder
+class InterimModelBuilder
   include Concord.new(:builder_class, :custom_intents, :amazon_intents)
  
   def model
