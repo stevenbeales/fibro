@@ -2,8 +2,8 @@
 
 require 'alexa_generator'
 require 'concord'
-require_relative './intents/samples'
 
+require_relative './intents/samples'
 require_relative './intents/intent_builder'
 require_relative './intents/cancel_intent_builder'
 require_relative './intents/condition_intent_builder'
@@ -30,6 +30,6 @@ require_relative 'custom_intent'
 require_relative 'amazon_intent'
 require_relative 'json_file_output'
 require_relative 'interim_model_builder'
-require_relative 'json_interaction_model'
+require_relative 'json_interaction_file'
 require_relative 'utterances_model'
 require_relative 'speech_asset_generator' # must come after json_interaction and utterances
