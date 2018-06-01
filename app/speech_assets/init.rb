@@ -2,6 +2,7 @@
 
 require 'alexa_generator'
 require 'concord'
+require './lib/refinements/intent_refinements'
 
 require_relative './intents/samples'
 require_relative './intents/intent_builder'

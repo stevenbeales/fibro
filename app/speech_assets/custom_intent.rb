@@ -8,7 +8,7 @@ class CustomIntent
     model.add_intent(key) { |intent| add_value(intent) }
   end
 
-  private
+  protected
 
   def add_value(intent)
     value.new(intent).add

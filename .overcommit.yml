@@ -65,7 +65,7 @@ PreCommit:
   MergeConflicts:
     enabled: true
   RubyLint:
-    enabled: true
+    enabled: false
   YamlLint:
     enabled: false
   YamlSyntax:

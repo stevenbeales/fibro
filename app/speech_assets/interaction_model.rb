@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require './lib/refinements/intent_refinements'
 using IntentRefinements
 
 # Combines Schema in Amazon Alexa 1.0 format with Samples to build schema in Alexa 2.0 format
@@ -14,7 +13,7 @@ class InteractionModel
   def intent_schema
     intents_by_name = []
     utterance_model.sample_values.map { |intent| add_intents_by_name(intents_by_name, intent) } 
-    { intents: intents_by_name, types: types_by_name }
+    { intents: intents_by_name, types: custom_types_by_name }
   end
 
   protected 
@@ -27,7 +26,7 @@ class InteractionModel
     intents_by_name << { intent: intent.name, slots: slots, samples: intent.samples }
   end
 
-  def types_by_name
-    interim_model_builder.types_by_name.map { |type| { name: type[1], values: '' } }
+  def custom_types_by_name
+    interim_model_builder.custom_types_by_name.map { |_type, name| { name: name, values: '' } }
   end
 end

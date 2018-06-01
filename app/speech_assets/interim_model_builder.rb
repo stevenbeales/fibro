@@ -5,15 +5,11 @@ class InterimModelBuilder
   include Concord.new(:builder_class, :custom_intents, :amazon_intents)
  
   def model
-    @model ||= generate
+    @model ||= build_model
   end
 
-  # Return lists of intents based on Alexa 1.0 JSON schema
-  def json_intents
-    @json_intents ||= JSON.parse(json_model, symbolize_names: true)[:interactionModel][:languageModel][:intents]
-  end
-   
-  def types_by_name
+  # Returns a hash of custom types
+  def custom_types_by_name
     model.collect_slot_types.reject { |_key, value| value.include?('AMAZON') }.uniq { |_key, value| value }
   end
 
@@ -26,14 +22,10 @@ class InterimModelBuilder
     end
   end
 
-  def generate
+  def build_model
     @model = builder_class.build do |modl|
       add_intents(modl, CustomIntent, @custom_intents)
       add_intents(modl, AmazonIntent, @amazon_intents)
     end
-  end
-
-  def json_model
-    JsonFileOutput.new(model.intent_schema).output_model
   end
 end

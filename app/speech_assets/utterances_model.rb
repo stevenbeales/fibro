@@ -5,10 +5,7 @@ using IntentRefinements
 
 # Class to generate sample utterances file
 class UtterancesModel
-  def initialize(interim_builder)
-    @interim_builder = interim_builder
-    @interim_model = interim_builder.model
-  end
+  include Concord.new(:interim_model)
 
   def intents_with_samples
     @intents_with_samples ||= build_intents_with_samples
@@ -20,55 +17,31 @@ class UtterancesModel
  
   def save(filename)
     File.open(filename, 'w+') do |line|
-      describe { |sample| line.puts sample }
+      sample_utterance_by_intent { |sample| line.puts sample }
     end
   end
 
   protected  
   
-  attr_reader :interim_builder
-  attr_reader :interim_model
-
-  def add_samples(generator_intent, index)
-    generator_intent.add_samples(samples, index)
+  # add_samples to intents using intent refinement method add_samples
+  def add_sample_utterances_to(intent)
+    intent.add_samples_from(sample_utterances_for(intent))
   end
   
   def build_intents_with_samples
     sample_array = []
-    interim_model.intents.each_with_index do |generator_intent, index|
-      sample_array.concat([add_samples(generator_intent[1], index)])
+    interim_model.intents.each do |_name, intent|
+      sample_array.concat([add_sample_utterances_to(intent)])
     end
     Hash[sample_array.map { |intent| [intent.name, intent] }]
   end
 
-  def build_samples
-    samples = []
-    interim_builder.json_intents.map { |intent| samples.concat([intent_utterance(intent[:intent])]) }
-    samples
+  def sample_utterances_for(intent)
+    interim_model.sample_utterances(intent.name)
   end
 
-  def describe
-    interim_model.intents.map do |intent, _value|
-      yield interim_model.sample_utterances(intent) if block_given?
-    end
-  end
-
-  def intent_utterance(intent)
-    # the sample utterance is taken from the model.sample_utterances list but Amazon and Custom intents  
-    # are indexed with strings or symbols respectively so we call indifferent_access to access the samples. 
-    interim_model.sample_utterances(indifferent_access(intent))
-  end
-  
-  # returns a list of sample utterances in format: [Intent] [Sample] e.g. ConditionIntent talk about {Condition}
-  def samples
-    @samples ||= build_samples
-  end
-
-  private
-
-  def indifferent_access(intent)
-    return intent if intent.include?('AMAZON') 
- 
-    intent.to_sym
+  # Enumerator that passes sample utterances for each intent in turn back to calling block
+  def sample_utterance_by_intent
+    interim_model.intents.map { |intent, _value| yield interim_model.sample_utterances(intent) if block_given? }
   end
 end

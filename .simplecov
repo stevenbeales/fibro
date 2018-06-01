@@ -21,6 +21,7 @@ SimpleCov.profiles.define 'app' do
               '.inch.yml', '.overcommit.yml', '.rdoc_options',  '.rspec', '.rubocop.yml',
               '.ruby-version', '.simplecov', '.travis.yml', 'AUTHORS', 'CODE_OF_CONDUCT.md',
               'config.reek', 'CONTRIBUTING.md', 'Gemfile', 'Gemfile.lock', 'issue_template.md', 'LICENSE',
-              'Procfile', 'Rakefile', 'README.md', 'VERSION', 'config/database.yml'
+              'Procfile', 'Rakefile', 'README.md', 'VERSION', 'config/database.yml',
+              'app/speech_assets/files/interactionModel.json', 'app/speech_assets/files/SampleUtterances.txt'
             ]
 end

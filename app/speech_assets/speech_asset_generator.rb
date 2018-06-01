@@ -15,7 +15,7 @@ unless defined? INTERACTION_MODEL_GENERATOR_LOADED
                                                       IntentBuilders::CUSTOM_INTENTS,
                                                       IntentBuilders::AMAZON_INTENTS)
       # Create the sample utterances file in Alexa 1.0 format
-      utterance_model = UtterancesModel.new(interim_model_builder)
+      utterance_model = UtterancesModel.new(interim_model_builder.model)
       utterance_model.save(utterances_file)
   
       # Create the interaction json file in Alexa 2.0 format
