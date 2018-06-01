@@ -14,6 +14,8 @@ verify_signatures: false
 PreCommit:
   ALL:
     problem_on_unmodified_line: warn
+    requires_files: true
+    required: false
     exclude: &default_excludes
       - 'node_modules/**/*'
       - 'vendor/**/*'
@@ -21,6 +23,14 @@ PreCommit:
     MyHook:
       exclude:
         - *default_excludes
+  AuthorEmail:
+    enabled: true
+  AuthorName:
+    enabled: true
+  BerksfileCheck:
+    enabled: true
+  Brakeman:
+    enabled: false
   RuboCop:
     enabled: true
     on_warn: fail # Treat all warnings as failures
@@ -31,6 +41,10 @@ PreCommit:
   BundleCheck:
     enabled: false
   BundleOutdated:
+    enabled: true
+  CaseConflicts:
+    enabled: true
+  ChamberSecurity:
     enabled: true
   Reek:
     enabled: true
@@ -48,18 +62,59 @@ PreCommit:
     enabled: true
   BrokenSymlinks:
     enabled: false
-
-IndexTags:
-  enabled: false # Generate a tags file with `ctags` each time HEAD changes
+  MergeConflicts:
+    enabled: true
+  RubyLint:
+    enabled: true
+  YamlLint:
+    enabled: false
+  YamlSyntax:
+    enabled: true
 
 CommitMsg:
+  ALL:
+    requires_files: false
+  CapitalizedSubject:
+    enabled: true
+  EmptyMessage:
+    enabled: false
   RussianNovel:
     enabled: true
   Spellcheck:
     enabled: false
   BundleCheck:
     enabled: false
+  SingleLineSubject:
+    enabled: true
+  TrailingPeriod:
+    enabled: true
 
 PrePush:
+  ALL:
+    requires_files: false
+    required: false
   RSpec:
     enabled: false # enable this if you don't run rspec prior to git
+
+PostCheckout:
+  ALL:
+    quiet: true
+  IndexTags:
+    enabled: false # Generate a tags file with `ctags` each time HEAD changes
+
+PreRebase:
+  ALL:
+    requires_files: false
+    required: false
+
+  MergedCommits:
+    enabled: false
+
+PostMerge:
+  ALL:
+    enabled: false
+    requires_files: false
+
+PostRewrite:
+  ALL:
+    requires_files: false
