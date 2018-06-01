@@ -21,7 +21,7 @@
 
     <meta name="keywords" content="BaseResponse class">
   
-    <meta name="keywords" content="new, response">
+    <meta name="keywords" content="respond_to_missing?, method_missing, response, intent_to_response">
   
 </head>
 
@@ -34,7 +34,7 @@
             
                 <span class="parent">&lt;
                     
-                    Object
+                    <a href="Object.html">Object</a>
                     
                 </span>
             
@@ -71,13 +71,25 @@
     <div class="sectiontitle">Methods</div>
     <dl class="methods">
       
-        <dt>N</dt>
+        <dt>I</dt>
         <dd>
           <ul>
             
               
               <li>
-                <a href="#method-c-new">new</a>
+                <a href="#method-i-intent_to_response">intent_to_response</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-method_missing">method_missing</a>
               </li>
             
           </ul>
@@ -86,6 +98,11 @@
         <dt>R</dt>
         <dd>
           <ul>
+            
+              
+              <li>
+                <a href="#method-i-respond_to_missing-3F">respond_to_missing?</a>,
+              </li>
             
               
               <li>
@@ -111,6 +128,12 @@
           
         </li>
       
+        <li>
+          
+            Concord
+          
+        </li>
+      
     </ul>
   
 
@@ -126,45 +149,25 @@
 
 
     
-      <!-- Section attributes -->
-      <div class="sectiontitle">Attributes</div>
-      <table border='0' cellpadding='5'>
-        
-          <tr valign='top'>
-            <td class='attr-rw'>
-              [R]
-            </td>
-            <td class='attr-name'>echo_request</td>
-            <td class='attr-desc'></td>
-          </tr>
-        
-          <tr valign='top'>
-            <td class='attr-rw'>
-              [R]
-            </td>
-            <td class='attr-name'>echo_response</td>
-            <td class='attr-desc'></td>
-          </tr>
-        
-      </table>
-    
 
 
     <!-- Methods -->
     
-      <div class="sectiontitle">Class Public methods</div>
+    
+      <div class="sectiontitle">Instance Public methods</div>
       
         <div class="method">
-          <div class="title method-title" id="method-c-new">
+          <div class="title method-title" id="method-i-method_missing">
             
-              <b>new</b>(echo_request, echo_response)
+              <b>method_missing</b>(method_name, *arguments, &amp;block)
             
-            <a href="../classes/BaseResponse.html#method-c-new" name="method-c-new" class="permalink">Link</a>
+            <a href="../classes/BaseResponse.html#method-i-method_missing" name="method-i-method_missing" class="permalink">Link</a>
           </div>
 
           
             <div class="description">
-              
+              <p>If we try to fire a response_method but don&#39;t find one, fire
+help_response</p>
             </div>
           
 
@@ -178,24 +181,60 @@
               
               <p class="source-link">
                 Source:
-                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                <a href="javascript:toggleSource('method-i-method_missing_source')" id="l_method-i-method_missing_source">show</a>
                 
               </p>
-              <div id="method-c-new_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/services/base_response.rb, line 10</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">echo_request</span>, <span class="ruby-identifier">echo_response</span>)
-  <span class="ruby-ivar">@echo_request</span> = <span class="ruby-identifier">echo_request</span>
-  <span class="ruby-ivar">@echo_response</span> = <span class="ruby-identifier">echo_response</span>
+              <div id="method-i-method_missing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/services/base_response.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">method_missing</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">arguments</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">method_name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&#39;response&#39;</span>)
+    <span class="ruby-identifier">help_response</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
             
           </div>
         
-      
-    
-      <div class="sectiontitle">Instance Public methods</div>
-      
+        <div class="method">
+          <div class="title method-title" id="method-i-respond_to_missing-3F">
+            
+              <b>respond_to_missing?</b>(method_name, include_private = false)
+            
+            <a href="../classes/BaseResponse.html#method-i-respond_to_missing-3F" name="method-i-respond_to_missing-3F" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Respond true if it is a response method call</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-respond_to_missing-3F_source')" id="l_method-i-respond_to_missing-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-respond_to_missing-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/services/base_response.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">respond_to_missing?</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">include_private</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">method_name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&#39;response&#39;</span>) <span class="ruby-operator">||</span> <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
         <div class="method">
           <div class="title method-title" id="method-i-response">
             
@@ -224,9 +263,57 @@
                 
               </p>
               <div id="method-i-response_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/services/base_response.rb, line 16</span>
+                <pre><span class="ruby-comment"># File app/services/base_response.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">response</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-intent_to_response">
+            
+              <b>intent_to_response</b>(intent)
+            
+            <a href="../classes/BaseResponse.html#method-i-intent_to_response" name="method-i-intent_to_response" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-intent_to_response_source')" id="l_method-i-intent_to_response_source">show</a>
+                
+              </p>
+              <div id="method-i-intent_to_response_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/services/base_response.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">intent_to_response</span>(<span class="ruby-identifier">intent</span>)
+  <span class="ruby-comment"># Extract text before Intent</span>
+  <span class="ruby-comment"># append _response</span>
+  <span class="ruby-comment"># turn into snakecase</span>
+  <span class="ruby-comment"># fire method</span>
+  <span class="ruby-identifier">public_send</span>(<span class="ruby-identifier">intent</span>
+              .<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&#39;Intent&#39;</span>, <span class="ruby-string">&#39;&#39;</span>)
+              .<span class="ruby-identifier">concat</span>(<span class="ruby-string">&#39;_response&#39;</span>)
+              .<span class="ruby-identifier">downcase</span>
+              .<span class="ruby-identifier">snake_case</span>)
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>

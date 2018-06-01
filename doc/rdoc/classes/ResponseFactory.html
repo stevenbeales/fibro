@@ -21,7 +21,7 @@
 
     <meta name="keywords" content="ResponseFactory class">
   
-    <meta name="keywords" content="new, response">
+    <meta name="keywords" content="response">
   
 </head>
 
@@ -34,7 +34,7 @@
             
                 <span class="parent">&lt;
                     
-                    Object
+                    <a href="Object.html">Object</a>
                     
                 </span>
             
@@ -71,18 +71,6 @@
     <div class="sectiontitle">Methods</div>
     <dl class="methods">
       
-        <dt>N</dt>
-        <dd>
-          <ul>
-            
-              
-              <li>
-                <a href="#method-c-new">new</a>
-              </li>
-            
-          </ul>
-        </dd>
-      
         <dt>R</dt>
         <dd>
           <ul>
@@ -111,6 +99,12 @@
           
         </li>
       
+        <li>
+          
+            Concord
+          
+        </li>
+      
     </ul>
   
 
@@ -130,47 +124,6 @@
 
     <!-- Methods -->
     
-      <div class="sectiontitle">Class Public methods</div>
-      
-        <div class="method">
-          <div class="title method-title" id="method-c-new">
-            
-              <b>new</b>(echo_request, echo_response)
-            
-            <a href="../classes/ResponseFactory.html#method-c-new" name="method-c-new" class="permalink">Link</a>
-          </div>
-
-          
-            <div class="description">
-              
-            </div>
-          
-
-          
-
-          
-
-          
-            
-            <div class="sourcecode">
-              
-              <p class="source-link">
-                Source:
-                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
-                
-              </p>
-              <div id="method-c-new_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/services/response_factory.rb, line 6</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">echo_request</span>, <span class="ruby-identifier">echo_response</span>)
-  <span class="ruby-ivar">@echo_request</span> = <span class="ruby-identifier">echo_request</span>
-  <span class="ruby-ivar">@echo_response</span> = <span class="ruby-identifier">echo_response</span>
-<span class="ruby-keyword">end</span></pre>
-              </div>
-            </div>
-            
-          </div>
-        
-      
     
       <div class="sectiontitle">Instance Public methods</div>
       
@@ -202,7 +155,7 @@
                 
               </p>
               <div id="method-i-response_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/services/response_factory.rb, line 11</span>
+                <pre><span class="ruby-comment"># File app/services/response_factory.rb, line 8</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">response</span>
   <span class="ruby-keyword">case</span> <span class="ruby-ivar">@echo_request</span>.<span class="ruby-identifier">intent_name</span>
   <span class="ruby-keyword">when</span> <span class="ruby-regexp">/Read/</span>

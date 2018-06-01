@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>InteractionModel</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="InteractionModel">
+
+  
+    
+    <meta name="description" content="Combines Schema in Amazon Alexa 1.0 format with Samples to build schema in Alexa 2.">
+    <meta property="og:description" content="Combines Schema in Amazon Alexa 1.0 format with Samples to build schema in Alexa 2.">
+  
+
+    <meta name="keywords" content="InteractionModel class">
+  
+    <meta name="keywords" content="save, intent_schema, add_intents_by_name, types_by_name">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            InteractionModel
+            
+                <span class="parent">&lt;
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/speech_assets/interaction_model_rb.html">app/speech_assets/interaction_model.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Combines Schema in Amazon Alexa 1.0 format with <a
+href="Samples.html">Samples</a> to build schema in Alexa 2.0 format</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-add_intents_by_name">add_intents_by_name</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-intent_schema">intent_schema</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-save">save</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-types_by_name">types_by_name</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            Concord
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-intent_schema">
+            
+              <b>intent_schema</b>()
+            
+            <a href="../classes/InteractionModel.html#method-i-intent_schema" name="method-i-intent_schema" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-intent_schema_source')" id="l_method-i-intent_schema_source">show</a>
+                
+              </p>
+              <div id="method-i-intent_schema_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/interaction_model.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">intent_schema</span>
+  <span class="ruby-identifier">intents_by_name</span> = []
+  <span class="ruby-identifier">utterance_model</span>.<span class="ruby-identifier">sample_values</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">intent</span><span class="ruby-operator">|</span> <span class="ruby-identifier">add_intents_by_name</span>(<span class="ruby-identifier">intents_by_name</span>, <span class="ruby-identifier">intent</span>) } 
+  { <span class="ruby-value">intents:</span> <span class="ruby-identifier">intents_by_name</span>, <span class="ruby-value">types:</span> <span class="ruby-identifier">types_by_name</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-save">
+            
+              <b>save</b>(filename)
+            
+            <a href="../classes/InteractionModel.html#method-i-save" name="method-i-save" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-save_source')" id="l_method-i-save_source">show</a>
+                
+              </p>
+              <div id="method-i-save_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/interaction_model.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">save</span>(<span class="ruby-identifier">filename</span>)
+  <span class="ruby-constant">JsonFileOutput</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">intent_schema</span>).<span class="ruby-identifier">save</span>(<span class="ruby-identifier">filename</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-add_intents_by_name">
+            
+              <b>add_intents_by_name</b>(intents_by_name, intent)
+            
+            <a href="../classes/InteractionModel.html#method-i-add_intents_by_name" name="method-i-add_intents_by_name" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-add_intents_by_name_source')" id="l_method-i-add_intents_by_name_source">show</a>
+                
+              </p>
+              <div id="method-i-add_intents_by_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/interaction_model.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_intents_by_name</span>(<span class="ruby-identifier">intents_by_name</span>, <span class="ruby-identifier">intent</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">intents_by_name</span> <span class="ruby-operator">&lt;&lt;</span> { <span class="ruby-value">intent:</span> <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">name</span>, <span class="ruby-value">samples:</span> <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">samples</span> } <span class="ruby-keyword">unless</span> <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">slots</span>.<span class="ruby-identifier">any?</span>
+   
+  <span class="ruby-identifier">slots</span> = []
+  <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">slots</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">slot</span><span class="ruby-operator">|</span> <span class="ruby-identifier">slots</span> <span class="ruby-operator">&lt;&lt;</span> { <span class="ruby-value">name:</span> <span class="ruby-identifier">slot</span>.<span class="ruby-identifier">name</span>, <span class="ruby-value">type:</span> <span class="ruby-identifier">slot</span>.<span class="ruby-identifier">type</span> } }
+  <span class="ruby-identifier">intents_by_name</span> <span class="ruby-operator">&lt;&lt;</span> { <span class="ruby-value">intent:</span> <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">name</span>, <span class="ruby-value">slots:</span> <span class="ruby-identifier">slots</span>, <span class="ruby-value">samples:</span> <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">samples</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-types_by_name">
+            
+              <b>types_by_name</b>()
+            
+            <a href="../classes/InteractionModel.html#method-i-types_by_name" name="method-i-types_by_name" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-types_by_name_source')" id="l_method-i-types_by_name_source">show</a>
+                
+              </p>
+              <div id="method-i-types_by_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/interaction_model.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">types_by_name</span>
+  <span class="ruby-identifier">interim_model_builder</span>.<span class="ruby-identifier">types_by_name</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">type</span><span class="ruby-operator">|</span> { <span class="ruby-value">name:</span> <span class="ruby-identifier">type</span>[<span class="ruby-value">1</span>], <span class="ruby-value">values:</span> <span class="ruby-string">&#39;&#39;</span> } }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

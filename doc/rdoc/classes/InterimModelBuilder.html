@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>InterimModelBuilder</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="InterimModelBuilder">
+
+  
+    
+    <meta name="description" content="Builds interaction Model in Amazon Alexa 1.">
+    <meta property="og:description" content="Builds interaction Model in Amazon Alexa 1.">
+  
+
+    <meta name="keywords" content="InterimModelBuilder class">
+  
+    <meta name="keywords" content="model, json_intents, types_by_name, add_intents, generate, json_model">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            InterimModelBuilder
+            
+                <span class="parent">&lt;
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/app/speech_assets/interim_model_builder_rb.html">app/speech_assets/interim_model_builder.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Builds interaction Model in Amazon Alexa 1.0 format</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-add_intents">add_intents</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-generate">generate</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>J</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-json_intents">json_intents</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-json_model">json_model</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-model">model</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-types_by_name">types_by_name</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            Concord
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-json_intents">
+            
+              <b>json_intents</b>()
+            
+            <a href="../classes/InterimModelBuilder.html#method-i-json_intents" name="method-i-json_intents" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Return lists of intents based on Alexa 1.0 JSON schema</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-json_intents_source')" id="l_method-i-json_intents_source">show</a>
+                
+              </p>
+              <div id="method-i-json_intents_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/interim_model_builder.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">json_intents</span>
+  <span class="ruby-ivar">@json_intents</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">json_model</span>, <span class="ruby-value">symbolize_names:</span> <span class="ruby-keyword">true</span>)[<span class="ruby-value">:interactionModel</span>][<span class="ruby-value">:languageModel</span>][<span class="ruby-value">:intents</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-model">
+            
+              <b>model</b>()
+            
+            <a href="../classes/InterimModelBuilder.html#method-i-model" name="method-i-model" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-model_source')" id="l_method-i-model_source">show</a>
+                
+              </p>
+              <div id="method-i-model_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/interim_model_builder.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">model</span>
+  <span class="ruby-ivar">@model</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">generate</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-types_by_name">
+            
+              <b>types_by_name</b>()
+            
+            <a href="../classes/InterimModelBuilder.html#method-i-types_by_name" name="method-i-types_by_name" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-types_by_name_source')" id="l_method-i-types_by_name_source">show</a>
+                
+              </p>
+              <div id="method-i-types_by_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/interim_model_builder.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">types_by_name</span>
+  <span class="ruby-identifier">model</span>.<span class="ruby-identifier">collect_slot_types</span>.<span class="ruby-identifier">reject</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&#39;AMAZON&#39;</span>) }.<span class="ruby-identifier">uniq</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-identifier">value</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-add_intents">
+            
+              <b>add_intents</b>(modl, klass, intents)
+            
+            <a href="../classes/InterimModelBuilder.html#method-i-add_intents" name="method-i-add_intents" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-add_intents_source')" id="l_method-i-add_intents_source">show</a>
+                
+              </p>
+              <div id="method-i-add_intents_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/interim_model_builder.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_intents</span>(<span class="ruby-identifier">modl</span>, <span class="ruby-identifier">klass</span>, <span class="ruby-identifier">intents</span>)
+  <span class="ruby-identifier">intents</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">intent</span> = <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">modl</span>, <span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-generate">
+            
+              <b>generate</b>()
+            
+            <a href="../classes/InterimModelBuilder.html#method-i-generate" name="method-i-generate" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-generate_source')" id="l_method-i-generate_source">show</a>
+                
+              </p>
+              <div id="method-i-generate_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/interim_model_builder.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate</span>
+  <span class="ruby-ivar">@model</span> = <span class="ruby-identifier">builder_class</span>.<span class="ruby-identifier">build</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">modl</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">add_intents</span>(<span class="ruby-identifier">modl</span>, <span class="ruby-constant">CustomIntent</span>, <span class="ruby-ivar">@custom_intents</span>)
+    <span class="ruby-identifier">add_intents</span>(<span class="ruby-identifier">modl</span>, <span class="ruby-constant">AmazonIntent</span>, <span class="ruby-ivar">@amazon_intents</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-json_model">
+            
+              <b>json_model</b>()
+            
+            <a href="../classes/InterimModelBuilder.html#method-i-json_model" name="method-i-json_model" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-json_model_source')" id="l_method-i-json_model_source">show</a>
+                
+              </p>
+              <div id="method-i-json_model_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/interim_model_builder.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">json_model</span>
+  <span class="ruby-constant">JsonFileOutput</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">model</span>.<span class="ruby-identifier">intent_schema</span>).<span class="ruby-identifier">output_model</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

@@ -21,7 +21,7 @@
 
     <meta name="keywords" content="UtterancesModel class">
   
-    <meta name="keywords" content="new, describe, save">
+    <meta name="keywords" content="new, intents_with_samples, sample_values, save, add_samples, build_intents_with_samples, build_samples, describe, intent_utterance, samples">
   
 </head>
 
@@ -34,7 +34,7 @@
             
                 <span class="parent">&lt;
                     
-                    Object
+                    <a href="Object.html">Object</a>
                     
                 </span>
             
@@ -71,6 +71,35 @@
     <div class="sectiontitle">Methods</div>
     <dl class="methods">
       
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-add_samples">add_samples</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-build_intents_with_samples">build_intents_with_samples</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-build_samples">build_samples</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
         <dt>D</dt>
         <dd>
           <ul>
@@ -78,6 +107,23 @@
               
               <li>
                 <a href="#method-i-describe">describe</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-intent_utterance">intent_utterance</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-intents_with_samples">intents_with_samples</a>
               </li>
             
           </ul>
@@ -98,6 +144,16 @@
         <dt>S</dt>
         <dd>
           <ul>
+            
+              
+              <li>
+                <a href="#method-i-sample_values">sample_values</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-samples">samples</a>,
+              </li>
             
               
               <li>
@@ -132,7 +188,15 @@
             <td class='attr-rw'>
               [R]
             </td>
-            <td class='attr-name'>model</td>
+            <td class='attr-name'>interim_builder</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>interim_model</td>
             <td class='attr-desc'></td>
           </tr>
         
@@ -147,7 +211,7 @@
         <div class="method">
           <div class="title method-title" id="method-c-new">
             
-              <b>new</b>(model)
+              <b>new</b>(interim_builder)
             
             <a href="../classes/UtterancesModel.html#method-c-new" name="method-c-new" class="permalink">Link</a>
           </div>
@@ -172,9 +236,10 @@
                 
               </p>
               <div id="method-c-new_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 7</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">model</span>)
-  <span class="ruby-ivar">@model</span> = <span class="ruby-identifier">model</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">interim_builder</span>)
+  <span class="ruby-ivar">@interim_builder</span> = <span class="ruby-identifier">interim_builder</span>
+  <span class="ruby-ivar">@interim_model</span> = <span class="ruby-identifier">interim_builder</span>.<span class="ruby-identifier">model</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
@@ -186,11 +251,11 @@
       <div class="sectiontitle">Instance Public methods</div>
       
         <div class="method">
-          <div class="title method-title" id="method-i-describe">
+          <div class="title method-title" id="method-i-intents_with_samples">
             
-              <b>describe</b>()
+              <b>intents_with_samples</b>()
             
-            <a href="../classes/UtterancesModel.html#method-i-describe" name="method-i-describe" class="permalink">Link</a>
+            <a href="../classes/UtterancesModel.html#method-i-intents_with_samples" name="method-i-intents_with_samples" class="permalink">Link</a>
           </div>
 
           
@@ -209,15 +274,50 @@
               
               <p class="source-link">
                 Source:
-                <a href="javascript:toggleSource('method-i-describe_source')" id="l_method-i-describe_source">show</a>
+                <a href="javascript:toggleSource('method-i-intents_with_samples_source')" id="l_method-i-intents_with_samples_source">show</a>
                 
               </p>
-              <div id="method-i-describe_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 11</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">describe</span>
-  <span class="ruby-identifier">model</span>.<span class="ruby-identifier">intents</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">intent</span>, <span class="ruby-identifier">_value</span><span class="ruby-operator">|</span>
-    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">model</span>.<span class="ruby-identifier">sample_utterances</span>(<span class="ruby-identifier">intent</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
-  <span class="ruby-keyword">end</span>
+              <div id="method-i-intents_with_samples_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">intents_with_samples</span>
+  <span class="ruby-ivar">@intents_with_samples</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">build_intents_with_samples</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-sample_values">
+            
+              <b>sample_values</b>()
+            
+            <a href="../classes/UtterancesModel.html#method-i-sample_values" name="method-i-sample_values" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-sample_values_source')" id="l_method-i-sample_values_source">show</a>
+                
+              </p>
+              <div id="method-i-sample_values_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sample_values</span>
+  <span class="ruby-identifier">intents_with_samples</span>.<span class="ruby-identifier">values</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
@@ -252,11 +352,247 @@
                 
               </p>
               <div id="method-i-save_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 17</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">save</span>(<span class="ruby-identifier">filename</span>)
   <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-string">&#39;w+&#39;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">describe</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">sample</span><span class="ruby-operator">|</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">sample</span> }
   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-add_samples">
+            
+              <b>add_samples</b>(generator_intent, index)
+            
+            <a href="../classes/UtterancesModel.html#method-i-add_samples" name="method-i-add_samples" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-add_samples_source')" id="l_method-i-add_samples_source">show</a>
+                
+              </p>
+              <div id="method-i-add_samples_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_samples</span>(<span class="ruby-identifier">generator_intent</span>, <span class="ruby-identifier">index</span>)
+  <span class="ruby-identifier">generator_intent</span>.<span class="ruby-identifier">add_samples</span>(<span class="ruby-identifier">samples</span>, <span class="ruby-identifier">index</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-build_intents_with_samples">
+            
+              <b>build_intents_with_samples</b>()
+            
+            <a href="../classes/UtterancesModel.html#method-i-build_intents_with_samples" name="method-i-build_intents_with_samples" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-build_intents_with_samples_source')" id="l_method-i-build_intents_with_samples_source">show</a>
+                
+              </p>
+              <div id="method-i-build_intents_with_samples_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">build_intents_with_samples</span>
+  <span class="ruby-identifier">sample_array</span> = []
+  <span class="ruby-identifier">interim_model</span>.<span class="ruby-identifier">intents</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">generator_intent</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">sample_array</span>.<span class="ruby-identifier">concat</span>([<span class="ruby-identifier">add_samples</span>(<span class="ruby-identifier">generator_intent</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">index</span>)])
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Hash</span>[<span class="ruby-identifier">sample_array</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">intent</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">intent</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">intent</span>] }]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-build_samples">
+            
+              <b>build_samples</b>()
+            
+            <a href="../classes/UtterancesModel.html#method-i-build_samples" name="method-i-build_samples" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-build_samples_source')" id="l_method-i-build_samples_source">show</a>
+                
+              </p>
+              <div id="method-i-build_samples_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">build_samples</span>
+  <span class="ruby-identifier">samples</span> = []
+  <span class="ruby-identifier">interim_builder</span>.<span class="ruby-identifier">json_intents</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">intent</span><span class="ruby-operator">|</span> <span class="ruby-identifier">samples</span>.<span class="ruby-identifier">concat</span>([<span class="ruby-identifier">intent_utterance</span>(<span class="ruby-identifier">intent</span>[<span class="ruby-value">:intent</span>])]) }
+  <span class="ruby-identifier">samples</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-describe">
+            
+              <b>describe</b>()
+            
+            <a href="../classes/UtterancesModel.html#method-i-describe" name="method-i-describe" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-describe_source')" id="l_method-i-describe_source">show</a>
+                
+              </p>
+              <div id="method-i-describe_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">describe</span>
+  <span class="ruby-identifier">interim_model</span>.<span class="ruby-identifier">intents</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">intent</span>, <span class="ruby-identifier">_value</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">interim_model</span>.<span class="ruby-identifier">sample_utterances</span>(<span class="ruby-identifier">intent</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-intent_utterance">
+            
+              <b>intent_utterance</b>(intent)
+            
+            <a href="../classes/UtterancesModel.html#method-i-intent_utterance" name="method-i-intent_utterance" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-intent_utterance_source')" id="l_method-i-intent_utterance_source">show</a>
+                
+              </p>
+              <div id="method-i-intent_utterance_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">intent_utterance</span>(<span class="ruby-identifier">intent</span>)
+  <span class="ruby-comment"># the sample utterance is taken from the model.sample_utterances list but Amazon and Custom intents</span>
+  <span class="ruby-comment"># are indexed with strings or symbols respectively so we call indifferent_access to access the samples.</span>
+  <span class="ruby-identifier">interim_model</span>.<span class="ruby-identifier">sample_utterances</span>(<span class="ruby-identifier">indifferent_access</span>(<span class="ruby-identifier">intent</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-samples">
+            
+              <b>samples</b>()
+            
+            <a href="../classes/UtterancesModel.html#method-i-samples" name="method-i-samples" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>returns a list of sample utterances in format: [Intent] [Sample] e.g.
+ConditionIntent talk about {Condition}</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-samples_source')" id="l_method-i-samples_source">show</a>
+                
+              </p>
+              <div id="method-i-samples_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">samples</span>
+  <span class="ruby-ivar">@samples</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">build_samples</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>

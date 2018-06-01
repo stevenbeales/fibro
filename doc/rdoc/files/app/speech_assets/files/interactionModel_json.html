@@ -24,7 +24,7 @@
                 app/speech_assets/files/interactionModel.json
                 
             </li>
-            <li>Last modified: 2018-05-24 22:20:11 -0400</li>
+            <li>Last modified: 2018-05-31 17:46:22 -0400</li>
         </ul>
     </div>
 
@@ -33,9 +33,8 @@
   
     <div class="description">
       
-<p>{</p>
-
-<pre><code>&quot;interactionModel&quot;: {
+<pre><code>{
+&quot;interactionModel&quot;: {
   &quot;languageModel&quot;: {
     &quot;invocationName&quot;: &quot;fibro friend&quot;,
     &quot;intents&quot;: [
@@ -46,10 +45,22 @@
             &quot;name&quot;: &quot;Condition&quot;,
             &quot;type&quot;: &quot;LIST_OF_CONDITIONS&quot;
           }
+        ],
+        &quot;samples&quot;: [
+          &quot;talk about {Condition}&quot;,
+          &quot;tell me about {Condition}&quot;,
+          &quot;tell me some details about {Condition}&quot;,
+          &quot;tell me symptoms of {Condition}&quot;,
+          &quot;tell me the symptoms of {Condition}&quot;,
+          &quot;tell me the treatment of {Condition}&quot;,
+          &quot;{Condition}&quot;
         ]
       },
       {
-        &quot;intent&quot;: &quot;EverybodyHurtsIntent&quot;
+        &quot;intent&quot;: &quot;EverybodyHurtsIntent&quot;,
+        &quot;samples&quot;: [
+          &quot;Everybody Hurts&quot;
+        ]
       },
       {
         &quot;intent&quot;: &quot;ReadAllIntent&quot;,
@@ -62,6 +73,12 @@
             &quot;name&quot;: &quot;Log&quot;,
             &quot;type&quot;: &quot;LOG&quot;
           }
+        ],
+        &quot;samples&quot;: [
+          &quot;What happened&quot;,
+          &quot;{Read} all&quot;,
+          &quot;{Read} everything&quot;,
+          &quot;{Read} {Log}&quot;
         ]
       },
       {
@@ -83,6 +100,13 @@
             &quot;name&quot;: &quot;Entry&quot;,
             &quot;type&quot;: &quot;ENTRY&quot;
           }
+        ],
+        &quot;samples&quot;: [
+          &quot;Get {Entry} for {Day}&quot;,
+          &quot;Give me {Entry} for {Day}&quot;,
+          &quot;What happened on {Day}&quot;,
+          &quot;{Read} {Day}&quot;,
+          &quot;{Read} {Log} for {Day}&quot;
         ]
       },
       {
@@ -100,6 +124,12 @@
             &quot;name&quot;: &quot;n&quot;,
             &quot;type&quot;: &quot;AMAZON.NUMBER&quot;
           }
+        ],
+        &quot;samples&quot;: [
+          &quot;{Read} last&quot;,
+          &quot;{Read} last {Log}&quot;,
+          &quot;{Read} last {n}&quot;,
+          &quot;{Read} last {n} {Log}&quot;
         ]
       },
       {
@@ -109,6 +139,16 @@
             &quot;name&quot;: &quot;Symptom&quot;,
             &quot;type&quot;: &quot;LIST_OF_SYMPTOMS&quot;
           }
+        ],
+        &quot;samples&quot;: [
+          &quot;I am feeling {Symptom}&quot;,
+          &quot;I am {Symptom}&quot;,
+          &quot;I feel {Symptom}&quot;,
+          &quot;I have {Symptom}&quot;,
+          &quot;I think I may have {Symptom}&quot;,
+          &quot;I think I might have {Symptom}&quot;,
+          &quot;I {Symptom}&quot;,
+          &quot;{Symptom}&quot;
         ]
       },
       {
@@ -118,40 +158,214 @@
             &quot;name&quot;: &quot;SymptomInfo&quot;,
             &quot;type&quot;: &quot;LIST_OF_SYMPTOMS&quot;
           }
+        ],
+        &quot;samples&quot;: [
+          &quot;Can you tell me about {Symptom}&quot;,
+          &quot;Could untreated {Symptom} be fatal&quot;,
+          &quot;Do you know anything about {Symptom}&quot;,
+          &quot;Get result for {Symptom}&quot;,
+          &quot;I have {Symptom} what does it mean&quot;,
+          &quot;If I feel {Symptom} should I be worried&quot;,
+          &quot;If I feel {Symptom} what could it be&quot;,
+          &quot;Is {Symptom} fatal&quot;,
+          &quot;Should I be scared if {Symptom}&quot;,
+          &quot;Should I be worried if I am {Symptom}&quot;,
+          &quot;Should I be worried if I have {Symptom}&quot;,
+          &quot;Should I go to the doctor if I have {Symptom}&quot;,
+          &quot;Should I go to the doctor if {Symptom}&quot;,
+          &quot;What are feelings of {Symptom}&quot;,
+          &quot;What are the most popular diagnosis that cause {Symptom}&quot;,
+          &quot;What could {Symptom} mean&quot;,
+          &quot;What does it mean to have {Symptom}&quot;,
+          &quot;What if I feel {Symptom}&quot;,
+          &quot;What if I have {Symptom}&quot;,
+          &quot;What is linked to {Symptom}&quot;,
+          &quot;What relates to {Symptom}&quot;,
+          &quot;Will I die if {Symptom}&quot;,
+          &quot;what does it mean if I have {Symptom}&quot;
         ]
       },
       {
-        &quot;intent&quot;: &quot;AMAZON.CancelIntent&quot;
+        &quot;intent&quot;: &quot;AMAZON.CancelIntent&quot;,
+        &quot;samples&quot;: [
+          &quot;Cancel&quot;,
+          &quot;Forget it&quot;,
+          &quot;Never mind&quot;
+        ]
       },
       {
-        &quot;intent&quot;: &quot;AMAZON.HelpIntent&quot;
+        &quot;intent&quot;: &quot;AMAZON.FallbackIntent&quot;,
+        &quot;samples&quot;: [
+          &quot;Fall back&quot;
+        ]
       },
       {
-        &quot;intent&quot;: &quot;AMAZON.NextIntent&quot;
+        &quot;intent&quot;: &quot;AMAZON.HelpIntent&quot;,
+        &quot;samples&quot;: [
+          &quot;Any advice&quot;,
+          &quot;Any tips&quot;,
+          &quot;Can you help me&quot;,
+          &quot;Do not understand&quot;,
+          &quot;Do you have instructions&quot;,
+          &quot;Get help&quot;,
+          &quot;Help&quot;,
+          &quot;Help me&quot;,
+          &quot;How can I use you&quot;,
+          &quot;How do I give commands&quot;,
+          &quot;How do I use this app&quot;,
+          &quot;How do I use you&quot;,
+          &quot;How do you work&quot;,
+          &quot;How does this work&quot;,
+          &quot;I could use help&quot;,
+          &quot;I don&#39;t know&quot;,
+          &quot;I don&#39;t know what&#39;s going on&quot;,
+          &quot;I&#39;m confused&quot;,
+          &quot;I&#39;m lost on what to do&quot;,
+          &quot;I&#39;m stuck&quot;,
+          &quot;Instructions please&quot;,
+          &quot;Please advise&quot;,
+          &quot;Please help&quot;,
+          &quot;What can I answer&quot;,
+          &quot;What can I ask you&quot;,
+          &quot;What can I do&quot;,
+          &quot;What can I use this for&quot;,
+          &quot;What can you do&quot;,
+          &quot;What can you tell me&quot;,
+          &quot;What commands can I ask&quot;,
+          &quot;What do you do&quot;,
+          &quot;What do you mean&quot;,
+          &quot;What do you refer to&quot;,
+          &quot;What kind of command should I give&quot;,
+          &quot;What questions can I ask&quot;,
+          &quot;What should I say&quot;,
+          &quot;What type of input should I give&quot;
+        ]
       },
       {
-        &quot;intent&quot;: &quot;AMAZON.NoIntent&quot;
+        &quot;intent&quot;: &quot;AMAZON.NextIntent&quot;,
+        &quot;samples&quot;: [
+          &quot;Another&quot;,
+          &quot;Next&quot;,
+          &quot;Now what&quot;,
+          &quot;Skip&quot;,
+          &quot;Skip forward&quot;
+        ]
       },
       {
-        &quot;intent&quot;: &quot;AMAZON.PauseIntent&quot;
+        &quot;intent&quot;: &quot;AMAZON.NoIntent&quot;,
+        &quot;samples&quot;: [
+          &quot;Nah&quot;,
+          &quot;Nein&quot;,
+          &quot;No&quot;,
+          &quot;No thanks&quot;,
+          &quot;No way&quot;,
+          &quot;Non&quot;,
+          &quot;Nyet&quot;
+        ]
       },
       {
-        &quot;intent&quot;: &quot;AMAZON.PreviousIntent&quot;
+        &quot;intent&quot;: &quot;AMAZON.PauseIntent&quot;,
+        &quot;samples&quot;: [
+          &quot;Pause&quot;,
+          &quot;Pause that&quot;
+        ]
       },
       {
-        &quot;intent&quot;: &quot;AMAZON.RepeatIntent&quot;
+        &quot;intent&quot;: &quot;AMAZON.PreviousIntent&quot;,
+        &quot;samples&quot;: [
+          &quot;Back up&quot;,
+          &quot;Go back&quot;,
+          &quot;Previous&quot;,
+          &quot;Skip back&quot;
+        ]
       },
       {
-        &quot;intent&quot;: &quot;AMAZON.ResumeIntent&quot;
+        &quot;intent&quot;: &quot;AMAZON.RepeatIntent&quot;,
+        &quot;samples&quot;: [
+          &quot;Again&quot;,
+          &quot;Can you repeat that&quot;,
+          &quot;One more time&quot;,
+          &quot;Repeat&quot;,
+          &quot;Repeat again&quot;,
+          &quot;Repeat that&quot;,
+          &quot;Say again&quot;,
+          &quot;Say that again&quot;,
+          &quot;What are you asking about&quot;
+        ]
       },
       {
-        &quot;intent&quot;: &quot;AMAZON.StartOverIntent&quot;
+        &quot;intent&quot;: &quot;AMAZON.ResumeIntent&quot;,
+        &quot;samples&quot;: [
+          &quot;Continue&quot;,
+          &quot;Keep Going&quot;,
+          &quot;Resume&quot;
+        ]
       },
       {
-        &quot;intent&quot;: &quot;AMAZON.StopIntent&quot;
+        &quot;intent&quot;: &quot;AMAZON.StartOverIntent&quot;,
+        &quot;samples&quot;: [
+          &quot;Re-start&quot;,
+          &quot;Start&quot;,
+          &quot;Start again&quot;,
+          &quot;Start over&quot;
+        ]
       },
       {
-        &quot;intent&quot;: &quot;AMAZON.YesIntent&quot;
+        &quot;intent&quot;: &quot;AMAZON.StopIntent&quot;,
+        &quot;samples&quot;: [
+          &quot;Adios&quot;,
+          &quot;Arrivederci&quot;,
+          &quot;Au Revoir&quot;,
+          &quot;Auf Wiedersehn&quot;,
+          &quot;Good-bye&quot;,
+          &quot;Goodbye&quot;,
+          &quot;No mas&quot;,
+          &quot;Off&quot;,
+          &quot;Shut up&quot;,
+          &quot;Stop&quot;
+        ]
+      },
+      {
+        &quot;intent&quot;: &quot;AMAZON.YesIntent&quot;,
+        &quot;samples&quot;: [
+          &quot;Bien Sur&quot;,
+          &quot;Da&quot;,
+          &quot;Got it&quot;,
+          &quot;Ja&quot;,
+          &quot;Let&#39;s do it&quot;,
+          &quot;OK&quot;,
+          &quot;Okay&quot;,
+          &quot;Oui&quot;,
+          &quot;Roger that&quot;,
+          &quot;Sounds good&quot;,
+          &quot;Super&quot;,
+          &quot;Sure&quot;,
+          &quot;Yep&quot;,
+          &quot;Yes&quot;,
+          &quot;Yes please&quot;
+        ]
+      }
+    ],
+    &quot;types&quot;: [
+      {
+        &quot;name&quot;: &quot;LIST_OF_CONDITIONS&quot;,
+        &quot;values&quot;: &quot;&quot;
+      },
+      {
+        &quot;name&quot;: &quot;READ&quot;,
+        &quot;values&quot;: &quot;&quot;
+      },
+      {
+        &quot;name&quot;: &quot;LOG&quot;,
+        &quot;values&quot;: &quot;&quot;
+      },
+      {
+        &quot;name&quot;: &quot;ENTRY&quot;,
+        &quot;values&quot;: &quot;&quot;
+      },
+      {
+        &quot;name&quot;: &quot;LIST_OF_SYMPTOMS&quot;,
+        &quot;values&quot;: &quot;&quot;
       }
     ]
   }

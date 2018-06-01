@@ -310,6 +310,28 @@
             "Yes please"
           ]
         }
+      ],
+      "types": [
+        {
+          "name": "LIST_OF_CONDITIONS",
+          "values": ""
+        },
+        {
+          "name": "READ",
+          "values": ""
+        },
+        {
+          "name": "LOG",
+          "values": ""
+        },
+        {
+          "name": "ENTRY",
+          "values": ""
+        },
+        {
+          "name": "LIST_OF_SYMPTOMS",
+          "values": ""
+        }
       ]
     }
   }

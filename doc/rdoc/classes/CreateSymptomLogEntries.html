@@ -147,7 +147,7 @@
                 
               </p>
               <div id="method-i-add_indexes_and_keys_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File db/migrate/20180506042531_create_symptom_log_entries.rb, line 19</span>
+                <pre><span class="ruby-comment"># File db/migrate/20180506042531_create_symptom_log_entries.rb, line 20</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_indexes_and_keys</span>
   <span class="ruby-identifier">add_index</span> <span class="ruby-value">:symptom_log_entries</span>, <span class="ruby-value">:discarded_at</span>
 <span class="ruby-keyword">end</span></pre>
@@ -192,6 +192,7 @@
     <span class="ruby-identifier">t</span>.<span class="ruby-identifier">datetime</span> <span class="ruby-value">:entry_date</span>, <span class="ruby-value">null:</span> <span class="ruby-keyword">false</span>, <span class="ruby-value">index:</span> <span class="ruby-keyword">true</span>, <span class="ruby-value">default:</span> <span class="ruby-operator">-&gt;</span> { <span class="ruby-string">&#39;CURRENT_TIMESTAMP&#39;</span> }
     <span class="ruby-identifier">t</span>.<span class="ruby-identifier">integer</span> <span class="ruby-value">:severity</span>, <span class="ruby-value">null:</span> <span class="ruby-keyword">false</span>, <span class="ruby-value">default:</span> <span class="ruby-value">2</span>
     <span class="ruby-identifier">t</span>.<span class="ruby-identifier">integer</span> <span class="ruby-value">:score</span>, <span class="ruby-value">null:</span> <span class="ruby-keyword">false</span>, <span class="ruby-value">default:</span> <span class="ruby-value">5</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:duration</span>, <span class="ruby-value">:interval</span>
     <span class="ruby-identifier">t</span>.<span class="ruby-identifier">timestamps</span> <span class="ruby-value">null:</span> <span class="ruby-keyword">false</span>, <span class="ruby-value">default:</span> <span class="ruby-operator">-&gt;</span> { <span class="ruby-string">&#39;CURRENT_TIMESTAMP&#39;</span> }
     <span class="ruby-identifier">t</span>.<span class="ruby-identifier">datetime</span> <span class="ruby-value">:discarded_at</span>
   <span class="ruby-keyword">end</span>

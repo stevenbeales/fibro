@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>IntentRefinements</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <meta property="og:title" value="IntentRefinements">
+
+  
+    
+    <meta name="description" content="Add methods to AlexaGenerator::Intent class.">
+    <meta property="og:description" content="Add methods to AlexaGenerator::Intent class.">
+  
+
+    <meta name="keywords" content="IntentRefinements class">
+  
+    <meta name="keywords" content="add_samples, remove_intent, remove_intents_from_samples">
+  
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span>
+            IntentRefinements
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/lib/refinements/intent_refinements_rb.html">lib/refinements/intent_refinements.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Add methods to AlexaGenerator::Intent class</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-add_samples">add_samples</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-remove_intent">remove_intent</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-remove_intents_from_samples">remove_intents_from_samples</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+    
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-add_samples">
+            
+              <b>add_samples</b>(samples, index)
+            
+            <a href="../classes/IntentRefinements.html#method-i-add_samples" name="method-i-add_samples" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-add_samples_source')" id="l_method-i-add_samples_source">show</a>
+                
+              </p>
+              <div id="method-i-add_samples_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/refinements/intent_refinements.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_samples</span>(<span class="ruby-identifier">samples</span>, <span class="ruby-identifier">index</span>)
+  <span class="ruby-ivar">@samples</span> = <span class="ruby-identifier">remove_intents_from_samples</span>(<span class="ruby-identifier">samples</span>, <span class="ruby-identifier">index</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-remove_intent">
+            
+              <b>remove_intent</b>(sample)
+            
+            <a href="../classes/IntentRefinements.html#method-i-remove_intent" name="method-i-remove_intent" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              <p>Transforms [intent] [sample] to [sample]</p>
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-remove_intent_source')" id="l_method-i-remove_intent_source">show</a>
+                
+              </p>
+              <div id="method-i-remove_intent_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/refinements/intent_refinements.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">remove_intent</span>(<span class="ruby-identifier">sample</span>)
+  <span class="ruby-identifier">sample</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39; &#39;</span>, <span class="ruby-string">&#39;&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-remove_intents_from_samples">
+            
+              <b>remove_intents_from_samples</b>(samples, index)
+            
+            <a href="../classes/IntentRefinements.html#method-i-remove_intents_from_samples" name="method-i-remove_intents_from_samples" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-remove_intents_from_samples_source')" id="l_method-i-remove_intents_from_samples_source">show</a>
+                
+              </p>
+              <div id="method-i-remove_intents_from_samples_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/refinements/intent_refinements.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">remove_intents_from_samples</span>(<span class="ruby-identifier">samples</span>, <span class="ruby-identifier">index</span>)
+  <span class="ruby-identifier">samples_only</span> = []
+  <span class="ruby-identifier">samples</span>[<span class="ruby-identifier">index</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sample</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">samples_only</span>.<span class="ruby-identifier">concat</span>([<span class="ruby-identifier">remove_intent</span>(<span class="ruby-identifier">sample</span>)])
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">samples_only</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+    
+  
+</div>
+
+    </div>
+  </body>
+</html>

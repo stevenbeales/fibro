@@ -21,7 +21,7 @@
 
     <meta name="keywords" content="IntentBuilder class">
   
-    <meta name="keywords" content="new, add, add_slot, add_intents">
+    <meta name="keywords" content="add, add_slot, add_intents">
   
 </head>
 
@@ -34,14 +34,14 @@
             
                 <span class="parent">&lt;
                     
-                    Object
+                    <a href="Object.html">Object</a>
                     
                 </span>
             
         </h1>
         <ul class="files">
             
-            <li><a href="../files/app/speech_assets/intent_builder_rb.html">app/speech_assets/intent_builder.rb</a></li>
+            <li><a href="../files/app/speech_assets/intents/intent_builder_rb.html">app/speech_assets/intents/intent_builder.rb</a></li>
             
         </ul>
     </div>
@@ -94,22 +94,22 @@ intents for voice user interfaces</p>
           </ul>
         </dd>
       
-        <dt>N</dt>
-        <dd>
-          <ul>
-            
-              
-              <li>
-                <a href="#method-c-new">new</a>
-              </li>
-            
-          </ul>
-        </dd>
-      
     </dl>
   
 
   
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            Concord
+          
+        </li>
+      
+    </ul>
+  
 
 
 
@@ -122,73 +122,11 @@ intents for voice user interfaces</p>
     
 
 
-    
-      <!-- Section attributes -->
-      <div class="sectiontitle">Attributes</div>
-      <table border='0' cellpadding='5'>
-        
-          <tr valign='top'>
-            <td class='attr-rw'>
-              [R]
-            </td>
-            <td class='attr-name'>builder</td>
-            <td class='attr-desc'></td>
-          </tr>
-        
-          <tr valign='top'>
-            <td class='attr-rw'>
-              [R]
-            </td>
-            <td class='attr-name'>intent</td>
-            <td class='attr-desc'></td>
-          </tr>
-        
-      </table>
     
 
 
     <!-- Methods -->
     
-      <div class="sectiontitle">Class Public methods</div>
-      
-        <div class="method">
-          <div class="title method-title" id="method-c-new">
-            
-              <b>new</b>(intent)
-            
-            <a href="../classes/IntentBuilder.html#method-c-new" name="method-c-new" class="permalink">Link</a>
-          </div>
-
-          
-            <div class="description">
-              
-            </div>
-          
-
-          
-
-          
-
-          
-            
-            <div class="sourcecode">
-              
-              <p class="source-link">
-                Source:
-                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
-                
-              </p>
-              <div id="method-c-new_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/intent_builder.rb, line 8</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">intent</span>)
-  <span class="ruby-ivar">@intent</span> = <span class="ruby-identifier">intent</span>
-<span class="ruby-keyword">end</span></pre>
-              </div>
-            </div>
-            
-          </div>
-        
-      
     
       <div class="sectiontitle">Instance Public methods</div>
       
@@ -220,7 +158,7 @@ intents for voice user interfaces</p>
                 
               </p>
               <div id="method-i-add_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/intent_builder.rb, line 12</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/intents/intent_builder.rb, line 7</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
 <span class="ruby-keyword">end</span></pre>
@@ -257,7 +195,7 @@ intents for voice user interfaces</p>
                 
               </p>
               <div id="method-i-add_slot_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/intent_builder.rb, line 16</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/intents/intent_builder.rb, line 11</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_slot</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">type</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add_slot</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">type</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -297,7 +235,7 @@ intents for voice user interfaces</p>
                 
               </p>
               <div id="method-i-add_intents_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/intent_builder.rb, line 22</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/intents/intent_builder.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_intents</span>(<span class="ruby-identifier">intents</span>)
   <span class="ruby-identifier">intents</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">sample</span><span class="ruby-operator">|</span> <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add_utterance_template</span> <span class="ruby-identifier">sample</span> }
 <span class="ruby-keyword">end</span></pre>

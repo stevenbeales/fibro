@@ -11,15 +11,15 @@ unless defined? INTERACTION_MODEL_GENERATOR_LOADED
   class SpeechAssetGenerator
     def self.generate(interaction_file, utterances_file)
       # Build an in memory JSON Interaction Model in Alexa 1.0 format
-      interim_model = InterimModelBuilder.new(AlexaGenerator::InteractionModel,
-                                              IntentBuilders::CUSTOM_INTENTS,
-                                              IntentBuilders::AMAZON_INTENTS).model
+      interim_model_builder = InterimModelBuilder.new(AlexaGenerator::InteractionModel,
+                                                      IntentBuilders::CUSTOM_INTENTS,
+                                                      IntentBuilders::AMAZON_INTENTS)
       # Create the sample utterances file in Alexa 1.0 format
-      utterance_model = UtterancesModel.new(interim_model)
+      utterance_model = UtterancesModel.new(interim_model_builder)
       utterance_model.save(utterances_file)
   
       # Create the interaction json file in Alexa 2.0 format
-      combiner = JsonInteractionFile.new(utterance_model)
+      combiner = InteractionModel.new(interim_model_builder, utterance_model)
       combiner.save(interaction_file)
     end
   end
