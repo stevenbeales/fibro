@@ -39,7 +39,7 @@ PreCommit:
   Mdl:
     enabled: false
   TravisLint:
-    enabled: true
+    enabled: false
   JsonSyntax:
     enabled: true
   LocalPathsInGemfile:

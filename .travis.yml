@@ -7,14 +7,9 @@ branches:
     - master
 addons:
   postgresql: "9.6"
-  apt:
-    sources:
-    - heroku
-    packages:
-    - heroku-toolbelt
-
+ 
 bundler_args:
-  --without development production
+  --without development production --jobs=2
 
 env:
   global:
@@ -53,6 +48,7 @@ after_script:
 
 notifications:
   email:
+    recipients:
+     - stevenbeales@gmail.com
     on_success: never
     on_failure: change
-    on_start: false
