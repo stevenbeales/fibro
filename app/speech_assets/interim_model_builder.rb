@@ -8,9 +8,8 @@ class InterimModelBuilder
     @model ||= build_model
   end
 
-  # Returns a hash of custom types
-  def custom_types_by_name
-    model.collect_slot_types.reject { |_key, value| value.include?('AMAZON') }.uniq { |_key, value| value }
+  def intents
+    model.intents
   end
 
   protected

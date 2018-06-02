@@ -27,6 +27,13 @@ class InteractionModel
   end
 
   def custom_types_by_name
-    interim_model_builder.custom_types_by_name.map { |_type, name| { name: name, values: '' } }
+    interim_model_builder.intents \
+                         .select { |_name, intent| intent.slots.size.positive? }
+                         .map { |_name, intent| custom_types_for(intent) }
+                         .uniq { |key, _value| key }
+  end
+
+  def custom_types_for(intent)
+    intent.slots.map { |slot| { name: slot.name, values: slot.bindings } }
   end
 end

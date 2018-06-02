@@ -4,7 +4,6 @@ unless defined? INTERACTION_MODEL_GENERATOR_LOADED
   INTERACTION_MODEL_GENERATOR_LOADED = 1
 
   require_relative 'init'
-  require './app/app_constants'
   
   # Class to regenerate the interaction model and sample utterances speech assets for Alexa if in test environment  
   # Entry point to regeneration of the interactionModel.json and sampleUtterances.txt files

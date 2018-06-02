@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require './lib/refinements/string_refinements'
-
 # add indent methods to string
 using StringRefinements
 

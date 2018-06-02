@@ -3,6 +3,8 @@
 require 'alexa_generator'
 require 'concord'
 require './lib/refinements/intent_refinements'
+require './lib/refinements/string_refinements'
+require './app/app_constants'
 
 require_relative './intents/samples'
 require_relative './intents/intent_builder'
