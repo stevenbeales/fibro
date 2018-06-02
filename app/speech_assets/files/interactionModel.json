@@ -312,126 +312,121 @@
         }
       ],
       "types": [
-        [
-          {
-            "name": "Condition",
-            "values": [
-              "Fibromyalgia",
-              "Fibro"
-            ]
-          }
-        ],
-        [
-          {
-            "name": "Read",
-            "values": [
-              [
-                "read",
-                "speak"
-              ]
-            ]
-          },
-          {
-            "name": "Log",
-            "values": [
-              [
-                "log",
-                "journal",
-                "diary",
-                "symptom log"
-              ]
-            ]
-          }
-        ],
-        [
-          {
-            "name": "Day",
-            "values": [
+        {
+          "name": "CONDITION",
+          "values": [
+            {
+              "name": {
+                "value": "Condition",
+                "synonyms": [
+                  "Fibromyalgia",
+                  "Fibro"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "LOG",
+          "values": [
+            {
+              "name": {
+                "value": "Log",
+                "synonyms": [
+                  "log",
+                  "journal",
+                  "diary",
+                  "symptom log"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "ENTRY",
+          "values": [
+            {
+              "name": {
+                "value": "Entry",
+                "synonyms": [
+                  "entry",
+                  "event"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "N",
+          "values": [
+            {
+              "name": {
+                "value": "n",
+                "synonyms": [
 
-            ]
-          },
-          {
-            "name": "Read",
-            "values": [
-              [
-                "read",
-                "speak"
-              ]
-            ]
-          },
-          {
-            "name": "Log",
-            "values": [
-              [
-                "log",
-                "journal",
-                "diary",
-                "symptom log"
-              ]
-            ]
-          },
-          {
-            "name": "Entry",
-            "values": [
-              [
-                "entry",
-                "event"
-              ]
-            ]
-          }
-        ],
-        [
-          {
-            "name": "Symptom",
-            "values": [
-              [
-                "Fatigue",
-                "Pain",
-                "Fogginess",
-                "Memory",
-                "Poor Sleep",
-                "Depression",
-                "Mood Change",
-                "Eyes",
-                "Light Sensitivity",
-                "Abdominal Pain",
-                "Dizzy",
-                "Balance Problems",
-                "Headache",
-                "Joint Pain",
-                "Lymph Node Tenderness",
-                "Sore Throat",
-                "Other"
-              ]
-            ]
-          }
-        ],
-        [
-          {
-            "name": "SymptomInfo",
-            "values": [
-              [
-                "Fatigue",
-                "Pain",
-                "Fogginess",
-                "Memory",
-                "Poor Sleep",
-                "Depression",
-                "Mood Change",
-                "Eyes",
-                "Light Sensitivity",
-                "Abdominal Pain",
-                "Dizzy",
-                "Balance Problems",
-                "Headache",
-                "Joint Pain",
-                "Lymph Node Tenderness",
-                "Sore Throat",
-                "Other"
-              ]
-            ]
-          }
-        ]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "SYMPTOM",
+          "values": [
+            {
+              "name": {
+                "value": "Symptom",
+                "synonyms": [
+                  "Fatigue",
+                  "Pain",
+                  "Fogginess",
+                  "Memory",
+                  "Poor Sleep",
+                  "Depression",
+                  "Mood Change",
+                  "Eyes",
+                  "Light Sensitivity",
+                  "Abdominal Pain",
+                  "Dizzy",
+                  "Balance Problems",
+                  "Headache",
+                  "Joint Pain",
+                  "Lymph Node Tenderness",
+                  "Sore Throat",
+                  "Other"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "SYMPTOMINFO",
+          "values": [
+            {
+              "name": {
+                "value": "SymptomInfo",
+                "synonyms": [
+                  "Fatigue",
+                  "Pain",
+                  "Fogginess",
+                  "Memory",
+                  "Poor Sleep",
+                  "Depression",
+                  "Mood Change",
+                  "Eyes",
+                  "Light Sensitivity",
+                  "Abdominal Pain",
+                  "Dizzy",
+                  "Balance Problems",
+                  "Headache",
+                  "Joint Pain",
+                  "Lymph Node Tenderness",
+                  "Sore Throat",
+                  "Other"
+                ]
+              }
+            }
+          ]
+        }
       ]
     }
   }
