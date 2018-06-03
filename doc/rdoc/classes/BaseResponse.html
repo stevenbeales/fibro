@@ -41,7 +41,7 @@
         </h1>
         <ul class="files">
             
-            <li><a href="../files/app/services/base_response_rb.html">app/services/base_response.rb</a></li>
+            <li><a href="../files/app/responses/base_response_rb.html">app/responses/base_response.rb</a></li>
             
         </ul>
     </div>
@@ -185,7 +185,7 @@ help_response</p>
                 
               </p>
               <div id="method-i-method_missing_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/services/base_response.rb, line 17</span>
+                <pre><span class="ruby-comment"># File app/responses/base_response.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">method_missing</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">arguments</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">method_name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&#39;response&#39;</span>)
     <span class="ruby-identifier">help_response</span>
@@ -226,7 +226,7 @@ help_response</p>
                 
               </p>
               <div id="method-i-respond_to_missing-3F_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/services/base_response.rb, line 12</span>
+                <pre><span class="ruby-comment"># File app/responses/base_response.rb, line 12</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">respond_to_missing?</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">include_private</span> = <span class="ruby-keyword">false</span>)
   <span class="ruby-identifier">method_name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&#39;response&#39;</span>) <span class="ruby-operator">||</span> <span class="ruby-keyword">super</span>
 <span class="ruby-keyword">end</span></pre>
@@ -263,7 +263,7 @@ help_response</p>
                 
               </p>
               <div id="method-i-response_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/services/base_response.rb, line 26</span>
+                <pre><span class="ruby-comment"># File app/responses/base_response.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">response</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
 <span class="ruby-keyword">end</span></pre>
@@ -303,7 +303,7 @@ help_response</p>
                 
               </p>
               <div id="method-i-intent_to_response_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/services/base_response.rb, line 32</span>
+                <pre><span class="ruby-comment"># File app/responses/base_response.rb, line 32</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">intent_to_response</span>(<span class="ruby-identifier">intent</span>)
   <span class="ruby-comment"># Extract text before Intent</span>
   <span class="ruby-comment"># append _response</span>

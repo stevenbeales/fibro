@@ -21,7 +21,7 @@
 
     <meta name="keywords" content="CustomIntent class">
   
-    <meta name="keywords" content="add">
+    <meta name="keywords" content="add, add_value">
   
 </head>
 
@@ -77,7 +77,12 @@
             
               
               <li>
-                <a href="#method-i-add">add</a>
+                <a href="#method-i-add">add</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-add_value">add_value</a>
               </li>
             
           </ul>
@@ -150,6 +155,46 @@
                 <pre><span class="ruby-comment"># File app/speech_assets/custom_intent.rb, line 7</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add</span>
   <span class="ruby-identifier">model</span>.<span class="ruby-identifier">add_intent</span>(<span class="ruby-identifier">key</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">intent</span><span class="ruby-operator">|</span> <span class="ruby-identifier">add_value</span>(<span class="ruby-identifier">intent</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+      
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-add_value">
+            
+              <b>add_value</b>(intent)
+            
+            <a href="../classes/CustomIntent.html#method-i-add_value" name="method-i-add_value" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-add_value_source')" id="l_method-i-add_value_source">show</a>
+                
+              </p>
+              <div id="method-i-add_value_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/custom_intent.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_value</span>(<span class="ruby-identifier">intent</span>)
+  <span class="ruby-identifier">value</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">intent</span>).<span class="ruby-identifier">add</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>

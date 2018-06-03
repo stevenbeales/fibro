@@ -196,7 +196,7 @@ class</p>
                 
               </p>
               <div id="method-i-output_model_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/json_file_output.rb, line 17</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/json_file_output.rb, line 15</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">output_model</span>
   <span class="ruby-identifier">wrap</span>(<span class="ruby-constant">JSON</span>.<span class="ruby-identifier">pretty_generate</span>(<span class="ruby-identifier">schema</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -233,7 +233,7 @@ class</p>
                 
               </p>
               <div id="method-i-save_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/json_file_output.rb, line 13</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/json_file_output.rb, line 11</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">save</span>(<span class="ruby-identifier">filename</span>)
   <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-string">&#39;w+&#39;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">pretty_generate</span>(<span class="ruby-identifier">line</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-identifier">output_model</span>)) }
 <span class="ruby-keyword">end</span></pre>
@@ -273,7 +273,7 @@ class</p>
                 
               </p>
               <div id="method-i-footer_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/json_file_output.rb, line 23</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/json_file_output.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">footer</span>
   <span class="ruby-string">&quot;  }\n}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -310,7 +310,7 @@ class</p>
                 
               </p>
               <div id="method-i-header_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/json_file_output.rb, line 27</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/json_file_output.rb, line 25</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">header</span>
     <span class="ruby-identifier">&lt;&lt;-HEADER</span>
 <span class="ruby-value">  {
@@ -352,7 +352,7 @@ class</p>
                 
               </p>
               <div id="method-i-wrap_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/json_file_output.rb, line 36</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/json_file_output.rb, line 34</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">wrap</span>(<span class="ruby-identifier">schema</span>)
   <span class="ruby-node">%(#{header}#{schema.remove_first_line.indent(4)}\n#{footer})</span>
 <span class="ruby-keyword">end</span></pre>

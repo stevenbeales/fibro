@@ -23,7 +23,7 @@ unless defined? INTERACTION_MODEL_GENERATOR_LOADED
     end
   end
 
-  if test?
+  unless production? 
     SpeechAssetGenerator.generate("./#{AppConstants::SPEECH_FOLDER}/interactionModel.json",
                                   "./#{AppConstants::SPEECH_FOLDER}/SampleUtterances.txt")
   end

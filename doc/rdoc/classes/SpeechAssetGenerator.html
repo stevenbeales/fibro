@@ -136,14 +136,14 @@ the interactionModel.json and sampleUtterances.txt files</p>
                 
               </p>
               <div id="method-c-generate_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/speech_asset_generator.rb, line 12</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/speech_asset_generator.rb, line 11</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">generate</span>(<span class="ruby-identifier">interaction_file</span>, <span class="ruby-identifier">utterances_file</span>)
   <span class="ruby-comment"># Build an in memory JSON Interaction Model in Alexa 1.0 format</span>
   <span class="ruby-identifier">interim_model_builder</span> = <span class="ruby-constant">InterimModelBuilder</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">AlexaGenerator</span><span class="ruby-operator">::</span><span class="ruby-constant">InteractionModel</span>,
                                                   <span class="ruby-constant">IntentBuilders</span><span class="ruby-operator">::</span><span class="ruby-constant">CUSTOM_INTENTS</span>,
                                                   <span class="ruby-constant">IntentBuilders</span><span class="ruby-operator">::</span><span class="ruby-constant">AMAZON_INTENTS</span>)
   <span class="ruby-comment"># Create the sample utterances file in Alexa 1.0 format</span>
-  <span class="ruby-identifier">utterance_model</span> = <span class="ruby-constant">UtterancesModel</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">interim_model_builder</span>)
+  <span class="ruby-identifier">utterance_model</span> = <span class="ruby-constant">UtterancesModel</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">interim_model_builder</span>.<span class="ruby-identifier">model</span>)
   <span class="ruby-identifier">utterance_model</span>.<span class="ruby-identifier">save</span>(<span class="ruby-identifier">utterances_file</span>)
   
   <span class="ruby-comment"># Create the interaction json file in Alexa 2.0 format</span>

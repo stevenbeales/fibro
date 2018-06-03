@@ -30,9 +30,7 @@ class UtterancesModel
   
   def build_intents_with_samples
     sample_array = []
-    interim_model.intents.each do |_name, intent|
-      sample_array.concat([add_sample_utterances_to(intent)])
-    end
+    interim_model.intents.each { |_name, intent| sample_array.concat([add_sample_utterances_to(intent)]) }
     Hash[sample_array.map { |intent| [intent.name, intent] }]
   end
 

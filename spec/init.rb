@@ -14,6 +14,6 @@ require_relative 'shared_example_specs'
 require_relative 'test_constants'
 
 require './app/models/init'
-require './app/services/init'
+require './app/responses/init'
 require './app/speech_assets/init'
 require './lib/sinatra/fibro'

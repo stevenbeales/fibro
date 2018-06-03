@@ -41,7 +41,7 @@
         </h1>
         <ul class="files">
             
-            <li><a href="../files/app/services/alexa_response_handler_rb.html">app/services/alexa_response_handler.rb</a></li>
+            <li><a href="../files/app/responses/alexa_response_handler_rb.html">app/responses/alexa_response_handler.rb</a></li>
             
         </ul>
     </div>
@@ -158,7 +158,7 @@ to construct response to match request</p>
                 
               </p>
               <div id="method-i-response_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/services/alexa_response_handler.rb, line 11</span>
+                <pre><span class="ruby-comment"># File app/responses/alexa_response_handler.rb, line 11</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">response</span>
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">launch_response</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@echo_request</span>.<span class="ruby-identifier">launch_request?</span>
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">end_session_response</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@echo_request</span>.<span class="ruby-identifier">session_ended_request?</span>

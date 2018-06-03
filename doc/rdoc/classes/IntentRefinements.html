@@ -21,7 +21,7 @@
 
     <meta name="keywords" content="IntentRefinements class">
   
-    <meta name="keywords" content="add_samples, remove_intent, remove_intents_from_samples">
+    <meta name="keywords" content="add_samples_from, remove_intent, remove_intents">
   
 </head>
 
@@ -71,7 +71,7 @@
             
               
               <li>
-                <a href="#method-i-add_samples">add_samples</a>
+                <a href="#method-i-add_samples_from">add_samples_from</a>
               </li>
             
           </ul>
@@ -88,7 +88,7 @@
             
               
               <li>
-                <a href="#method-i-remove_intents_from_samples">remove_intents_from_samples</a>
+                <a href="#method-i-remove_intents">remove_intents</a>
               </li>
             
           </ul>
@@ -119,11 +119,11 @@
       <div class="sectiontitle">Instance Public methods</div>
       
         <div class="method">
-          <div class="title method-title" id="method-i-add_samples">
+          <div class="title method-title" id="method-i-add_samples_from">
             
-              <b>add_samples</b>(samples, index)
+              <b>add_samples_from</b>(intents_and_samples)
             
-            <a href="../classes/IntentRefinements.html#method-i-add_samples" name="method-i-add_samples" class="permalink">Link</a>
+            <a href="../classes/IntentRefinements.html#method-i-add_samples_from" name="method-i-add_samples_from" class="permalink">Link</a>
           </div>
 
           
@@ -142,13 +142,13 @@
               
               <p class="source-link">
                 Source:
-                <a href="javascript:toggleSource('method-i-add_samples_source')" id="l_method-i-add_samples_source">show</a>
+                <a href="javascript:toggleSource('method-i-add_samples_from_source')" id="l_method-i-add_samples_from_source">show</a>
                 
               </p>
-              <div id="method-i-add_samples_source" class="dyn-source">
+              <div id="method-i-add_samples_from_source" class="dyn-source">
                 <pre><span class="ruby-comment"># File lib/refinements/intent_refinements.rb, line 10</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_samples</span>(<span class="ruby-identifier">samples</span>, <span class="ruby-identifier">index</span>)
-  <span class="ruby-ivar">@samples</span> = <span class="ruby-identifier">remove_intents_from_samples</span>(<span class="ruby-identifier">samples</span>, <span class="ruby-identifier">index</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_samples_from</span>(<span class="ruby-identifier">intents_and_samples</span>)
+  <span class="ruby-ivar">@samples</span> = <span class="ruby-identifier">remove_intents</span>(<span class="ruby-identifier">intents_and_samples</span>)
   <span class="ruby-keyword">self</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
@@ -194,11 +194,11 @@
           </div>
         
         <div class="method">
-          <div class="title method-title" id="method-i-remove_intents_from_samples">
+          <div class="title method-title" id="method-i-remove_intents">
             
-              <b>remove_intents_from_samples</b>(samples, index)
+              <b>remove_intents</b>(intents_and_samples)
             
-            <a href="../classes/IntentRefinements.html#method-i-remove_intents_from_samples" name="method-i-remove_intents_from_samples" class="permalink">Link</a>
+            <a href="../classes/IntentRefinements.html#method-i-remove_intents" name="method-i-remove_intents" class="permalink">Link</a>
           </div>
 
           
@@ -217,17 +217,13 @@
               
               <p class="source-link">
                 Source:
-                <a href="javascript:toggleSource('method-i-remove_intents_from_samples_source')" id="l_method-i-remove_intents_from_samples_source">show</a>
+                <a href="javascript:toggleSource('method-i-remove_intents_source')" id="l_method-i-remove_intents_source">show</a>
                 
               </p>
-              <div id="method-i-remove_intents_from_samples_source" class="dyn-source">
+              <div id="method-i-remove_intents_source" class="dyn-source">
                 <pre><span class="ruby-comment"># File lib/refinements/intent_refinements.rb, line 22</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">remove_intents_from_samples</span>(<span class="ruby-identifier">samples</span>, <span class="ruby-identifier">index</span>)
-  <span class="ruby-identifier">samples_only</span> = []
-  <span class="ruby-identifier">samples</span>[<span class="ruby-identifier">index</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sample</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">samples_only</span>.<span class="ruby-identifier">concat</span>([<span class="ruby-identifier">remove_intent</span>(<span class="ruby-identifier">sample</span>)])
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">samples_only</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">remove_intents</span>(<span class="ruby-identifier">intents_and_samples</span>)
+  <span class="ruby-identifier">intents_and_samples</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">intent_sample</span><span class="ruby-operator">|</span> <span class="ruby-identifier">remove_intent</span>(<span class="ruby-identifier">intent_sample</span>) }
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>

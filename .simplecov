@@ -1,6 +1,6 @@
 SimpleCov.profiles.define 'app' do
   add_group 'Models', 'app/models'
-  add_group 'Services', 'app/services'
+  add_group 'Responses', 'app/responses'
   add_group 'Lib', 'lib'
   add_group 'Config', 'config'
   add_group 'Db', 'db'

@@ -8,6 +8,11 @@ class InterimModelBuilder
     @model ||= build_model
   end
 
+  def custom_intents
+    intents.select { |_name, intent| intent.slots.size.positive? }
+           .uniq { |key, _value| key }
+  end
+
   def intents
     model.intents
   end
