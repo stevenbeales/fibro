@@ -29,7 +29,7 @@ DuplicateMethodCall:
   allow_calls: []
 FeatureEnvy:
   enabled: true
-  exclude: []
+  exclude: [custom_types_for]
 InstanceVariableAssumption:
   enabled: false
   exclude: []

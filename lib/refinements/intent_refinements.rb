@@ -11,6 +11,10 @@ module IntentRefinements
       @samples = remove_intents(intents_and_samples)
       self
     end
+    
+    def custom_types_for
+      slots.map { |slot| { value: slot.name, synonyms: slot.bindings.flatten } }
+    end
 
     private
 

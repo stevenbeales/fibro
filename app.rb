@@ -63,7 +63,6 @@ module Sinatra
     end
 
     post '/' do
-      content_type :json
       # build_response helper method is registered in lib/sinatra/fibro module
       response = build_response(@echo_request, AlexaWebService::Response.new)
       response.post

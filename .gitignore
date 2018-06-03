@@ -21,3 +21,5 @@ log/bullet.log
 log/test.log
 irb.log
 .tags
+log/development.log
+log/production.log

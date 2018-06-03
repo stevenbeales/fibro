@@ -28,16 +28,12 @@ class InteractionModel
 
   def custom_types_by_name
     interim_model_builder.custom_intents                
-                         .map { |_name, intent| hash_wrap(custom_types_for(intent)) }
-  end
-
-  def custom_types_for(intent)
-    intent.slots.map { |slot| { value: slot.name, synonyms: slot.bindings.flatten } }
+                         .map { |_name, intent| hash_wrap(intent.custom_types_for) }
   end
 
   private
 
-  def slot_name(name_hash)
+  def slot_name_from(name_hash)
     name_hash[:name][:value].to_s.upcase
   end
 
@@ -46,7 +42,7 @@ class InteractionModel
   end
 
   def wrap_in_name_values_hash(name_hash)
-    Hash[:name, slot_name(name_hash), :values, [name_hash]]
+    Hash[:name, slot_name_from(name_hash), :values, [name_hash]]
   end
   
   # Helper method to put our custom types in correct format for Alexa

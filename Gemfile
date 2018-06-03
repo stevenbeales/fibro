@@ -5,7 +5,7 @@ ruby ENV['CUSTOM_RUBY_VERSION'] || '2.4.4'
 
 gem 'activerecord', '>= 5.2', require: false # ORM
 gem 'alexa_generator', '>= 0.3', require: false # Alexa utterance generator
-gem 'alexa_rubykit', '>= 1.3', require: false # Alternative Alexa Web Service support with better directives
+gem 'alexa_ruby', '>= 1.5.0', require: false # Fork of Alexa RubyKit
 gem 'alexa_web_service', '>= 1.0', require: false # Alexa Web Service support
 gem 'audited', '>= 4.7', require: false # adds table auiting support
 gem 'bugsnag', '>= 6.6', require: false # online bug reporting
@@ -60,5 +60,5 @@ group :production, :test do
 end
 
 group :windows do
-  gem 'win32console', '>= 1.3 ', require: false if Gem.win_platform? # color code coverage
+  gem 'win32console', '>= 1.3', require: false if Gem.win_platform? # color code coverage
 end
