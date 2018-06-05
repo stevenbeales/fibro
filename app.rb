@@ -22,8 +22,8 @@ module Sinatra
 
     set :root, File.dirname(File.expand_path(__FILE__))
     set :protection, except: :json_csrf
-    configure { set :server, :puma }
-    set :log_file, File.dirname(__FILE__) + AppConstants::LOG_FILE
+    set :server, :puma
+    set :log_file, settings.root + AppConstants::LOG_FILE
     enable :sessions
     enable :logging
 
@@ -34,18 +34,11 @@ module Sinatra
       use Rack::CommonLogger, file
     end
 
-    # custom logging
-    configure do
-      logger = Logger.new(File.open("#{root}/log/#{environment}.log", 'a+'))
-      logger.level = Logger::DEBUG unless production?
-      set :logger, logger
-    end
-
     # Pre process requests from Amazon Alexa.
     before do
       if request.request_method == "POST"
         content_type :json, 'charset' => 'utf-8'
-        logger.info("Received request with headers:\n#{request.env}")
+        Bugsnag.notify("Received request with headers:\n#{request.env}")
         @data = request.body.read
         begin
           params.merge!(::JSON.parse(@data))
@@ -57,7 +50,6 @@ module Sinatra
           AlexaWebService::Verify.new(request.env, request.body.read)
         rescue StandardError => exception
           Bugsnag.notify(exception)
-          logger.error(exception)
         end
       end
     end
@@ -66,14 +58,6 @@ module Sinatra
       # build_response helper method is registered in lib/sinatra/fibro module
       response = build_response(@echo_request, AlexaWebService::Response.new)
       response.post
-    end
-
-    get "/" do
-      send_file settings.public_folder + '/index.html'
-    end
-
-    get "/privacy" do
-      send_file settings.public_folder + '/privacy.html'
     end
   end
 end

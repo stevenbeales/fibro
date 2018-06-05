@@ -33,6 +33,11 @@ class InteractionModel
 
   private
 
+  # Helper method to put our custom types in correct format for Alexa
+  def hash_wrap(custom_types)
+    wrap_in_name_values_hash(wrap_in_name_hash(custom_types))
+  end
+
   def slot_name_from(name_hash)
     name_hash[:name][:value].to_s.upcase
   end
@@ -43,10 +48,5 @@ class InteractionModel
 
   def wrap_in_name_values_hash(name_hash)
     Hash[:name, slot_name_from(name_hash), :values, [name_hash]]
-  end
-  
-  # Helper method to put our custom types in correct format for Alexa
-  def hash_wrap(custom_types)
-    wrap_in_name_values_hash(wrap_in_name_hash(custom_types))
   end
 end

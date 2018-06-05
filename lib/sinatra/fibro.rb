@@ -16,6 +16,14 @@ module Sinatra
 
     def self.registered(app)
       app.helpers Fibro::Helpers
+        
+      app.get "/" do
+        send_file settings.public_folder + '/index.html'
+      end
+
+      app.get "/privacy" do
+        send_file settings.public_folder + '/privacy.html'
+      end
     end
   end
   register Fibro

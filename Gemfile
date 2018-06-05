@@ -4,8 +4,9 @@ source 'https://rubygems.org'
 ruby ENV['CUSTOM_RUBY_VERSION'] || '2.4.4'
 
 gem 'activerecord', '>= 5.2', require: false # ORM
+gem 'activerecord-safer_migrations', '>= 2.0', require: false # Lock timeouts for migrations
 gem 'alexa_generator', '>= 0.3', require: false # Alexa utterance generator
-gem 'alexa_ruby', '>= 1.5.0', require: false # Fork of Alexa RubyKit
+gem 'alexa_ruby', '>= 1.5', require: false # Fork of Alexa RubyKit
 gem 'alexa_web_service', '>= 1.0', require: false # Alexa Web Service support
 gem 'audited', '>= 4.7', require: false # adds table auiting support
 gem 'bugsnag', '>= 6.6', require: false # online bug reporting
@@ -36,6 +37,7 @@ group :test do
   gem 'rspec', '>= 3.7', require: false # for behavioral driven testing
   gem 'simplecov', '>= 0.16', require: false # for code coverage
   gem 'simplecov-console', '>= 0.4', require: false # code coverage to console
+  gem 'strong_migrations', '>= 0.2', require: false # ensure safe migrations
   gem 'timecop', '>= 0.9', require: false # testing time dependent code
 end
 
