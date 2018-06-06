@@ -2,7 +2,6 @@
 
 require 'sinatra/activerecord'
 require 'sinatra/activerecord/rake'
-require 'strong_migrations'
 
 # Heroku advises us to wrap Rspec tasks in a rescue block so rake does not throw error in production
 begin
