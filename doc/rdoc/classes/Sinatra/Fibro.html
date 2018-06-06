@@ -142,6 +142,14 @@
                 <pre><span class="ruby-comment"># File lib/sinatra/fibro.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">registered</span>(<span class="ruby-identifier">app</span>)
   <span class="ruby-identifier">app</span>.<span class="ruby-identifier">helpers</span> <span class="ruby-constant">Fibro</span><span class="ruby-operator">::</span><span class="ruby-constant">Helpers</span>
+    
+  <span class="ruby-identifier">app</span>.<span class="ruby-identifier">get</span> <span class="ruby-string">&quot;/&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">send_file</span> <span class="ruby-identifier">settings</span>.<span class="ruby-identifier">public_folder</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;/index.html&#39;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">app</span>.<span class="ruby-identifier">get</span> <span class="ruby-string">&quot;/privacy&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">send_file</span> <span class="ruby-identifier">settings</span>.<span class="ruby-identifier">public_folder</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;/privacy.html&#39;</span>
+  <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>

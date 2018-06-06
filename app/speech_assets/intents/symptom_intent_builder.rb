@@ -15,7 +15,7 @@ class SymptomIntentBuilder < IntentBuilder
 
   def add
     add_slot(:Symptom, :LIST_OF_SYMPTOMS) do |slot|
-      slot.add_bindings(Samples::SYMPTOM_SLOTS)
+      slot.add_bindings(SlotSamples::SYMPTOM_SLOTS)
     end
 
     add_intents(SYMPTOM_INTENTS)

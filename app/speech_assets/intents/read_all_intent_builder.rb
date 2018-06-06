@@ -11,10 +11,10 @@ class ReadAllIntentBuilder < IntentBuilder
 
   def add
     add_slot(:Read, :READ) do |slot|
-      slot.add_bindings(Samples::READ_SLOTS)
+      slot.add_bindings(SlotSamples::READ_SLOTS)
     end
     add_slot(:Log, :LOG) do |slot|
-      slot.add_bindings(Samples::LOG_SLOTS)
+      slot.add_bindings(SlotSamples::LOG_SLOTS)
     end
 
     add_intents(READ_ALL_INTENTS)

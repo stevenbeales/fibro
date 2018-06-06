@@ -13,13 +13,13 @@ class ReadEntryIntentBuilder < IntentBuilder
   def add
     add_slot(:Day, AlexaGenerator::Slot::SlotType::DATE)
     add_slot(:Read, :READ) do |slot|
-      slot.add_bindings(Samples::READ_SLOTS)
+      slot.add_bindings(SlotSamples::READ_SLOTS)
     end
     add_slot(:Log, :LOG) do |slot|
-      slot.add_bindings(Samples::LOG_SLOTS)
+      slot.add_bindings(SlotSamples::LOG_SLOTS)
     end
     add_slot(:Entry, :ENTRY) do |slot|
-      slot.add_bindings(Samples::ENTRY_SLOTS)
+      slot.add_bindings(SlotSamples::ENTRY_SLOTS)
     end
 
     add_intents(READ_ENTRY_INTENTS)

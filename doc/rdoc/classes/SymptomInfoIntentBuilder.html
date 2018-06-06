@@ -181,7 +181,7 @@
                 <pre><span class="ruby-comment"># File app/speech_assets/intents/symptom_info_intent_builder.rb, line 32</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add</span>
   <span class="ruby-identifier">add_slot</span>(<span class="ruby-value">:SymptomInfo</span>, <span class="ruby-value">:LIST_OF_SYMPTOMS</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">slot</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">slot</span>.<span class="ruby-identifier">add_bindings</span>(<span class="ruby-constant">Samples</span><span class="ruby-operator">::</span><span class="ruby-constant">SYMPTOM_SLOTS</span>)
+    <span class="ruby-identifier">slot</span>.<span class="ruby-identifier">add_bindings</span>(<span class="ruby-constant">SlotSamples</span><span class="ruby-operator">::</span><span class="ruby-constant">SYMPTOM_SLOTS</span>)
   <span class="ruby-keyword">end</span>
 
   <span class="ruby-identifier">add_intents</span>(<span class="ruby-constant">SYMPTOM_INFO_INTENTS</span>)

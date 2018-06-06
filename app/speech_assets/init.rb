@@ -6,7 +6,7 @@ require './lib/refinements/intent_refinements'
 require './lib/refinements/string_refinements'
 require './app/app_constants'
 
-require_relative './intents/samples'
+require_relative './intents/slot_samples'
 require_relative './intents/intent_builder'
 require_relative './intents/cancel_intent_builder'
 require_relative './intents/condition_intent_builder'

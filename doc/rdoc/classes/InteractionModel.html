@@ -21,7 +21,7 @@
 
     <meta name="keywords" content="InteractionModel class">
   
-    <meta name="keywords" content="save, intent_schema, add_intents_by_name, custom_types_by_name, custom_types_for">
+    <meta name="keywords" content="save, intent_schema, add_intents_by_name, custom_types_by_name">
   
 </head>
 
@@ -50,8 +50,8 @@
   
     <div class="description">
       
-<p>Combines Schema in Amazon Alexa 1.0 format with <a
-href="Samples.html">Samples</a> to build schema in Alexa 2.0 format</p>
+<p>Combines Schema in Amazon Alexa 1.0 format with Samples to build schema in
+Alexa 2.0 format</p>
 
     </div>
   
@@ -90,12 +90,7 @@ href="Samples.html">Samples</a> to build schema in Alexa 2.0 format</p>
             
               
               <li>
-                <a href="#method-i-custom_types_by_name">custom_types_by_name</a>,
-              </li>
-            
-              
-              <li>
-                <a href="#method-i-custom_types_for">custom_types_for</a>
+                <a href="#method-i-custom_types_by_name">custom_types_by_name</a>
               </li>
             
           </ul>
@@ -312,44 +307,7 @@ href="Samples.html">Samples</a> to build schema in Alexa 2.0 format</p>
                 <pre><span class="ruby-comment"># File app/speech_assets/interaction_model.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">custom_types_by_name</span>
   <span class="ruby-identifier">interim_model_builder</span>.<span class="ruby-identifier">custom_intents</span>                
-                       .<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_name</span>, <span class="ruby-identifier">intent</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash_wrap</span>(<span class="ruby-identifier">custom_types_for</span>(<span class="ruby-identifier">intent</span>)) }
-<span class="ruby-keyword">end</span></pre>
-              </div>
-            </div>
-            
-          </div>
-        
-        <div class="method">
-          <div class="title method-title" id="method-i-custom_types_for">
-            
-              <b>custom_types_for</b>(intent)
-            
-            <a href="../classes/InteractionModel.html#method-i-custom_types_for" name="method-i-custom_types_for" class="permalink">Link</a>
-          </div>
-
-          
-            <div class="description">
-              
-            </div>
-          
-
-          
-
-          
-
-          
-            
-            <div class="sourcecode">
-              
-              <p class="source-link">
-                Source:
-                <a href="javascript:toggleSource('method-i-custom_types_for_source')" id="l_method-i-custom_types_for_source">show</a>
-                
-              </p>
-              <div id="method-i-custom_types_for_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/interaction_model.rb, line 34</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">custom_types_for</span>(<span class="ruby-identifier">intent</span>)
-  <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">slots</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">slot</span><span class="ruby-operator">|</span> { <span class="ruby-value">value:</span> <span class="ruby-identifier">slot</span>.<span class="ruby-identifier">name</span>, <span class="ruby-value">synonyms:</span> <span class="ruby-identifier">slot</span>.<span class="ruby-identifier">bindings</span>.<span class="ruby-identifier">flatten</span> } }
+                       .<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_name</span>, <span class="ruby-identifier">intent</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash_wrap</span>(<span class="ruby-identifier">intent</span>.<span class="ruby-identifier">custom_types_for</span>) }
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>

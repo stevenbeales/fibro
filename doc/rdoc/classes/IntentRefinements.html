@@ -21,7 +21,7 @@
 
     <meta name="keywords" content="IntentRefinements class">
   
-    <meta name="keywords" content="add_samples_from, remove_intent, remove_intents">
+    <meta name="keywords" content="add_samples_from, custom_types_for, remove_intent, remove_intents">
   
 </head>
 
@@ -72,6 +72,18 @@
               
               <li>
                 <a href="#method-i-add_samples_from">add_samples_from</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-custom_types_for">custom_types_for</a>
               </li>
             
           </ul>
@@ -157,6 +169,43 @@
           </div>
         
         <div class="method">
+          <div class="title method-title" id="method-i-custom_types_for">
+            
+              <b>custom_types_for</b>()
+            
+            <a href="../classes/IntentRefinements.html#method-i-custom_types_for" name="method-i-custom_types_for" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-custom_types_for_source')" id="l_method-i-custom_types_for_source">show</a>
+                
+              </p>
+              <div id="method-i-custom_types_for_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File lib/refinements/intent_refinements.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">custom_types_for</span>
+  <span class="ruby-identifier">slots</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">slot</span><span class="ruby-operator">|</span> { <span class="ruby-value">value:</span> <span class="ruby-identifier">slot</span>.<span class="ruby-identifier">name</span>, <span class="ruby-value">synonyms:</span> <span class="ruby-identifier">slot</span>.<span class="ruby-identifier">bindings</span>.<span class="ruby-identifier">flatten</span> } }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
           <div class="title method-title" id="method-i-remove_intent">
             
               <b>remove_intent</b>(sample)
@@ -184,7 +233,7 @@
                 
               </p>
               <div id="method-i-remove_intent_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/refinements/intent_refinements.rb, line 18</span>
+                <pre><span class="ruby-comment"># File lib/refinements/intent_refinements.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">remove_intent</span>(<span class="ruby-identifier">sample</span>)
   <span class="ruby-identifier">sample</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39; &#39;</span>, <span class="ruby-string">&#39;&#39;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -221,7 +270,7 @@
                 
               </p>
               <div id="method-i-remove_intents_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/refinements/intent_refinements.rb, line 22</span>
+                <pre><span class="ruby-comment"># File lib/refinements/intent_refinements.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">remove_intents</span>(<span class="ruby-identifier">intents_and_samples</span>)
   <span class="ruby-identifier">intents_and_samples</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">intent_sample</span><span class="ruby-operator">|</span> <span class="ruby-identifier">remove_intent</span>(<span class="ruby-identifier">intent_sample</span>) }
 <span class="ruby-keyword">end</span></pre>

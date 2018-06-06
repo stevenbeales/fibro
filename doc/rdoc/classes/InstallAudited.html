@@ -190,7 +190,7 @@
               <div id="method-i-change_source" class="dyn-source">
                 <pre><span class="ruby-comment"># File db/migrate/20180401040204_install_audited.rb, line 5</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">change</span>
-  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:audits</span>, <span class="ruby-value">force:</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:audits</span>, <span class="ruby-value">comment:</span> <span class="ruby-string">&#39;Audits table&#39;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:auditable_id</span>, <span class="ruby-value">:integer</span>
     <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:auditable_type</span>, <span class="ruby-value">:string</span>
     <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:associated_id</span>, <span class="ruby-value">:integer</span>

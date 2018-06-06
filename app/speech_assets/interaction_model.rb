@@ -27,7 +27,7 @@ class InteractionModel
   end
 
   def custom_types_by_name
-    interim_model_builder.custom_intents                
+    interim_model_builder.custom_intent_types                
                          .map { |_name, intent| hash_wrap(intent.custom_types_for) }
   end
 
