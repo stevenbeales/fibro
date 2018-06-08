@@ -76,11 +76,6 @@ RSpec.describe Sinatra::MyApp do
       expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:symptom_response)
     end
 
-    it 'should return everybody_hurts_response from everybody hurts intent request' do
-      allow(echo_request).to receive(:intent_name).and_return "EverybodyHurtsIntent"
-      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:everybody_hurts_response)
-    end
-
     it 'should return help_response misheard request' do
       allow(echo_request).to receive(:intent_name).and_return "Blah Blah what"
       expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:help_response)

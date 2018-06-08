@@ -6,8 +6,6 @@ class ConditionResponse < BaseResponse
     case echo_request.intent_name
     when 'ConditionIntent'
       condition_response
-    when 'EverybodyHurtsIntent'
-      everybody_hurts_response
     end
   end
 
@@ -15,9 +13,5 @@ class ConditionResponse < BaseResponse
 
   def condition_response
     construct_response :condition_response
-  end
-
-  def everybody_hurts_response
-    construct_response :everybody_hurts_response
   end
 end
