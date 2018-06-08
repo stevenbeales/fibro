@@ -29,6 +29,9 @@ Layout/ClassStructure:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#consistent-classes'
   Enabled: true
 
+Layout/ClosingHeredocIndentation:
+  Enabled: false
+
 # Align comments with method definitions.
 Layout/CommentIndentation:
   Enabled: true
