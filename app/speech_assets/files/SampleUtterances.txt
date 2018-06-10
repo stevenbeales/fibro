@@ -5,7 +5,6 @@ ConditionIntent tell me symptoms of {Condition}
 ConditionIntent tell me the symptoms of {Condition}
 ConditionIntent tell me the treatment of {Condition}
 ConditionIntent {Condition}
-EverybodyHurtsIntent Everybody Hurts
 ReadAllIntent What happened
 ReadAllIntent {Read} all
 ReadAllIntent {Read} everything

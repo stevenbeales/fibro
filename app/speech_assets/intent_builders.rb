@@ -3,7 +3,6 @@
 # Static class that contains our Alexa intents and their builders in hashes.
 class IntentBuilders
   CUSTOM_INTENTS = { ConditionIntent: ConditionIntentBuilder,
-                     EverybodyHurtsIntent: EverybodyHurtsIntentBuilder,
                      ReadAllIntent: ReadAllIntentBuilder,
                      ReadEntryIntent: ReadEntryIntentBuilder,
                      ReadLastIntent: ReadLastIntentBuilder,

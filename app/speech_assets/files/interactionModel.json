@@ -22,12 +22,6 @@
           ]
         },
         {
-          "intent": "EverybodyHurtsIntent",
-          "samples": [
-            "Everybody Hurts"
-          ]
-        },
-        {
           "intent": "ReadAllIntent",
           "slots": [
             {
@@ -327,6 +321,22 @@
           ]
         },
         {
+          "name": "READ",
+          "values": [
+            {
+              "name": {
+                "value": "Read",
+                "synonyms": [
+                  "read",
+                  "speak",
+                  "say",
+                  "tell"
+                ]
+              }
+            }
+          ]
+        },
+        {
           "name": "LOG",
           "values": [
             {
@@ -351,19 +361,6 @@
                 "synonyms": [
                   "entry",
                   "event"
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "name": "N",
-          "values": [
-            {
-              "name": {
-                "value": "n",
-                "synonyms": [
-
                 ]
               }
             }

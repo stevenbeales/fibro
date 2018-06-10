@@ -2,14 +2,16 @@
 
 using IntentRefinements
 
-# Combines Schema in Amazon Alexa 1.0 format with Samples to build schema in Alexa 2.0 format
+# Combines schema in Amazon Alexa 1.0 format with samples to build schema in Alexa 2.0 format
 class InteractionModel
   include Concord.new(:interim_model_builder, :utterance_model)
 
+  # Save to JSON file in current Alexa interaction file format
   def save(filename)
     JsonFileOutput.new(intent_schema).save(filename)
   end
 
+  # Build intent schema in Alexa 2.0 format with custom types
   def intent_schema
     intents_by_name = []
     utterance_model.sample_values.map { |intent| add_intents_by_name(intents_by_name, intent) } 
@@ -29,6 +31,7 @@ class InteractionModel
   def custom_types_by_name
     interim_model_builder.custom_intent_types                
                          .map { |_name, intent| hash_wrap(intent.custom_types_for) }
+                         .flatten.uniq { |key, _val| key }
   end
 
   private
@@ -38,15 +41,21 @@ class InteractionModel
     wrap_in_name_values_hash(wrap_in_name_hash(custom_types))
   end
 
-  def slot_name_from(name_hash)
-    name_hash[:name][:value].to_s.upcase
+  def slot_name_from(names)
+    names[:name][:value].to_s.upcase
   end
 
   def wrap_in_name_hash(value_synonyms_array)
-    Hash[value_synonyms_array.map { |value_synonyms| [:name, value_synonyms] }] 
+    value_synonyms_array.map do |value_synonyms| 
+      result = {} 
+      result[:name] = value_synonyms
+      result
+    end 
   end
 
-  def wrap_in_name_values_hash(name_hash)
-    Hash[:name, slot_name_from(name_hash), :values, [name_hash]]
+  def wrap_in_name_values_hash(name_array)
+    result = []
+    name_array.each { |name| result << { name: slot_name_from(name), values: [name] } }
+    result
   end
 end

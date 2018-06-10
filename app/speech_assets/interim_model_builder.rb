@@ -4,6 +4,7 @@
 class InterimModelBuilder
   include Concord.new(:builder_class, :custom_intents, :amazon_intents)
  
+  # Model generated in Alexa 1.0 format using Alexa Generator gem
   def model
     @model ||= build_model
   end

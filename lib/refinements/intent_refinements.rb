@@ -13,7 +13,8 @@ module IntentRefinements
     end
     
     def custom_types_for
-      slots.map { |slot| { value: slot.name, synonyms: slot.bindings.flatten } }
+      slots.select { |slot| slot.bindings.size.positive? }
+           .map { |slot| { value: slot.name, synonyms: slot.bindings.flatten } }
     end
 
     private

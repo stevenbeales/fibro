@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
-unless defined? INTERACTION_MODEL_GENERATOR_LOADED 
-  INTERACTION_MODEL_GENERATOR_LOADED = 1
+require_relative 'init'
 
-  require_relative 'init'
-  
+if test?
   # Class to regenerate the interaction model and sample utterances speech assets for Alexa if in test environment  
   # Entry point to regeneration of the interactionModel.json and sampleUtterances.txt files
   class SpeechAssetGenerator
@@ -23,8 +21,6 @@ unless defined? INTERACTION_MODEL_GENERATOR_LOADED
     end
   end
 
-  unless production? 
-    SpeechAssetGenerator.generate("./#{AppConstants::SPEECH_FOLDER}/interactionModel.json",
-                                  "./#{AppConstants::SPEECH_FOLDER}/SampleUtterances.txt")
-  end
+  SpeechAssetGenerator.generate("./#{AppConstants::SPEECH_FOLDER}/interactionModel.json",
+                                "./#{AppConstants::SPEECH_FOLDER}/SampleUtterances.txt")
 end
