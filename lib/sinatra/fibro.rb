@@ -14,6 +14,7 @@ module Sinatra
       end
     end
 
+    # Add helper methods and end points to our Fibro app 
     def self.registered(app)
       app.helpers Fibro::Helpers
         

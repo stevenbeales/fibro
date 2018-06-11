@@ -15,8 +15,8 @@
 
   
     
-    <meta name="description" content="Combines Schema in Amazon Alexa 1.0 format with Samples to build schema in Alexa 2.">
-    <meta property="og:description" content="Combines Schema in Amazon Alexa 1.0 format with Samples to build schema in Alexa 2.">
+    <meta name="description" content="Combines schema in Amazon Alexa 1.0 format with samples to build schema in Alexa 2.">
+    <meta property="og:description" content="Combines schema in Amazon Alexa 1.0 format with samples to build schema in Alexa 2.">
   
 
     <meta name="keywords" content="InteractionModel class">
@@ -34,7 +34,7 @@
             
                 <span class="parent">&lt;
                     
-                    <a href="Object.html">Object</a>
+                    Object
                     
                 </span>
             
@@ -50,7 +50,7 @@
   
     <div class="description">
       
-<p>Combines Schema in Amazon Alexa 1.0 format with Samples to build schema in
+<p>Combines schema in Amazon Alexa 1.0 format with samples to build schema in
 Alexa 2.0 format</p>
 
     </div>
@@ -166,7 +166,8 @@ Alexa 2.0 format</p>
 
           
             <div class="description">
-              
+              <p>Build intent schema in Alexa 2.0 interaction format including Custom Types
+instead of Literals</p>
             </div>
           
 
@@ -184,7 +185,7 @@ Alexa 2.0 format</p>
                 
               </p>
               <div id="method-i-intent_schema_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/interaction_model.rb, line 13</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/interaction_model.rb, line 16</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">intent_schema</span>
   <span class="ruby-identifier">intents_by_name</span> = []
   <span class="ruby-identifier">utterance_model</span>.<span class="ruby-identifier">sample_values</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">intent</span><span class="ruby-operator">|</span> <span class="ruby-identifier">add_intents_by_name</span>(<span class="ruby-identifier">intents_by_name</span>, <span class="ruby-identifier">intent</span>) } 
@@ -205,7 +206,7 @@ Alexa 2.0 format</p>
 
           
             <div class="description">
-              
+              <p>Save to JSON file in current Alexa 2.0 interaction file format</p>
             </div>
           
 
@@ -223,7 +224,7 @@ Alexa 2.0 format</p>
                 
               </p>
               <div id="method-i-save_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/interaction_model.rb, line 9</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/interaction_model.rb, line 11</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">save</span>(<span class="ruby-identifier">filename</span>)
   <span class="ruby-constant">JsonFileOutput</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">intent_schema</span>).<span class="ruby-identifier">save</span>(<span class="ruby-identifier">filename</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -245,7 +246,7 @@ Alexa 2.0 format</p>
 
           
             <div class="description">
-              
+              <p>Add intents formatted in Alexa 2.0 interaction json file format</p>
             </div>
           
 
@@ -263,7 +264,7 @@ Alexa 2.0 format</p>
                 
               </p>
               <div id="method-i-add_intents_by_name_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/interaction_model.rb, line 21</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/interaction_model.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_intents_by_name</span>(<span class="ruby-identifier">intents_by_name</span>, <span class="ruby-identifier">intent</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">intents_by_name</span> <span class="ruby-operator">&lt;&lt;</span> { <span class="ruby-value">intent:</span> <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">name</span>, <span class="ruby-value">samples:</span> <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">samples</span> } <span class="ruby-keyword">unless</span> <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">slots</span>.<span class="ruby-identifier">any?</span>
    
@@ -286,7 +287,7 @@ Alexa 2.0 format</p>
 
           
             <div class="description">
-              
+              <p>Get unique custom types formatted for Alexa 2.0 interaction json files</p>
             </div>
           
 
@@ -304,10 +305,12 @@ Alexa 2.0 format</p>
                 
               </p>
               <div id="method-i-custom_types_by_name_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/interaction_model.rb, line 29</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/interaction_model.rb, line 34</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">custom_types_by_name</span>
-  <span class="ruby-identifier">interim_model_builder</span>.<span class="ruby-identifier">custom_intents</span>                
-                       .<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_name</span>, <span class="ruby-identifier">intent</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash_wrap</span>(<span class="ruby-identifier">intent</span>.<span class="ruby-identifier">custom_types_for</span>) }
+  <span class="ruby-identifier">interim_model_builder</span>.<span class="ruby-identifier">custom_intent_types</span>                
+                       .<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_name</span>, <span class="ruby-identifier">intent</span><span class="ruby-operator">|</span> <span class="ruby-identifier">format_for_alexa</span>(<span class="ruby-identifier">intent</span>.<span class="ruby-identifier">custom_types_for</span>) }
+                       .<span class="ruby-identifier">flatten</span>
+                       .<span class="ruby-identifier">uniq</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">_val</span><span class="ruby-operator">|</span> <span class="ruby-identifier">key</span> }
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>

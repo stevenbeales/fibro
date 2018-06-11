@@ -20,6 +20,8 @@ class UtterancesModel
   end
 
   protected  
+
+  delegate :intents, to: :interim_model
   
   # add_samples to intents - uses intent refinement add_samples
   def add_sample_utterances_to(intent)
@@ -29,7 +31,7 @@ class UtterancesModel
   # builds a hash of intents with their sample utterances
   def build_intents_with_samples
     intent_samples = []
-    interim_model.intents.map { |_name, intent| intent_samples.concat([add_sample_utterances_to(intent)]) }
+    intents.map { |_name, intent| intent_samples.concat([add_sample_utterances_to(intent)]) }
     Hash[intent_samples.map { |intent| [intent.name, intent] }]
   end
 
@@ -40,6 +42,6 @@ class UtterancesModel
 
   # Enumerator that passes sample utterances for each intent in turn back to calling block
   def sample_utterances_by_intent
-    interim_model.intents.map { |_name, intent| yield sample_utterances_for(intent) if block_given? }
+    intents.map { |_name, intent| yield sample_utterances_for(intent) if block_given? }
   end
 end

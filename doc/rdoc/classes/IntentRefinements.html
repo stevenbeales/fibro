@@ -198,7 +198,8 @@
               <div id="method-i-custom_types_for_source" class="dyn-source">
                 <pre><span class="ruby-comment"># File lib/refinements/intent_refinements.rb, line 15</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">custom_types_for</span>
-  <span class="ruby-identifier">slots</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">slot</span><span class="ruby-operator">|</span> { <span class="ruby-value">value:</span> <span class="ruby-identifier">slot</span>.<span class="ruby-identifier">name</span>, <span class="ruby-value">synonyms:</span> <span class="ruby-identifier">slot</span>.<span class="ruby-identifier">bindings</span>.<span class="ruby-identifier">flatten</span> } }
+  <span class="ruby-identifier">slots</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">slot</span><span class="ruby-operator">|</span> <span class="ruby-identifier">slot</span>.<span class="ruby-identifier">bindings</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">positive?</span> }
+       .<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">slot</span><span class="ruby-operator">|</span> { <span class="ruby-value">value:</span> <span class="ruby-identifier">slot</span>.<span class="ruby-identifier">name</span>, <span class="ruby-value">synonyms:</span> <span class="ruby-identifier">slot</span>.<span class="ruby-identifier">bindings</span>.<span class="ruby-identifier">flatten</span> } }
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
@@ -233,7 +234,7 @@
                 
               </p>
               <div id="method-i-remove_intent_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/refinements/intent_refinements.rb, line 22</span>
+                <pre><span class="ruby-comment"># File lib/refinements/intent_refinements.rb, line 23</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">remove_intent</span>(<span class="ruby-identifier">sample</span>)
   <span class="ruby-identifier">sample</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39; &#39;</span>, <span class="ruby-string">&#39;&#39;</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -270,7 +271,7 @@
                 
               </p>
               <div id="method-i-remove_intents_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File lib/refinements/intent_refinements.rb, line 26</span>
+                <pre><span class="ruby-comment"># File lib/refinements/intent_refinements.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">remove_intents</span>(<span class="ruby-identifier">intents_and_samples</span>)
   <span class="ruby-identifier">intents_and_samples</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">intent_sample</span><span class="ruby-operator">|</span> <span class="ruby-identifier">remove_intent</span>(<span class="ruby-identifier">intent_sample</span>) }
 <span class="ruby-keyword">end</span></pre>

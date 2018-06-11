@@ -34,7 +34,7 @@
             
                 <span class="parent">&lt;
                     
-                    <a href="Object.html">Object</a>
+                    Object
                     
                 </span>
             
@@ -312,7 +312,7 @@
                 
               </p>
               <div id="method-i-add_sample_utterances_to_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 25</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_sample_utterances_to</span>(<span class="ruby-identifier">intent</span>)
   <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add_samples_from</span>(<span class="ruby-identifier">sample_utterances_for</span>(<span class="ruby-identifier">intent</span>))
 <span class="ruby-keyword">end</span></pre>
@@ -349,10 +349,10 @@
                 
               </p>
               <div id="method-i-build_intents_with_samples_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 30</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 32</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">build_intents_with_samples</span>
   <span class="ruby-identifier">intent_samples</span> = []
-  <span class="ruby-identifier">interim_model</span>.<span class="ruby-identifier">intents</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_name</span>, <span class="ruby-identifier">intent</span><span class="ruby-operator">|</span> <span class="ruby-identifier">intent_samples</span>.<span class="ruby-identifier">concat</span>([<span class="ruby-identifier">add_sample_utterances_to</span>(<span class="ruby-identifier">intent</span>)]) }
+  <span class="ruby-identifier">intents</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_name</span>, <span class="ruby-identifier">intent</span><span class="ruby-operator">|</span> <span class="ruby-identifier">intent_samples</span>.<span class="ruby-identifier">concat</span>([<span class="ruby-identifier">add_sample_utterances_to</span>(<span class="ruby-identifier">intent</span>)]) }
   <span class="ruby-constant">Hash</span>[<span class="ruby-identifier">intent_samples</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">intent</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">intent</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">intent</span>] }]
 <span class="ruby-keyword">end</span></pre>
               </div>
@@ -389,9 +389,9 @@ calling block</p>
                 
               </p>
               <div id="method-i-sample_utterances_by_intent_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 42</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sample_utterances_by_intent</span>
-  <span class="ruby-identifier">interim_model</span>.<span class="ruby-identifier">intents</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_name</span>, <span class="ruby-identifier">intent</span><span class="ruby-operator">|</span> <span class="ruby-keyword">yield</span> <span class="ruby-identifier">sample_utterances_for</span>(<span class="ruby-identifier">intent</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span> }
+  <span class="ruby-identifier">intents</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_name</span>, <span class="ruby-identifier">intent</span><span class="ruby-operator">|</span> <span class="ruby-keyword">yield</span> <span class="ruby-identifier">sample_utterances_for</span>(<span class="ruby-identifier">intent</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span> }
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
@@ -426,7 +426,7 @@ calling block</p>
                 
               </p>
               <div id="method-i-sample_utterances_for_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 37</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/utterances_model.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sample_utterances_for</span>(<span class="ruby-identifier">intent</span>)
   <span class="ruby-identifier">interim_model</span>.<span class="ruby-identifier">sample_utterances</span>(<span class="ruby-identifier">intent</span>.<span class="ruby-identifier">name</span>)
 <span class="ruby-keyword">end</span></pre>

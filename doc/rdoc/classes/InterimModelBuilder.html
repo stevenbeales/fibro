@@ -21,7 +21,7 @@
 
     <meta name="keywords" content="InterimModelBuilder class">
   
-    <meta name="keywords" content="model, custom_intents, intents, add_intents, build_model">
+    <meta name="keywords" content="model, custom_intent_types, add_intents_to_model, build_model">
   
 </head>
 
@@ -34,7 +34,7 @@
             
                 <span class="parent">&lt;
                     
-                    <a href="Object.html">Object</a>
+                    Object
                     
                 </span>
             
@@ -77,7 +77,7 @@
             
               
               <li>
-                <a href="#method-i-add_intents">add_intents</a>
+                <a href="#method-i-add_intents_to_model">add_intents_to_model</a>
               </li>
             
           </ul>
@@ -101,19 +101,7 @@
             
               
               <li>
-                <a href="#method-i-custom_intents">custom_intents</a>
-              </li>
-            
-          </ul>
-        </dd>
-      
-        <dt>I</dt>
-        <dd>
-          <ul>
-            
-              
-              <li>
-                <a href="#method-i-intents">intents</a>
+                <a href="#method-i-custom_intent_types">custom_intent_types</a>
               </li>
             
           </ul>
@@ -168,11 +156,11 @@
       <div class="sectiontitle">Instance Public methods</div>
       
         <div class="method">
-          <div class="title method-title" id="method-i-custom_intents">
+          <div class="title method-title" id="method-i-custom_intent_types">
             
-              <b>custom_intents</b>()
+              <b>custom_intent_types</b>()
             
-            <a href="../classes/InterimModelBuilder.html#method-i-custom_intents" name="method-i-custom_intents" class="permalink">Link</a>
+            <a href="../classes/InterimModelBuilder.html#method-i-custom_intent_types" name="method-i-custom_intent_types" class="permalink">Link</a>
           </div>
 
           
@@ -191,51 +179,14 @@
               
               <p class="source-link">
                 Source:
-                <a href="javascript:toggleSource('method-i-custom_intents_source')" id="l_method-i-custom_intents_source">show</a>
+                <a href="javascript:toggleSource('method-i-custom_intent_types_source')" id="l_method-i-custom_intent_types_source">show</a>
                 
               </p>
-              <div id="method-i-custom_intents_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/interim_model_builder.rb, line 11</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">custom_intents</span>
+              <div id="method-i-custom_intent_types_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/interim_model_builder.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">custom_intent_types</span>
   <span class="ruby-identifier">intents</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_name</span>, <span class="ruby-identifier">intent</span><span class="ruby-operator">|</span> <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">slots</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">positive?</span> }
          .<span class="ruby-identifier">uniq</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">_value</span><span class="ruby-operator">|</span> <span class="ruby-identifier">key</span> }
-<span class="ruby-keyword">end</span></pre>
-              </div>
-            </div>
-            
-          </div>
-        
-        <div class="method">
-          <div class="title method-title" id="method-i-intents">
-            
-              <b>intents</b>()
-            
-            <a href="../classes/InterimModelBuilder.html#method-i-intents" name="method-i-intents" class="permalink">Link</a>
-          </div>
-
-          
-            <div class="description">
-              
-            </div>
-          
-
-          
-
-          
-
-          
-            
-            <div class="sourcecode">
-              
-              <p class="source-link">
-                Source:
-                <a href="javascript:toggleSource('method-i-intents_source')" id="l_method-i-intents_source">show</a>
-                
-              </p>
-              <div id="method-i-intents_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/interim_model_builder.rb, line 16</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">intents</span>
-  <span class="ruby-identifier">model</span>.<span class="ruby-identifier">intents</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
             </div>
@@ -252,7 +203,7 @@
 
           
             <div class="description">
-              
+              <p>Model generated in Alexa 1.0 format using Alexa Generator gem</p>
             </div>
           
 
@@ -270,7 +221,7 @@
                 
               </p>
               <div id="method-i-model_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/interim_model_builder.rb, line 7</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/interim_model_builder.rb, line 11</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">model</span>
   <span class="ruby-ivar">@model</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">build_model</span>
 <span class="ruby-keyword">end</span></pre>
@@ -283,16 +234,16 @@
       <div class="sectiontitle">Instance Protected methods</div>
       
         <div class="method">
-          <div class="title method-title" id="method-i-add_intents">
+          <div class="title method-title" id="method-i-add_intents_to_model">
             
-              <b>add_intents</b>(modl, klass, intents)
+              <b>add_intents_to_model</b>(modl, klass, intents)
             
-            <a href="../classes/InterimModelBuilder.html#method-i-add_intents" name="method-i-add_intents" class="permalink">Link</a>
+            <a href="../classes/InterimModelBuilder.html#method-i-add_intents_to_model" name="method-i-add_intents_to_model" class="permalink">Link</a>
           </div>
 
           
             <div class="description">
-              
+              <p>Called by build model to add all intents to interaction model</p>
             </div>
           
 
@@ -306,12 +257,12 @@
               
               <p class="source-link">
                 Source:
-                <a href="javascript:toggleSource('method-i-add_intents_source')" id="l_method-i-add_intents_source">show</a>
+                <a href="javascript:toggleSource('method-i-add_intents_to_model_source')" id="l_method-i-add_intents_to_model_source">show</a>
                 
               </p>
-              <div id="method-i-add_intents_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/interim_model_builder.rb, line 22</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_intents</span>(<span class="ruby-identifier">modl</span>, <span class="ruby-identifier">klass</span>, <span class="ruby-identifier">intents</span>)
+              <div id="method-i-add_intents_to_model_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File app/speech_assets/interim_model_builder.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_intents_to_model</span>(<span class="ruby-identifier">modl</span>, <span class="ruby-identifier">klass</span>, <span class="ruby-identifier">intents</span>)
   <span class="ruby-identifier">intents</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">intent</span> = <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">modl</span>, <span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
     <span class="ruby-identifier">intent</span>.<span class="ruby-identifier">add</span>
@@ -332,7 +283,8 @@
 
           
             <div class="description">
-              
+              <p>Add Custom Intents and Amazon Intents and build Alexa 1.0 interaction
+format</p>
             </div>
           
 
@@ -350,11 +302,11 @@
                 
               </p>
               <div id="method-i-build_model_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/interim_model_builder.rb, line 29</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/interim_model_builder.rb, line 31</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">build_model</span>
   <span class="ruby-ivar">@model</span> = <span class="ruby-identifier">builder_class</span>.<span class="ruby-identifier">build</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">modl</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">add_intents</span>(<span class="ruby-identifier">modl</span>, <span class="ruby-constant">CustomIntent</span>, <span class="ruby-ivar">@custom_intents</span>)
-    <span class="ruby-identifier">add_intents</span>(<span class="ruby-identifier">modl</span>, <span class="ruby-constant">AmazonIntent</span>, <span class="ruby-ivar">@amazon_intents</span>)
+    <span class="ruby-identifier">add_intents_to_model</span>(<span class="ruby-identifier">modl</span>, <span class="ruby-constant">CustomIntent</span>, <span class="ruby-ivar">@custom_intents</span>)
+    <span class="ruby-identifier">add_intents_to_model</span>(<span class="ruby-identifier">modl</span>, <span class="ruby-constant">AmazonIntent</span>, <span class="ruby-ivar">@amazon_intents</span>)
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
               </div>
