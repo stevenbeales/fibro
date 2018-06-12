@@ -17,6 +17,7 @@ gem 'dotenv', '>= 2.2', require: false # adds environment variables from .env fi
 gem 'goldiloader', '>= 2.1', require: false # automatic eager loading
 gem 'httparty', '>= 0.16', require: false # parse html
 gem 'i18n', '>= 1.0', require: false # internationalization support
+gem 'i18n-tasks', '~> 0.9.21', require: false # internationalization tasks
 gem 'pg', '>= 1.0', require: false # for Postgres
 gem 'puma', '>= 3.11', require: false # puma web server
 gem 'rake', '>= 12.3', require: false # so we can run Rake tasks
