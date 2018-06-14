@@ -1,4 +1,4 @@
-Sun, 10 Jun 2018 12:50:07 -0400
+Thu, 14 Jun 2018 14:05:28 -0400
 README.md	Thu, 24 May 2018 23:56:53 -0400
 app/responses/alexa_response_handler.rb	Thu, 07 Jun 2018 22:32:45 -0400
 app/responses/amazon_response.rb	Sat, 26 May 2018 14:41:10 -0400
@@ -16,10 +16,10 @@ app/models/symptom_log.rb	Thu, 17 May 2018 00:12:08 -0400
 app/models/symptom_log_entry.rb	Thu, 17 May 2018 00:11:52 -0400
 app/models/user.rb	Wed, 16 May 2018 23:56:08 -0400
 app/speech_assets/amazon_intent.rb	Wed, 30 May 2018 20:21:29 -0400
-app/speech_assets/custom_intent.rb	Thu, 31 May 2018 21:23:25 -0400
-app/speech_assets/files/interactionModel.json	Sun, 10 Jun 2018 12:46:22 -0400
-app/speech_assets/files/SampleUtterances.txt	Sun, 10 Jun 2018 12:46:22 -0400
-app/speech_assets/init.rb	Fri, 08 Jun 2018 20:20:13 -0400
+app/speech_assets/custom_intent.rb	Wed, 13 Jun 2018 18:42:35 -0400
+app/speech_assets/files/interactionModel.json	Wed, 13 Jun 2018 23:21:24 -0400
+app/speech_assets/files/SampleUtterances.txt	Wed, 13 Jun 2018 23:21:24 -0400
+app/speech_assets/init.rb	Wed, 13 Jun 2018 20:07:59 -0400
 app/speech_assets/intents/cancel_intent_builder.rb	Wed, 30 May 2018 11:34:13 -0400
 app/speech_assets/intents/condition_intent_builder.rb	Wed, 30 May 2018 11:34:19 -0400
 app/speech_assets/intents/fallback_intent_builder.rb	Wed, 30 May 2018 11:34:41 -0400
@@ -42,13 +42,13 @@ app/speech_assets/intents/symptom_intent_builder.rb	Mon, 04 Jun 2018 23:45:32 -0
 app/speech_assets/intents/yes_intent_builder.rb	Wed, 30 May 2018 11:35:38 -0400
 app/speech_assets/intent_builders.rb	Fri, 08 Jun 2018 20:18:59 -0400
 app/speech_assets/interaction_model.rb	Sun, 10 Jun 2018 12:31:44 -0400
-app/speech_assets/interim_model_builder.rb	Sun, 10 Jun 2018 12:42:16 -0400
-app/speech_assets/json_file_output.rb	Fri, 01 Jun 2018 22:49:06 -0400
+app/speech_assets/interim_model_builder.rb	Wed, 13 Jun 2018 18:34:24 -0400
+app/speech_assets/json_file_output.rb	Wed, 13 Jun 2018 18:32:44 -0400
 app/speech_assets/speech_asset_generator.rb	Fri, 08 Jun 2018 20:16:41 -0400
 app/speech_assets/utterances_model.rb	Sun, 10 Jun 2018 12:46:02 -0400
 lib/refinements/intent_refinements.rb	Sat, 09 Jun 2018 23:43:24 -0400
 lib/refinements/string_refinements.rb	Thu, 24 May 2018 23:33:03 -0400
-lib/sinatra/fibro.rb	Sun, 03 Jun 2018 19:38:32 -0400
+lib/sinatra/fibro.rb	Sun, 10 Jun 2018 12:51:50 -0400
 lib/tasks/app.rake	Sat, 05 May 2018 15:46:48 -0400
 lib/tasks/bootstrap.rake	Fri, 04 May 2018 11:17:55 -0400
 lib/tasks/db.rake	Fri, 04 May 2018 11:17:55 -0400
@@ -69,6 +69,7 @@ db/seeds/test.rb	Fri, 04 May 2018 11:38:05 -0400
 db/seeds.rb	Fri, 04 May 2018 11:17:55 -0400
 config/database.yml	Sun, 06 May 2018 23:27:26 -0400
 config/db.rb	Sun, 01 Apr 2018 16:54:58 -0400
+config/i18n-tasks.yml	Mon, 11 Jun 2018 21:59:08 -0400
 config/initializers/00_dotenv_load.rb	Sun, 29 Apr 2018 21:00:46 -0400
 config/initializers/00_ssl_initializer.rb	Thu, 24 May 2018 21:34:09 -0400
 config/initializers/00_strong_migrations.rb	Mon, 04 Jun 2018 20:55:29 -0400
@@ -77,5 +78,5 @@ config/initializers/03_i18n_initializer.rb	Fri, 13 Apr 2018 00:07:58 -0400
 config/initializers/04_bugsnag_configure.rb	Wed, 04 Apr 2018 11:15:40 -0400
 config/initializers/05_dump_schema.rb	Mon, 04 Jun 2018 20:56:13 -0400
 config/initializers/06_analyze_tables.rb	Mon, 04 Jun 2018 20:46:59 -0400
-config/locales/en.yml	Sat, 26 May 2018 14:43:55 -0400
+config/locales/en.yml	Mon, 11 Jun 2018 22:00:29 -0400
 config/puma.rb	Fri, 30 Mar 2018 12:29:00 -0400

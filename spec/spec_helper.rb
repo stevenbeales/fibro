@@ -16,6 +16,8 @@ module RSpecMixin
   end
 end
 
+ActiveRecord::Base.logger = nil
+
 # Find n+1 queries
 Bullet.raise = true # raise an error if n+1 query occurs
 
@@ -24,6 +26,9 @@ RSpec.configure do |config|
   config.include RSpecMixin
   config.include Sinatra::Fibro::Helpers
   config.include FactoryBot::Syntax::Methods
+  
+  config.run_all_when_everything_filtered = true
+  config.filter_run :focus
 
   # cleanup database and reload seeds
   config.before(:suite) do

@@ -12,6 +12,7 @@ class JsonFileOutput
     File.open(filename, 'w+') { |line| JSON.pretty_generate(line.puts(output_model)) }
   end
 
+  # Wraps a model in Alexa 1.0 format with Alexa 2.0 headers and footers 
   def output_model
     wrap(JSON.pretty_generate(schema))
   end

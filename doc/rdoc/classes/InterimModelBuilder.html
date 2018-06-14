@@ -165,7 +165,8 @@
 
           
             <div class="description">
-              
+              <p>Returns unique intent types that have slots. Amazon types cannot have
+slots.<br> Note: This will not include a custom type without a custom slot</p>
             </div>
           
 
@@ -221,7 +222,7 @@
                 
               </p>
               <div id="method-i-model_source" class="dyn-source">
-                <pre><span class="ruby-comment"># File app/speech_assets/interim_model_builder.rb, line 11</span>
+                <pre><span class="ruby-comment"># File app/speech_assets/interim_model_builder.rb, line 9</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">model</span>
   <span class="ruby-ivar">@model</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">build_model</span>
 <span class="ruby-keyword">end</span></pre>

@@ -44,6 +44,7 @@ module Sinatra
           params.merge!(::JSON.parse(@data))
           # The request object.
           @echo_request = AlexaWebService::Request.new(::JSON.parse(@data))
+          # Store logged in Alexa user
           @user = User.authenticate(@echo_request.user_id)
           # If the request body has been read, you need to rewind it.
           request.body.rewind
@@ -59,5 +60,9 @@ module Sinatra
       response = build_response(@echo_request, AlexaWebService::Response.new)
       response.post
     end
+
+    # $0 is the executed file
+    # __FILE__ is the current file
+    run! if $PROGRAM_NAME == __FILE__ 
   end
 end

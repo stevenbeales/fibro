@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'active_support/core_ext/module/delegation'
-
 # Builds interaction Model in Amazon Alexa 1.0 format
 class InterimModelBuilder
   include Concord.new(:builder_class, :custom_intents, :amazon_intents)
@@ -12,6 +10,8 @@ class InterimModelBuilder
     @model ||= build_model
   end
 
+  # Returns unique intent types that have slots. Amazon types cannot have slots.    
+  # Note: This will not include a custom type without a custom slot
   def custom_intent_types
     intents.select { |_name, intent| intent.slots.size.positive? }
            .uniq { |key, _value| key }

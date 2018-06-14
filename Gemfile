@@ -27,6 +27,7 @@ gem 'sinatra-activerecord', '>= 2.0', require: false # for Active Record models
 gem 'sinatra-contrib', '>= 2.0', require: false # Sinatra extensions
 gem 'sinatra-initializers', '>= 0.1', require: false # config initializers for sinatra
 gem 'strong_migrations', '>= 0.2', require: false # ensure safe migrations
+gem 'tux', '>= 0.3', require: false # IRB for sinatra apps
 gem 'validates_timeliness', '>= 4.0', require: false # validate dates and times
 
 group :test do
