@@ -4,7 +4,10 @@
 class RepeatIntentBuilder < IntentBuilder
   REPEAT_INTENTS = [
     'Again',
+    'Another time',
     'Can you repeat that',
+    'Do again',
+    'Once more',
     'One more time',
     'Repeat',
     'Repeat again',

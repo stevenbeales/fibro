@@ -3,7 +3,7 @@
 RSpec.describe AlexaResponseHandler do
   subject { described_class.new(user, echo_request, AlexaWebService::Response.new) }
   let(:user) { build(:test_user) }
-  let(:echo_request) { double }
+  let(:echo_request) { double.as_null_object }
 
   it { expect(subject).to be_an AlexaResponseHandler }
 
@@ -44,7 +44,8 @@ RSpec.describe AlexaResponseHandler do
     describe '.symptom_response' do
       it do
         allow(echo_request).to receive(:intent_name).and_return('SymptomIntent')
-        expect(subject.response.spoken_response).to eq(I18n.t(:symptom_response))
+        allow(echo_request).to receive(:symptom).and_return('Pain')
+        expect(subject.response.spoken_response).to eq(I18n.t(:symptom_response) % 'Pain')
       end
     end
 

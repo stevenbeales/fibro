@@ -10,7 +10,7 @@ RSpec.describe Sinatra::MyApp do
     app
   end
   let(:rep) { AlexaWebService::Response.new }
-  let(:echo_request) { double }
+  let(:echo_request) { double.as_null_object }
   let(:alexa_service) { AlexaResponse.new(nil, rep) }
 
   it { expect(subject).to be_a Sinatra::MyApp }
@@ -68,7 +68,8 @@ RSpec.describe Sinatra::MyApp do
 
     it 'should return symptom_info_response from symptom info intent request' do
       allow(echo_request).to receive(:intent_name).and_return "SymptomInfoIntent"
-      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:symptom_info_response)
+      allow(echo_request).to receive(:symptom).and_return "Pain"
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:symptom_info_response) % "Pain"
     end
 
     it 'should return symptom_response from symptom intent request' do

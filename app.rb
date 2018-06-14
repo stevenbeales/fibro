@@ -49,6 +49,7 @@ module Sinatra
           # If the request body has been read, you need to rewind it.
           request.body.rewind
           AlexaWebService::Verify.new(request.env, request.body.read)
+          production? && (halt 400, verified.to_s unless verified == "OK")
         rescue StandardError => exception
           Bugsnag.notify(exception)
         end

@@ -10,6 +10,7 @@ class StopIntentBuilder < IntentBuilder
     'Goodbye',
     'Good-bye',
     'No mas',
+    'No more',
     'Off',
     'Shut up',
     'Stop'

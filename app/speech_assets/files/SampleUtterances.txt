@@ -102,6 +102,7 @@ AMAZON.NoIntent No thanks
 AMAZON.NoIntent No way
 AMAZON.NoIntent Non
 AMAZON.NoIntent Nyet
+AMAZON.PauseIntent Freeze
 AMAZON.PauseIntent Pause
 AMAZON.PauseIntent Pause that
 AMAZON.PreviousIntent Back up
@@ -109,7 +110,10 @@ AMAZON.PreviousIntent Go back
 AMAZON.PreviousIntent Previous
 AMAZON.PreviousIntent Skip back
 AMAZON.RepeatIntent Again
+AMAZON.RepeatIntent Another time
 AMAZON.RepeatIntent Can you repeat that
+AMAZON.RepeatIntent Do again
+AMAZON.RepeatIntent Once more
 AMAZON.RepeatIntent One more time
 AMAZON.RepeatIntent Repeat
 AMAZON.RepeatIntent Repeat again
@@ -131,6 +135,7 @@ AMAZON.StopIntent Auf Wiedersehn
 AMAZON.StopIntent Good-bye
 AMAZON.StopIntent Goodbye
 AMAZON.StopIntent No mas
+AMAZON.StopIntent No more
 AMAZON.StopIntent Off
 AMAZON.StopIntent Shut up
 AMAZON.StopIntent Stop

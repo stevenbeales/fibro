@@ -16,10 +16,10 @@ class SymptomResponse < BaseResponse
   private
 
   def symptom_response
-    construct_response :symptom_response
+    construct_response :symptom_response, echo_request.slots.symptom
   end
 
   def symptom_info_response
-    construct_response :symptom_info_response
+    construct_response :symptom_info_response 
   end
 end

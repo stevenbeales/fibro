@@ -225,6 +225,7 @@
         {
           "intent": "AMAZON.PauseIntent",
           "samples": [
+            "Freeze",
             "Pause",
             "Pause that"
           ]
@@ -242,7 +243,10 @@
           "intent": "AMAZON.RepeatIntent",
           "samples": [
             "Again",
+            "Another time",
             "Can you repeat that",
+            "Do again",
+            "Once more",
             "One more time",
             "Repeat",
             "Repeat again",
@@ -279,6 +283,7 @@
             "Good-bye",
             "Goodbye",
             "No mas",
+            "No more",
             "Off",
             "Shut up",
             "Stop"

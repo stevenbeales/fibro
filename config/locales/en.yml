@@ -13,6 +13,6 @@ en:
   resume_response: "Resume"
   start_over_response: "What would you like to do now?"
   stop_response: "Goodbye."
-  symptom_info_response:
-  symptom_response:
+  symptom_info_response: 
+  symptom_response: "On a scale of 1-10, how much would you rate your %s today?"
   yes_response: "Yes"
