@@ -2,6 +2,7 @@
 
 # Static class that contains our Alexa intents and their builders in hashes.
 class IntentBuilders
+  # Custom Intents hash for use in speech asset generator
   CUSTOM_INTENTS = { ConditionIntent: ConditionIntentBuilder,
                      ReadAllIntent: ReadAllIntentBuilder,
                      ReadEntryIntent: ReadEntryIntentBuilder,
@@ -9,6 +10,7 @@ class IntentBuilders
                      SymptomIntent: SymptomIntentBuilder,
                      SymptomInfoIntent: SymptomInfoIntentBuilder }.freeze
 
+  # Built-in Amazon Intents hash for use in speech asset generator                  
   AMAZON_INTENTS = { Cancel: CancelIntentBuilder,
                      Fallback: FallbackIntentBuilder,
                      Help: HelpIntentBuilder,

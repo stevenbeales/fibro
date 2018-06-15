@@ -3,8 +3,10 @@
 # Class to build utterances for Next Intent
 class NextIntentBuilder < IntentBuilder
   NEXT_INTENTS = [
+    'After this',
     'Another',
     'Next',
+    'Next off',
     'Now what',
     'Skip',
     'Skip forward'

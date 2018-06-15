@@ -4,7 +4,7 @@
       "invocationName": "fibro friend",
       "intents": [
         {
-          "intent": "ConditionIntent",
+          "name": "ConditionIntent",
           "slots": [
             {
               "name": "Condition",
@@ -22,7 +22,7 @@
           ]
         },
         {
-          "intent": "ReadAllIntent",
+          "name": "ReadAllIntent",
           "slots": [
             {
               "name": "Read",
@@ -41,7 +41,7 @@
           ]
         },
         {
-          "intent": "ReadEntryIntent",
+          "name": "ReadEntryIntent",
           "slots": [
             {
               "name": "Day",
@@ -69,7 +69,7 @@
           ]
         },
         {
-          "intent": "ReadLastIntent",
+          "name": "ReadLastIntent",
           "slots": [
             {
               "name": "Read",
@@ -92,7 +92,7 @@
           ]
         },
         {
-          "intent": "SymptomIntent",
+          "name": "SymptomIntent",
           "slots": [
             {
               "name": "Symptom",
@@ -111,7 +111,7 @@
           ]
         },
         {
-          "intent": "SymptomInfoIntent",
+          "name": "SymptomInfoIntent",
           "slots": [
             {
               "name": "SymptomInfo",
@@ -145,21 +145,28 @@
           ]
         },
         {
-          "intent": "AMAZON.CancelIntent",
+          "name": "AMAZON.CancelIntent",
           "samples": [
+            "Abandon",
+            "Ax",
+            "Axe",
+            "Call off",
             "Cancel",
             "Forget it",
-            "Never mind"
+            "Never mind",
+            "Nix",
+            "Scrap",
+            "Scrub"
           ]
         },
         {
-          "intent": "AMAZON.FallbackIntent",
+          "name": "AMAZON.FallbackIntent",
           "samples": [
             "Fall back"
           ]
         },
         {
-          "intent": "AMAZON.HelpIntent",
+          "name": "AMAZON.HelpIntent",
           "samples": [
             "Any advice",
             "Any tips",
@@ -201,71 +208,95 @@
           ]
         },
         {
-          "intent": "AMAZON.NextIntent",
+          "name": "AMAZON.NextIntent",
           "samples": [
+            "After this",
             "Another",
             "Next",
+            "Next off",
             "Now what",
             "Skip",
             "Skip forward"
           ]
         },
         {
-          "intent": "AMAZON.NoIntent",
+          "name": "AMAZON.NoIntent",
           "samples": [
+            "Absolutely not",
+            "By no means",
+            "Ixnay",
+            "Most certainly not",
             "Nah",
+            "Negative",
             "Nein",
+            "Never",
             "No",
             "No thanks",
             "No way",
+            "No way Jose",
             "Non",
-            "Nyet"
+            "Not at all",
+            "Not on your life",
+            "Nyet",
+            "Of course not",
+            "Uh-uh",
+            "Under no circumstances"
           ]
         },
         {
-          "intent": "AMAZON.PauseIntent",
+          "name": "AMAZON.PauseIntent",
           "samples": [
+            "Break",
             "Freeze",
+            "Hibernate",
             "Pause",
-            "Pause that"
+            "Pause that",
+            "Sleep"
           ]
         },
         {
-          "intent": "AMAZON.PreviousIntent",
+          "name": "AMAZON.PreviousIntent",
           "samples": [
             "Back up",
             "Go back",
+            "Last",
             "Previous",
             "Skip back"
           ]
         },
         {
-          "intent": "AMAZON.RepeatIntent",
+          "name": "AMAZON.RepeatIntent",
           "samples": [
             "Again",
             "Another time",
             "Can you repeat that",
             "Do again",
+            "Go through again",
             "Once more",
             "One more time",
             "Repeat",
             "Repeat again",
             "Repeat that",
+            "Restate",
+            "Run through again",
             "Say again",
             "Say that again",
             "What are you asking about"
           ]
         },
         {
-          "intent": "AMAZON.ResumeIntent",
+          "name": "AMAZON.ResumeIntent",
           "samples": [
             "Continue",
             "Keep Going",
-            "Resume"
+            "Reopen",
+            "Restart",
+            "Resume",
+            "Return"
           ]
         },
         {
-          "intent": "AMAZON.StartOverIntent",
+          "name": "AMAZON.StartOverIntent",
           "samples": [
             "Re-start",
             "Start",
@@ -274,7 +305,7 @@
           ]
         },
         {
-          "intent": "AMAZON.StopIntent",
+          "name": "AMAZON.StopIntent",
           "samples": [
             "Adios",
             "Arrivederci",
@@ -290,23 +321,43 @@
           ]
         },
         {
-          "intent": "AMAZON.YesIntent",
+          "name": "AMAZON.YesIntent",
           "samples": [
+            "Absolutely",
+            "Affirmative",
+            "Agreed",
+            "All right",
+            "Aye",
+            "Aye aye",
             "Bien Sur",
+            "By all means",
+            "Certainly",
             "Da",
             "Got it",
+            "Indeed",
             "Ja",
             "Let's do it",
             "OK",
+            "Of course",
             "Okay",
+            "Okey-doke",
+            "Okey-dokey",
             "Oui",
+            "Right",
+            "Roger",
             "Roger that",
             "Sounds good",
             "Super",
             "Sure",
+            "Uh-huh",
+            "Very well",
+            "Ya",
+            "Yea",
+            "Yeah",
             "Yep",
             "Yes",
-            "Yes please"
+            "Yes please",
+            "Yup"
           ]
         }
       ],

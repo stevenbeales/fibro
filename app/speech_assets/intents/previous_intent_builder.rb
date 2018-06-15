@@ -5,6 +5,7 @@ class PreviousIntentBuilder < IntentBuilder
   PREVIOUS_INTENTS = [
     'Back up',
     'Go back',
+    'Last',
     'Previous',
     'Skip back'
   ].freeze

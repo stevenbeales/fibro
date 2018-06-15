@@ -32,7 +32,14 @@ class JsonFileOutput
     HEADER
   end
 
+  # Fix any formatting differences between Alexa 1.0 and 2.0 format 
   def wrap(schema)
-    %(#{header}#{schema.remove_first_line.indent(4)}\n#{footer})
+    %(#{header}#{fix_names_of_intents(schema.remove_first_line.indent(4))}\n#{footer})
+  end
+
+  private 
+  
+  def fix_names_of_intents(schema)
+    schema.gsub(/intent/, 'name').gsub('names', 'intents')
   end
 end

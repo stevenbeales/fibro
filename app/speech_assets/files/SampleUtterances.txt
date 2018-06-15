@@ -49,9 +49,16 @@ SymptomInfoIntent What is linked to {Symptom}
 SymptomInfoIntent What relates to {Symptom}
 SymptomInfoIntent Will I die if {Symptom}
 SymptomInfoIntent what does it mean if I have {Symptom}
+AMAZON.CancelIntent Abandon
+AMAZON.CancelIntent Ax
+AMAZON.CancelIntent Axe
+AMAZON.CancelIntent Call off
 AMAZON.CancelIntent Cancel
 AMAZON.CancelIntent Forget it
 AMAZON.CancelIntent Never mind
+AMAZON.CancelIntent Nix
+AMAZON.CancelIntent Scrap
+AMAZON.CancelIntent Scrub
 AMAZON.FallbackIntent Fall back
 AMAZON.HelpIntent Any advice
 AMAZON.HelpIntent Any tips
@@ -90,40 +97,64 @@ AMAZON.HelpIntent What kind of command should I give
 AMAZON.HelpIntent What questions can I ask
 AMAZON.HelpIntent What should I say
 AMAZON.HelpIntent What type of input should I give
+AMAZON.NextIntent After this
 AMAZON.NextIntent Another
 AMAZON.NextIntent Next
+AMAZON.NextIntent Next off
 AMAZON.NextIntent Now what
 AMAZON.NextIntent Skip
 AMAZON.NextIntent Skip forward
+AMAZON.NoIntent Absolutely not
+AMAZON.NoIntent By no means
+AMAZON.NoIntent Ixnay
+AMAZON.NoIntent Most certainly not
 AMAZON.NoIntent Nah
+AMAZON.NoIntent Negative
 AMAZON.NoIntent Nein
+AMAZON.NoIntent Never
 AMAZON.NoIntent No
 AMAZON.NoIntent No thanks
 AMAZON.NoIntent No way
+AMAZON.NoIntent No way Jose
 AMAZON.NoIntent Non
+AMAZON.NoIntent Not at all
+AMAZON.NoIntent Not on your life
 AMAZON.NoIntent Nyet
+AMAZON.NoIntent Of course not
+AMAZON.NoIntent Uh-uh
+AMAZON.NoIntent Under no circumstances
+AMAZON.PauseIntent Break
 AMAZON.PauseIntent Freeze
+AMAZON.PauseIntent Hibernate
 AMAZON.PauseIntent Pause
 AMAZON.PauseIntent Pause that
+AMAZON.PauseIntent Sleep
 AMAZON.PreviousIntent Back up
 AMAZON.PreviousIntent Go back
+AMAZON.PreviousIntent Last
 AMAZON.PreviousIntent Previous
 AMAZON.PreviousIntent Skip back
 AMAZON.RepeatIntent Again
 AMAZON.RepeatIntent Another time
 AMAZON.RepeatIntent Can you repeat that
 AMAZON.RepeatIntent Do again
+AMAZON.RepeatIntent Go through again
 AMAZON.RepeatIntent Once more
 AMAZON.RepeatIntent One more time
 AMAZON.RepeatIntent Repeat
 AMAZON.RepeatIntent Repeat again
 AMAZON.RepeatIntent Repeat that
+AMAZON.RepeatIntent Restate
+AMAZON.RepeatIntent Run through again
 AMAZON.RepeatIntent Say again
 AMAZON.RepeatIntent Say that again
 AMAZON.RepeatIntent What are you asking about
 AMAZON.ResumeIntent Continue
 AMAZON.ResumeIntent Keep Going
+AMAZON.ResumeIntent Reopen
+AMAZON.ResumeIntent Restart
 AMAZON.ResumeIntent Resume
+AMAZON.ResumeIntent Return
 AMAZON.StartOverIntent Re-start
 AMAZON.StartOverIntent Start
 AMAZON.StartOverIntent Start again
@@ -139,18 +170,38 @@ AMAZON.StopIntent No more
 AMAZON.StopIntent Off
 AMAZON.StopIntent Shut up
 AMAZON.StopIntent Stop
+AMAZON.YesIntent Absolutely
+AMAZON.YesIntent Affirmative
+AMAZON.YesIntent Agreed
+AMAZON.YesIntent All right
+AMAZON.YesIntent Aye
+AMAZON.YesIntent Aye aye
 AMAZON.YesIntent Bien Sur
+AMAZON.YesIntent By all means
+AMAZON.YesIntent Certainly
 AMAZON.YesIntent Da
 AMAZON.YesIntent Got it
+AMAZON.YesIntent Indeed
 AMAZON.YesIntent Ja
 AMAZON.YesIntent Let's do it
 AMAZON.YesIntent OK
+AMAZON.YesIntent Of course
 AMAZON.YesIntent Okay
+AMAZON.YesIntent Okey-doke
+AMAZON.YesIntent Okey-dokey
 AMAZON.YesIntent Oui
+AMAZON.YesIntent Right
+AMAZON.YesIntent Roger
 AMAZON.YesIntent Roger that
 AMAZON.YesIntent Sounds good
 AMAZON.YesIntent Super
 AMAZON.YesIntent Sure
+AMAZON.YesIntent Uh-huh
+AMAZON.YesIntent Very well
+AMAZON.YesIntent Ya
+AMAZON.YesIntent Yea
+AMAZON.YesIntent Yeah
 AMAZON.YesIntent Yep
 AMAZON.YesIntent Yes
 AMAZON.YesIntent Yes please
+AMAZON.YesIntent Yup

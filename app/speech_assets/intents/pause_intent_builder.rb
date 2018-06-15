@@ -3,9 +3,12 @@
 # Class to build utterances for Pause Intent
 class PauseIntentBuilder < IntentBuilder
   PAUSE_INTENTS = [
+    'Break',
     'Freeze',
+    'Hibernate',
     'Pause',
-    'Pause that'
+    'Pause that',
+    'Sleep'
   ].freeze
 
   def add

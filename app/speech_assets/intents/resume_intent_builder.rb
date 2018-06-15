@@ -5,7 +5,10 @@ class ResumeIntentBuilder < IntentBuilder
   RESUME_INTENTS = [
     'Continue',
     'Keep Going',
-    'Resume'
+    'Reopen',
+    'Restart',
+    'Resume',
+    'Return'
   ].freeze
 
   def add
