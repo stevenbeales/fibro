@@ -7,6 +7,8 @@ using StringRefinements
 class BaseResponse
   include ResponseHelpers
   include Concord.new(:echo_request, :echo_response) 
+  delegate :session_attributes, to: :echo_response 
+  delegate :add_attribute, to: :echo_response
 
   # Respond true if it is a response method call
   def respond_to_missing?(method_name, include_private = false)

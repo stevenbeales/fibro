@@ -1,10 +1,12 @@
 en:
   cancel_response: "OK. What would you like to do now?"
   condition_response:
+  delete_entry_response:
   fallback_response:
   help_response: "Alexa can only process a few seconds of speech at a time, so after each sentence, pause for a breath while your sentence is saved, then continue speaking when you hear the prompt."
   launch_response: "What would you like to do? Say help for more help."
   next_response: "Next"
+  next_entry_response: "Next"
   no_response: "No"
   previous_response: "Previous"
   read_all_response:
@@ -13,6 +15,6 @@ en:
   resume_response: "Resume"
   start_over_response: "What would you like to do now?"
   stop_response: "Goodbye."
-  symptom_info_response: 
+  symptom_info_response:  "Here is more information about symptom %s."
   symptom_response: "On a scale of 1-10, how much would you rate your %s today?"
   yes_response: "Yes"

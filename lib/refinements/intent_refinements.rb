@@ -7,11 +7,14 @@ module IntentRefinements
   refine AlexaGenerator::Intent do
     attr_reader :samples
     
+    # Store samples with intents
+    # Takes a list of sample utterances in Alexa 1.0 sample utterance format ([intent] [sample])
     def add_samples_from(intents_and_samples)
       @samples = remove_intents(intents_and_samples)
       self
     end
     
+    # Returns an array of custom types in Alexa 2.0 format
     def custom_types_for
       slots.select { |slot| slot.bindings.size.positive? }
            .map { |slot| { value: slot.name, synonyms: slot.bindings.flatten } }

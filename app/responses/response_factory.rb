@@ -15,6 +15,8 @@ class ResponseFactory
       AmazonResponse.new(@echo_request, @echo_response).response
     when 'ConditionIntent', 'EverybodyHurtsIntent'
       ConditionResponse.new(@echo_request, @echo_response).response
+    when 'DeleteEntryIntent', 'NextEntryIntent'
+      WriteResponse.new(@echo_request, @echo_response).response
     else
       help_response
     end

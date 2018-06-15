@@ -51,6 +51,16 @@ RSpec.describe Sinatra::MyApp do
       expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:condition_response)
     end
 
+    it 'should return delete_entry_response from read entry intent request' do
+      allow(echo_request).to receive(:intent_name).and_return "DeleteEntryIntent"
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:delete_entry_response)
+    end
+
+    it 'should return next_entry_response from read entry intent request' do
+      allow(echo_request).to receive(:intent_name).and_return "NextEntryIntent"
+      expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:next_entry_response)
+    end
+
     it 'should return read_all_response from read all intent request' do
       allow(echo_request).to receive(:intent_name).and_return "ReadAllIntent"
       expect(subject.build_response(echo_request, rep).spoken_response).to eq I18n.t(:read_all_response)

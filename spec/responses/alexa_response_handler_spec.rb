@@ -19,7 +19,21 @@ RSpec.describe AlexaResponseHandler do
         expect(subject.response.spoken_response).to eq(I18n.t(:condition_response))
       end
     end
-    
+   
+    describe '.delete_entry_response' do
+      it do
+        allow(echo_request).to receive(:intent_name).and_return('DeleteEntryIntent')
+        expect(subject.response.spoken_response).to eq I18n.t(:delete_entry_response)
+      end
+    end
+        
+    describe '.next_entry_response' do
+      it do
+        allow(echo_request).to receive(:intent_name).and_return('NextEntryIntent')
+        expect(subject.response.spoken_response).to eq I18n.t(:next_entry_response)
+      end
+    end
+
     describe '.read_all_response' do
       it do
         allow(echo_request).to receive(:intent_name).and_return('ReadAllIntent')
@@ -33,7 +47,7 @@ RSpec.describe AlexaResponseHandler do
         expect(subject.response.spoken_response).to eq I18n.t(:read_entry_response)
       end
     end
-
+    
     describe '.read_last_response' do
       it do
         allow(echo_request).to receive(:intent_name).and_return('ReadLastIntent')
