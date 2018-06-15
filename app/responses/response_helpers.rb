@@ -2,7 +2,13 @@
 
 # Common methods to construct Alexa responses
 module ResponseHelpers
-  def construct_response(spoken_text, args = '')
+  def construct_response(spoken_text)
+    @echo_response.end_session = false
+    @echo_response.spoken_response = I18n.t spoken_text
+    @echo_response
+  end
+
+  def construct_response_with_arguments(spoken_text, args = '')
     @echo_response.end_session = false
     @echo_response.spoken_response = (I18n.t spoken_text) % args
     @echo_response

@@ -5,6 +5,10 @@ ConditionIntent tell me symptoms of {Condition}
 ConditionIntent tell me the symptoms of {Condition}
 ConditionIntent tell me the treatment of {Condition}
 ConditionIntent {Condition}
+DeleteEntryIntent Delete {Entry}
+DeleteEntryIntent Delete {Log} {Entry}
+NextEntryIntent Next {Entry}
+NextEntryIntent Next {Log} {Entry}
 ReadAllIntent What happened
 ReadAllIntent {Read} all
 ReadAllIntent {Read} everything
@@ -26,29 +30,29 @@ SymptomIntent I think I may have {Symptom}
 SymptomIntent I think I might have {Symptom}
 SymptomIntent I {Symptom}
 SymptomIntent {Symptom}
-SymptomInfoIntent Can you tell me about {Symptom}
-SymptomInfoIntent Could untreated {Symptom} be fatal
-SymptomInfoIntent Do you know anything about {Symptom}
-SymptomInfoIntent Get result for {Symptom}
-SymptomInfoIntent I have {Symptom} what does it mean
-SymptomInfoIntent If I feel {Symptom} should I be worried
-SymptomInfoIntent If I feel {Symptom} what could it be
-SymptomInfoIntent Is {Symptom} fatal
-SymptomInfoIntent Should I be scared if {Symptom}
-SymptomInfoIntent Should I be worried if I am {Symptom}
-SymptomInfoIntent Should I be worried if I have {Symptom}
-SymptomInfoIntent Should I go to the doctor if I have {Symptom}
-SymptomInfoIntent Should I go to the doctor if {Symptom}
-SymptomInfoIntent What are feelings of {Symptom}
-SymptomInfoIntent What are the most popular diagnosis that cause {Symptom}
-SymptomInfoIntent What could {Symptom} mean
-SymptomInfoIntent What does it mean to have {Symptom}
-SymptomInfoIntent What if I feel {Symptom}
-SymptomInfoIntent What if I have {Symptom}
-SymptomInfoIntent What is linked to {Symptom}
-SymptomInfoIntent What relates to {Symptom}
-SymptomInfoIntent Will I die if {Symptom}
-SymptomInfoIntent what does it mean if I have {Symptom}
+SymptomInfoIntent Can you tell me about {SymptomInfo}
+SymptomInfoIntent Could untreated {SymptomInfo} be fatal
+SymptomInfoIntent Do you know anything about {SymptomInfo}
+SymptomInfoIntent Get result for {SymptomInfo}
+SymptomInfoIntent I have {SymptomInfo} what does it mean
+SymptomInfoIntent If I feel {SymptomInfo} should I be worried
+SymptomInfoIntent If I feel {SymptomInfo} what could it be
+SymptomInfoIntent Is {SymptomInfo} fatal
+SymptomInfoIntent Should I be scared if {SymptomInfo}
+SymptomInfoIntent Should I be worried if I am {SymptomInfo}
+SymptomInfoIntent Should I be worried if I have {SymptomInfo}
+SymptomInfoIntent Should I go to the doctor if I have {SymptomInfo}
+SymptomInfoIntent Should I go to the doctor if {SymptomInfo}
+SymptomInfoIntent What are feelings of {SymptomInfo}
+SymptomInfoIntent What are the most popular diagnosis that cause {SymptomInfo}
+SymptomInfoIntent What could {SymptomInfo} mean
+SymptomInfoIntent What does it mean if I have {SymptomInfo}
+SymptomInfoIntent What does it mean to have {SymptomInfo}
+SymptomInfoIntent What if I feel {SymptomInfo}
+SymptomInfoIntent What if I have {SymptomInfo}
+SymptomInfoIntent What is linked to {SymptomInfo}
+SymptomInfoIntent What relates to {SymptomInfo}
+SymptomInfoIntent Will I die if {SymptomInfo}
 AMAZON.CancelIntent Abandon
 AMAZON.CancelIntent Ax
 AMAZON.CancelIntent Axe

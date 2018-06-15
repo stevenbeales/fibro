@@ -14,7 +14,7 @@ class SymptomIntentBuilder < IntentBuilder
   ].freeze
 
   def add
-    add_slot(:Symptom, :LIST_OF_SYMPTOMS) do |slot|
+    add_slot(:Symptom, :SYMPTOM) do |slot|
       slot.add_bindings(SlotSamples::SYMPTOM_SLOTS)
     end
 

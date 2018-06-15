@@ -16,7 +16,7 @@ class SymptomResponse < BaseResponse
   private
 
   def symptom_response
-    construct_response :symptom_response, echo_request.slots.symptom
+    construct_response_with_arguments :symptom_response, echo_request.slots.symptom
   end
 
   def symptom_info_response

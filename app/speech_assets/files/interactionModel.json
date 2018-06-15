@@ -8,7 +8,7 @@
           "slots": [
             {
               "name": "Condition",
-              "type": "LIST_OF_CONDITIONS"
+              "type": "CONDITION"
             }
           ],
           "samples": [
@@ -19,6 +19,40 @@
             "tell me the symptoms of {Condition}",
             "tell me the treatment of {Condition}",
             "{Condition}"
+          ]
+        },
+        {
+          "name": "DeleteEntryIntent",
+          "slots": [
+            {
+              "name": "Log",
+              "type": "LOG"
+            },
+            {
+              "name": "Entry",
+              "type": "ENTRY"
+            }
+          ],
+          "samples": [
+            "Delete {Entry}",
+            "Delete {Log} {Entry}"
+          ]
+        },
+        {
+          "name": "NextEntryIntent",
+          "slots": [
+            {
+              "name": "Log",
+              "type": "LOG"
+            },
+            {
+              "name": "Entry",
+              "type": "ENTRY"
+            }
+          ],
+          "samples": [
+            "Next {Entry}",
+            "Next {Log} {Entry}"
           ]
         },
         {
@@ -96,7 +130,7 @@
           "slots": [
             {
               "name": "Symptom",
-              "type": "LIST_OF_SYMPTOMS"
+              "type": "SYMPTOM"
             }
           ],
           "samples": [
@@ -115,33 +149,33 @@
           "slots": [
             {
               "name": "SymptomInfo",
-              "type": "LIST_OF_SYMPTOMS"
+              "type": "SYMPTOMINFO"
             }
           ],
           "samples": [
-            "Can you tell me about {Symptom}",
-            "Could untreated {Symptom} be fatal",
-            "Do you know anything about {Symptom}",
-            "Get result for {Symptom}",
-            "I have {Symptom} what does it mean",
-            "If I feel {Symptom} should I be worried",
-            "If I feel {Symptom} what could it be",
-            "Is {Symptom} fatal",
-            "Should I be scared if {Symptom}",
-            "Should I be worried if I am {Symptom}",
-            "Should I be worried if I have {Symptom}",
-            "Should I go to the doctor if I have {Symptom}",
-            "Should I go to the doctor if {Symptom}",
-            "What are feelings of {Symptom}",
-            "What are the most popular diagnosis that cause {Symptom}",
-            "What could {Symptom} mean",
-            "What does it mean to have {Symptom}",
-            "What if I feel {Symptom}",
-            "What if I have {Symptom}",
-            "What is linked to {Symptom}",
-            "What relates to {Symptom}",
-            "Will I die if {Symptom}",
-            "what does it mean if I have {Symptom}"
+            "Can you tell me about {SymptomInfo}",
+            "Could untreated {SymptomInfo} be fatal",
+            "Do you know anything about {SymptomInfo}",
+            "Get result for {SymptomInfo}",
+            "I have {SymptomInfo} what does it mean",
+            "If I feel {SymptomInfo} should I be worried",
+            "If I feel {SymptomInfo} what could it be",
+            "Is {SymptomInfo} fatal",
+            "Should I be scared if {SymptomInfo}",
+            "Should I be worried if I am {SymptomInfo}",
+            "Should I be worried if I have {SymptomInfo}",
+            "Should I go to the doctor if I have {SymptomInfo}",
+            "Should I go to the doctor if {SymptomInfo}",
+            "What are feelings of {SymptomInfo}",
+            "What are the most popular diagnosis that cause {SymptomInfo}",
+            "What could {SymptomInfo} mean",
+            "What does it mean if I have {SymptomInfo}",
+            "What does it mean to have {SymptomInfo}",
+            "What if I feel {SymptomInfo}",
+            "What if I have {SymptomInfo}",
+            "What is linked to {SymptomInfo}",
+            "What relates to {SymptomInfo}",
+            "Will I die if {SymptomInfo}"
           ]
         },
         {
@@ -377,22 +411,6 @@
           ]
         },
         {
-          "name": "READ",
-          "values": [
-            {
-              "name": {
-                "value": "Read",
-                "synonyms": [
-                  "read",
-                  "speak",
-                  "say",
-                  "tell"
-                ]
-              }
-            }
-          ]
-        },
-        {
           "name": "LOG",
           "values": [
             {
@@ -417,6 +435,22 @@
                 "synonyms": [
                   "entry",
                   "event"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "READ",
+          "values": [
+            {
+              "name": {
+                "value": "Read",
+                "synonyms": [
+                  "read",
+                  "speak",
+                  "say",
+                  "tell"
                 ]
               }
             }

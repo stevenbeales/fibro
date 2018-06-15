@@ -13,7 +13,7 @@ class ConditionIntentBuilder < IntentBuilder
   ].freeze
 
   def add
-    add_slot(:Condition, :LIST_OF_CONDITIONS) do |slot|
+    add_slot(:Condition, :CONDITION) do |slot|
       slot.add_bindings('Fibromyalgia', 'Fibro')
     end
 

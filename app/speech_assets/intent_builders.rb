@@ -4,6 +4,8 @@
 class IntentBuilders
   # Custom Intents hash for use in speech asset generator
   CUSTOM_INTENTS = { ConditionIntent: ConditionIntentBuilder,
+                     DeleteEntryIntent: DeleteEntryIntentBuilder,
+                     NextEntryIntent: NextEntryIntentBuilder, 
                      ReadAllIntent: ReadAllIntentBuilder,
                      ReadEntryIntent: ReadEntryIntentBuilder,
                      ReadLastIntent: ReadLastIntentBuilder,
