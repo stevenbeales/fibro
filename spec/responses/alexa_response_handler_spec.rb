@@ -11,6 +11,7 @@ RSpec.describe AlexaResponseHandler do
     before(:each) do
       allow(echo_request).to receive(:launch_request?).and_return(false)
       allow(echo_request).to receive(:session_ended_request?).and_return(false)
+      allow(echo_request).to receive(:previous_intent).and_return('')
     end
 
     describe '.condition_response' do

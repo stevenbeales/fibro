@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+using RequestRefinements
+
 # Class to define custom responses to Alexa intent request
 class AlexaResponseHandler
   include ResponseHelpers
@@ -13,5 +15,6 @@ class AlexaResponseHandler
     return end_session_response if @echo_request.session_ended_request?
 
     ResponseFactory.new(@echo_request, @echo_response).response
+    # SessionFactory.new(@echo_request, @echo_response).response
   end
 end

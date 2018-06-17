@@ -2,12 +2,13 @@
 
 require 'active_support/core_ext/module/delegation'
 require './lib/refinements/string_refinements'
+require './lib/refinements/request_refinements'
 require 'concord'
 require_relative 'response_helpers'
 
 # BaseResponse must be required before its child classes
 require_relative 'base_response'
-
+require_relative 'session_factory'
 require_relative 'response_factory'
 require_relative 'alexa_response_handler'
 require_relative 'amazon_response'

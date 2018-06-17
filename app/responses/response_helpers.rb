@@ -38,6 +38,10 @@ module ResponseHelpers
     construct_response :help_response
   end
 
+  def help_with_rating_response
+    construct_response :help_with_rating_response
+  end
+
   def launch_response
     construct_response :launch_response
   end

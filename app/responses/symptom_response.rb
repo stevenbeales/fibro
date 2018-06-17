@@ -16,14 +16,14 @@ class SymptomResponse < BaseResponse
   private
 
   def symptom_response
-    echo_response.add_attribute("symptom_name", echo_request.slots.symptom)
-    echo_response.add_attribute("previous_intent", echo_request.intent_name)
+    echo_response.add_attribute(:symptom_name, echo_request.slots.symptom)
+    echo_response.add_attribute(:previous_intent, echo_request.intent_name)
     construct_response_with_arguments :symptom_response, echo_request.slots.symptom
   end
 
   def symptom_info_response
-    echo_response.add_attribute("symptom_info_name", echo_request.slots.symptom_info)
-    echo_response.add_attribute("previous_intent", echo_request.intent_name)
+    echo_response.add_attribute(:symptom_info_name, echo_request.slots.symptom_info)
+    echo_response.add_attribute(:previous_intent, echo_request.intent_name)
     construct_response_with_arguments :symptom_info_response, echo_request.slots.symptom_info
   end
 end

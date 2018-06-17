@@ -4,6 +4,7 @@ en:
   delete_entry_response:
   fallback_response:
   help_response: "Alexa can only process a few seconds of speech at a time, so after each sentence, pause for a breath while your sentence is saved, then continue speaking when you hear the prompt."
+  help_with_rating_response:
   launch_response: "What would you like to do? Say help for more help."
   next_response: "Next"
   next_entry_response: "Next"
